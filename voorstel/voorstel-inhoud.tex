@@ -8,7 +8,7 @@ Binnen het vakgebied "AI \& Data Engineering" is er een cursus Machine Learning 
 Dit onderzoek richt zich op een specifieke uitdaging binnen machine learning operations: Het lokaal draaien van machine learning pipelines.\newline
 
 In deze context word er gebruik gemaakt van Azure ML pipelines, waarvan het onderliggende framework Kubeflow is. Kubeflow is een open-source machine learning toolkit op Kubernetes en zal centraal staan in dit onderzoek. %TODO bron toevoegen van Kubeflow
-Er zal ook onderzoek worden gedaan naar alternatieven, die dan met elkaar worden vergeleken om eventueel een tweede Proof of Concept (PoC) op te stellen. hierbij zal gekeken worden naar hoe dat de verschillende frameworks werken, welke programeertaal ze gebruiken en de verschillenede functies van elke framework.
+Er zal ook onderzoek worden gedaan naar alternatieven, die dan met elkaar worden vergeleken om eventueel een tweede Proof of Concept (PoC) op te stellen. hierbij zal gekeken worden naar hoe dat de verschillende frameworks en libraries werken, welke programeertaal ze gebruiken en de verschillenede functies van elke framework.
 Daarnaast worden de frameworks ook getest op de compatibiliteit van verschillende Operating Systems (OS). Deze test omvat gedetailleerde installaties van alle frameworks, waarvan de resultaten worden vastgelegd in een rapport.\newline
 
 De focus ligt op het lokaal draaien van Kubeflow, een proces dat uitdagend is door de onduidelijke documentatie en de migratieproblemen van versie 1 naar versie 2.
@@ -33,9 +33,14 @@ De centrale probleemstelling is daarom: "Hoe kan een ML-pipeline lokaal worden u
 \subsection{Machine Learning}
 Machine Learning (ML) is een onderliggend deel van Artificiële Intelligentie (AI), een snel groeiend vakgebied in het midden van informatica en statistiek, dat feit gebaseerde beslissingen in verschillende sectoren aanstuurt (Jordan, 2015).
 Door middel van het berekenen van wiskundige regels kan machine learning een verband leggen tussen gegevens om zo voorspellingen te genereren (Cybenko, 2001).
-Dit is mogelijk door het gebruik van machine learning algoritmen, hiermee kunnen computer leren van gegevens en hun prestatie in de loop van tijd verbeteren door middel van testen en validaties en zo nieuwe taken uit te voeren met nieuwe data(Shaveta, 2023).
+Dit is mogelijk door het gebruik van machine learning algoritmen, hiermee kunnen computer leren van gegevens en hun prestatie in de loop van tijd verbeteren door middel van testen en validaties en zo nieuwe taken uit te voeren met nieuwe data (Shaveta, 2023).
 \subsection{CI/CD pipelines}
-\subsection{Frameworks}
+Een CI/CD (Continuous Integration/Continuous Deployment soms ook Continuous Delivery genoemt) zijn een cruciaal onderdeel van moderne softwareontwikkeling, voor het sneller en meer betrouwbare levering van web applicaties (Singh, 2023).
+De effectiviteit van deze pipelines hangt sterk af van de juiste onderhoud en updates om in lijn te blijven met de veranderingen in systemen en technologiën (Zampetti, 2021).
+
+\subsection{Frameworks en Libraries}
+Een framework is een tool dat reeds gemaakte componenten of solution dat de development zou versnellen. Een framework kan bibliotheken, toolsets en API's bevatten voor het ontwikkelen van software en het creeren van systemen.
+Voor machine learning pipelines zijn er ook verschillende frameworks waaronder:
 \begin{itemize}
     \item Kubeflow
     \item Kedro
@@ -44,7 +49,10 @@ Dit is mogelijk door het gebruik van machine learning algoritmen, hiermee kunnen
     \item Airflow
 \end{itemize}
 \subsubsection{Kubeflow}
+Kubeflow is een project voor het maken van machine learning (ML) workflows deployments op Kubernetes. Het is portable en schaalbaal. Overal waar je Kubernetes kan uitvoeren kan je Kubeflow gebruiken.
+In de cursus Machine Learning Operations worde er momenteel gebruik gemaakt hiervan maar dan in een cloud omgeving van Azure. Maar dit framework kan ook lokaal draaien maar dit is een uitdaging.
 \subsubsection{Kedro}
+Kedro is een open-source Python-framework om reproduceerbare, onderhoudsvriendelijke en modulaire code voor data science te creëren. Het maakt gebruik van best practices in software engineering om je te helpen productieklare data science-pipelines te bouwen.
 \subsubsection{Metaflow}
 \subsubsection{ZenML}
 \subsubsection{Airflow}

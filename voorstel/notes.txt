@@ -4,3 +4,9 @@ Raj, 2019: https://doi.org/10.22214/ijraset.2019.6138, https://www.semanticschol
 Sheveta, 2023: https://doi.org/10.30574/ijsra.2023.9.1.0410, https://www.semanticscholar.org/paper/A-review-on-machine-learning-Shaveta/7b8c7d36268d532ef6304a98fbba2f05c7c923ac
 https://pub.towardsai.net/using-scikit-learn-pipelines-to-automate-the-machine-learning-model-training-and-predictions-3ed5e263c356
 https://neptune.ai/blog/building-end-to-end-ml-pipeline
+https://www.redhat.com/en/topics/devops/what-cicd-pipeline
+singh 2023: https://doi.org/10.22214/ijraset.2023.52867, https://www.ijraset.com/best-journal/ci-cd-pipeline-for-web-applications
+zampetti 2021: https://doi.org/10.1109/ICSME52107.2021.00048, https://mdipenta.github.io/files/icsme2021.pdf
+https://www.netsolutions.com/insights/what-is-a-framework-in-programming/
+https://docs.kedro.org/en/stable/introduction/index.html
+https://kubeflow.org/
