@@ -1,0 +1,6 @@
+BRONNEN:
+Jordan, 2015: https://www.science.org/doi/10.1126/science.aaa8415
+Raj, 2019: https://doi.org/10.22214/ijraset.2019.6138, https://www.semanticscholar.org/paper/A-Review-on-Machine-Learning-Algorithms-Raj/a7f315038817f4d0697d86796bbfe69d11e33f9c
+Sheveta, 2023: https://doi.org/10.30574/ijsra.2023.9.1.0410, https://www.semanticscholar.org/paper/A-review-on-machine-learning-Shaveta/7b8c7d36268d532ef6304a98fbba2f05c7c923ac
+https://pub.towardsai.net/using-scikit-learn-pipelines-to-automate-the-machine-learning-model-training-and-predictions-3ed5e263c356
+https://neptune.ai/blog/building-end-to-end-ml-pipeline
