@@ -18,18 +18,11 @@ Dit onderzoek richt zich op IT-professionals die betrokken zijn bij Machine Lear
 Het lokaal draaien van machinel learning pipelines met behulp van Kubeflow blijkt een uitdaging te zijn, vooral met betrekking tot de huidige migratieproblemen en gebrekkige documentatie.
 De centrale probleemstelling is daarom: "Hoe kan een ML-pipeline lokaal worden uitgevoerd met behulp van een machine learning framework, rekeninghouden met de uitdagingen van de frameworks?"
 
-
-
-
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:state-of-the-art}
 
-
-%TODO Uitleg over Machine Learning
-%TODO uitleg over de Frameworks
-%Todo uitleg over CI/CD pipelines
 \subsection{Machine Learning}
 Machine Learning (ML) is een onderliggend deel van Artificiële Intelligentie (AI), een snel groeiend vakgebied in het midden van informatica en statistiek, dat feit gebaseerde beslissingen in verschillende sectoren aanstuurt (Jordan, 2015).
 Door middel van het berekenen van wiskundige regels kan machine learning een verband leggen tussen gegevens om zo voorspellingen te genereren (Cybenko, 2001).
@@ -39,8 +32,9 @@ Een CI/CD (Continuous Integration/Continuous Deployment soms ook Continuous Deli
 De effectiviteit van deze pipelines hangt sterk af van de juiste onderhoud en updates om in lijn te blijven met de veranderingen in systemen en technologiën (Zampetti, 2021).
 
 \subsection{Frameworks en Libraries}
-Een framework is een tool dat reeds gemaakte componenten of solution dat de development zou versnellen. Een framework kan bibliotheken, toolsets en API's bevatten voor het ontwikkelen van software en het creeren van systemen.
-Voor machine learning pipelines zijn er ook verschillende frameworks waaronder:
+Een framework is een tool dat reeds gemaakte componenten of solutions dat de development zou versnellen. Een framework kan libraries, toolsets en API's bevatten voor het ontwikkelen van software en het creeren van systemen.
+Libraries zijn componenten die specifieke taken uitvoert. 
+Voor machine learning pipelines zijn er ook verschillende frameworks en libraries waaronder:
 \begin{itemize}
     \item Kubeflow
     \item Kedro
@@ -49,22 +43,21 @@ Voor machine learning pipelines zijn er ook verschillende frameworks waaronder:
     \item Airflow
 \end{itemize}
 \subsubsection{Kubeflow}
-Kubeflow is een project voor het maken van machine learning (ML) workflows deployments op Kubernetes. Het is portable en schaalbaal. Overal waar je Kubernetes kan uitvoeren kan je Kubeflow gebruiken.
-In de cursus Machine Learning Operations worde er momenteel gebruik gemaakt hiervan maar dan in een cloud omgeving van Azure. Maar dit framework kan ook lokaal draaien maar dit is een uitdaging.
+Kubeflow pipelines zijn een hoofdonderdeel van het Kubeflow platform.
 \subsubsection{Kedro}
 Kedro is een open-source Python-framework om reproduceerbare, onderhoudsvriendelijke en modulaire code voor data science te creëren. Het maakt gebruik van best practices in software engineering om je te helpen productieklare data science-pipelines te bouwen.
 \subsubsection{Metaflow}
 \subsubsection{ZenML}
 \subsubsection{Airflow}
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+%Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+%Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
+%Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+%Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+%Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -79,25 +72,60 @@ Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur v
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Het ondezoek zal bestaan uit verschillende fasen. Er zal eerst een literatuurstudie worden uitgevoerd om inzicht te krijgen in de werking en
+functies van verschillende frameworks en libraries die machine learning pipelines ondersteunen.
+Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te draaien. Deze fase zal ongeveer 2 weken duren en gebruik maken van verschillende bronnen zoals online-artikelen en relevante rapporten om de nodige informatie te vinden. Als resultaat zal een sammenvatting geschreven worden met alle relevante informatie voor dit onderzoek.\\
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+In de volgende deze fase zullen volgende testen worden uitgevoerd op de Kubeflow and alternatieve frameworks en libraries. De installatie word uitgevoerd en elke stap word beschreven en bekeken of er fouten komen. Daarnaast word er gekeken hoe dat machine learning pipelines lokaal draaien, hiervoor zal er een pipeline gemaakt worden die altijd de zelfde data verwerkt en bewerkingen uitvoert. deze data zal worden bijgehouden in een rapport.
+Deze testen zullen op verschillende besturingssystemen worden uitgevoerd en met verschillende soorten data, hierdoor kunnen de resultaten goed worden geanalyseerd.\\
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+Na het verzamelen van de nodige data van de testen zal deze ook geanalyseerd worden. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. Zo word gekeken hoe effectief de verschillende frameworks and libraries de machine learning pipelines lokaal kan uitvoeren. Vervolgens wordt over de geanalyseerde data een conclusie geformuleerd.
+Deze fase zal 2 weken duren.\\
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies  gedetailleerd beschreven worden. Dit zal stapsgewijs gebeuren, waarin de belangerijkste bevindingen en conclusies worden aangetoond. Het rapport zal worden opgesteld met LaTeX.\\
+\begin{tikzpicture}[node distance=2cm]
+\node (pro0) [process] {Literatuurstudie};
+\node (pro1) [process, below of=pro0] {Onderzoek naar het lokaal draaien van Kubeflow piplines};
+\node (pro2) [process, right of=pro1, xshift=2cm] {Onderzoek verschillende frameworks en libraries en hun werking};
+\node (pro3) [process, below of=pro1] {Opstellen Short list};
+\node (pro4) [process, below of=pro3] {Testen van het lokaal uitvoeren van machine learning pipelines};
+\node (pro5) [process, below of=pro4] {Analyseren en verglijken van resultaten};
+\node (pro6) [process, below of=pro5] {Scriptie};
+\draw [arrow] (pro0) -- (pro1);
+\draw [arrow] (pro0) -- (pro2);
+\draw [arrow] (pro2) -- (pro3);
+\draw [arrow] (pro1) -- (pro3);
+\draw [arrow] (pro3) -- (pro4);
+\draw [arrow] (pro4) -- (pro5);
+\draw [arrow] (pro5) -- (pro6);
+\end{tikzpicture}\\
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+%Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+%Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+
+%Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+
+%Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+
+%Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
+
+%Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+De data die zal verzameld worden van de testen zijn:
+\begin{itemize}
+  \item Hoe is de installatie of gebuik van de frameworks and libraries verlopen?
+  \item Hoelang duurde de installatie.
+  \item Hoe word de zelfde pipeline uitgevoerd op de verschillende frameworks en libraries.
+  \item Hoelang duurde het uitoveren van de pipelines op de verschillende frameworks en libraries.
+\end{itemize}
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+%Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+%Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
 
+%Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
