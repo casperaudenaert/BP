@@ -7,8 +7,8 @@ De toename van Artificiële Intelligentie (AI), Machine Learning (ML) en Deep Le
 Binnen het vakgebied "AI \& Data Engineering" is er een cursus Machine Learning Operations, waar studenten leren van het opzetten van machine learning workspaces tot het monitoren van machine learning operations.
 Dit onderzoek richt zich op een specifieke uitdaging binnen machine learning operations: Het lokaal draaien van machine learning pipelines.\newline
 
-In deze context word er gebruik gemaakt van Azure ML pipelines, waarvan het onderliggende framework Kubeflow is. Kubeflow is een open-source machine learning toolkit op Kubernetes en zal centraal staan in dit onderzoek. %TODO bron toevoegen van Kubeflow
-Er zal ook onderzoek worden gedaan naar alternatieven, die dan met elkaar worden vergeleken om eventueel een tweede Proof of Concept (PoC) op te stellen. hierbij zal gekeken worden naar hoe dat de verschillende frameworks en libraries werken, welke programeertaal ze gebruiken en de verschillenede functies van elke framework.
+In deze context word er gebruik gemaakt van Azure ML pipelines, waarvan het onderliggende framework Kubeflow is. Kubeflow is een open-source machine learning toolkit op Kubernetes en zal centraal staan in dit onderzoek \autocite{Kubeflow2021}.
+Er zal ook onderzoek worden gedaan naar alternatieven, die dan met elkaar worden vergeleken om eventueel een tweede Proof of Concept (PoC) op te stellen. hierbij zal gekeken worden naar hoe dat de verschillende frameworks en bibliotheken werken, welke programeertaal ze gebruiken en de verschillenede functies van elke framework.
 Daarnaast worden de frameworks ook getest op de compatibiliteit van verschillende Operating Systems (OS). Deze test omvat gedetailleerde installaties van alle frameworks, waarvan de resultaten worden vastgelegd in een rapport.\newline
 
 De focus ligt op het lokaal draaien van Kubeflow, een proces dat uitdagend is door de onduidelijke documentatie en de migratieproblemen van versie 1 naar versie 2.
@@ -24,17 +24,21 @@ De centrale probleemstelling is daarom: "Hoe kan een ML-pipeline lokaal worden u
 \label{sec:state-of-the-art}
 
 \subsection{Machine Learning}
-Machine Learning (ML) is een onderliggend deel van Artificiële Intelligentie (AI), een snel groeiend vakgebied in het midden van informatica en statistiek, dat feit gebaseerde beslissingen in verschillende sectoren aanstuurt (Jordan, 2015).
-Door middel van het berekenen van wiskundige regels kan machine learning een verband leggen tussen gegevens om zo voorspellingen te genereren (Cybenko, 2001).
-Dit is mogelijk door het gebruik van machine learning algoritmen, hiermee kunnen computer leren van gegevens en hun prestatie in de loop van tijd verbeteren door middel van testen en validaties en zo nieuwe taken uit te voeren met nieuwe data (Shaveta, 2023).
+Machine Learning (ML) is een onderliggend deel van Artificiële Intelligentie (AI), een snel groeiend vakgebied in het midden van informatica en statistiek, dat feit gebaseerde beslissingen in verschillende sectoren aanstuurt \autocite{Jordan2015}.
+Door middel van het berekenen van wiskundige regels kan machine learning een verband leggen tussen gegevens om zo voorspellingen te genereren \autocite{Cybenko2001}.
+Dit is mogelijk door het gebruik van machine learning algoritmen, hiermee kunnen computer leren van gegevens en hun prestatie in de loop van tijd verbeteren door middel van testen en validaties en zo nieuwe taken uit te voeren met nieuwe data \autocite{Shaveta2023}.
 \subsection{CI/CD pipelines}
-Een CI/CD (Continuous Integration/Continuous Deployment soms ook Continuous Delivery genoemt) zijn een cruciaal onderdeel van moderne softwareontwikkeling, voor het sneller en meer betrouwbare levering van web applicaties (Singh, 2023).
-De effectiviteit van deze pipelines hangt sterk af van de juiste onderhoud en updates om in lijn te blijven met de veranderingen in systemen en technologiën (Zampetti, 2021).
+Een CI/CD (Continuous Integration/Continuous Deployment soms ook Continuous Delivery genoemt) zijn een cruciaal onderdeel van moderne softwareontwikkeling, voor het sneller en meer betrouwbare levering van web applicaties \autocite{Singh2023}.
+De effectiviteit van deze pipelines hangt sterk af van de juiste onderhoud en updates om in lijn te blijven met de veranderingen in systemen en technologiën \autocite{Zampetti2021}.
 
-\subsection{Frameworks en Libraries}
-Een framework is een tool dat reeds gemaakte componenten of solutions dat de development zou versnellen. Een framework kan libraries, toolsets en API's bevatten voor het ontwikkelen van software en het creeren van systemen.
-Libraries zijn componenten die specifieke taken uitvoert. 
-Voor machine learning pipelines zijn er ook verschillende frameworks en libraries die gebruikt kunnen worden.
+\subsection{Frameworks en Bibliotheken}
+\subsubsection{Frameworks}
+\subsubsection{title}
+Een framework is een tool dat reeds gemaakte componenten of solutions dat de development zou versnellen. Een framework kan bibliotheken, toolsets en API's bevatten voor het ontwikkelen van software en het creeren van systemen.
+Bibliotheken zijn componenten die specifieke taken uitvoert. 
+Voor machine learning pipelines zijn er ook verschillende frameworks en bibliotheken die gebruikt kunnen worden.
+
+\subsection{Kubeflow}
 %Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 
 %Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
@@ -59,13 +63,13 @@ Voor machine learning pipelines zijn er ook verschillende frameworks en librarie
 \label{sec:methodologie}
 
 Het ondezoek zal bestaan uit verschillende fasen. Er zal eerst een literatuurstudie worden uitgevoerd om inzicht te krijgen in de werking en
-functies van verschillende frameworks en libraries die machine learning pipelines ondersteunen.
+functies van verschillende frameworks en bibliotheken die machine learning pipelines ondersteunen.
 Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te draaien. Deze fase zal ongeveer 2 weken duren en gebruik maken van verschillende bronnen zoals online-artikelen en relevante rapporten om de nodige informatie te vinden. Als resultaat zal een sammenvatting geschreven worden met alle relevante informatie voor dit onderzoek.\\
 
-In de volgende deze fase zullen volgende testen worden uitgevoerd op de Kubeflow and alternatieve frameworks en libraries. De installatie word uitgevoerd en elke stap word beschreven en bekeken of er fouten komen. Daarnaast word er gekeken hoe dat machine learning pipelines lokaal draaien, hiervoor zal er een pipeline gemaakt worden die altijd de zelfde data verwerkt en bewerkingen uitvoert. deze data zal worden bijgehouden in een rapport.
+In de volgende deze fase zullen volgende testen worden uitgevoerd op de Kubeflow and alternatieve frameworks en bibliotheken. De installatie word uitgevoerd en elke stap word beschreven en bekeken of er fouten komen. Daarnaast word er gekeken hoe dat machine learning pipelines lokaal draaien, hiervoor zal er een pipeline gemaakt worden die altijd de zelfde data verwerkt en bewerkingen uitvoert. deze data zal worden bijgehouden in een rapport.
 Deze testen zullen op verschillende besturingssystemen worden uitgevoerd en met verschillende soorten data, hierdoor kunnen de resultaten goed worden geanalyseerd.\\
 
-Na het verzamelen van de nodige data van de testen zal deze ook geanalyseerd worden. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. Zo word gekeken hoe effectief de verschillende frameworks and libraries de machine learning pipelines lokaal kan uitvoeren. Vervolgens wordt over de geanalyseerde data een conclusie geformuleerd.
+Na het verzamelen van de nodige data van de testen zal deze ook geanalyseerd worden. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. Zo word gekeken hoe effectief de verschillende frameworks and bibliotheken de machine learning pipelines lokaal kan uitvoeren. Vervolgens wordt over de geanalyseerde data een conclusie geformuleerd.
 Deze fase zal 6 weken duren.\\
 
 Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies  gedetailleerd beschreven worden. Dit zal stapsgewijs gebeuren, waarin de belangerijkste bevindingen en conclusies worden aangetoond. Het rapport zal worden opgesteld met LaTeX. Dit zal 2 weken duren\\
@@ -89,10 +93,10 @@ Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waar
 
 De data die zal verzameld worden van de testen zijn:
 \begin{itemize}
-  \item Hoe is de installatie of gebuik van de frameworks and libraries verlopen?
+  \item Hoe is de installatie of gebuik van de frameworks and bibliotheken verlopen?
   \item Hoelang duurde de installatie.
-  \item Hoe word de zelfde pipeline uitgevoerd op de verschillende frameworks en libraries.
-  \item Hoelang duurde het uitoveren van de pipelines op de verschillende frameworks en libraries.
+  \item Hoe word de zelfde pipeline uitgevoerd op de verschillende frameworks en bibliotheken.
+  \item Hoelang duurde het uitoveren van de pipelines op de verschillende frameworks en bibliotheken.
 \end{itemize}
 
 %Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
