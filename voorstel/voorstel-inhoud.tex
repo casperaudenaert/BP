@@ -73,7 +73,22 @@ Deze fase zal 6 weken duren.\\
 
 Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies  gedetailleerd beschreven worden. Dit zal stapsgewijs gebeuren, waarin de belangerijkste bevindingen en conclusies worden aangetoond. Het rapport zal worden opgesteld met LaTeX. Dit zal 2 weken duren\\
 
-
+\begin{tikzpicture}[node distance=2cm]
+  \node (pro0) [process] {Literatuurstudie};
+  \node (pro1) [process, below of=pro0] {Onderzoek naar het lokaal draaien van Kubeflow piplines};
+  \node (pro2) [process, right of=pro1, xshift=2cm] {Onderzoek verschillende frameworks en libraries en hun werking};
+  \node (pro3) [process, below of=pro1] {Opstellen Short list};
+  \node (pro4) [process, below of=pro3] {Testen van het lokaal uitvoeren van machine learning pipelines};
+  \node (pro5) [process, below of=pro4] {Analyseren en verglijken van resultaten};
+  \node (pro6) [process, below of=pro5] {Scriptie};
+  \draw [arrow] (pro0) -- (pro1);
+  \draw [arrow] (pro0) -- (pro2);
+  \draw [arrow] (pro2) -- (pro3);
+  \draw [arrow] (pro1) -- (pro3);
+  \draw [arrow] (pro3) -- (pro4);
+  \draw [arrow] (pro4) -- (pro5);
+  \draw [arrow] (pro5) -- (pro6);
+  \end{tikzpicture}\\
 %Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 
 %Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
