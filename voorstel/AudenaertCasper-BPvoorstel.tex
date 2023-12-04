@@ -63,6 +63,23 @@
   De eerste fase van deze bachelorproef omvat een diepgaande literatuurstudie, waarin wordt onderzocht welke frameworks bestaan voor het lokaal draaien van machine learning pipelines, hoe deze frameworks functioneren, en ook de compatibiliteit en diverse functies ervan.
   Het tweede deel van dit onderzoek richt zich op het opzetten van een Proof of Concept voor de geselecteerde tool(s), mogelijk vertrekkende van publiek beschikbare manifest bestanden. Hierbij wordt specifiek aandacht aan besteed aan het gemak van onderhoud voor de betrokken lectoren.
   Het verwachte resultaat van deze studie is een diepgaand inzicht in de geschiktheid van verschillende frameworks voor het lokaal uitvoeren van machine learning pipelines, met mogelijke praktische toepasbaarheid in het onderwijs en bedrijfsleven.
+
+  \begin{tikzpicture}[node distance=2cm]
+    \node (pro0) [process] {Literatuurstudie};
+    \node (pro1) [process, below of=pro0] {Onderzoek naar het lokaal draaien van Kubeflow piplines};
+    \node (pro2) [process, right of=pro1, xshift=2cm] {Onderzoek verschillende frameworks en libraries en hun werking};
+    \node (pro3) [process, below of=pro1] {Opstellen Short list};
+    \node (pro4) [process, below of=pro3] {Testen van het lokaal uitvoeren van machine learning pipelines};
+    \node (pro5) [process, below of=pro4] {Analyseren en verglijken van resultaten};
+    \node (pro6) [process, below of=pro5] {Scriptie};
+    \draw [arrow] (pro0) -- (pro1);
+    \draw [arrow] (pro0) -- (pro2);
+    \draw [arrow] (pro2) -- (pro3);
+    \draw [arrow] (pro1) -- (pro3);
+    \draw [arrow] (pro3) -- (pro4);
+    \draw [arrow] (pro4) -- (pro5);
+    \draw [arrow] (pro5) -- (pro6);
+    \end{tikzpicture}
 \end{abstract}
 
 \tableofcontents
