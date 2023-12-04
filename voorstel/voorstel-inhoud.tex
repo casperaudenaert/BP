@@ -5,17 +5,17 @@
 
 De toename van Artificiële Intelligentie (AI), Machine Learning (ML) en Deep Learning heeft geleid tot een groeiende vraag naar manieren om machine learning modellen op een schaalbare en efficiënte manier te implementeren en te beheren.
 Binnen het vakgebied "AI \& Data Engineering" is er een cursus Machine Learning Operations, waar studenten leren van het opzetten van machine learning workspaces tot het monitoren van machine learning operations.
-Dit onderzoek richt zich op een specifieke uitdaging binnen machine learning operations: Het lokaal draaien van machine learning pipelines.\newline
+Dit onderzoek richt zich op een specifieke uitdaging binnen machine learning operations: Het lokaal uitvoeren van machine learning pipelines.\newline
 
 In deze context word er gebruik gemaakt van Azure ML pipelines, waarvan het onderliggende framework Kubeflow is. Kubeflow is een open-source machine learning toolkit op Kubernetes en zal centraal staan in dit onderzoek \autocite{Kubeflow2021}.
 Er zal ook onderzoek worden gedaan naar alternatieven, die dan met elkaar worden vergeleken om eventueel een tweede Proof of Concept (PoC) op te stellen. hierbij zal gekeken worden naar hoe dat de verschillende frameworks en bibliotheken werken, welke programeertaal ze gebruiken en de verschillenede functies van elke framework.
 Daarnaast worden de frameworks ook getest op de compatibiliteit van verschillende Operating Systems (OS). Deze test omvat gedetailleerde installaties van alle frameworks, waarvan de resultaten worden vastgelegd in een rapport.\newline
 
-De focus ligt op het lokaal draaien van Kubeflow, een proces dat uitdagend is door de onduidelijke documentatie en de migratieproblemen van versie 1 naar versie 2.
+De focus ligt op het lokaal uitvoeren van Kubeflow, een proces dat uitdagend is door de onduidelijke documentatie en de migratieproblemen van versie 1 naar versie 2.
 Het onderzoek zal specifiek analyseren welke aspecten van de migratie problematisch zijn en waar de documentatie verbeterd kan worden.\newline
 
-Dit onderzoek richt zich op IT-professionals die betrokken zijn bij Machine Learning Operations, specefiek voor de degenen die ML-pipelines lokaal willen draaien.
-Het lokaal draaien van machinel learning pipelines met behulp van Kubeflow blijkt een uitdaging te zijn, vooral met betrekking tot de huidige migratieproblemen en gebrekkige documentatie.
+Dit onderzoek richt zich op IT-professionals die betrokken zijn bij Machine Learning Operations, specefiek voor de degenen die ML-pipelines lokaal willen uitvoeren.
+Het lokaal uitvoeren van machinel learning pipelines met behulp van Kubeflow blijkt een uitdaging te zijn, vooral met betrekking tot de huidige migratieproblemen en gebrekkige documentatie.
 De centrale probleemstelling is daarom: "Hoe kan een ML-pipeline lokaal worden uitgevoerd met behulp van een machine learning framework, rekeninghouden met de uitdagingen van de frameworks?"
 
 %---------- Stand van zaken ---------------------------------------------------
@@ -63,9 +63,9 @@ Kubeflow kan ook gebruik worden van end-to-end machine learning-oplossingen, waa
 
 Het ondezoek zal bestaan uit verschillende fasen. Er zal eerst een literatuurstudie worden uitgevoerd om inzicht te krijgen in de werking en
 functies van verschillende frameworks en bibliotheken die machine learning pipelines ondersteunen.
-Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te draaien. Deze fase zal ongeveer 2 weken duren en gebruik maken van verschillende bronnen zoals online-artikelen en relevante rapporten om de nodige informatie te vinden. Als resultaat zal een sammenvatting geschreven worden met alle relevante informatie voor dit onderzoek.\\
+Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te uitvoeren. Deze fase zal ongeveer 2 weken duren en gebruik maken van verschillende bronnen zoals online-artikelen en relevante rapporten om de nodige informatie te vinden. Als resultaat zal een sammenvatting geschreven worden met alle relevante informatie voor dit onderzoek.\\
 
-In de volgende deze fase zullen volgende testen worden uitgevoerd op de Kubeflow and alternatieve frameworks en bibliotheken. De installatie word uitgevoerd en elke stap word beschreven en bekeken of er fouten komen. Daarnaast word er gekeken hoe dat machine learning pipelines lokaal draaien, hiervoor zal er een pipeline gemaakt worden die altijd de zelfde data verwerkt en bewerkingen uitvoert. deze data zal worden bijgehouden in een rapport.
+In de volgende deze fase zullen volgende testen worden uitgevoerd op de Kubeflow and alternatieve frameworks en bibliotheken. De installatie word uitgevoerd en elke stap word beschreven en bekeken of er fouten komen. Daarnaast word er gekeken hoe dat machine learning pipelines lokaal uitvoeren, hiervoor zal er een pipeline gemaakt worden die altijd de zelfde data verwerkt en bewerkingen uitvoert. deze data zal worden bijgehouden in een rapport.
 Deze testen zullen op verschillende besturingssystemen worden uitgevoerd en met verschillende soorten data, hierdoor kunnen de resultaten goed worden geanalyseerd.\\
 
 Na het verzamelen van de nodige data van de testen zal deze ook geanalyseerd worden. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. Zo word gekeken hoe effectief de verschillende frameworks and bibliotheken de machine learning pipelines lokaal kan uitvoeren. Vervolgens wordt over de geanalyseerde data een conclusie geformuleerd.
@@ -75,7 +75,7 @@ Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waar
 
 \begin{tikzpicture}[node distance=2cm, every node/.style={font=\small}]
   \node (pro0) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm] {Literatuurstudie};
-  \node (pro1) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro0] {Onderzoek naar het lokaal draaien van Kubeflow pipelines};
+  \node (pro1) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro0] {Onderzoek naar het lokaal uitvoeren van Kubeflow pipelines};
   \node (pro2) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, right of=pro1, xshift=2cm] {Onderzoek verschillende frameworks en libraries en hun werking};
   \node (pro3) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro1] {Opstellen Short list};
   \node (pro4) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro3] {Testen van het lokaal uitvoeren van machine learning pipelines};
@@ -116,7 +116,7 @@ De data die zal verzameld worden van de testen zijn:
 \end{itemize}
 
 Er word verwacht dat er een duidelijk verschil zal zijn tussen de frameworks en bibliotheken. Kubeflow zal een uitdaging vormen door de onduidelijke documentatie, hierbij zal worden onderzocht of een ander alternatief mogelijk beter is.
-Het uiteindelijke resultaat is een rapport die de resulaten zullen samenbrengen en conclusies trekt met betrekking tot de uitdaging van het lokaal draaien van draaien van Kubeflow, rekening houdend met de migratieproblemen en documentatiekwesties. Daarnaast zal het rapport aanbevelingen bevatten voor mogelijke verbeteringen in documentatie en migratieprocedures. Het rapport kan eventueel een beter alternatief bieden dan Kubeflow voor het lokaal draaien van machine learning pipelines, afhankelijk van de resultaten van de testen die gedaan werden.
+Het uiteindelijke resultaat is een rapport die de resulaten zullen samenbrengen en conclusies trekt met betrekking tot de uitdaging van het lokaal uitvoeren van Kubeflow, rekening houdend met de migratieproblemen en documentatiekwesties. Daarnaast zal het rapport aanbevelingen bevatten voor mogelijke verbeteringen in documentatie en migratieprocedures. Het rapport kan eventueel een beter alternatief bieden dan Kubeflow voor het lokaal uitvoeren van machine learning pipelines, afhankelijk van de resultaten van de testen die gedaan werden.
 
 %Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
 
