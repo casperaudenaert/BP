@@ -30,6 +30,11 @@ Middels het toepassen van wiskundige principes kan machine learning verbanden le
 \subsection{CI/CD pipelines}
 Een CI/CD (Continuous Integration/Continuous Deployment, soms ook Continuous Delivery genoemd) is een cruciaal onderdeel van moderne softwareontwikkeling, voor een snellere en meer betrouwbare levering van web applicaties\\ \autocite{Singh2023}.
 De effectiviteit van deze pipelines hangt sterk af van het juiste onderhoud en updates om in lijn te blijven met de veranderingen in systemen en technologieën.
+Binnen het domein van datamanagement beklemtonen \autocite{Samad2018} en \autocite{RMV2020} de cruciale aspecten van respectievelijk het optimaliseren van beperkte data samples en de implementatie van Continuous Integration in de datapipeline.
+Deze inzichten vormen de kern van een intrigerende verhaallijn die draait om de zoektocht naar efficiëntie en effectiviteit bij het omgaan met gegevens. In deze studies wordt ook aangetoond dat het verzamelen van data veel geld kan kosten en veel tijd in beslag kan nemen. De studies tonen aan dat je met behulp van ML-pipelines met een beperkte dataset ook nauwkeurige modellen kunt genereren.
+In dit onderzoeksvoorstel treed ook \citeauthor{Zhang2022} \autocite{Zhang2022} naar voren als een belangrijk figuur met zijn eigen bijdragen.
+Zhang richt zich op het ontwerpen en automatiseren van data pipelines. Hij toont aan dat met behulp van datapipelines een machine learning model veel efficiënter kan worden getraind, omdat de data goed wordt schoongemaakt en verwerkt, zodat onnodige of ontbrekende data niet de accuraatheid van het model beinvloed.
+Deze drie experten vormen samen een intrigerend plot, waarin het optimaliseren van data samples, Continuous Integration, automatisering van datapijplijnen en geavanceerde technologieën als symbolische planning en reinforcement learning centraal staan. 
 \subsection{Frameworks}
 Een framework in programmeren is een herbruikbaar ontwerp, uitgedrukt als een reeks abstracte klassen en hun interacties \autocite{JuhaHautamaeki1997}. Dit essentiële concept heeft de potentie om het softwareontwikkelingsproces aanzienlijk te verbeteren door ontwikkelaars de flexibiliteit te bieden om het gedrag ervan aan te passen aan de specifieke vereisten van hun huidige project \autocite{JuhaHautamaeki1997}. Het framework maakt het mogelijk om zowel het ontwerp als de code opnieuw te gebruiken, waardoor ontwikkelaars de kosten van het ontwikkelen van een toepassing kunnen verminderen. Deze benadering bevordert niet alleen de efficiëntie van het ontwikkelproces, maar zorgt ook voor een gestroomlijnde en kosteneffectieve aanpak in \\software-engineering. Het vermogen om herhaaldelijk gebruik te maken van reeds bestaande ontwerppatronen en interacties in verschillende projecten resulteert in een aanzienlijke tijds- en kostenefficiëntie, terwijl het ook bijdraagt aan de consistentie en kwaliteit van de ontwikkelde software.
 \subsection{Bibliotheken}
@@ -75,13 +80,13 @@ Het onderzoek zal bestaan uit verschillende fasen. Er zal eerst een literatuurst
 functies van verschillende frameworks en bibliotheken die machine learning pipelines ondersteunen.
 Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te uitvoeren. Er zal ook gekeken worden naar de gelijkenissen en verschillen van de frameworks en de compatibiliteit met verschillende Operating Systems (OS) zoals Windows, Linux en MacOS
 Als resultaat zal een samenvatting geschreven worden met alle relevante informatie voor dit onderzoek.
-Er wordt ook een long list opgesteld alsook een requirementsanalayse.\\
+Er wordt ook een requirementsanalayse opgesteld.\\
 \subsection{Fase 3: Long list (2 weken)}
 Binnen deze fase wordt een longlist van mogelijke bronnen samengesteld die potentieel bruikbaar kunnen zijn. Een methodologie gericht op
 grondig online onderzoek, alsook het doorzoeken
 van diverse frameworks en bibliotheken, wordt
 gehanteerd om een omvangrijke lijst van bronnen te verzamelen. Deze bronnen zijn geselecteerd vanwege hun potentie om waardevolle informatie te verschaffen die relevant is voor het vergelijken van de frameworks.
-\subsection{Fase 4: Short list (2 weken)}
+\subsection{Fase 4: Short list (1 weken)}
 Gebruikmakend van de longlist, zullen de
 bronnen geëvalueerd en gerangschikt worden
 op grond van hun praktische toepasbaarheid.
@@ -90,11 +95,11 @@ een beknopte lijst van waardevolle bronnen. Dit
 stelt ons in staat om duplicatie van informatie te
 vermijden, aangezien we geen meerdere bronnen met identieke informatie zullen opnemen.
 \subsection{Fase 5: Kiezen van de gepaste frameworks (2 weken)}
-In deze stap worden de geschikte franeworks gekozen gekozen gebaseerd op onze requirements.
+In deze stap worden de geschikte frameworks gekozen gebaseerd op de requirements.
 \subsection{Fase 6: Het maken van een ML-pipeline (2 weken)}
-
+Het testen van de frameworks zal gebeuren met 
 \subsection{Fase 7: Proof of Concept (2 weken)}
-Het proof of concept zal bestaan uit testen die worden uitgevoerd op verschillende frameworks en bibliotheken (Kubeflow,Kedro,MLflow). Eerst zal de installatie zal worden uitgevoerd en elke stap zal beschreven en geanalyseerd worden om in kaart te brengen of er fouten voor komen. Daarnaast wordt er gekeken hoe er machine learning pipelines lokaal worden uitgevoerd. Hiervoor zal er een pipeline gemaakt worden die altijd dezelfde data verwerkt en bewerkingen uitvoert. Dit resultaat zal worden bijgehouden in een rapport.
+Het proof of concept zal bestaan uit testen die worden uitgevoerd op de gekozen frameworks. Eerst zal de installatie zal worden uitgevoerd en elke stap zal beschreven en geanalyseerd worden om in kaart te brengen of er fouten voor komen. Daarnaast wordt er gekeken hoe er machine learning pipelines lokaal worden uitgevoerd. Hiervoor zal er een pipeline gemaakt worden die altijd dezelfde data verwerkt en bewerkingen uitvoert. Dit resultaat zal worden bijgehouden in een rapport.
 Deze testen zullen op verschillende besturingssystemen worden uitgevoerd zoals Windows macOS en met verschillende soorten data. Hierdoor zal dit onderzoek over meer data beschikken en zullen de uiteindelijke conclusies beter onderbouwd kunnen worden.\\
 
 Na het verzamelen van de nodige data van de verschillende testen wordt dit ook verder geanalyseerd. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. 
@@ -106,10 +111,9 @@ De data die zal verzameld worden van de testen zijn:
   \item Hoelang duurde het uitvoeren van de pipelines op de verschillende frameworks en bibliotheken.
   \item Er word gekeken of alle requirements uit de requirementsanalyse behaald zijn.
 \end{itemize}
-Op deze manier wordt er gekeken hoe effectief de verschillende frameworks en bibliotheken de machine learning pipelines lokaal kunnen uitvoeren. Tot slot wordt op basis van de geanalyseerde data een conclusie geformuleerd.
-Deze fase zal 6 weken duren.\\
+Op deze manier wordt er gekeken hoe effectief de verschillende frameworks en bibliotheken de machine learning pipelines lokaal kunnen uitvoeren. Tot slot wordt op basis van de geanalyseerde data een conclusie geformuleerd.\\
 \subsection{Fase 8: Conclusie (2 weken)}
-Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies gedetailleerd beschreven worden. Dit zal stapsgewijs gebeuren, waarin de belangrijkste bevindingen en conclusies worden aangetoond.\\
+Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies gedetailleerd beschreven worden alsook een oplossing voor het lokaal uitvoeren van machine learning pipelines. Dit zal stapsgewijs gebeuren, waarin de belangrijkste bevindingen en conclusies worden aangetoond.\\
 
 \begin{tikzpicture}[node distance=2cm, every node/.style={font=\small}]
   \node (pro0) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm] {Literatuurstudie};
