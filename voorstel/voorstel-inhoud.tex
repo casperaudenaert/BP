@@ -72,22 +72,20 @@ De belangrijkste pijlers van MLflow zijn Tracking, Projects, Models en Registry.
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
-
+Het onderzoek is onderverdeeld in verschillende fasen om een grondige evaluatie uit te voeren van de mogelijkheden en prestaties van verschillende frameworks en bibliotheken die machine learning pipelines ondersteunen. Elke fase heeft een specifieke focus en draagt bij aan het uiteindelijke doel van het ontwikkelen van een effectieve methode voor het lokaal uitvoeren van machine learning pipelines.
 \subsection{Fase 1: Literatuurstudie (2 weken)}
 Het onderzoek zal bestaan uit verschillende fasen. Er zal eerst een literatuurstudie worden uitgevoerd om inzicht te krijgen in de werking en
 functies van verschillende frameworks en bibliotheken die machine learning pipelines ondersteunen.
 Deze literatuurstudie zal gericht zijn op het vaststellen van mogelijke manieren om machine learning pipelines lokaal te uitvoeren. Er zal ook gekeken worden naar de gelijkenissen en verschillen van de frameworks en de compatibiliteit met verschillende Operating Systems (OS) zoals Windows, Linux en MacOS
 Als resultaat zal een samenvatting geschreven worden met alle relevante informatie voor dit onderzoek.
 Er wordt ook een requirementsanalayse opgesteld.\\
-\subsection{Fase 2: Long list (1 weken)}
+\subsection{Fase 2: Long list (2 weken)}
 Binnen deze fase wordt een longlist samengesteld van mogelijke frameworks die potentieel bruikbaar kunnen zijn. Een methodologie gericht op grondig online onderzoek, evenals het doorzoeken van verschillende frameworks en bibliotheken, wordt toegepast om een uitgebreide lijst van bronnen te verzamelen. Deze bronnen zijn geselecteerd vanwege hun potentie om waardevolle informatie te bieden die relevant is voor het vergelijken van de frameworks.
-\subsection{Fase 3: Short list (1 week)}
+\subsection{Fase 3: Short list (2 week)}
 Met behulp van de longlist zullen we elke oplossing grondig analyseren en beoordelen aan de hand van de vereisten die zijn vastgesteld in de requirementsanalyse. Dit zal bepalen welke vereisten zijn vervuld, welke niet zijn vervuld en welke mogelijk onduidelijk zijn. Het uiteindelijke resultaat van deze fase zal één of twee mogelijke benaderingen zijn voor het ontwikkelen van het proof of concept.
-\subsection{Fase 4: Kiezen van de gepaste frameworks (2 weken)}
-In deze stap worden de geschikte frameworks gekozen gebaseerd op de requirements.
-\subsection{Fase 5: Het maken van een ML-pipeline (1 week)}
+\subsection{Fase 4: Het maken van een ML-pipeline (1 week)}
 In deze fase wordt een reeks pipelines ontwikkeld om de verschillende frameworks te testen die lokaal machine learning-pipelines uitvoeren. Deze pipelines worden ontworpen om het gedrag en de prestaties van de frameworks grondig te evalueren en te vergelijken. Elke pipeline zal gebruikmaken van dezelfde dataset en algoritmes om machine learning-modellen te genereren. Dit proces stelt ons in staat om nauwkeurige beoordelingen te maken van de mogelijkheden en beperkingen van de verschillende frameworks en om weloverwogen beslissingen te nemen bij de keuze van het meest geschikte framework voor het beoogde doel.
-\subsection{Fase 6: Proof of Concept (4 weken)}
+\subsection{Fase 5: Proof of Concept (4 weken)}
 Het proof of concept zal bestaan uit testen die worden uitgevoerd op de gekozen frameworks. Eerst zal de installatie zal worden uitgevoerd en elke stap zal beschreven en geanalyseerd worden om in kaart te brengen of er fouten voor komen. Daarnaast wordt er gekeken hoe er machine learning pipelines lokaal worden uitgevoerd. Hiervoor zal er een pipeline gemaakt worden die altijd dezelfde data verwerkt en bewerkingen uitvoert. Dit resultaat zal worden bijgehouden in een rapport.
 Deze testen zullen op verschillende besturingssystemen worden uitgevoerd zoals Windows macOS en met verschillende soorten data. Hierdoor zal dit onderzoek over meer data beschikken en zullen de uiteindelijke conclusies beter onderbouwd kunnen worden.\\
 Na het verzamelen van de nodige data van de verschillende testen wordt dit ook verder geanalyseerd. Dit zal gebeuren door de resultaten van de verschillende testen te vergelijken. 
@@ -100,7 +98,7 @@ De data die zal verzameld worden van de testen zijn:
   \item Er word gekeken of alle requirements uit de requirementsanalyse behaald zijn.
 \end{itemize}
 Op deze manier wordt er gekeken hoe effectief de verschillende frameworks en bibliotheken de machine learning pipelines lokaal kunnen uitvoeren. Tot slot wordt op basis van de geanalyseerde data een conclusie geformuleerd.\\
-\subsection{Fase 7: Conclusie (2 weken)}
+\subsection{Fase 6: Conclusie (2 weken)}
 Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waarin de bevindingen en conclusies gedetailleerd beschreven worden alsook een oplossing voor het lokaal uitvoeren van machine learning pipelines. Dit zal stapsgewijs gebeuren, waarin de belangrijkste bevindingen en conclusies worden aangetoond.\\
 
 \begin{tikzpicture}[node distance=2cm, every node/.style={font=\small}]
@@ -108,10 +106,10 @@ Het uiteindelijke resultaat van dit onderzoek zal een volledig rapport zijn waar
   \node (pro1) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro0] {Onderzoek naar het lokaal uitvoeren van Kubeflow pipelines};
   \node (pro2) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, right of=pro1, xshift=2cm] {Onderzoek verschillende frameworks en libraries en hun werking};
   \node (pro3) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro1] {Opstellen Short list};
-  \node (pro4) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro1] {Opstellen van een pipeline};
-  \node (pro5) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro3] {Testen van het lokaal uitvoeren van machine learning pipelines};
-  \node (pro6) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro4] {Analyseren en vergelijken van resultaten};
-  \node (pro7) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro5] {Scriptie};
+  \node (pro4) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro3] {Opstellen van een pipeline};
+  \node (pro5) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro4] {Testen van het lokaal uitvoeren van machine learning pipelines};
+  \node (pro6) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro5] {Analyseren en vergelijken van resultaten};
+  \node (pro7) [rectangle, draw, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, below of=pro6] {Scriptie};
 
   \draw [->] (pro0) -- (pro1);
   \draw [->] (pro0) -- (pro2);
