@@ -23,11 +23,11 @@ Machine Learning (ML) is een onderliggend deel van Artificial Intelligence (AI),
 De levenscyclus van een typisch machine learning-project omvat verschillende fasen:
 
 \begin{itemize}
-    \item \textbf{Data Verzameling en Preprocessing:} In deze fase worden relevante gegevens verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het oplossen van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor machine learning-modellen.
-    \item \textbf{Model Selectie en Training:} Hier wordt een geschikt machine learning-model geselecteerd op basis van de aard van de gegevens en het doel van het project. Het model wordt vervolgens getraind met behulp van de verzamelde gegevens, waarbij parameters worden aangepast om een optimaal voorspellingsresultaat te bereiken.
-    \item \textbf{Validatie en Evaluatie:}  Na het trainen van het model wordt het gevalideerd met behulp van een aparte dataset die niet is gebruikt tijdens de training. Dit stelt vast hoe goed het model presteert op nieuwe, niet eerder geziene gegevens.
-    \item \textbf{Implementatie en Inzet:}  Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de productieomgeving om voorspellingen te genereren op nieuwe gegevens. Dit kan bijvoorbeeld inhouden dat het model wordt geïntegreerd in een bestaande softwareapplicatie of gegevensstroom.
-    \item \textbf{Monitoring en Onderhoud:}  Nadat het model is ingezet, wordt het continu gemonitord om te controleren op prestatieverlies of achteruitgang in voorspellingsnauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse gegevens om de prestaties te behouden.
+    \item \textbf{Data Verzameling en Preprocessing:} In deze fase worden relevante gegevens verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het oplossen van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor machine learning-modellen\autocite{Schlegel2022}.
+    \item \textbf{Model Selectie en Training:} Hier wordt een geschikt machine learning-model geselecteerd op basis van de aard van de gegevens en het doel van het project. Het model wordt vervolgens getraind met behulp van de verzamelde gegevens, waarbij parameters worden aangepast om een optimaal voorspellingsresultaat te bereiken\autocite{Schlegel2022}.
+    \item \textbf{Validatie en Evaluatie:}  Na het trainen van het model wordt het gevalideerd met behulp van een aparte dataset die niet is gebruikt tijdens de training. Dit stelt vast hoe goed het model presteert op nieuwe, niet eerder geziene gegevens\autocite{Schlegel2022}.
+    \item \textbf{Implementatie en Inzet:}  Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de productieomgeving om voorspellingen te genereren op nieuwe gegevens. Dit kan bijvoorbeeld inhouden dat het model wordt geïntegreerd in een bestaande softwareapplicatie of gegevensstroom\autocite{Schlegel2022}.
+    \item \textbf{Monitoring en Onderhoud:}  Nadat het model is ingezet, wordt het continu gemonitord om te controleren op prestatieverlies of achteruitgang in voorspellingsnauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse gegevens om de prestaties te behouden\autocite{Schlegel2022}.
   \end{itemize}
 
 \subsection{Soorten Machine Learning Methoden}
@@ -35,19 +35,19 @@ De levenscyclus van een typisch machine learning-project omvat verschillende fas
 Er zijn verschillende soorten machine learning-methoden, waaronder:
 
 \subsubsection{Supervised Learning}
-In deze methode wordt het model getraind op een dataset die gelabelde voorbeelden bevat, waarbij het doel is om een voorspellend model te ontwikkelen dat correcte uitvoer kan genereren voor nieuwe, niet eerder geziene gegevens.
+In deze methode wordt het model getraind op een dataset die gelabelde voorbeelden bevat, waarbij het doel is om een voorspellend model te ontwikkelen dat correcte uitvoer kan genereren voor nieuwe, niet eerder geziene gegevens \autocite{Mahesh2019}.
 
 \subsubsection{Unsupervised Learning}
-Hierbij wordt het model getraind op een dataset zonder gelabelde voorbeelden. Het doel is om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer.
+Hierbij wordt het model getraind op een dataset zonder gelabelde voorbeelden. Het doel is om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer\autocite{Mahesh2019}.
 
 \subsubsection{Semi-supervised Learning}
-Deze methode maakt gebruik van een combinatie van gelabelde en ongelabelde gegevens voor training. Het model profiteert van zowel de begeleide als de onbegeleide informatie om nauwkeuriger voorspellingen te maken.
+Deze methode maakt gebruik van een combinatie van gelabelde en ongelabelde gegevens voor training. Het model profiteert van zowel de begeleide als de onbegeleide informatie om nauwkeuriger voorspellingen te maken\autocite{Mahesh2019}.
 
 \subsubsection{Reinforcement Learning}
-Bij reinforcement learning leert het model door interactie met een dynamische omgeving, waarbij het beloningen ontvangt of straffen krijgt op basis van de acties die het uitvoert. Het doel is om een optimale strategie te ontwikkelen om de ontvangen beloningen te maximaliseren.
+Bij reinforcement learning leert het model door interactie met een dynamische omgeving, waarbij het beloningen ontvangt of straffen krijgt op basis van de acties die het uitvoert. Het doel is om een optimale strategie te ontwikkelen om de ontvangen beloningen te maximaliseren\autocite{Mahesh2019}.
 
 \subsubsection{Deep Learning}
-Deep learning is een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
+Deep learning is een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen\autocite{Mahesh2019}.
 
 \subsection{Conclusie}
 
@@ -99,7 +99,7 @@ CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Machine Learning Pipelines}
 
-Machine learning (ML) is een krachtige technologie die in diverse sectoren wordt toegepast om waardevolle inzichten te verwerven uit data. De ontwikkeling van ML-modellen omvat echter een complexe reeks stappen, van dataverzameling tot modeltraining en -implementatie. Dit proces is vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten belemmert. Hierdoor worden pipelines gebruikt die het process automatisch laat lopen.
+Machine learning (ML) is een krachtige technologie die in diverse sectoren wordt toegepast om waardevolle inzichten te verwerven uit data\autocite{Jordan2015}. De ontwikkeling van ML-modellen omvat echter een complexe reeks stappen, van dataverzameling tot modeltraining en -implementatie. Dit proces is vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten belemmert. Hierdoor worden pipelines gebruikt die het process automatisch laat lopen.
 
 \subsection{De levenscyclus van machine learning}
 
