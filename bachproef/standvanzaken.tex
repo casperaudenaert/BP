@@ -32,24 +32,22 @@ De levenscyclus van een typisch machine learning-project omvat verschillende fas
 
 \subsection{Soorten Machine Learning Methoden}
 
-Er zijn verschillende soorten machine learning-methoden, waaronder:
+Er zijn verschillende soorten machine learning-methoden, waaronder \autocite{Mahesh2019}:
 
 \subsubsection{Supervised Learning}
-In deze methode wordt het model getraind op een dataset die gelabelde voorbeelden bevat, waarbij het doel is om een voorspellend model te ontwikkelen dat correcte uitvoer kan genereren voor nieuwe, niet eerder geziene gegevens \autocite{Mahesh2019}.
+In deze methode wordt het model getraind op een dataset die gelabelde voorbeelden bevat, waarbij het doel is om een voorspellend model te ontwikkelen dat correcte uitvoer kan genereren voor nieuwe, niet eerder geziene gegevens.
 
 \subsubsection{Unsupervised Learning}
-Hierbij wordt het model getraind op een dataset zonder gelabelde voorbeelden. Het doel is om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer\autocite{Mahesh2019}.
+Hierbij wordt het model getraind op een dataset zonder gelabelde voorbeelden. Het doel is om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer.
 
 \subsubsection{Semi-supervised Learning}
-Deze methode maakt gebruik van een combinatie van gelabelde en ongelabelde gegevens voor training. Het model profiteert van zowel de begeleide als de onbegeleide informatie om nauwkeuriger voorspellingen te maken\autocite{Mahesh2019}.
+Deze methode maakt gebruik van een combinatie van gelabelde en ongelabelde gegevens voor training. Het model profiteert van zowel de begeleide als de onbegeleide informatie om nauwkeuriger voorspellingen te maken.
 
 \subsubsection{Reinforcement Learning}
 Bij reinforcement learning leert het model door interactie met een dynamische omgeving, waarbij het beloningen ontvangt of straffen krijgt op basis van de acties die het uitvoert. Het doel is om een optimale strategie te ontwikkelen om de ontvangen beloningen te maximaliseren\autocite{Mahesh2019}.
 
 \subsubsection{Deep Learning}
-Deep learning is een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen\autocite{Mahesh2019}.
-
-\subsection{Conclusie}
+Deep learning is een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.\\
 
 Machine learning speelt een cruciale rol in het genereren van inzichten uit gegevens en het maken van voorspellingen op basis van complexe patronen. Door de levenscyclus van machine learning-projecten te begrijpen en verschillende soorten machine learning-methoden te verkennen, kunnen onderzoekers en ontwikkelaars effectievere en nauwkeurigere modellen ontwikkelen om een breed scala aan problemen op te lossen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,16 +62,15 @@ Een Continuous Integration/Continuous Deployment (CI/CD) pipeline is een cruciaa
     \item Verbeterde samenwerking: CI/CD pipelines bevorderen de samenwerking tussen softwareontwikkelaars, testers en operationele teams.
 \end{enumerate}
 
-\subsection{De werking van CI/CD pipelines}
+Een CI/CD pipeline bestaat uit een geordende reeks stappen die codewijzigingen automatisch integreren, testen en implementeren. De stappen in een dergelijke pipeline kunnen worden opgedeeld in verschillende categorieën.
 
-Een CI/CD pipeline bestaat uit een reeks geordende stappen die codewijzigingen automatisch integreren, testen en implementeren. De stappen in een pipeline kunnen worden gecategoriseerd als:
+Continue integratie omvat het samenvoegen en testen van codewijzigingen van diverse ontwikkelaars. Dit proces verzekert dat de verschillende delen van de code goed samenwerken en geen conflicten veroorzaken.
 
-\begin{enumerate}[label=\arabic*.]
-    \item Continue integratie: Codewijzigingen van verschillende developers worden samengevoegd en getest.
-    \item Continue testing: Geautomatiseerde tests controleren de functionaliteit en kwaliteit van de code.
-    \item Continue delivery: De geteste code wordt klaargemaakt voor implementatie in de productieomgeving.
-    \item Continuous deployment: De geprepareerde code wordt automatisch gedeployed in de productieomgeving.
-\end{enumerate}
+Continue testing is het volgende stadium, waar geautomatiseerde tests worden uitgevoerd om de functionaliteit en kwaliteit van de code te controleren. Dit zorgt ervoor dat eventuele fouten of bugs worden opgespoord voordat de code verder wordt verwerkt.
+
+Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het verpakken van de code en het gereedmaken van eventuele configuratiebestanden.
+
+Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit proces minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.
 
 \subsection{CI/CD pipelines in het kader van datamanagement}
 
@@ -91,9 +88,8 @@ Zhang (2022) richt zich op het ontwerpen en automatiseren van datapipelines. Hij
 \begin{itemize}
     \item Dataverwerking: Datapipelines zorgen voor het opschonen, transformeren en normaliseren van data, waardoor onnodige of ontbrekende data de modelnauwkeurigheid niet beïnvloedt.
     \item Automatisering: Datapipelines automatiseren repetitieve taken in de ML-workflow, waardoor de doorlooptijd van modelontwikkeling wordt verkort.
-\end{itemize}
+\end{itemize}\\
 
-\subsection{Conclusie}
 
 CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. Ze versnellen de levering van software, verhogen de kwaliteit en betrouwbaarheid, en bevorderen de samenwerking tussen teams. In het kader van datamanagement helpen CI/CD pipelines om data-efficiënte ML-modellen te ontwikkelen en de consistentie en betrouwbaarheid van datastromen te garanderen. Datapipelines spelen een cruciale rol in ML door dataverwerking te automatiseren en de efficiëntie van modeltraining te verhogen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,21 +97,6 @@ CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. 
 
 Machine learning (ML) is een krachtige technologie die in diverse sectoren wordt toegepast om waardevolle inzichten te verwerven uit data\autocite{Jordan2015}. De ontwikkeling van ML-modellen omvat echter een complexe reeks stappen, van dataverzameling tot modeltraining en -implementatie. Dit proces is vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten belemmert. Hierdoor worden pipelines gebruikt die het process automatisch laat lopen.
 
-\subsection{De levenscyclus van machine learning}
-
-De levenscyclus van ML omvat de volgende stappen:
-\begin{enumerate}[label=\arabic*.]
-    \item Dataverzameling en -voorbereiding: Het verzamelen en opschonen van relevante data, inclusief het transformeren en normaliseren van de data.
-    \item Feature engineering: Het selecteren en creëren van features die relevant zijn voor de ML-taak.
-    \item Modeltraining: Het trainen van een ML-model op basis van de voorbereide data.
-    \item Modelkeuze: Het selecteren van het beste model op basis van prestatie-evaluatie.
-    \item Modelfinetuning: Het optimaliseren van de hyperparameters van het geselecteerde model.
-    \item Modelvalidatie: Het evalueren van de prestaties van het model op onafhankelijke data.
-    \item Modeldeployement: Het implementeren van het model in een productieomgeving.
-    \item Modelbewaking: Het monitoren van de prestaties van het model in de productieomgeving en het uitvoeren van hertraining indien nodig.
-\end{enumerate}
-
-\subsection{Verbeteringen door machine learning pipelines}
 
 Machine learning pipelines automatiseren en stroomlijnen de stappen in de levenscyclus van ML. De voordelen van pipelines zijn onder andere:
 \begin{itemize}
@@ -125,20 +106,8 @@ Machine learning pipelines automatiseren en stroomlijnen de stappen in de levens
     \item Verhoogde transparantie: Pipelines documenteren de stappen in de ML-workflow, waardoor de transparantie en het begrip van het proces worden vergroot.
 \end{itemize}
 
-\subsection{Hoe machine learning pipelines werken}
+Pipelines vormen een gestroomlijnde serie geordende stappen die dienen om data te transformeren en modellen te trainen. Deze stappen omvatten data-ingestion, data-preprocessing, feature engineering, modeltraining, modelbeoordeling en modeldeployement. Data-ingestion houdt in het laden van data vanuit diverse bronnen, terwijl data-preprocessing het opschonen, transformeren en normaliseren van de data omvat. Feature engineering richt zich op het selecteren en creëren van features om de data verder te verrijken. Vervolgens wordt het ML-model getraind op basis van de voorbereide data, en worden de prestaties van het model geëvalueerd om de effectiviteit ervan te meten. Ten slotte wordt het model geïmplementeerd in een productieomgeving om operationeel te worden. Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, waaronder Apache Airflow, Kubeflow, TensorFlow Extended (TFX) en Amazon SageMaker. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren.
 
-Pipelines bestaan uit een reeks geordende stappen die data transformeren en modellen trainen. De stappen in een pipeline kunnen worden gecategoriseerd als:
-\begin{enumerate}[label=\arabic*.]
-    \item Data-ingestion: Het laden van data uit verschillende bronnen.
-    \item Data-preprocessing: Het opschonen, transformeren en normaliseren van data.
-    \item Feature engineering: Het selecteren en creëren van features.
-    \item Modeltraining: Het trainen van een ML-model op basis van de voorbereide data.
-    \item Modelbeoordeling: Het evalueren van de prestaties van het model.
-    \item Modeldeployement: Het implementeren van het model in een productieomgeving.
-\end{enumerate}
-Pipelines kunnen worden geïmplementeerd met behulp van diverse tools en frameworks, zoals Apache Airflow, Kubeflow, TensorFlow Extended (TFX), en Amazon SageMaker.
-
-\subsection{Conclusie}
 
 Machine learning pipelines bieden een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren. Door de stappen in de levenscyclus van ML te automatiseren, bevorderen pipelines de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,37 +115,17 @@ Machine learning pipelines bieden een efficiënte en schaalbare manier om ML-mod
 
 In het domein van onderzoek en ontwikkeling op het gebied van Machine Learning (ML) is effectief beheer en opslag van gegevens cruciaal. Kedro, een open-source Python library voor het bouwen van betrouwbare, reproduceerbare en onderhoudbare machine learning-pipelines, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Kedro in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
 
-\subsection{Voordelen van Lokale Implementatie van Kedro voor ML Pipelines}
+Een van de voordelen van het lokaal implementeren van Kedro voor ML-pipelines is de flexibiliteit en modulariteit die het biedt. Kedro maakt het mogelijk om machine learning-pipelines op een flexibele wijze samen te stellen, waardoor onderzoekers gemakkelijk verschillende componenten kunnen toevoegen, verwijderen of aanpassen, afhankelijk van de veranderende behoeften van hun onderzoek.
 
-\subsubsection{Flexibele en Modulaire Pipelines}
-Kedro maakt het mogelijk om machine learning-pipelines op een flexibele en modulaire manier te bouwen, waardoor onderzoekers gemakkelijk verschillende componenten kunnen toevoegen, verwijderen of aanpassen. Dit verbetert de aanpasbaarheid van de pipeline aan veranderende onderzoeksbehoeften.
+Een ander belangrijk voordeel is het aspect van versiebeheer en reproduceerbaarheid dat Kedro integreert in ML-pipelines. Dit stelt onderzoekers in staat om experimenten te reproduceren en resultaten te valideren, wat cruciaal is voor het verzekeren van transparantie en betrouwbaarheid in onderzoek.
 
-\subsubsection{Versiebeheer en Reproduceerbaarheid}
-Met Kedro kunnen onderzoekers versiebeheer integreren in hun ML-pipelines, waardoor ze experimenten kunnen reproduceren en resultaten kunnen valideren. Dit is essentieel voor het bevorderen van transparantie en betrouwbaarheid in onderzoek.
+Daarnaast biedt Kedro een geïntegreerde gegevenscatalogus waarmee onderzoekers gemakkelijk datasets kunnen beheren, documenteren en traceren binnen de ML-pipeline. Dit vereenvoudigt niet alleen het gegevensbeheer, maar bevordert ook de samenwerking tussen teamleden.
 
-\subsubsection{Geïntegreerde Gegevenscatalogus}
-Kedro biedt een geïntegreerde gegevenscatalogus waarmee onderzoekers gemakkelijk datasets kunnen beheren, documenteren en traceren binnen de ML-pipeline. Dit vereenvoudigt het gegevensbeheer en bevordert de samenwerking tussen teamleden.
+Ten slotte, Kedro ondersteunt lokale uitvoering van ML-pipelines, waardoor onderzoekers offline experimenten kunnen uitvoeren en ontwikkelen. Dit is met name gunstig voor onderzoek dat gevoelige gegevens omvat of in situaties waarin cloudresources niet beschikbaar zijn.
 
-\subsubsection{Ondersteuning voor Lokale Uitvoering}
-Kedro ondersteunt lokale uitvoering van ML-pipelines, waardoor onderzoekers offline experimenten kunnen uitvoeren en ontwikkelen. Dit is met name gunstig voor onderzoek dat gevoelige gegevens omvat of waar cloudresources niet beschikbaar zijn.
+Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn, waardoor onderzoekers hun favoriete tools kunnen blijven gebruiken binnen de Kedro-pipeline. Dit minimaliseert de leercurve en bevordert een consistente ontwikkelingservaring. Bovendien ondersteunt Kedro het gebruik van virtual environments, waardoor onderzoekers afhankelijkheden kunnen isoleren en een gecontroleerde ontwikkelingsomgeving kunnen behouden. Dit helpt bij het voorkomen van conflicten tussen verschillende projecten en zorgt voor reproduceerbare resultaten.
 
-\subsection{Integratie met Lokale ML Tools en Frameworks}
-
-\subsubsection{Compatibiliteit met Populaire ML-frameworks}
-Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn, waardoor onderzoekers hun favoriete tools kunnen blijven gebruiken binnen de Kedro-pipeline. Dit minimaliseert de leercurve en bevordert een consistente ontwikkelingservaring.
-
-\subsubsection{Gebruik van Virtual Environments}
-Kedro ondersteunt het gebruik van virtual environments, waardoor onderzoekers afhankelijkheden kunnen isoleren en een gecontroleerde ontwikkelingsomgeving kunnen behouden. Dit helpt bij het voorkomen van conflicten tussen verschillende projecten en zorgt voor reproduceerbare resultaten.
-
-\subsection{Geavanceerde Functionaliteiten}
-
-\subsubsection{Automatische Documentatie}
-Kedro genereert automatisch gedetailleerde documentatie voor ML-pipelines, inclusief informatie over datasets, parameters en dependencies. Dit verbetert de traceerbaarheid en maakt het gemakkelijker om de pipeline te begrijpen en te onderhouden.
-
-\subsubsection{Pipelinevisualisatie}
-Kedro biedt tools voor het visualiseren van ML-pipelines, waardoor onderzoekers een overzicht krijgen van de gegevensstroom en de interacties tussen verschillende componenten. Dit vergemakkelijkt het begrip van de pipeline-architectuur en identificeert mogelijke optimalisaties.
-
-\subsection{Conclusie}
+Een andere geavanceerde functionaliteit van Kedro is de mogelijkheid om automatisch gedetailleerde documentatie voor ML-pipelines te genereren, inclusief informatie over datasets, parameters en dependencies. Dit verbetert de traceerbaarheid en maakt het gemakkelijker om de pipeline te begrijpen en te onderhouden. Daarnaast biedt Kedro tools voor het visualiseren van ML-pipelines, waardoor onderzoekers een overzicht krijgen van de gegevensstroom en de interacties tussen verschillende componenten. Dit vergemakkelijkt het begrip van de pipeline-architectuur en identificeert mogelijke optimalisaties.
 
 Kedro biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kedro kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten reproduceerbaar maken en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
