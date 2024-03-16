@@ -129,13 +129,8 @@ Een andere geavanceerde functionaliteit van Kedro is de mogelijkheid om automati
 
 Kedro biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kedro kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten reproduceerbaar maken en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{MLFlow}
 
-\textcite{MLflow2023} benadrukt gebruiksgemak en aanpasbaarheid. Het biedt een gestandaardiseerde manier om Machine Learning projecten te beheren, ongeacht de programmeertaal die wordt gebruikt. Met MLflow kunnen experimenten worden bijgehouden, modelparameters worden geregistreerd, modellen worden beheerd en zelfs modellen worden geïmplementeerd in verschillende omgevingen.
-
-\subsection{MLflow: Een Overzicht}
-
-MLflow is een open-source Python-bibliotheek ontwikkeld door Databricks, die een brede functionaliteit biedt voor het beheren van Machine Learning (ML) projecten. De belangrijkste pijlers van MLflow zijn Tracking, Projects, Models en Registry.
+\textcite{MLflow2023}MLflow is een open-source Python-bibliotheek ontwikkeld door Databricks, die een brede functionaliteit biedt voor het beheren van Machine Learning (ML) projecten. De belangrijkste pijlers van MLflow zijn Tracking, Projects, Models en Registry.
 
 \subsubsection{Tracking}
 Tracking biedt een eenvoudige manier om experimenten te volgen en resultaten te vergelijken. MLflow houdt nauwgezet relevante details bij gedurende de ML-levenscyclus, zoals code, parameters, metrieken en artefacten (modellen, datasets), waardoor onderzoekers naadloos eerdere experimenten kunnen reproduceren en verschillende configuraties kunnen vergelijken.
@@ -203,112 +198,55 @@ Kubeflow ondersteunt model deployment en serving, waardoor onderzoekers getraind
 
 Kubeflow biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kubeflow kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten efficiënter uitvoeren en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Minio}
+\section{ZenML}
+ZenML is een open-source framework dat Python-gebaseerde ML pipelines definieert en beheert. Het biedt een end-to-end oplossing voor het ontwikkelen, implementeren en beheren van ML pipelines. ZenML biedt verschillende functies, waaronder:
 
-In het domein van onderzoek en ontwikkeling op het gebied van Machine Learning (ML) is effectief beheer en opslag van gegevens cruciaal. Minio, een open-source, high-performance objectopslagoplossing, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Minio in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
-
-\subsection{Voordelen van Lokale Implementatie van Minio voor ML Pipelines}
-
-\subsubsection{Kosteneffectieve Opslag}
-Minio elimineert licentiekosten die gepaard gaan met eigen oplossingen, waardoor het een budgetvriendelijke optie is voor onderzoeksprojecten. Dit is met name gunstig voor kleinere onderzoeksgroepen of individuen met beperkte middelen.
-
-\subsubsection{Vereenvoudigd Gegevensbeheer}
-Minio's op objecten gebaseerde opslag vereenvoudigt het gegevensbeheer voor ML-pipelines. Elk gegevenspunt wordt opgeslagen als een onveranderlijk object met een unieke identifier, waardoor directe toegang en versiebeheer mogelijk zijn. Dit vereenvoudigt de gegevensopvraging en de reproduceerbaarheid van experimenten, cruciale aspecten van onderzoek.
-
-\subsubsection{Schaalbaarheid en Flexibiliteit}
-De horizontale schaalbaarheid van Minio stelt onderzoekers in staat om de opslagcapaciteit geleidelijk te vergroten naarmate hun datavolume groeit. Deze aanpasbaarheid zorgt ervoor dat de opslagoplossing kan voldoen aan de evoluerende behoeften van onderzoeksprojecten.
-
-\subsubsection{Offline Experimenten}
-Minio stelt onderzoekers in staat om ML-pipelines uit te voeren en gegevens volledig lokaal op te slaan, waardoor offline experimenten en ontwikkeling mogelijk zijn. Dit is met name voordelig voor onderzoek met gevoelige gegevens die niet op cloudplatforms kunnen worden opgeslagen vanwege privacy- of beveiligingsproblemen.
-
-\subsection{Integratie met Lokale ML Tools en Frameworks}
-
-\subsubsection{Docker en Kubernetes}
-Minio kan eenvoudig worden gecontaineriseerd met behulp van Docker en worden ingezet op lokale Kubernetes-clusters, waardoor onderzoekers het naadloos kunnen integreren in hun bestaande lokale ontwikkelings- en implementatieomgeving. Dit vergemakkelijkt een consistente workflow voor zowel lokale ontwikkeling als mogelijke toekomstige cloudimplementatie.
-
-\subsubsection{ML Frameworks}
-Minio integreert met populaire ML-frameworks zoals TensorFlow en PyTorch via hun objectopslag-API's, waardoor onderzoekers direct toegang hebben tot en gegevens kunnen verwerken die zijn opgeslagen in Minio met behulp van vertrouwde tools. Dit vereenvoudigt het gegevensbeheer binnen de ML-pipeline.
-
-\subsection{Geavanceerde Functionaliteiten}
-
-\subsubsection{Beveiligingsfuncties}
-Minio biedt verschillende beveiligingsfuncties, waaronder gebruikersauthenticatie, toegangscontrole en versleuteling, waardoor de vertrouwelijkheid en integriteit van onderzoeksgegevens zelfs in een lokale omgeving worden gewaarborgd. Het implementeren van passende beveiligingsmaatregelen is cruciaal voor het beschermen van gevoelige onderzoeksgegevens.
-
-\subsubsection{Gegevenslevenscyclusbeheer}
-Minio stelt onderzoekers in staat om beleidsregels voor gegevenslevenscyclus te definiëren, zoals het automatisch archiveren van oudere gegevens of het verwijderen van tijdelijke bestanden. Dit helpt bij het handhaven van een efficiënt gebruik van opslagruimte en voorkomt gegevensrommel binnen de lokale omgeving.
-
-\subsubsection{Monitoring en Observatie}
-Minio biedt monitoringtools en API's om opslaggebruik bij te houden, potentiële problemen te identificeren en inzicht te krijgen in gegevenstoegangspatronen. Deze informatie kan waardevol zijn voor het optimaliseren van de lokale opslagconfiguratie en het zorgen voor een soepele werking van ML-pipelines.
-
-\subsection{Conclusie}
-
-Minio biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van gegevensopslag voor lokaal uitgevoerde ML-pipelines. De kosteneffectiviteit, het gemak van beheer, de schaalbaarheid en de offline mogelijkheden maken het tot een waardevol instrument voor onderzoeksinspanningen, waardoor efficiënte MLOps-praktijken worden bevorderd en reproduceerbaar onderzoek wordt vergemakkelijkt. Door gebruik te maken van Minio kunnen onderzoekers hun lokale ontwikkelingsworkflows stroomlijnen en zich richten op kernonderzoeksactiviteiten.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Apache Beam}
-
-De exponentiële groei van gegevens in diverse formaten stelt organisaties voor aanzienlijke uitdagingen bij het extraheren van zinvolle inzichten {BRON}. Apache Beam heeft zich ontwikkeld tot een overtuigende oplossing, met een uniform programmeringsmodel dat ontwikkelaars in staat stelt schaalbare, fouttolerante gegevensverwerkingspipelines te construeren die zowel batch- als real-time streaminggegevens kunnen verwerken. Deze scriptie onderzoekt de verdiensten van Apache Beam, met name de geschiktheid ervan voor verschillende toepassingen voor het verwerken van big data, waarbij de voordelen ervan worden benadrukt in de context van onderzoek en scriptieontwikkeling.
-
-\subsection{Uniform Programmeringsmodel}
-
-De kernkracht van Apache Beam ligt in zijn abstractie van onderliggende infrastructuur, waardoor ontwikkelaars zich kunnen concentreren op logische gegevenstransformaties in plaats van te worden gehinderd door implementatiedetails op laag niveau. Deze abstractielaag presenteert een draagbaar programmeringsmodel, waardoor ontwikkelaars code kunnen schrijven die onafhankelijk is van de bron en uitvoerder. In eenvoudiger bewoordingen:
-\begin{itemize}
-    \item Source-agnostic: Code blijft onafhankelijk van de gegevensbron (bijv. databases, berichtenwachtrijen, bestanden), waardoor gemakkelijk kan worden geschakeld tussen verschillende gegevensbronnen zonder significante codeaanpassingen.
-    \item Runner-agnostic: Code blijft onafhankelijk van het onderliggende uitvoeringsplatform (bijv. Apache Flink, Apache Spark, Google Cloud Dataflow), waardoor dezelfde pipelinecode naadloos op verschillende platforms kan worden uitgevoerd.
+\begin{itemize}[label=$\bullet$]
+    \item Opslag van pipelines: ZenML slaat pipelines op in een centrale repository, waardoor ze eenvoudig te hergebruiken en te delen zijn.
+    \item Uitvoering van pipelines: ZenML kan pipelines lokaal of op afstand uitvoeren, op verschillende platforms zoals Kubernetes en Docker.
+    \item Monitoring van pipelines: ZenML biedt uitgebreide monitoringmogelijkheden om de voortgang en prestaties van pipelines te volgen.
+    \item Herstarten van pipelines: ZenML kan pipelines herstarten vanaf een mislukte stap, waardoor fouten eenvoudig te debuggen zijn.
+    \item MLOps-functionaliteit: ZenML biedt functies voor MLOps, zoals artefactbeheer, versiebeheer en experimentenbeheer.
 \end{itemize}
 
-\subsection{Belangrijkste Functionaliteiten}
+De voordelen van het gebruik van ZenML voor lokaal uitvoeren van ML pipelines zijn onder andere:
 
-\subsubsection{Gegevenstransformaties}
-Beam's kernkracht ligt in zijn rijke set van primitieve transformaties (bijv. filtering, mapping, aggregatie) die aan elkaar kunnen worden gekoppeld om complexe gegevensverwerkingspipelines te vormen.
+\begin{itemize}[label=$\bullet$]
+    \item Eenvoudig te gebruiken: ZenML biedt een intuïtieve interface om pipelines te definiëren en te beheren.
+    \item Schaalbaar: ZenML kan pipelines uitvoeren op een breed scala aan platforms, van laptops tot clusters.
+    \item Flexibel: ZenML kan worden geconfigureerd om te voldoen aan de specifieke behoeften van uw project.
+    \item Uitgebreide functies: ZenML biedt een breder scala aan functies dan andere frameworks.
+    \item MLOps-gericht: ZenML is ontworpen met MLOps in het achterhoofd, waardoor het een goede keuze is voor teams die MLOps-best practices willen implementeren.
+\end{itemize}
 
-\subsubsection{Windowing}
-Beam vergemakkelijkt de verwerking van gegevensstromen door ze in eindige vensters te verdelen, waardoor ontwikkelaars gegevens in stukken in de tijd kunnen analyseren. Dit is cruciaal voor real-time toepassingen waarbij het continu analyseren van de volledige stroom niet haalbaar is.
+\section{Vergelijking met andere Frameworks}
+Er zijn verschillende andere frameworks beschikbaar voor het beheren van ML pipelines, waaronder Apache Airflow, Luigi en Kubeflow Pipelines. ZenML onderscheidt zich van deze frameworks door:
 
-\subsubsection{State Management}
-Beam ondersteunt het beheren van staat (bijv. bijhouden van tussentijdse resultaten) over verschillende verwerkingsunits, waardoor complexe berekeningen mogelijk zijn waarbij historische informatie wordt bijgehouden.
+\begin{itemize}[label=$\bullet$]
+    \item Eenvoudig te gebruiken: ZenML heeft een eenvoudiger leercurve dan andere frameworks.
+    \item Flexibel: ZenML is meer flexibel in termen van configuratie en aanpassing.
+    \item Uitgebreide functies: ZenML biedt een breder scala aan functies dan andere frameworks.
+    \item MLOps-gericht: ZenML is uniek in zijn focus op MLOps.
+\end{itemize}
 
-\subsubsection{Fouttolerantie}
-Beam-pipelines zijn inherent fouttolerant en behandelen automatisch storingen en herstellen daarvan zonder gegevensverlies. Dit zorgt voor betrouwbare verwerking, zelfs bij systeemproblemen.
+ZenML is een krachtig framework voor het beheren en uitvoeren van ML pipelines. Het biedt een scala aan functies, waaronder MLOps-functionaliteit, die het lokaal uitvoeren van pipelines eenvoudig en efficiënt maken. ZenML is een goede keuze voor data scientists en machine learning engineers die een framework zoeken dat gebruiksvriendelijk, schaalbaar, flexibel en MLOps-gericht is.
 
-\subsection{Voordelen}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Prefect}
 
-\subsubsection{Stream Processing}
-Beam is bijzonder geschikt voor onderzoeksgebieden die te maken hebben met real-time gegevensstromen. Bijvoorbeeld, onderzoekers kunnen Beam gebruiken om sensorgegevens van experimenten te analyseren, financiële transacties in realtime te verwerken, of socialemediastromen te analyseren om realtime trends te bestuderen.
+Prefect is een open-source framework dat Python-gebaseerde ML pipelines definieert als gerichte acyclische grafieken (DAG's). Deze aanpak maakt het mogelijk om de stappen in de pipeline expliciet te definiëren en hun onderlinge afhankelijkheden te specificeren. Het framework biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
-\subsubsection{Schaalbaarheid}
-Beam-pipelines kunnen horizontaal worden geschaald door meer verwerkingswerkers toe te voegen, waardoor onderzoekers efficiënt met grootschalige gegevens kunnen omgaan. Deze aanpasbaarheid is cruciaal voor het omgaan met het groeiende volume aan gegevens in veel onderzoeksprojecten.
+De voordelen van het gebruik van Prefect voor het lokaal uitvoeren van ML pipelines zijn aanzienlijk. Het framework biedt een intuïtieve interface die het gemakkelijk maakt om pipelines te definiëren en te beheren. Daarnaast is Prefect zeer schaalbaar en kan het pipelines uitvoeren op verschillende platforms, variërend van laptops tot clusters. Bovendien is Prefect flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
 
-\subsubsection{Flexibiliteit}
-De bron-onafhankelijke aard van Beam stelt onderzoekers in staat om gemakkelijk te schakelen tussen verschillende gegevensbronnen zonder belangrijke codeaanpassingen, waardoor experimenten met diverse datasets worden gestimuleerd.
+In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi en Kubeflow Pipelines, onderscheidt Prefect zich door zijn gebruiksvriendelijkheid, flexibiliteit en uitgebreide functieset. Het heeft een eenvoudigere leercurve, is gemakkelijker aan te passen en biedt meer mogelijkheden dan zijn tegenhangers.
 
-\subsubsection{Reproduceerbaarheid}
-Het draagbare programmeringsmodel van Beam bevordert de reproduceerbaarheid, aangezien code gemakkelijk kan worden gedeeld en uitgevoerd op verschillende platforms, waardoor samenwerking en verificatie van onderzoeksresultaten worden vergemakkelijkt.
+Ter afsluiting demonstreren we de praktische toepassing van Prefect met een proof of concept. We definiëren een eenvoudige ML pipeline die een iris-classificatiemodel traint en evalueert, en laten zien hoe deze lokaal kan worden uitgevoerd met Prefect. Deze PoC bevestigt dat Prefect inderdaad een eenvoudige en efficiënte manier biedt om ML pipelines lokaal uit te voeren.
 
-\subsection{Integratie met Bestaande Systemen}
+In conclusie is Prefect een krachtig framework voor het beheren en uitvoeren van ML pipelines. Met zijn gebruiksvriendelijke, schaalbare en flexibele karakter is Prefect een uitstekende keuze voor data scientists en machine learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 
-Beam integreert naadloos met verschillende populaire big data-platforms en -tools:
 
-\subsubsection{Cloudplatforms}
-Beam-pipelines kunnen worden uitgevoerd op toonaangevende cloudplatforms zoals Google Cloud Platform (GCP), Amazon Web Services (AWS) en Microsoft Azure, waarbij gebruik wordt gemaakt van de kracht van cloudresources voor efficiënte en schaalbare gegevensverwerking.
 
-\subsubsection{Opslagsystemen}
-Beam-pipelines kunnen eenvoudig gegevens lezen van en schrijven naar populaire opslagsystemen zoals Apache HDFS, Amazon S3 en Google Cloud Storage, waardoor flexibiliteit in gegevenstoegang en -beheer wordt geboden.
-
-\subsubsection{Machine Learning Frameworks}
-Integratie met frameworks zoals TensorFlow, PyTorch en scikit-learn stelt onderzoekers in staat om machine learning-modellen naadloos op te nemen in hun gegevensverwerkingspipelines, waardoor taken zoals realtime anomaliedetectie, sentimentanalyse of voorspellende modellering op streaminggegevens mogelijk worden.
-
-\subsection{Verder dan de Basis}
-
-\subsubsection{Apache Beam SQL}
-Beam biedt een SQL-achtige interface voor het schrijven van gegevensverwerkingspipelines, als alternatief voor gebruikers die bekend zijn met SQL-syntax.
-
-\subsubsection{User-Defined Functions (UDFs)}
-Beam stelt ontwikkelaars in staat om hun eigen aangepaste functies (UDFs) te definiëren in Python, Java of Go, waardoor de implementatie van specifieke verwerkingslogica op maat van onderzoeksproblemen mogelijk is.
-
-\subsubsection{Testen en Debuggen}
-Beam biedt verschillende tools en frameworks voor het testen en debuggen van pipelines, waardoor de juistheid en robuustheid van onderzoeksresultaten worden gegarandeerd.
-
-\subsection{Conclusie}
-
-Apache Beam biedt een overtuigend programmeermodel voor het construeren van robuuste, schaalbare en fouttolerante gegevensverwerkingspipelines die zowel batch- als real-time streaminggegevens kunnen verwerken. Zijn bron- en uitvoerder-agnostische aard, gekoppeld aan zijn rijke set functies en naadloze integratie met populaire big data-tools, maken het tot een onschatbaar hulpmiddel voor onderzoekers die werken met grootschalige gegevens in verschillende domeinen. Door Beam te benutten, kunnen onderzoekers zich concentreren op de kernlogica van hun onderzoek terwijl ze profiteren van de abstractie- en uitvoeringsmogelijkheden van het platform.
-
+%%%% Apache Airflow: https://airflow.apache.org/
+%%Luigi: https://luigi.readthedocs.io/en/stable/
+%%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
+%%% GITHUB PREFECT EN PREFECT DOCS BRON
