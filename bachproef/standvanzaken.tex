@@ -160,76 +160,37 @@ MLflow biedt verschillende voordelen voor onderzoekers in het beheer van Machine
 In conclusie, MLflow vestigt zich als een onschatbare troef voor onderzoekers die zich bezighouden met Machine Learning-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verbeteren.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kubeflow}
+In het domein van Machine Learning (ML) is effectief beheer en opschaling van machine learning-workloads cruciaal. Kubeflow, een open-source machine learning toolkit ontworpen voor Kubernetes, biedt een krachtige infrastructuur voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in zowel lokale als cloudomgevingen. Deze scriptie onderzoekt de verdiensten van het gebruik van Kubeflow in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
 
-In het domein van onderzoek en ontwikkeling op het gebied van Machine Learning (ML) is effectief beheer en opschaling van machine learning-workloads cruciaal. Kubeflow, een open-source machine learning toolkit ontworpen voor Kubernetes, biedt een krachtige infrastructuur voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in zowel lokale als cloudomgevingen. Deze scriptie onderzoekt de verdiensten van het gebruik van Kubeflow in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
-
-\subsection{Voordelen van Lokale Implementatie van Kubeflow voor ML Pipelines}
-
-\subsubsection{Schaalbaarheid en Flexibiliteit}
 Kubeflow maakt gebruik van Kubernetes om machine learning-workloads te beheren, waardoor onderzoekers de mogelijkheid hebben om hun ML-pipelines eenvoudig op te schalen of af te schalen afhankelijk van de behoeften van het onderzoek. Dit maakt het een geschikte keuze voor onderzoeksgroepen van verschillende groottes.
 
-\subsubsection{Geautomatiseerd Beheer}
 Met Kubeflow kunnen onderzoekers de implementatie en het beheer van machine learning-pipelines automatiseren, waardoor ze minder tijd hoeven te besteden aan het handmatig configureren en monitoren van infrastructuur. Dit verhoogt de operationele efficiëntie en stelt onderzoekers in staat zich te concentreren op het onderzoek zelf.
 
-\subsubsection{Reproduceerbare Experimenten}
 Kubeflow biedt tools en functies voor het vastleggen van de omgeving en het versiebeheer van de code, waardoor onderzoekers experimenten kunnen reproduceren en resultaten kunnen valideren. Dit draagt bij aan de transparantie en betrouwbaarheid van het onderzoek.
 
-\subsubsection{Ondersteuning voor Diverse Workloads}
 Kubeflow ondersteunt een breed scala aan machine learning-workloads, waaronder training, inferentie en hyperparameteroptimalisatie, waardoor onderzoekers flexibel kunnen experimenteren met verschillende modellen en technieken binnen dezelfde infrastructuur.
 
-\subsection{Integratie met Lokale ML Tools en Frameworks}
-
-\subsubsection{Naadloze Integratie met Kubernetes}
 Kubeflow is ontworpen om naadloos te integreren met Kubernetes, waardoor onderzoekers het gemakkelijk kunnen implementeren en beheren op lokale Kubernetes-clusters. Dit minimaliseert de operationele overhead en bevordert een consistente ontwikkelingservaring.
 
-\subsubsection{Compatibiliteit met ML Frameworks}
 Kubeflow biedt integratie met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn, waardoor onderzoekers hun favoriete tools kunnen blijven gebruiken binnen de Kubeflow-pipelines. Dit maximaliseert de flexibiliteit en maakt het gemakkelijk om bestaande modellen en code te hergebruiken.
 
-\subsection{Geavanceerde Functionaliteiten}
-
-\subsubsection{Experiment Tracking en Monitoring}
 Kubeflow biedt functionaliteiten voor het bijhouden en monitoren van machine learning-experimenten, waardoor onderzoekers inzicht krijgen in de voortgang van hun onderzoek en potentiële problemen kunnen identificeren. Dit vergemakkelijkt het optimaliseren van de prestaties en het vinden van de beste modellen.
 
-\subsubsection{Model Deployment en Serving}
 Kubeflow ondersteunt model deployment en serving, waardoor onderzoekers getrainde modellen gemakkelijk kunnen implementeren en schalen voor productiegebruik. Dit vergemakkelijkt de overgang van experimentele prototypen naar operationele systemen.
-
-\subsection{Conclusie}
 
 Kubeflow biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kubeflow kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten efficiënter uitvoeren en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ZenML}
-ZenML is een open-source framework dat Python-gebaseerde ML pipelines definieert en beheert. Het biedt een end-to-end oplossing voor het ontwikkelen, implementeren en beheren van ML pipelines. ZenML biedt verschillende functies, waaronder:
+ZenML is een open-source framework dat Python-gebaseerde machine learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
 
-\begin{itemize}
-    \item Opslag van pipelines: ZenML slaat pipelines op in een centrale repository, waardoor ze eenvoudig te hergebruiken en te delen zijn.
-    \item Uitvoering van pipelines: ZenML kan pipelines lokaal of op afstand uitvoeren, op verschillende platforms zoals Kubernetes en Docker.
-    \item Monitoring van pipelines: ZenML biedt uitgebreide monitoringmogelijkheden om de voortgang en prestaties van pipelines te volgen.
-    \item Herstarten van pipelines: ZenML kan pipelines herstarten vanaf een mislukte stap, waardoor fouten eenvoudig te debuggen zijn.
-    \item MLOps-functionaliteit: ZenML biedt functies voor MLOps, zoals artefactbeheer, versiebeheer en experimentenbeheer.
-\end{itemize}
+Een kenmerk van ZenML is de uitgebreide monitoringfunctionaliteit die wordt geboden, waardoor onderzoekers en ontwikkelaars de voortgang en prestaties van hun pipelines nauwkeurig kunnen volgen. Bovendien maakt ZenML het mogelijk om pipelines efficiënt te herstarten vanaf een mislukte stap, waardoor de foutopsporingsprocedure wordt vereenvoudigd en versneld.
 
-De voordelen van het gebruik van ZenML voor lokaal uitvoeren van ML pipelines zijn onder andere:
+Een belangrijk aspect van ZenML is de integratie van MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het framework aantrekkelijk is voor teams die streven naar best practices op het gebied van machine learning operations.
 
-\begin{itemize}
-    \item Eenvoudig te gebruiken: ZenML biedt een intuïtieve interface om pipelines te definiëren en te beheren.
-    \item Schaalbaar: ZenML kan pipelines uitvoeren op een breed scala aan platforms, van laptops tot clusters.
-    \item Flexibel: ZenML kan worden geconfigureerd om te voldoen aan de specifieke behoeften van uw project.
-    \item Uitgebreide functies: ZenML biedt een breder scala aan functies dan andere frameworks.
-    \item MLOps-gericht: ZenML is ontworpen met MLOps in het achterhoofd, waardoor het een goede keuze is voor teams die MLOps-best practices willen implementeren.
-\end{itemize}
+In vergelijking met andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines, valt ZenML op vanwege zijn eenvoudige leercurve, flexibiliteit in configuratie en aanpassing, en zijn brede scala aan functionaliteiten. Bovendien onderscheidt ZenML zich door zijn expliciete focus op MLOps, waardoor het een waardevolle aanwinst is voor onderzoeksgemeenschappen en industriële toepassingen.
 
-\section{Vergelijking met andere Frameworks}
-Er zijn verschillende andere frameworks beschikbaar voor het beheren van ML pipelines, waaronder Apache Airflow, Luigi en Kubeflow Pipelines. ZenML onderscheidt zich van deze frameworks door:
+Als een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices, is ZenML een geschikte keuze voor data scientists en machine learning engineers die streven naar een effectieve en efficiënte aanpak voor het beheren van ML pipelines.
 
-\begin{itemize}
-    \item Eenvoudig te gebruiken: ZenML heeft een eenvoudiger leercurve dan andere frameworks.
-    \item Flexibel: ZenML is meer flexibel in termen van configuratie en aanpassing.
-    \item Uitgebreide functies: ZenML biedt een breder scala aan functies dan andere frameworks.
-    \item MLOps-gericht: ZenML is uniek in zijn focus op MLOps.
-\end{itemize}
-
-ZenML is een krachtig framework voor het beheren en uitvoeren van ML pipelines. Het biedt een scala aan functies, waaronder MLOps-functionaliteit, die het lokaal uitvoeren van pipelines eenvoudig en efficiënt maken. ZenML is een goede keuze voor data scientists en machine learning engineers die een framework zoeken dat gebruiksvriendelijk, schaalbaar, flexibel en MLOps-gericht is.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prefect}
