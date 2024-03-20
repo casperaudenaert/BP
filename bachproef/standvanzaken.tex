@@ -24,15 +24,15 @@ Machine Learning (ML) is een onderdeel van Artificial Intelligence (AI), een sne
     \label{fig:ML_cycle}
 \end{figure}
 
-De levenscyclus van een typisch machine learning-project omvat verschillende fasen. Allereerst is er de fase van Data Verzameling en Preprocessing, waarin relevante gegevens worden verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het oplossen van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor machine learning-modellen \autocite{Schlegel2022}.
+De levenscyclus van een typisch Machine Learning-project omvat verschillende fasen. Allereerst is er de fase van Data Verzameling en Preprocessing, waarin relevante gegevens worden verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het verwerken van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor Machine Learning-modellen \autocite{Schlegel2022}.
 
-Vervolgens komt de fase van Model Selectie en Training, waarbij een geschikt machine learning-model wordt geselecteerd op basis van de aard van de gegevens en het doel van het project. Het model wordt vervolgens getraind met behulp van de verzamelde gegevens, waarbij parameters worden aangepast om een optimaal voorspellingsresultaat te bereiken \autocite{Schlegel2022}.
+Vervolgens komt de fase van Model Selectie en Training, waarbij een geschikt Machine Learning-model wordt geselecteerd op basis van de aard van de gegevens en het doel van het project. Het model wordt vervolgens getraind met behulp van de verzamelde gegevens, waarbij parameters worden aangepast om een optimaal resultaat te bereiken \autocite{Schlegel2022}.
 
-Na het trainen van het model volgt de Validatie en Evaluatie. Het model wordt gevalideerd met behulp van een aparte dataset die niet is gebruikt tijdens de training, om vast te stellen hoe goed het presteert op nieuwe, niet eerder geziene gegevens \autocite{Schlegel2022}.
+Na het trainen van het model volgt de Validatie en Evaluatie. Het model wordt gevalideerd met behulp van een validatie dataset die niet is gebruikt tijdens de training, om vast te stellen hoe goed het presteert op nieuwe, niet eerder geziene data \autocite{Schlegel2022}.
 
-Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de productieomgeving om voorspellingen te genereren op nieuwe gegevens. Dit kan bijvoorbeeld inhouden dat het model wordt geïntegreerd in een bestaande softwareapplicatie of gegevensstroom \autocite{Schlegel2022}.
+Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de productieomgeving om voorspellingen te genereren op nieuwe data. Dit kan bijvoorbeeld inhouden dat het model wordt geïntegreerd in een bestaande softwareapplicatie of gegevensstroom \autocite{Schlegel2022}.
 
-Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monitoring en Onderhoudsfase. Hierbij wordt gecontroleerd op prestatieverlies of achteruitgang in voorspellingsnauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse gegevens om de prestaties te behouden \autocite{Schlegel2022}.
+Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monitoring en Onderhoudsfase. Hierbij wordt gecontroleerd op prestatieverlies of achteruitgang in nauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse data om de prestaties te behouden of te verbeteren\autocite{Schlegel2022}.
 
 \subsection{Machine Learning Methoden}
 
@@ -42,21 +42,21 @@ Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monit
     \label{fig:ML_subsets}
 \end{figure}
 
-Er zijn verschillende soorten machine learning-methoden, waaronder \autocite{Mahesh2019}:
+Er zijn verschillende soorten Machine Learning-methoden, waaronder \autocite{Mahesh2019}:
 \begin{itemize}
-    \item Supervised Learning, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een voorspellend model te ontwikkelen voor nieuwe, niet eerder geziene gegevens.
+    \item Supervised Learning, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een model te ontwikkelen voor nieuwe, niet eerder geziene data.
 
-    \item Unsupervised Learning, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer.
+    \item Unsupervised Learning, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de data te ontdekken zonder voorafgaande kennis van de uitvoer.
 
     \item Semi-supervised Learning, die een combinatie van gelabelde en ongelabelde gegevens gebruikt voor training, om nauwkeuriger voorspellingen te maken.
 
     \item Reinforcement Learning, waarbij het model leert door interactie met een dynamische omgeving, om een optimale strategie te ontwikkelen om beloningen te maximaliseren.
 
-    \item Deep Learning, een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
+    \item Deep Learning, een subset van Machine Learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
 \end{itemize}
 
 
-Machine learning speelt een cruciale rol in het genereren van inzichten uit gegevens en het maken van voorspellingen op basis van complexe patronen. Door de levenscyclus van machine learning-projecten te begrijpen en verschillende soorten machine learning-methoden te verkennen, kunnen onderzoekers en ontwikkelaars effectievere en nauwkeurigere modellen ontwikkelen om een breed scala aan problemen op te lossen.
+Machine Learning speelt een cruciale rol in het genereren van inzichten uit gegevens en het maken van voorspellingen op basis van complexe patronen \autocite{Jordan2015}. Door de levenscyclus van Machine Learning-projecten te begrijpen en verschillende soorten Machine Learning-methoden te verkennen, kunnen onderzoekers en ontwikkelaars effectievere en nauwkeurigere modellen ontwikkelen om een breed scala aan problemen op te lossen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CI/CD pipelines}
 
@@ -68,7 +68,7 @@ Continue integratie omvat het samenvoegen en testen van codewijzigingen van dive
 
 Continue testing houdt in dat geautomatiseerde tests worden uitgevoerd om de functionaliteit en kwaliteit van de code te controleren. Dit zorgt ervoor dat eventuele fouten of bugs worden opgespoord voordat de code verder wordt verwerkt.
 
-Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het verpakken van de code en het gereedmaken van eventuele configuratiebestanden.
+Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het compileren van de code en het gereedmaken van eventuele configuratiebestanden.
 
 Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
 
@@ -80,28 +80,28 @@ Tenslotte is er continuous deployment, waar de voorbereide code automatisch word
   
 %Figuur \ref{fig:CICD_flow} toont de flow van een CI/CD pipeline.
 
-Binnen het domein van datamanagement benadrukken onderzoekers de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een essentiële rol spelen bij het ontwikkelen van data-efficiënte ML-modellen en het waarborgen van de consistentie en betrouwbaarheid van datastromen.
+Binnen het domein van datamanagement benadrukken \textcite{Samad2018} en \textcite{Vadavalasa2020} de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een essentiële rol spelen bij het ontwikkelen van data-efficiënte ML-modellen en het waarborgen van de consistentie en betrouwbaarheid van datastromen.
 
 CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. Ze versnellen de levering van software, verhogen de kwaliteit en betrouwbaarheid, en bevorderen de samenwerking tussen teams. Datapipelines spelen een cruciale rol in ML door dataverwerking te automatiseren en de efficiëntie van modeltraining te verhogen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Machine Learning Pipelines}
 
-Machine learning (ML) is een veelgebruikte technologie die in diverse sectoren wordt ingezet om waardevolle inzichten uit data te halen \citep{Jordan2015}. Het proces van het ontwikkelen van ML-modellen omvat een complexe reeks stappen, van het verzamelen en voorbereiden van data tot het trainen, evalueren en implementeren van modellen. Deze stappen zijn vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten kan belemmeren.
+Machine Learning (ML) is een veelgebruikte technologie die in diverse sectoren wordt ingezet om waardevolle inzichten uit data te halen \citep{Jordan2015}. Het proces van het ontwikkelen van ML-modellen omvat een complexe reeks stappen, van het verzamelen en voorbereiden van data tot het trainen, evalueren en implementeren van modellen. Deze stappen zijn vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten kan belemmeren.
 
-Machine learning pipelines zijn geautomatiseerde workflows die zijn ontworpen om deze stappen in de levenscyclus van een ML-project te stroomlijnen en te automatiseren. Ze bestaan uit een reeks geordende taken, zoals data-ingestion, data-preprocessing, feature engineering, modeltraining, modelbeoordeling en modelimplementatie. Deze pipelines zorgen voor consistente en gestructureerde uitvoering van deze taken, waardoor de ontwikkeling en implementatie van ML-modellen efficiënter worden.
+Machine Learning pipelines zijn geautomatiseerde workflows die zijn ontworpen om deze stappen in de levenscyclus van een ML-project te stroomlijnen en te automatiseren. Ze bestaan uit een reeks geordende taken, zoals data-ingestion, data-preprocessing, feature engineering, modeltraining, modelbeoordeling en modelimplementatie. Deze pipelines zorgen voor consistente en gestructureerde uitvoering van deze taken, waardoor de ontwikkeling en implementatie van ML-modellen efficiënter worden.
 
-De voordelen van machine learning pipelines zijn talrijk. Ten eerste verhogen ze de efficiëntie door repetitieve taken te automatiseren, waardoor de doorlooptijd van ML-projecten wordt verkort. Bovendien zorgen pipelines voor verbeterde reproduceerbaarheid, doordat ze garanderen dat experimenten op een consistente manier worden uitgevoerd, wat essentieel is voor wetenschappelijke validatie en het delen van resultaten. Verder bieden pipelines een betere schaalbaarheid door de implementatie van ML-modellen op grotere datasets en in productieomgevingen te vergemakkelijken. Ten slotte vergroten ze de transparantie van het ML-proces door de stappen in de workflow te documenteren en te volgen.
+De voordelen van Machine Learning pipelines zijn talrijk. Ten eerste verhogen ze de efficiëntie door repetitieve taken te automatiseren, waardoor de doorlooptijd van ML-projecten wordt verkort. Bovendien zorgen pipelines voor verbeterde reproduceerbaarheid, doordat ze garanderen dat experimenten op een consistente manier worden uitgevoerd, wat essentieel is voor wetenschappelijke validatie en het delen van resultaten. Verder bieden pipelines een betere schaalbaarheid door de implementatie van ML-modellen op grotere datasets en in productieomgevingen te vergemakkelijken. Ten slotte vergroten ze de transparantie van het ML-proces door de stappen in de workflow te documenteren en te volgen.
 
-Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, zoals Apache Airflow, Kubeflow, Kedro, MLflow, luigi, prefect. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren, afhankelijk van de specifieke behoeften en vereisten van een project.
+Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, zoals Apache Airflow, Kubeflow, Kedro, MLflow, luigi en prefect. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren, afhankelijk van de specifieke behoeften en vereisten van een project.
 
-Al met al bieden machine learning pipelines een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren, waardoor de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten worden bevorderd.
+Al met al bieden Machine Learning pipelines een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren, waardoor de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten worden bevorderd.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frameworks}
 
-Machine learning pipelines zijn een cruciaal onderdeel van het machine learning proces \autocite{Jordan2015}. Ze automatiseren de stappen van dataverzameling en -voorbereiding tot modeltraining en -evaluatie, waardoor het efficiënter en reproduceerbaarder wordt.
+Machine Learning pipelines zijn een cruciaal onderdeel van het Machine Learning proces \autocite{Jordan2015}. Ze automatiseren de stappen van dataverzameling en -voorbereiding tot modeltraining en -evaluatie, waardoor het efficiënter en reproduceerbaarder wordt.
 
-Traditioneel worden machine learning pipelines uitgevoerd op cloudplatforms of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van machine learning pipelines biedt een aantal voordelen:
+Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatforms of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van Machine Learning pipelines biedt een aantal voordelen:
 
 \begin{itemize}
   \item Lagere kosten: Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
@@ -109,12 +109,12 @@ Traditioneel worden machine learning pipelines uitgevoerd op cloudplatforms of o
   \item Flexibiliteit: Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
 \end{itemize}
 
-Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van machine learning pipelines. We bespreken de voordelen en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor uw behoeften.
+Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voordelen en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze onderzoeksvraag.
 \subsection{Kedro}
 
-\autocite{Kedro2024}, een open-source Python library voor het bouwen van betrouwbare, reproduceerbare en onderhoudbare machine learning-pipelines, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Kedro in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
+\autocite{Kedro2024}, een open-source Python library voor het bouwen van betrouwbare, reproduceerbare en onderhoudbare Machine Learning-pipelines, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Kedro in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
 
-Een van de voordelen van het lokaal implementeren van Kedro voor ML-pipelines is de flexibiliteit en modulariteit die het biedt. Kedro maakt het mogelijk om machine learning-pipelines op een flexibele wijze samen te stellen, waardoor onderzoekers gemakkelijk verschillende componenten kunnen toevoegen, verwijderen of aanpassen, afhankelijk van de veranderende behoeften van hun onderzoek.
+Een van de voordelen van het lokaal implementeren van Kedro voor ML-pipelines is de flexibiliteit en modulariteit die het biedt. Kedro maakt het mogelijk om Machine Learning-pipelines op een flexibele wijze samen te stellen, waardoor onderzoekers gemakkelijk verschillende componenten kunnen toevoegen, verwijderen of aanpassen, afhankelijk van de veranderende behoeften van hun onderzoek.
 
 Een ander belangrijk voordeel is het aspect van versiebeheer en reproduceerbaarheid dat Kedro integreert in ML-pipelines. Dit stelt onderzoekers in staat om experimenten te reproduceren en resultaten te valideren, wat cruciaal is voor het verzekeren van transparantie en betrouwbaarheid in onderzoek.
 
@@ -126,7 +126,7 @@ Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch 
 
 Een andere geavanceerde functionaliteit van Kedro is de mogelijkheid om automatisch gedetailleerde documentatie voor ML-pipelines te genereren, inclusief informatie over datasets, parameters en dependencies. Dit verbetert de traceerbaarheid en maakt het gemakkelijker om de pipeline te begrijpen en te onderhouden. Daarnaast biedt Kedro tools voor het visualiseren van ML-pipelines, waardoor onderzoekers een overzicht krijgen van de gegevensstroom en de interacties tussen verschillende componenten. Dit vergemakkelijkt het begrip van de pipeline-architectuur en identificeert mogelijke optimalisaties.
 
-Kedro biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kedro kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten reproduceerbaar maken en zich richten op het verkennen van complexe onderzoeksvraagstukken.
+Kedro biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van Machine Learning-pipelines in lokale omgevingen. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kedro kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten reproduceerbaar maken en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MLflow}
 
@@ -155,37 +155,37 @@ In conclusie, MLflow vestigt zich als een onschatbare troef voor onderzoekers di
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
 
-\autocite{Kubeflow2021}, een open-source machine learning toolkit ontworpen voor Kubernetes, biedt een krachtige infrastructuur voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in zowel lokale als cloudomgevingen. Deze scriptie onderzoekt de verdiensten van het gebruik van Kubeflow in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
+\autocite{Kubeflow2021}, een open-source Machine Learning toolkit ontworpen voor Kubernetes, biedt een krachtige infrastructuur voor onderzoekers bij het opzetten en beheren van Machine Learning-pipelines in zowel lokale als cloudomgevingen. Deze scriptie onderzoekt de verdiensten van het gebruik van Kubeflow in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
 
-Kubeflow maakt gebruik van Kubernetes om machine learning-workloads te beheren, waardoor onderzoekers de mogelijkheid hebben om hun ML-pipelines eenvoudig op te schalen of af te schalen afhankelijk van de behoeften van het onderzoek. Dit maakt het een geschikte keuze voor onderzoeksgroepen van verschillende groottes.
+Kubeflow maakt gebruik van Kubernetes om Machine Learning-workloads te beheren, waardoor onderzoekers de mogelijkheid hebben om hun ML-pipelines eenvoudig op te schalen of af te schalen afhankelijk van de behoeften van het onderzoek. Dit maakt het een geschikte keuze voor onderzoeksgroepen van verschillende groottes.
 
-Met Kubeflow kunnen onderzoekers de implementatie en het beheer van machine learning-pipelines automatiseren, waardoor ze minder tijd hoeven te besteden aan het handmatig configureren en monitoren van infrastructuur. Dit verhoogt de operationele efficiëntie en stelt onderzoekers in staat zich te concentreren op het onderzoek zelf.
+Met Kubeflow kunnen onderzoekers de implementatie en het beheer van Machine Learning-pipelines automatiseren, waardoor ze minder tijd hoeven te besteden aan het handmatig configureren en monitoren van infrastructuur. Dit verhoogt de operationele efficiëntie en stelt onderzoekers in staat zich te concentreren op het onderzoek zelf.
 
 Kubeflow biedt tools en functies voor het vastleggen van de omgeving en het versiebeheer van de code, waardoor onderzoekers experimenten kunnen reproduceren en resultaten kunnen valideren. Dit draagt bij aan de transparantie en betrouwbaarheid van het onderzoek.
 
-Kubeflow ondersteunt een breed scala aan machine learning-workloads, waaronder training, inferentie en hyperparameteroptimalisatie, waardoor onderzoekers flexibel kunnen experimenteren met verschillende modellen en technieken binnen dezelfde infrastructuur.
+Kubeflow ondersteunt een breed scala aan Machine Learning-workloads, waaronder training, inferentie en hyperparameteroptimalisatie, waardoor onderzoekers flexibel kunnen experimenteren met verschillende modellen en technieken binnen dezelfde infrastructuur.
 
 Kubeflow is ontworpen om naadloos te integreren met Kubernetes, waardoor onderzoekers het gemakkelijk kunnen implementeren en beheren op lokale Kubernetes-clusters. Dit minimaliseert de operationele overhead en bevordert een consistente ontwikkelingservaring.
 
 Kubeflow biedt integratie met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn, waardoor onderzoekers hun favoriete tools kunnen blijven gebruiken binnen de Kubeflow-pipelines. Dit maximaliseert de flexibiliteit en maakt het gemakkelijk om bestaande modellen en code te hergebruiken.
 
-Kubeflow biedt functionaliteiten voor het bijhouden en monitoren van machine learning-experimenten, waardoor onderzoekers inzicht krijgen in de voortgang van hun onderzoek en potentiële problemen kunnen identificeren. Dit vergemakkelijkt het optimaliseren van de prestaties en het vinden van de beste modellen.
+Kubeflow biedt functionaliteiten voor het bijhouden en monitoren van Machine Learning-experimenten, waardoor onderzoekers inzicht krijgen in de voortgang van hun onderzoek en potentiële problemen kunnen identificeren. Dit vergemakkelijkt het optimaliseren van de prestaties en het vinden van de beste modellen.
 
 Kubeflow ondersteunt model deployment en serving, waardoor onderzoekers getrainde modellen gemakkelijk kunnen implementeren en schalen voor productiegebruik. Dit vergemakkelijkt de overgang van experimentele prototypen naar operationele systemen.
 
-Kubeflow biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van machine learning-pipelines in lokale omgevingen. De schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kubeflow kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten efficiënter uitvoeren en zich richten op het verkennen van complexe onderzoeksvraagstukken.
+Kubeflow biedt een overtuigende oplossing voor onderzoekers bij het opzetten en beheren van Machine Learning-pipelines in lokale omgevingen. De schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken het tot een waardevol instrument voor onderzoeksinspanningen. Door gebruik te maken van Kubeflow kunnen onderzoekers hun ontwikkelingsworkflows stroomlijnen, experimenten efficiënter uitvoeren en zich richten op het verkennen van complexe onderzoeksvraagstukken.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
-\autocite{ZenML2024} is een open-source framework dat Python-gebaseerde machine learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+\autocite{ZenML2024} is een open-source framework dat Python-gebaseerde Machine Learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
 
 Een kenmerk van ZenML is de uitgebreide monitoringfunctionaliteit die wordt geboden, waardoor onderzoekers en ontwikkelaars de voortgang en prestaties van hun pipelines nauwkeurig kunnen volgen. Bovendien maakt ZenML het mogelijk om pipelines efficiënt te herstarten vanaf een mislukte stap, waardoor de foutopsporingsprocedure wordt vereenvoudigd en versneld.
 
-Een belangrijk aspect van ZenML is de integratie van MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het framework aantrekkelijk is voor teams die streven naar best practices op het gebied van machine learning operations.
+Een belangrijk aspect van ZenML is de integratie van MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het framework aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
 
 In vergelijking met andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines, valt ZenML op vanwege zijn eenvoudige leercurve, flexibiliteit in configuratie en aanpassing, en zijn brede scala aan functionaliteiten. Bovendien onderscheidt ZenML zich door zijn expliciete focus op MLOps, waardoor het een waardevolle aanwinst is voor onderzoeksgemeenschappen en industriële toepassingen.
 
-Als een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices, is ZenML een geschikte keuze voor data scientists en machine learning engineers die streven naar een effectieve en efficiënte aanpak voor het beheren van ML pipelines.
+Als een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices, is ZenML een geschikte keuze voor data scientists en Machine Learning engineers die streven naar een effectieve en efficiënte aanpak voor het beheren van ML pipelines.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,15 +199,15 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 
 Ter afsluiting demonstreren we de praktische toepassing van Prefect met een proof of concept. We definiëren een eenvoudige ML pipeline die een iris-classificatiemodel traint en evalueert, en laten zien hoe deze lokaal kan worden uitgevoerd met Prefect. Deze PoC bevestigt dat Prefect inderdaad een eenvoudige en efficiënte manier biedt om ML pipelines lokaal uit te voeren.
 
-In conclusie is Prefect een krachtig framework voor het beheren en uitvoeren van ML pipelines. Met zijn gebruiksvriendelijke, schaalbare en flexibele karakter is Prefect een uitstekende keuze voor data scientists en machine learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
+In conclusie is Prefect een krachtig framework voor het beheren en uitvoeren van ML pipelines. Met zijn gebruiksvriendelijke, schaalbare en flexibele karakter is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 
 \subsection{Apache Airflow}
 
-\autocite{ApacheAirflow2024}, een open-source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van machine learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
+\autocite{ApacheAirflow2024}, een open-source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
 
 De flexibiliteit van Airflow komt voort uit zijn vermogen om pipelines te bouwen met diverse taken, zoals het laden van data, het uitvoeren van ML-modellen, en het opslaan van resultaten. Deze taakdiversiteit maakt het platform veelzijdig en aanpasbaar aan verschillende behoeften. Bovendien kan Airflow eenvoudig worden opgeschaald om pipelines te beheren met een groot aantal taken en datavolumes, waardoor het geschikt is voor grootschalige projecten. De betrouwbaarheid van Airflow is een cruciaal voordeel, aangezien het features biedt voor het omgaan met fouten en het herstarten van mislukte taken, waardoor pipelines robuuster en veerkrachtiger worden. Daarnaast biedt het platform een gebruiksvriendelijke interface voor het definiëren en beheren van pipelines, waardoor de complexiteit wordt verminderd en het gemakkelijker wordt om workflows te beheren.
 
-Binnen het domein van machine learning kunnen Airflow-pipelines worden ingezet voor een reeks taken, waaronder data laden, data pre-processing, model training, model evaluatie, model deployment en model monitoring. Door gebruik te maken van Airflow voor ML pipelines, kunnen organisaties profiteren van verbeterde efficiëntie, verhoogde betrouwbaarheid, verbeterde schaalbaarheid en verbeterde reproduceerbaarheid. Het automatiseren van pipeline-uitvoering bespaart tijd en vermindert handmatige inspanningen, terwijl de betrouwbaarheid wordt verhoogd door de ingebouwde foutafhandelingsmechanismen van Airflow. Bovendien kan Airflow moeiteloos worden geschaald om te voldoen aan de eisen van groeiende datasets en complexere taken, terwijl het delen en coderen van pipelines de reproduceerbaarheid verbetert.
+Binnen het domein van Machine Learning kunnen Airflow-pipelines worden ingezet voor een reeks taken, waaronder data laden, data pre-processing, model training, model evaluatie, model deployment en model monitoring. Door gebruik te maken van Airflow voor ML pipelines, kunnen organisaties profiteren van verbeterde efficiëntie, verhoogde betrouwbaarheid, verbeterde schaalbaarheid en verbeterde reproduceerbaarheid. Het automatiseren van pipeline-uitvoering bespaart tijd en vermindert handmatige inspanningen, terwijl de betrouwbaarheid wordt verhoogd door de ingebouwde foutafhandelingsmechanismen van Airflow. Bovendien kan Airflow moeiteloos worden geschaald om te voldoen aan de eisen van groeiende datasets en complexere taken, terwijl het delen en coderen van pipelines de reproduceerbaarheid verbetert.
 
 Niettemin brengt het gebruik van Airflow voor ML pipelines enkele nadelen met zich mee. Het platform heeft een steile leercurve en kan complex zijn om te configureren en te gebruiken. Daarnaast kan Airflow overhead toevoegen aan pipelines, wat de prestaties kan beïnvloeden. Daarom moet de beslissing om Airflow te gebruiken voor ML pipelines zorgvuldig worden afgewogen, rekening houdend met de specifieke behoeften en vereisten van het project \autocite{Harenslak2021}.
 
@@ -215,15 +215,15 @@ In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orc
 
 \subsection{luigi}
 
-\autocite{Luigi2024}, een open-source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe machine learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
+\autocite{Luigi2024}, een open-source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe Machine Learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
 
-De voordelen van Luigi ten opzichte van andere frameworks voor het uitvoeren van machine learning-pipelines zijn duidelijk. Ten eerste is Luigi ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren. Het biedt handige functies die het beheren van pipelines vereenvoudigen. Daarnaast is Luigi schaalbaar en kan het draaien op clusters van machines, waardoor het automatisch taken parallel kan uitvoeren en workflows kan schalen naar grote datasets. Bovendien is het betrouwbaar, met functionaliteit die specifiek is ontworpen om robuust te zijn tegen fouten, waaronder het automatisch opnieuw uitvoeren van taken die mislukken en het herstellen van workflows van fouten.
+De voordelen van Luigi ten opzichte van andere frameworks voor het uitvoeren van Machine Learning-pipelines zijn duidelijk. Ten eerste is Luigi ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren. Het biedt handige functies die het beheren van pipelines vereenvoudigen. Daarnaast is Luigi schaalbaar en kan het draaien op clusters van machines, waardoor het automatisch taken parallel kan uitvoeren en workflows kan schalen naar grote datasets. Bovendien is het betrouwbaar, met functionaliteit die specifiek is ontworpen om robuust te zijn tegen fouten, waaronder het automatisch opnieuw uitvoeren van taken die mislukken en het herstellen van workflows van fouten.
 
-Luigi is een veelgebruikte keuze voor het uitvoeren van machine learning-pipelines in verschillende omgevingen, zoals onderzoek en commerciële implementaties. Het wordt door onderzoekers gebruikt voor het uitvoeren van machine learning-experimenten en door bedrijven om pipelines in productie te nemen. Als open-source project heeft Luigi een actieve community van ontwikkelaars die bijdragen aan de verdere ontwikkeling en uitbreiding van de functionaliteit.
+Luigi is een veelgebruikte keuze voor het uitvoeren van Machine Learning-pipelines in verschillende omgevingen, zoals onderzoek en commerciële implementaties. Het wordt door onderzoekers gebruikt voor het uitvoeren van Machine Learning-experimenten en door bedrijven om pipelines in productie te nemen. Als open-source project heeft Luigi een actieve community van ontwikkelaars die bijdragen aan de verdere ontwikkeling en uitbreiding van de functionaliteit.
 
-Hoewel Luigi Pipelines vaak wordt ingezet op clusters van machines, is het ook relevant voor het lokaal uitvoeren van ML pipelines. Dit kan voordelig zijn voor ontwikkeling en testen, vooral bij kleine datasets of wanneer gevoelige data betrokken is. Luigi vereenvoudigt het lokale uitvoeren van machine learning-pipelines door taken automatisch parallel uit te voeren op de lokale machine en workflows te herstellen van eventuele fouten.
+Hoewel Luigi Pipelines vaak wordt ingezet op clusters van machines, is het ook relevant voor het lokaal uitvoeren van ML pipelines. Dit kan voordelig zijn voor ontwikkeling en testen, vooral bij kleine datasets of wanneer gevoelige data betrokken is. Luigi vereenvoudigt het lokale uitvoeren van Machine Learning-pipelines door taken automatisch parallel uit te voeren op de lokale machine en workflows te herstellen van eventuele fouten.
 
-Met een actieve ontwikkelingscommunity kunnen we verwachten dat Luigi Pipelines in de toekomst nog krachtiger en flexibeler zal worden. Dit maakt het een aantrekkelijke keuze voor zowel grootschalige implementaties als lokale uitvoeringen van machine learning-pipelines.
+Met een actieve ontwikkelingscommunity kunnen we verwachten dat Luigi Pipelines in de toekomst nog krachtiger en flexibeler zal worden. Dit maakt het een aantrekkelijke keuze voor zowel grootschalige implementaties als lokale uitvoeringen van Machine Learning-pipelines.
 
 %%%% Apache Airflow: https://airflow.apache.org/
 %%Luigi: https://luigi.readthedocs.io/en/stable/
