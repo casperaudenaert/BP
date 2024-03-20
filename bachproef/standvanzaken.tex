@@ -28,7 +28,7 @@ Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de product
 
 Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monitoring en Onderhoudsfase. Hierbij wordt gecontroleerd op prestatieverlies of achteruitgang in voorspellingsnauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse gegevens om de prestaties te behouden \autocite{Schlegel2022}.
 
-\subsection{Soorten Machine Learning Methoden}
+\subsection{Machine Learning Methoden}
 
 Er zijn verschillende soorten machine learning-methoden, waaronder \autocite{Mahesh2019}:
 
@@ -58,6 +58,14 @@ Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor im
 
 Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.
 
+\begin{figure}
+    \includegraphics[width=\linewidth]{cdci.png}
+    \caption{CI/CD Flow}
+    \label{fig:CICD_flow}
+  \end{figure}
+  
+Figuur \ref{fig:CICD_flow} toont de flow van een CI/CD pipeline.
+
 Binnen het domein van datamanagement benadrukken onderzoekers de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een essentiële rol spelen bij het ontwikkelen van data-efficiënte ML-modellen en het waarborgen van de consistentie en betrouwbaarheid van datastromen.
 
 CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. Ze versnellen de levering van software, verhogen de kwaliteit en betrouwbaarheid, en bevorderen de samenwerking tussen teams. Datapipelines spelen een cruciale rol in ML door dataverwerking te automatiseren en de efficiëntie van modeltraining te verhogen.
@@ -70,12 +78,24 @@ Machine learning pipelines zijn geautomatiseerde workflows die zijn ontworpen om
 
 De voordelen van machine learning pipelines zijn talrijk. Ten eerste verhogen ze de efficiëntie door repetitieve taken te automatiseren, waardoor de doorlooptijd van ML-projecten wordt verkort. Bovendien zorgen pipelines voor verbeterde reproduceerbaarheid, doordat ze garanderen dat experimenten op een consistente manier worden uitgevoerd, wat essentieel is voor wetenschappelijke validatie en het delen van resultaten. Verder bieden pipelines een betere schaalbaarheid door de implementatie van ML-modellen op grotere datasets en in productieomgevingen te vergemakkelijken. Ten slotte vergroten ze de transparantie van het ML-proces door de stappen in de workflow te documenteren en te volgen.
 
-Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, zoals Apache Airflow, Kubeflow, TensorFlow Extended (TFX) en Amazon SageMaker. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren, afhankelijk van de specifieke behoeften en vereisten van een project.
+Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, zoals Apache Airflow, Kubeflow, Kedro, MLflow, luigi, prefect. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren, afhankelijk van de specifieke behoeften en vereisten van een project.
 
 Al met al bieden machine learning pipelines een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren, waardoor de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten worden bevorderd.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frameworks}
+
+Machine learning pipelines zijn een cruciaal onderdeel van het machine learning proces \autocite{Jordan2015}. Ze automatiseren de stappen van dataverzameling en -voorbereiding tot modeltraining en -evaluatie, waardoor het efficiënter en reproduceerbaarder wordt.
+
+Traditioneel worden machine learning pipelines uitgevoerd op cloudplatforms of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van machine learning pipelines biedt een aantal voordelen:
+
+\begin{itemize}
+  \item Lagere kosten: Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
+  \item Eenvoudige implementatie: Lokale pipelines zijn eenvoudiger te implementeren en te beheren dan pipelines op cloudplatforms.
+  \item Flexibiliteit: Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
+\end{itemize}
+
+Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van machine learning pipelines. We bespreken de voordelen en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor uw behoeften.
 \subsection{Kedro}
 
 \autocite{Kedro2024}, een open-source Python library voor het bouwen van betrouwbare, reproduceerbare en onderhoudbare machine learning-pipelines, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Kedro in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
@@ -181,7 +201,7 @@ In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orc
 
 \subsection{luigi}
 
-Luigi, een open-source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe machine learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
+\autocite{Luigi2024}, een open-source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe machine learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
 
 De voordelen van Luigi ten opzichte van andere frameworks voor het uitvoeren van machine learning-pipelines zijn duidelijk. Ten eerste is Luigi ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren. Het biedt handige functies die het beheren van pipelines vereenvoudigen. Daarnaast is Luigi schaalbaar en kan het draaien op clusters van machines, waardoor het automatisch taken parallel kan uitvoeren en workflows kan schalen naar grote datasets. Bovendien is het betrouwbaar, met functionaliteit die specifiek is ontworpen om robuust te zijn tegen fouten, waaronder het automatisch opnieuw uitvoeren van taken die mislukken en het herstellen van workflows van fouten.
 
