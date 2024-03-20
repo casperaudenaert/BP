@@ -16,7 +16,13 @@
 %Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 \section{Machine Learning}
 
-Machine Learning (ML) is een onderdeel van Artificial Intelligence (AI), een snel groeiend vakgebied op het raakvlak van data en statistiek dat feitgebaseerde beslissingen in verschillende sectoren aanstuurt \autocite{Jordan2015}. Door het toepassen van wiskundige principes kan Machine Learning verbanden leggen tussen gegevens om betrouwbare voorspellingen te genereren. Dit wordt mogelijk gemaakt door het gebruik van Machine Learning algoritmen, waarmee computers kunnen leren van data. Met iteratieve testen en validatie kunnen ze hun prestaties in de loop van de tijd verbeteren, waardoor ze nieuwe taken kunnen uitvoeren met nieuwe data \autocite{Shaveta2023}.
+Machine Learning (ML) is een onderdeel van Artificial Intelligence (AI), een snel groeiend vakgebied op het raakvlak van data en statistiek dat feitgebaseerde beslissingen in verschillende sectoren aanstuurt \autocite{Jordan2015}. Door het toepassen van wiskundige principes kan Machine Learning verbanden leggen tussen gegevens om betrouwbare voorspellingen te genereren. Dit wordt mogelijk gemaakt door het gebruik van Machine Learning algoritmen, waarmee computers kunnen leren van data. Met iteratieve testen en validatie kunnen ze hun prestaties in de loop van de tijd verbeteren, waardoor ze nieuwe taken kunnen uitvoeren met nieuwe data \autocite{Shaveta2023}.\newline
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{mlcycle.png}
+    \caption{Machine Learning cycle}
+    \label{fig:ML_cycle}
+\end{figure}
 
 De levenscyclus van een typisch machine learning-project omvat verschillende fasen. Allereerst is er de fase van Data Verzameling en Preprocessing, waarin relevante gegevens worden verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het oplossen van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor machine learning-modellen \autocite{Schlegel2022}.
 
@@ -30,17 +36,25 @@ Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monit
 
 \subsection{Machine Learning Methoden}
 
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{mm.png}
+    \caption{Machine Leaening en de subsets ervan}
+    \label{fig:ML_subsets}
+\end{figure}
+
 Er zijn verschillende soorten machine learning-methoden, waaronder \autocite{Mahesh2019}:
+\begin{itemize}
+    \item Supervised Learning, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een voorspellend model te ontwikkelen voor nieuwe, niet eerder geziene gegevens.
 
-Supervised Learning, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een voorspellend model te ontwikkelen voor nieuwe, niet eerder geziene gegevens.
+    \item Unsupervised Learning, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer.
 
-Unsupervised Learning, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de gegevens te ontdekken zonder voorafgaande kennis van de uitvoer.
+    \item Semi-supervised Learning, die een combinatie van gelabelde en ongelabelde gegevens gebruikt voor training, om nauwkeuriger voorspellingen te maken.
 
-Semi-supervised Learning, die een combinatie van gelabelde en ongelabelde gegevens gebruikt voor training, om nauwkeuriger voorspellingen te maken.
+    \item Reinforcement Learning, waarbij het model leert door interactie met een dynamische omgeving, om een optimale strategie te ontwikkelen om beloningen te maximaliseren.
 
-Reinforcement Learning, waarbij het model leert door interactie met een dynamische omgeving, om een optimale strategie te ontwikkelen om beloningen te maximaliseren.
+    \item Deep Learning, een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
+\end{itemize}
 
-Deep Learning, een subset van machine learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
 
 Machine learning speelt een cruciale rol in het genereren van inzichten uit gegevens en het maken van voorspellingen op basis van complexe patronen. Door de levenscyclus van machine learning-projecten te begrijpen en verschillende soorten machine learning-methoden te verkennen, kunnen onderzoekers en ontwikkelaars effectievere en nauwkeurigere modellen ontwikkelen om een breed scala aan problemen op te lossen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,15 +70,15 @@ Continue testing houdt in dat geautomatiseerde tests worden uitgevoerd om de fun
 
 Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het verpakken van de code en het gereedmaken van eventuele configuratiebestanden.
 
-Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.
+Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
 
-\begin{figure}
+\begin{figure}[h]
     \includegraphics[width=\linewidth]{cdci.png}
-    \caption{CI/CD Flow}
+    \caption{CI/CD Flow from \autocite{RedHat2023}}
     \label{fig:CICD_flow}
-  \end{figure}
+\end{figure}
   
-Figuur \ref{fig:CICD_flow} toont de flow van een CI/CD pipeline.
+%Figuur \ref{fig:CICD_flow} toont de flow van een CI/CD pipeline.
 
 Binnen het domein van datamanagement benadrukken onderzoekers de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een essentiële rol spelen bij het ontwikkelen van data-efficiënte ML-modellen en het waarborgen van de consistentie en betrouwbaarheid van datastromen.
 
