@@ -24,21 +24,27 @@ Machine Learning (ML) is een onderdeel van Artificial Intelligence (AI), een sne
     \label{fig:ML_cycle}
 \end{figure}
 
-De levenscyclus van een typisch Machine Learning-project omvat verschillende fasen. Allereerst is er de fase van Data Verzameling en Preprocessing, waarin relevante gegevens worden verzameld en voorbereid voor analyse. Dit omvat het reinigen van gegevens, het verwerken van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor Machine Learning-modellen \autocite{Schlegel2022}.
+Aldus \textcite{Schlegel2022} omvat de levenscyclus van een typisch Machine Learning-project verschillende fasen:
 
-Vervolgens komt de fase van Model Selectie en Training, waarbij een geschikt Machine Learning-model wordt geselecteerd op basis van de aard van de gegevens en het doel van het project. Het model wordt vervolgens getraind met behulp van de verzamelde gegevens, waarbij parameters worden aangepast om een optimaal resultaat te bereiken \autocite{Schlegel2022}.
+\begin{itemize}
+    \item \textbf{Data Verzameling en Preprocessing:} relevante gegevens worden verzameld en voorbereid voor analyse, inclusief het reinigen van gegevens, het verwerken van ontbrekende waarden en het transformeren van gegevens naar een geschikt formaat voor Machine Learning-modellen.
+    
+    \item \textbf{Model Selectie en Training:} een geschikt Machine Learning-model wordt geselecteerd op basis van de aard van de gegevens en het projectdoel. Het model wordt getraind met behulp van verzamelde gegevens, waarbij parameters worden aangepast om een optimaal resultaat te bereiken.
+    
+    \item \textbf{Validatie en Evaluatie:} het getrainde model wordt gevalideerd met behulp van een aparte validatieset om de prestaties op nieuwe, niet eerder geziene data te beoordelen.
+    
+    \item \textbf{Implementatie in de Productieomgeving:} het model wordt geïmplementeerd om voorspellingen te genereren op nieuwe data, bijvoorbeeld door integratie in een bestaande softwareapplicatie of gegevensstroom.
 
-Na het trainen van het model volgt de Validatie en Evaluatie. Het model wordt gevalideerd met behulp van een validatie dataset die niet is gebruikt tijdens de training, om vast te stellen hoe goed het presteert op nieuwe, niet eerder geziene data \autocite{Schlegel2022}.
-
-Als het model succesvol is gevalideerd, wordt het geïmplementeerd in de productieomgeving om voorspellingen te genereren op nieuwe data. Dit kan bijvoorbeeld inhouden dat het model wordt geïntegreerd in een bestaande softwareapplicatie of gegevensstroom \autocite{Schlegel2022}.
-
-Ten slotte, nadat het model is ingezet, wordt het continu gemonitord in de Monitoring en Onderhoudsfase. Hierbij wordt gecontroleerd op prestatieverlies of achteruitgang in nauwkeurigheid. Indien nodig wordt het model opnieuw getraind met verse data om de prestaties te behouden of te verbeteren\autocite{Schlegel2022}.
+    \item \textbf{Monitoring en Onderhoud:} het model wordt continu gemonitord om prestatieverlies of achteruitgang in nauwkeurigheid te detecteren. Indien nodig wordt het model opnieuw getraind met verse data om de prestaties te behouden of te verbeteren.
+\end{itemize}
 
 \subsection{Machine Learning Methoden}
 
+Dit hoofdstuk richt zich op de verschillende methoden binnen het domein van Machine Learning (ML) die worden gebruikt om modellen te trainen en voorspellingen te genereren op basis van gegevens. Aan de hand van praktische voorbeelden en theoretische concepten worden de belangrijkste methoden binnen ML uitgelegd, waarbij de nadruk ligt op het begrijpen van hun toepassingen.
+
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{mm.png}
-    \caption{Machine Leaening en de subsets ervan}
+    \caption{Machine Learning en de subsets ervan}
     \label{fig:ML_subsets}
 \end{figure}
 
@@ -61,17 +67,17 @@ Machine Learning speelt een cruciale rol in het genereren van inzichten uit gege
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CI/CD pipelines}
 
-Een Continuous Integration/Continuous Deployment (CI/CD) pipeline is een cruciaal onderdeel van moderne softwareontwikkeling. Het versnelt en verbetert de betrouwbaarheid van de levering van webapplicaties. Een CI/CD pipeline bestaat uit een geordende reeks stappen die codewijzigingen automatisch integreren, testen en implementeren. Deze stappen omvatten continue integratie, continue testing, continue delivery en continuous deployment.
+Een Continuous Integration/Continuous Deployment (CI/CD) pipeline is een cruciaal onderdeel van moderne softwareontwikkeling. Het versnelt en verbetert de betrouwbaarheid van de levering van webapplicaties. Een CI/CD pipeline bestaat uit een geordende reeks stappen die codewijzigingen automatisch integreren, testen en implementeren. Deze stappen omvatten Continuous Integration, Continuous Testing, Continuous Delivery en Continuous Deployment.
 
 Dit is CI/CD pipelines uitgelegd zoals beschreven in \textcite{NaveenVemuri2024}:
 
-Continue integratie omvat het samenvoegen en testen van codewijzigingen van diverse ontwikkelaars om ervoor te zorgen dat de verschillende delen van de code goed samenwerken en geen conflicten veroorzaken.
+Continuous Integration omvat het samenvoegen en testen van codewijzigingen van diverse ontwikkelaars om ervoor te zorgen dat de verschillende delen van de code goed samenwerken en geen conflicten veroorzaken.
 
-Continue testing houdt in dat geautomatiseerde tests worden uitgevoerd om de functionaliteit en kwaliteit van de code te controleren. Dit zorgt ervoor dat eventuele fouten of bugs worden opgespoord voordat de code verder wordt verwerkt.
+Continuous Testing houdt in dat geautomatiseerde tests worden uitgevoerd om de functionaliteit en kwaliteit van de code te controleren. Dit zorgt ervoor dat eventuele fouten of bugs worden opgespoord voordat de code verder wordt verwerkt.
 
-Vervolgens komt continue delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het compileren van de code en het gereedmaken van eventuele configuratiebestanden.
+Vervolgens komt Continuous Delivery, waar de geteste code wordt voorbereid voor implementatie in de productieomgeving. Dit omvat vaak het compileren van de code en het gereedmaken van eventuele configuratiebestanden.
 
-Tenslotte is er continuous deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
+Tenslotte is er Continuous Deployment, waar de voorbereide code automatisch wordt gedeployed in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{cdci.png}
@@ -87,7 +93,7 @@ CI/CD pipelines zijn een essentieel onderdeel van moderne softwareontwikkeling. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Machine Learning Pipelines}
 
-Machine Learning (ML) is een veelgebruikte technologie die in diverse sectoren wordt ingezet om waardevolle inzichten uit data te halen \citep{Jordan2015}. Het proces van het ontwikkelen van ML-modellen omvat een complexe reeks stappen, van het verzamelen en voorbereiden van data tot het trainen, evalueren en implementeren van modellen. Deze stappen zijn vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten kan belemmeren.
+Het proces van het ontwikkelen van ML-modellen omvat een complexe reeks stappen, van het verzamelen en voorbereiden van data tot het trainen, evalueren en implementeren van modellen. Deze stappen zijn vaak repetitief en tijdrovend, wat de efficiëntie en schaalbaarheid van ML-projecten kan belemmeren.
 
 Machine Learning pipelines zijn geautomatiseerde workflows die zijn ontworpen om deze stappen in de levenscyclus van een ML-project te stroomlijnen en te automatiseren. Ze bestaan uit een reeks geordende taken, zoals data-ingestion, data-preprocessing, feature engineering, modeltraining, modelbeoordeling en modelimplementatie. Deze pipelines zorgen voor consistente en gestructureerde uitvoering van deze taken, waardoor de ontwikkeling en implementatie van ML-modellen efficiënter worden.
 
@@ -106,11 +112,10 @@ Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatforms of o
 
 \begin{itemize}
   \item Lagere kosten: Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
-  \item Eenvoudige implementatie: Lokale pipelines zijn eenvoudiger te implementeren en te beheren dan pipelines op cloudplatforms.
   \item Flexibiliteit: Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
 \end{itemize}
 
-Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voordelen en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze onderzoeksvraag.
+Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voor- en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze onderzoeksvraag.
 \subsection{Kedro}
 
 \textcite{Kedro2024}, een open-source Python library voor het bouwen van betrouwbare, reproduceerbare en onderhoudbare Machine Learning-pipelines, komt naar voren als een krachtig instrument voor onderzoekers bij het opzetten en beheren van lokaal uitgevoerde ML-pipelines. Deze scriptie onderzoekt de verdiensten van het gebruik van Kedro in lokale ML-omgevingen en benadrukt de voordelen ervan bij het stroomlijnen van MLOps-praktijken voor onderzoek en scriptieontwikkeling.
