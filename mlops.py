@@ -4,6 +4,9 @@ import os
 import requests
 from prefect import task, flow, get_run_logger
 from prefect.task_runners import SequentialTaskRunner
+from keras.models import Sequential
+from keras.layers import Conv2D
+from keras.layers import Activation, Flatten, Dense
 
 DATASET = "dataset"
 IMAGE_SIZE = (150, 150)
@@ -97,13 +100,9 @@ def preprocess():
         class_mode='binary',
     )
     return train_generator, validation_generator, test_generator
+
 @task
 def build():
-    from keras.models import Sequential
-    from keras.layers import Conv2D
-    from keras.layers import Activation, Flatten, Dense
-
-
     model = Sequential()
     model.add(Conv2D(32, (3, 3), input_shape=(150, 150, 3)))
     model.add(Activation('relu'))
@@ -118,17 +117,7 @@ def build():
             loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
             metrics=['accuracy'])
     return model
-    
-@task
-def training(model, train_generator,validation_generator):
-    history = model.fit(
-    train_generator,
-    epochs=EPOCHS,
-    steps_per_epoch=len(train_generator),
-    validation_data=validation_generator,
-    validation_steps=len(validation_generator)
-    )
-    return history
+
 @task
 def eval(model, test_generator):
     test_loss, test_accuracy = model.evaluate(
@@ -145,7 +134,14 @@ def main():
     download()
     train_generator, validation_generator, test_generator = preprocess()
     model = build()
-    model = training(model, train_generator, validation_generator)
+    history = model.fit(
+    train_generator,
+    epochs=EPOCHS,
+    steps_per_epoch=len(train_generator),
+    validation_data=validation_generator,
+    validation_steps=len(validation_generator)
+    )
     eval(model, test_generator)
+
 if __name__ == '__main__':
     main()
