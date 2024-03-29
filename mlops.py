@@ -122,21 +122,31 @@ def build_model():
 @flow
 def train():
 
-    model = build_model()
-    train_generator = preprocess()[0]
-    validation_generator = preprocess()[1]
+    # Start an MLflow run
+    with mlflow.start_run():
+        # Log parameters
+        mlflow.log_param("epochs", EPOCHS)
+        mlflow.log_param("batch_size", BATCH_SIZE)
 
-    model.compile(
-        optimizer="adam",
-        loss=tf.keras.losses.BinaryCrossentropy(),
-        metrics=["accuracy"],
-    )
+        model = build_model()
+        train_generator = preprocess()[0]
+        validation_generator = preprocess()[1]
 
-    _ = model.fit(
-        train_generator,
-        epochs=EPOCHS,
-        validation_data=validation_generator,
-    )
+        model.compile(
+            optimizer="adam",
+            loss=tf.keras.losses.BinaryCrossentropy(),
+            metrics=["accuracy"],
+        )
+
+        # Log model as an artifact
+        mlflow.keras.log_model(model, "model")
+
+        _ = model.fit(
+            train_generator,
+            epochs=EPOCHS,
+            validation_data=validation_generator,
+        )
+
     return model
 
 @flow
@@ -153,6 +163,10 @@ def eval(model):
 
 @flow(task_runner=SequentialTaskRunner(), log_prints=True)
 def main():
+    tracking_uri = "sqlite:///mlflow.db"
+    model_name = "customer-sentiment-analysis"
+    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_experiment(model_name)
     download()
     preprocess()
     model = train()
