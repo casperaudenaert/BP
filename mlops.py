@@ -153,8 +153,8 @@ def train():
 
         mlflow.log_artifact("model_architecture.json")
 
-        model.save_weights("model_weights.h5")
-        mlflow.log_artifact("model_weights.h5")
+        # model.save_weights("model_weights.h5")
+        # mlflow.log_artifact("model_weights.h5")
     return model
 
 @flow
