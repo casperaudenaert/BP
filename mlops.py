@@ -10,6 +10,7 @@ from keras.layers import Activation, Flatten, Dense
 import mlflow
 import mlflow.keras
 import argparse
+os.environ["MLFLOW_ENABLE_SYSTEM_METRICS_LOGGING"] = "true"
 
 DATASET = "dataset"
 IMAGE_SIZE = (150, 150)
@@ -121,10 +122,8 @@ def build_model():
 
 @flow
 def train():
-
-    # Start an MLflow run
+    mlflow.autolog()
     with mlflow.start_run():
-        # Log parameters
         mlflow.log_param("epochs", EPOCHS)
         mlflow.log_param("batch_size", BATCH_SIZE)
 
@@ -138,33 +137,42 @@ def train():
             metrics=["accuracy"],
         )
 
-        # Log model as an artifact
         mlflow.keras.log_model(model, "model")
 
-        _ = model.fit(
+        history = model.fit(
             train_generator,
             epochs=EPOCHS,
             validation_data=validation_generator,
         )
+        for metric_name, metric_values in history.history.items():
+            for epoch, value in enumerate(metric_values, 1):
+                mlflow.log_metric(f'{metric_name}_epoch_{epoch}', value)
 
+        with open("model_architecture.json", "w") as json_file:
+            json_file.write(model.to_json())
+
+        mlflow.log_artifact("model_architecture.json")
+
+        model.save_weights("model_weights.h5")
+        mlflow.log_artifact("model_weights.h5")
     return model
 
 @flow
 def eval(model):
     test_generator = preprocess()[2]
+    mlflow.keras.autolog()
     test_loss, test_accuracy = model.evaluate(
         test_generator,
         steps=len(test_generator)
     )
-
     print('Test accuracy:', test_accuracy)
     print('Test Loss:', test_loss)
 
 
 @flow(task_runner=SequentialTaskRunner(), log_prints=True)
 def main():
-    tracking_uri = "sqlite:///mlflow.db"
-    model_name = "customer-sentiment-analysis"
+    tracking_uri = "http://127.0.0.1:8080"
+    model_name = "PoC"
     mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment(model_name)
     download()
@@ -173,4 +181,4 @@ def main():
     eval(model)
 
 if __name__ == '__main__':
-    main()
+    main.serve(name="pipeline-deployment")
