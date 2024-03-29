@@ -7,6 +7,9 @@ from prefect.task_runners import SequentialTaskRunner
 from keras.models import Sequential
 from keras.layers import Conv2D
 from keras.layers import Activation, Flatten, Dense
+import mlflow
+import mlflow.keras
+import argparse
 
 DATASET = "dataset"
 IMAGE_SIZE = (150, 150)
@@ -23,7 +26,7 @@ def download():
         "dataset/val/oranges",
         "dataset/test/oranges",
     ]:
-        os.makedirs(path)
+        os.makedirs(path, exist_ok=True)
 
 
     def download_from_list(list, type):
@@ -101,25 +104,44 @@ def preprocess():
     )
     return train_generator, validation_generator, test_generator
 
-@task
-def build():
-    model = Sequential()
-    model.add(Conv2D(32, (3, 3), input_shape=(150, 150, 3)))
-    model.add(Activation('relu'))
+def build_model():
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.Conv2D(32, (3, 3), input_shape=(150, 150, 3)))
+    model.add(tf.keras.layers.Activation("relu"))
 
-    model.add(Flatten())
-    model.add(Dense(64))
-    model.add(Activation('relu'))
+    model.add(tf.keras.layers.Flatten())
+    model.add(tf.keras.layers.Dense(64))
+    model.add(tf.keras.layers.Activation("relu"))
 
-    model.add(Dense(2))
-    model.add(Activation('sigmoid'))
-    model.compile(optimizer='adam',
-            loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-            metrics=['accuracy'])
+    model.add(tf.keras.layers.Dense(1))
+    model.add(tf.keras.layers.Activation("sigmoid"))
+
     return model
 
-@task
-def eval(model, test_generator):
+
+@flow
+def train():
+
+    model = build_model()
+    train_generator = preprocess()[0]
+    validation_generator = preprocess()[1]
+
+    model.compile(
+        optimizer="adam",
+        loss=tf.keras.losses.BinaryCrossentropy(),
+        metrics=["accuracy"],
+    )
+
+    _ = model.fit(
+        train_generator,
+        epochs=EPOCHS,
+        validation_data=validation_generator,
+    )
+    return model
+
+@flow
+def eval(model):
+    test_generator = preprocess()[2]
     test_loss, test_accuracy = model.evaluate(
         test_generator,
         steps=len(test_generator)
@@ -132,16 +154,9 @@ def eval(model, test_generator):
 @flow(task_runner=SequentialTaskRunner(), log_prints=True)
 def main():
     download()
-    train_generator, validation_generator, test_generator = preprocess()
-    model = build()
-    history = model.fit(
-    train_generator,
-    epochs=EPOCHS,
-    steps_per_epoch=len(train_generator),
-    validation_data=validation_generator,
-    validation_steps=len(validation_generator)
-    )
-    eval(model, test_generator)
+    preprocess()
+    model = train()
+    eval(model)
 
 if __name__ == '__main__':
     main()
