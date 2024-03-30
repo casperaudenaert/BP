@@ -10,8 +10,7 @@ from keras.layers import Activation, Flatten, Dense
 import mlflow
 import mlflow.keras
 import argparse
-import prefect.settings
-print(prefect.settings.PREFECT_HOME.value())
+
 os.environ["MLFLOW_ENABLE_SYSTEM_METRICS_LOGGING"] = "true"
 
 DATASET = "dataset"
