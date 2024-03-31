@@ -1,0 +1,13 @@
+- Task not accepting argument by unknown issue
+    -> Solved by changing the task to subflows
+
+- Setup local MlFlow and Prefect server
+    Prefect: prefect server start
+    MLFlow: mlflow server --host 127.0.0.1 --port 8080
+
+Changing the directory of prefect to the current folder - https://docs.prefect.io/latest/guides/settings/?h=profile
+    export PREFECT_HOME="prefect"
+    prefect config view
+
+ZenML
+ pip install "zenml[terraform]==0.56.2"

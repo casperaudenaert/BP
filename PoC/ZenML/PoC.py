@@ -1,8 +1,8 @@
+from zenml import pipeline, step
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import requests
-from prefect import task, flow, get_run_logger
 from prefect.task_runners import SequentialTaskRunner
 from keras.models import Sequential
 from keras.layers import Conv2D
@@ -18,7 +18,7 @@ IMAGE_SIZE = (150, 150)
 BATCH_SIZE = 8
 EPOCHS = 10
 
-@task
+@step
 def download():
     for path in [
         "dataset/train/apples",
@@ -77,7 +77,7 @@ def download():
         ],
         "orange",
     )
-@task
+@step
 def preprocess():
     train_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
     validation_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
@@ -121,7 +121,7 @@ def build_model():
     return model
 
 
-@flow
+@pipeline
 def train():
     mlflow.autolog(log_models=False, log_model_signatures=False)
     with mlflow.start_run():
@@ -158,7 +158,7 @@ def train():
         # mlflow.log_artifact("model_weights.h5")
     return model
 
-@flow
+@pipeline
 def eval(model):
     test_generator = preprocess()[2]
     mlflow.keras.autolog(log_models=False, log_model_signatures=False)
@@ -170,7 +170,7 @@ def eval(model):
     print('Test Loss:', test_loss)
 
 
-@flow(task_runner=SequentialTaskRunner(), log_prints=True)
+@pipeline
 def main():
     tracking_uri = "http://127.0.0.1:8080"
     model_name = "PoC"
@@ -182,4 +182,4 @@ def main():
     eval(model)
 
 if __name__ == '__main__':
-    main.serve(name="pipeline-deployment")
+    main()
