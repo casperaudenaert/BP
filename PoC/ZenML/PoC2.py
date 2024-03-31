@@ -77,8 +77,8 @@ def download():
         ],
         "orange",
     )
-@step
-def preprocess():
+
+def preprocess() -> list:
     train_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
     validation_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
     test_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
@@ -104,7 +104,7 @@ def preprocess():
         batch_size=BATCH_SIZE,
         class_mode='binary',
     )
-    return train_generator, validation_generator, test_generator
+    return [train_generator,validation_generator,test_generator]
 
 def build_model():
     model = tf.keras.Sequential()
@@ -121,7 +121,7 @@ def build_model():
     return model
 
 
-@pipeline
+@step
 def train():
     mlflow.autolog(log_models=False, log_model_signatures=False)
     with mlflow.start_run():
@@ -158,7 +158,7 @@ def train():
         # mlflow.log_artifact("model_weights.h5")
     return model
 
-@pipeline
+@step
 def eval(model):
     test_generator = preprocess()[2]
     mlflow.keras.autolog(log_models=False, log_model_signatures=False)
