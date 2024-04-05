@@ -231,6 +231,23 @@ Hoewel Luigi Pipelines vaak wordt ingezet op clusters van machines, is het ook r
 
 Met een actieve ontwikkelingscommunity kunnen we verwachten dat Luigi Pipelines in de toekomst nog krachtiger en flexibeler zal worden. Dit maakt het een aantrekkelijke keuze voor zowel grootschalige implementaties als lokale uitvoeringen van Machine Learning-pipelines.
 
+
+\begin{table}[htbp]
+    \centering
+    \caption{Frameworks vergelijking}
+      \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+      \hline
+      \textbf{Framework} & \textbf{OS compatibiliteit} & \textbf{Reproduceerbaarheid} & \textbf{Minimumvereisten} & \textbf{Cloud compatibiliteit} & \textbf{Leesbaar formaat} & \textbf{Lokale uitvoering} & \textbf{Data verzamelen/verwerken} & \textbf{Model trainen/evalueren} & \textbf{Model deployen} \\
+      \hline
+      \multirow{5}[2]{*}{Kedro} & Windows, macOS, Linux & Ja    & Ja    & Ja (Azure ML, AWS SageMaker) & YAML  & Ja    & Ja    & Ja    & Ja \\
+  \cline{2-10}          & \multirow{4}[1]{*}{\textbf{Luigi}} & Windows, macOS, Linux & Ja    & Ja    & Ja (Azure ML, AWS SageMaker) & Python code & Ja    & Ja    & Ja \\
+  \cline{2-10}          &       & Windows, macOS, Linux & Ja    & Ja    & Ja (Azure ML, AWS SageMaker) & Python code & Ja    & Ja    & Ja \\
+  \cline{2-10}          &       & Windows, macOS, Linux & Ja    & Ja    & Ja (Azure ML, AWS SageMaker) & Python code & Ja    & Ja    & Ja \\
+  \cline{2-10}          &       & Windows, macOS, Linux & Ja    & Ja    & Ja (Azure ML, AWS SageMaker) & Python code & Ja    & Ja    & Ja \\
+      \hline
+      \end{tabular}%
+    \label{tab:frameworks}%
+  \end{table}%
 %%%% Apache Airflow: https://airflow.apache.org/
 %%Luigi: https://luigi.readthedocs.io/en/stable/
 %%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
