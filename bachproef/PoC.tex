@@ -2,4 +2,15 @@
 \label{ch:PoC}
 
 \section{Inleiding}
-In deze Proof-Of-Concept word er een Machine Learning pipelines lokaal opgesteld. Dit zal gebeuren aan de hand van de gekozen framework, de gekozen framework is de framework dat voldoet aan alle criteria van de risico analyse.
+Deze documentatie biedt een uitgebreid overzicht van een Proof of Concept (PoC) script dat is ontwikkeld voor het lokaal uitvoeren van een machine learning (ML) pipeline. Het script maakt gebruik van het Prefect-framework voor het orchestreren van de pipeline-taken en MLflow voor het bijhouden van experimenten en logging.
+\section{Scenario}
+In het onderdeel ``Machine Learning Operations'' van de opleiding kregen studenten een labo waarin ze een Machine Learning pipline moesten opzetten met behulp van Azure. De student diende een Python-script te openen in een Python-omgeving en dit script vervolgens te verbinden met de endpoint van de Azure-servers.
+Hierdoor kon de Machine Learning pipeline worden uitgevoerd op de Azure-server. Het script betrof een classificatiemodel om appels van sinaasappels te onderscheiden, bestaande uit drie delen: preprocessing, training en evaluatie. De preprocessing-functie downloadde alle bestanden en paste ze aan naar een uniform formaat. Het trainingsgedeelte trainde het model, dat bestond uit verschillende Keras-lagen. Uiteindelijk werd het model geëvalueerd om de prestaties ervan te meten.
+Voor dit Proof of Concept word het zelfde script gebruikt zoals in de labo van ``Machine Learning Operations''
+
+\section{Probleemstelling}
+Om gebruik te kunnen maken van de Azure-servers, hebben gebruikers credits nodig. Tijdens het eerder genoemde lab waren er studenten die voor aanvang of tijdens het lab geen credits meer hadden. Dit leidde ertoe dat deze studenten hun resultaten niet konden presenteren of zelfs niet konden beginnen aan het lab.
+Daarom wordt in dit onderzoeksvoorstel gekeken naar het opzetten van een lokale installatie van een Machine Learning pipeline.
+\section{Verwacht resultaat}
+Het verwachtte resultaat is een framework dat een Machine Learning pipline lokaal kan uitvoeren en dat het framework voldoet aan alle criteria van de risicoanalyse.
+\section{Uitvoering}
