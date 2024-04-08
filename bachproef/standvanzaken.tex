@@ -287,3 +287,19 @@ De should haves zijn:
 \end{itemize}
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
+\begin{table}[h]
+    \caption{Vergelijking van ML Frameworks}
+    \label{tab:ml_frameworks}
+    \begin{tabular}{lcccccccc}
+        \toprule
+        Framework & OS Compatibility & Reproducibility & Minimum Requirements & Cloud Compatibility & Readable Format & Local Execution & Data Collection \& Processing & Model Training \& Evaluation & Model Deployment \\
+        \midrule
+        Kedro & Windows, macOS, Linux & Ja & Ja & Ja & YAML & Ja & Ja & Ja & Ja \\
+        Luigi & Windows, macOS, Linux & Ja & Ja & Ja & Python code & Ja & Ja & Ja & Ja \\
+        Prefect & Windows, macOS, Linux & Ja & Ja & Ja & Python code & Ja & Ja & Ja & Ja \\
+        Apache Airflow & Windows, macOS, Linux & Ja & Ja & Ja & YAML, Python code & Ja & Ja & Ja & Ja \\
+        ZenML & Windows, macOS, Linux & Ja & Ja & Ja & YAML & Ja & Ja & Ja & Ja \\
+        Kubeflow & Linux & Ja & Ja & Ja & YAML, Python code & Ja & Ja & Ja & Ja \\
+        \bottomrule
+    \end{tabular}
+\end{table}
