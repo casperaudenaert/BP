@@ -287,20 +287,20 @@ De should haves zijn:
 \end{itemize}
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
-\begin{table}[h!]
-\centering
-\begin{tabular}{lcccccccc}
-    \hline
-    Framework & OS Compatibility & Reproducibility & Minimum Requirements & Cloud Compatibility & Readable Format & Local Execution & Data Collection \& Processing & Model Training \& Evaluation & Model Deployment \\
-    \hline\hline
-    Kedro & Windows, macOS, Linux & Ja & Ja & Ja & YAML & Ja & Ja & Ja & Ja \\
-    Luigi & Windows, macOS, Linux & Ja & Ja & Ja & Python code & Ja & Ja & Ja & Ja \\
-    Prefect & Windows, macOS, Linux & Ja & Ja & Ja & Python code & Ja & Ja & Ja & Ja \\
-    Apache Airflow & Windows, macOS, Linux & Ja & Ja & Ja & YAML, Python code & Ja & Ja & Ja & Ja \\
-    ZenML & Windows, macOS, Linux & Ja & Ja & Ja & YAML & Ja & Ja & Ja & Ja \\
-    Kubeflow & Linux & Ja & Ja & Ja & YAML, Python code & Ja & Ja & Ja & Ja \\
-    \hline
+\begin{table}[]
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Criteria & Kedro & Luigi \\
+        \hline
+        OS compatibiliteit & Windows, macOS, Linux & Windows, macOS, Linux \\
+        Reproduceerbaarheid & Ja & Ja \\
+        Minimumvereisten & Ja & Ja \\
+        Cloud compatibiliteit & Azure ML, AWS SageMaker & Azure ML, AWS SageMaker \\
+        Leesbaar formaat & YAML & Python code \\
+        Lokale uitvoering & Ja & Ja \\
+        Data verzamelen/verwerken & Ja & Ja \\
+        Model trainen/evalueren & Ja & Ja \\
+        Model deployen & Ja & Ja \\
+        \hline
 \end{tabular}
-\caption{Vergelijking van ML Frameworks}
-\label{tab:ml_frameworks}
 \end{table}
