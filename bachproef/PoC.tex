@@ -164,16 +164,14 @@ De preprocessing van het notebook ziet er als volgt uit:
         component(args.training_data, args.val_data, args.test_data)
 \end{minted}
 
-De bovenstaande code maakt gebruik van verschillende externe bibliotheken, waaronder \texttt{argparse}, \texttt{glob}, \texttt{os}, \texttt{shutil}, \texttt{cv2} (OpenCV), en \texttt{requests}, en kan worden verdeeld in volgende stukken:
+De bovenstaande code maakt gebruik van verschillende externe bibliotheken, waaronder argparse, glob, os, shutil, cv2 (OpenCV), en requests, en kan worden verdeeld in volgende stukken:
 
 \begin{itemize}
-    \item \textbf{Datasetcreatie}: Het script gebruikt de \texttt{requests}-module om afbeeldingen van appels en sinaasappels te downloaden van verschillende bronnen op het internet. Deze afbeeldingen worden vervolgens ingedeeld in trainings-, validatie- en testsets, elk met een aparte mapstructuur.
+    \item \textbf{Dataset}: Het script gebruikt de requests-module om afbeeldingen van appels en sinaasappels te downloaden van verschillende bronnen op het internet. Deze afbeeldingen worden vervolgens ingedeeld in trainings-, validatie- en testsets, elk met een aparte mapstructuur.
     
-    \item \textbf{Afbeeldingsverwerking}: Na het downloaden worden de afbeeldingen verwerkt met behulp van OpenCV (\texttt{cv2}). Elke afbeelding wordt herschaald naar een standaardformaat van 150x150 pixels en genormaliseerd, zodat deze gereed is voor verwerking door een machine learning-model.
+    \item \textbf{preprocessing}: Na het downloaden worden de afbeeldingen verwerkt met behulp van OpenCV (cv2). Elke afbeelding wordt herschaald naar een standaardformaat van 150x150 pixels en genormaliseerd, zodat deze gereed is voor verwerking door een machine learning-model.
     
-    \item \textbf{Datasetorganisatie}: Na de verwerking worden de afbeeldingen georganiseerd in de mappen voor de trainings-, validatie- en testsets.
-    
-    \item \textbf{Argumentverwerking}: Het script accepteert command-line argumenten via \texttt{argparse}. De gebruiker kan de paden opgeven waar de dataset moet worden opgeslagen voor training, validatie en testen van het machine learning-model.
+    \item \textbf{folder structuur}: Na de verwerking worden de afbeeldingen georganiseerd in de mappen voor de trainings-, validatie- en testsets.
 \end{itemize}
 
 De volgende code geeft het zelfde resultaat maar dan gebruikmakend van het Prefect framework:
