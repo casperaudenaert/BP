@@ -37,7 +37,7 @@ De @flow decorator combineert alle taken en voert ze vervolgens uit. Een voorbee
     def main():
         my_task()
 \end{minted}
-In dit voorbeeld zal de flow de taak uitvoeren die eerder is gedefinieerd in een taak. Deze keer wordt een naam aan de flow gegeven, hoewel dit niet strikt noodzakelijk is, kan het helpen om de code overzichtelijker te maken. Er is geen maximumaantal taken dat aan een flow kan worden toegevoegd. Let op dat een taak niet zelfstandig kan worden uitgevoerd; deze moet altijd binnen een flow worden geplaatst om te worden uitgevoerd.\\
+In dit voorbeeld zal de flow de taak uitvoeren die eerder is gedefinieerd in een taak. Deze keer wordt een naam aan de flow gegeven, hoewel dit niet strikt noodzakelijk is, kan het helpen om de code overzichtelijker te maken. Er is geen maximumaantal taken dat aan een flow kan worden toegevoegd. Let op dat een taak niet zelfstandig kan worden uitgevoerd deze moet altijd binnen een flow worden geplaatst om te worden uitgevoerd.
 
 De task en flows zijn de core van Prefect. Om te beginnen aan het PoC moet eerst alle nodige Python-biblitheken worden geinstalleer.
 De biblitheken die werden gebruikt voor deze PoC zijn:
@@ -48,11 +48,11 @@ De biblitheken die werden gebruikt voor deze PoC zijn:
     \item tensorflow (versie 2.15.0)
 \end{itemize}
 
-deze kunnen als volgt geinstalleerd worden: 
+deze kunnen als volgt worden geinstalleerd: 
 
-\begin{minted}{text}
-    pip install keras==2.15.0 mlflow==2.11.3 requests==2.31.0 tensorflow==2.15.0 tensorflow_macos==2.15.0
-\end{minted}
+% \begin{minted}{text}
+%     pip install keras==2.15.0 mlflow==2.11.3 requests==2.31.0 tensorflow==2.15.0 tensorflow_macos==2.15.0
+% \end{minted}
 
 Dit PoC is gebaseerd op de notebook van labo 3 in het opleidingsonderdeel ``Machine Learning Operations''
 %github?
