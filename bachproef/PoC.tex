@@ -50,20 +50,20 @@ De biblitheken die werden gebruikt voor deze PoC zijn:
 
 deze kunnen als volgt worden geinstalleerd: 
 
-% \begin{minted}{text}
-%     pip install keras==2.15.0 mlflow==2.11.3 requests==2.31.0 tensorflow==2.15.0 tensorflow_macos==2.15.0
-% \end{minted}
+\begin{minted}{text}
+    pip install keras==2.15.0 mlflow==2.11.3 requests==2.31.0 tensorflow==2.15.0 tensorflow_macos==2.15.0
+\end{minted}
 
 Dit PoC is gebaseerd op de notebook van labo 3 in het opleidingsonderdeel ``Machine Learning Operations''
 %github?
 
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{download.png}
-    \caption{Flow in Azure, Bron: Machine Learning Operations}
-    \label{fig:Resultaten in Azure}
-\end{figure}
+% \begin{figure}[h]
+%     \includegraphics[width=\linewidth]{download.png}
+%     \caption{Flow in Azure, Bron: Machine Learning Operations}
+%     \label{fig:Resultaten in Azure}
+% \end{figure}
 
-Figuur \ref{fig:Resultaten in Azure} toont de flow aan hoe de notebook van Machine Learning Operations eruit ziet in een Azure omgeving, hier kan duidelijk gezien worden dat er een flow is van 3 taken.
+%Figuur \ref{fig:Resultaten in Azure} toont de flow aan hoe de notebook van Machine Learning Operations eruit ziet in een Azure omgeving, hier kan duidelijk gezien worden dat er een flow is van 3 taken.
 Dit werd eerder toegewezen in het scenario, maar hier zie je de 3 taken: preprocessing, train en eval.
 
 In dit deel van het PoC gaan we het resultaat van labo 3 nabootsen met Prefect.
