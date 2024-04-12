@@ -14,15 +14,15 @@ Daarom wordt in dit onderzoeksvoorstel gekeken naar het opzetten van een lokale 
 \section{Verwacht resultaat}
 Het verwachtte resultaat is een framework dat een Machine Learning pipline lokaal kan uitvoeren en dat het framework voldoet aan alle criteria van de risicoanalyse.
 \section{Uitvoering}
-De uitvoering van deze Proof of Concept (PoC) zal worden uitgevoerd met behulp van het Prefect-framework samen met MLFlow. Prefect voldoet aan alle criteria van de risicoanalyse en heeft een niet al te steile leercurve, waardoor het een geschikte keuze is voor een labo binnen het opleidingsonderdeel ``Machine Learning Operations''.
+% De uitvoering van deze Proof of Concept (PoC) zal worden uitgevoerd met behulp van het Prefect-framework samen met MLFlow. Prefect voldoet aan alle criteria van de risicoanalyse en heeft een niet al te steile leercurve, waardoor het een geschikte keuze is voor een labo binnen het opleidingsonderdeel ``Machine Learning Operations''.
 
-Prefect biedt verschillende voordelen ten opzichte van andere frameworks. Ten eerste maakt het eenvoudig plannen van de pipeline mogelijk, zodat deze op een specifiek tijdstip kan worden uitgevoerd. Bovendien is Prefect een Python-bibliotheek, waardoor de enige vereiste kennis Python is, wat mag worden verwacht van de studenten. Daarnaast is het mogelijk om zelf een Prefect-server te starten, waardoor alles lokaal kan worden uitgevoerd, wat overeenkomt met het doel van deze proof of concept.
+% Prefect biedt verschillende voordelen ten opzichte van andere frameworks. Ten eerste maakt het eenvoudig plannen van de pipeline mogelijk, zodat deze op een specifiek tijdstip kan worden uitgevoerd. Bovendien is Prefect een Python-bibliotheek, waardoor de enige vereiste kennis Python is, wat mag worden verwacht van de studenten. Daarnaast is het mogelijk om zelf een Prefect-server te starten, waardoor alles lokaal kan worden uitgevoerd, wat overeenkomt met het doel van deze proof of concept.
 
-MLFlow zal ook worden gebruikt in deze Proof of Concept. Deze bibliotheek zal zorgen voor het bijhouden van metingen tijdens het machine learning proces. Dit omvat onder andere metingen zoals de nauwkeurigheid van het model, het verlies van het model, en het zal ook alle systeemeigenschappen bijhouden.
+% MLFlow zal ook worden gebruikt in deze Proof of Concept. Deze bibliotheek zal zorgen voor het bijhouden van metingen tijdens het machine learning proces. Dit omvat onder andere metingen zoals de nauwkeurigheid van het model, het verlies van het model, en het zal ook alle systeemeigenschappen bijhouden.
 
-Prefect werkt met behulp van ``decorators'', die Prefect in staat stellen om Python-functies te herkennen en uit te voeren als een pipeline. De twee decorators die Prefect gebruikt zijn @task en @flow.
+% Prefect werkt met behulp van ``decorators'', die Prefect in staat stellen om Python-functies te herkennen en uit te voeren als een pipeline. De twee decorators die Prefect gebruikt zijn @task en @flow.
 
-De @task decorator markeert een functie als een taak, waardoor meerdere taken kunnen worden samengevoegd in een stroom (flow) en in een specifieke volgorde kunnen worden uitgevoerd. Een voorbeeld van een taak in Prefect wordt hieronder gegeven:
+% De @task decorator markeert een functie als een taak, waardoor meerdere taken kunnen worden samengevoegd in een stroom (flow) en in een specifieke volgorde kunnen worden uitgevoerd. Een voorbeeld van een taak in Prefect wordt hieronder gegeven:
 % \begin{minted}[frame=lines,breaklines, linenos]{python}
 %     @task
 %     def my_task():
