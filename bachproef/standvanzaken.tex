@@ -117,56 +117,75 @@ Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatforms of o
 
 Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voor- en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze onderzoeksvraag.
 \subsection{Kedro}
-\autocite{Kedro2024} is een open-source Python-bibliotheek die de ontwikkeling van betrouwbare, reproduceerbare en onderhoudbare Machine Learning-pipelines vereenvoudigt. Dit framework biedt een krachtige oplossing voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren.
 
-Kedro bied verschillende pluspunten waaronder:
+\textcite{Kedro2024} is een open source Python-bibliotheek die de ontwikkeling van betrouwbare, reproduceerbare en onderhoudbare Machine Learning-pipelines vereenvoudigt. Dit framework biedt een krachtige oplossing voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren.
+
+Kedro biedt verschillende pluspunten waaronder:
+
 \begin{itemize}
     \item \textbf{Flexibiliteit en modulariteit:} Kedro maakt het mogelijk om ML-pipelines op een flexibele manier samen te stellen. Onderzoekers kunnen eenvoudig componenten toevoegen, verwijderen of aanpassen, waardoor ze zich kunnen aanpassen aan de veranderende behoeften van hun onderzoek.
     \item \textbf{Versiebeheer en reproduceerbaarheid:} Kedro integreert versiebeheer in ML-pipelines, waardoor experimenten reproduceerbaar worden en resultaten gevalideerd kunnen worden. Dit is cruciaal voor het bevorderen van transparantie en betrouwbaarheid in onderzoek.
     \item \textbf{Gegevenscatalogus:} Kedro biedt een geïntegreerde gegevenscatalogus waarmee onderzoekers datasets eenvoudig kunnen beheren, documenteren en traceren binnen de ML-pipeline. Dit vereenvoudigt het gegevensbeheer en bevordert de samenwerking tussen teamleden.
     \item \textbf{Lokale uitvoering:} Kedro ondersteunt lokale uitvoering van ML-pipelines, waardoor onderzoekers offline experimenten kunnen uitvoeren en ontwikkelen. Dit is met name gunstig voor onderzoek met gevoelige data of in situaties waar cloudresources niet beschikbaar zijn.
-    \item \textbf{Integratie met populaire ML-frameworks:} Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn. Hierdoor kunnen onderzoekers hun favoriete tools blijven gebruiken binnen de Kedro-pipeline.
+    \item \textbf{Integratie met populaire ML-frameworks:} Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn. Hierdoor kunnen onderzoekers hun favoriete tools blijven gebruiken binnen de Kedro pipeline.
     \item \textbf{Virtual environments:} Kedro ondersteunt het gebruik van virtual environments, waardoor onderzoekers afhankelijkheden kunnen isoleren en een gecontroleerde ontwikkelingsomgeving kunnen behouden.
     \item \textbf{Automatische documentatie:} Kedro kan automatisch gedetailleerde documentatie genereren voor ML-pipelines, inclusief informatie over datasets, parameters en dependencies.
     \item \textbf{Visualisatie:} Kedro biedt tools voor het visualiseren van ML-pipelines, waardoor onderzoekers een beter begrip krijgen van de gegevensstroom en de interacties tussen verschillende componenten.
 \end{itemize}
 
-Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee er rekening zou moeten gehouden worden:
+Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee rekening moet gehouden worden:
 
 \begin{itemize}
     \item \textbf{Leercurve:} Kedro heeft een zekere leercurve, hoewel de integratie met populaire ML-frameworks de overstap vereenvoudigt.
     \item \textbf{Opslagruimte:} Lokale uitvoering van ML-pipelines kan, afhankelijk van de datasetgrootte, veel opslagruimte vereisen.
-    \item \textbf{Beperkte schaalbaarheid:} Kedro is primair gericht op lokale uitvoering en is mogelijk niet de beste keuze voor grootschalige ML-pipelines die op distributed computing-infrastructuur draaien.
+    \item \textbf{Beperkte schaalbaarheid:} Kedro is primair gericht op lokale uitvoering en is mogelijk niet de beste keuze voor grootschalige ML-pipelines die op distributed computing infrastructuur draaien.
 \end{itemize}
 
+% TODO: bedoel je de cloud met dat laatste puntje hier?
+% TODO: kan het eenvoudig vertaald worden naar bv. k8s?
+
 De volgende code is een Machine Learning-pipelines in Kedro: 
-    
+
+% TODO: ik vermoed dat je hier nog iets moet aanvullen?
+
 Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MLflow}
-\autocite{MLflow2023} is een open-source Python-bibliotheek ontwikkeld door Databricks die een uitgebreide set functionaliteiten biedt voor het beheren van Machine Learning (ML)-projecten. De vier pijlers van MLflow zijn Tracking, Projects, Models en Registry.
+
+\textcite{MLflow2023} is een open source Python bibliotheek ontwikkeld door Databricks die een uitgebreide set functionaliteiten biedt voor het beheren van Machine Learning (ML) projecten. De vier pijlers van MLflow zijn Tracking, Projects, Models en Registry:
+
 \begin{itemize}
     \item \textbf{Tracking:} MLflow Tracking biedt een eenvoudige manier om experimenten te volgen en resultaten te vergelijken. Het registreert nauwkeurig relevante details gedurende de ML-levenscyclus, zoals code, parameters, metrieken en artefacten (modellen, datasets). Dit maakt het voor onderzoekers naadloos mogelijk om eerdere experimenten te reproduceren en verschillende configuraties te vergelijken.
     \item \textbf{Projects:} MLflow Projects zorgt voor een uniforme structuur voor ML-projecten en bevordert herbruikbaarheid. Onderzoekers kunnen gestandaardiseerde projectstructuren definiëren met MLflow Projects, waardoor consistente en reproduceerbare onderzoeksomgevingen worden gecreëerd.
     \item \textbf{Models:} MLflow Models biedt tools om modellen te verpakken en te implementeren in verschillende omgevingen. Het stroomlijnt de implementatie van ML-modellen in productieomgevingen door ze te verpakken in een gestandaardiseerd formaat, inclusief de modelcode, afhankelijkheden en configuratiedetails.
     \item \textbf{Registry:} MLflow Registry fungeert als een centrale hub voor het beheren van modelversies. Het stelt onderzoekers in staat om een gecentraliseerd repository in te stellen voor geregistreerde modellen, waardoor ze verschillende versies van modellen kunnen organiseren, volgen en openen.
 \end{itemize}
+
+% TODO: "bezig houden" klinkt negatief, zoek een beter verwoording :) je gebruikt dit nog hieronder!
+
 MLflow biedt verschillende voordelen voor onderzoekers die zich bezighouden met ML-projecten:
+
 \begin{itemize}
     \item \textbf{Verbeterde reproduceerbaarheid:} De zorgvuldige logging- en trackingmogelijkheden van MLflow garanderen dat experimenten gemakkelijk reproduceerbaar zijn, wat de geloofwaardigheid en betrouwbaarheid van onderzoek versterkt.
     \item \textbf{Gestroomlijnde samenwerking:} Gecentraliseerd model- en experimentbeheer bevordert naadloze samenwerking tussen onderzoekers, doordat ze elkaars werk eenvoudig kunnen delen en volgen.
     \item \textbf{Verbeterde efficiëntie:} MLflow automatiseert tijdrovende taken zoals experimenttracking en modelbeheer, waardoor onderzoekers waardevolle tijd kunnen vrijmaken voor kernonderzoeksactiviteiten.
     \item \textbf{Vereenvoudigde implementatie:} MLflow stroomlijnt het implementatieproces, waardoor onderzoekers hun modellen snel en efficiënt kunnen overbrengen van onderzoek naar productieomgevingen.
 \end{itemize}
+
 Er zijn enkele mogelijke nadelen verbonden aan het gebruik van MLflow voor het lokaal uitvoeren van Machine Learning pipelines:
+
 \begin{itemize}
     \item \textbf{Complexiteit:} MLflow kan complex zijn om te installeren en te configureren, vooral voor onderzoekers die niet bekend zijn met Python of Databricks.
     \item \textbf{Vereist kennis:} MLflow vereist kennis van zowel Machine Learning als Python.
     \item \textbf{Beperkte integratie:} De integratie van MLflow met lokale tools en infrastructuur kan beperkt zijn.
     \item \textbf{Opslagruimte:} Het lokaal opslaan van alle experimentgegevens en artefacten kan veel opslagruimte vereisen.
 \end{itemize}
-De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow: 
+
+De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
+
+% TODO: bespreek deze code ook!
+
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
     import mlflow.sklearn
@@ -194,7 +213,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verhogen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
-\autocite{Kubeflow2021} is een open-source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
+\autocite{Kubeflow2021} is een open source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
 Kubeflow biedt verschillende voordelen voor onderzoekers die zich bezighouden met het opzetten en beheren van Machine Learning-pipelines:
 \begin{itemize}
     \item \textbf{Schaalbaarheid:} Door gebruik te maken van Kubernetes kan Kubeflow ML-workloads eenvoudig schalen, wat onderzoekers in staat stelt om snel te reageren op veranderende behoeften in hun onderzoek.
@@ -218,7 +237,7 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
-\textcite{ZenML2024} is een open-source framework dat Python-gebaseerde Machine Learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+\textcite{ZenML2024} is een open source framework dat Python-gebaseerde Machine Learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
 
 Een kenmerk van ZenML is de uitgebreide monitoringfunctionaliteit die wordt geboden, waardoor onderzoekers en ontwikkelaars de voortgang en prestaties van hun pipelines nauwkeurig kunnen volgen. Bovendien maakt ZenML het mogelijk om pipelines efficiënt te herstarten vanaf een mislukte stap, waardoor de foutopsporingsprocedure wordt vereenvoudigd en versneld.
 
@@ -232,7 +251,7 @@ Als een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
-\textcite{Prefect2024} is een open-source framework dat Python-gebaseerde ML pipelines definieert als gerichte acyclische grafieken (DAG's). Deze aanpak maakt het mogelijk om de stappen in de pipeline expliciet te definiëren en hun onderlinge afhankelijkheden te specificeren. Het framework biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
+\textcite{Prefect2024} is een open source framework dat Python-gebaseerde ML pipelines definieert als gerichte acyclische grafieken (DAG's). Deze aanpak maakt het mogelijk om de stappen in de pipeline expliciet te definiëren en hun onderlinge afhankelijkheden te specificeren. Het framework biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
 De voordelen van het gebruik van Prefect voor het lokaal uitvoeren van ML pipelines zijn aanzienlijk. Het framework biedt een intuïtieve interface die het gemakkelijk maakt om pipelines te definiëren en te beheren. Daarnaast is Prefect zeer schaalbaar en kan het pipelines uitvoeren op verschillende platforms, variërend van laptops tot clusters. Bovendien is Prefect flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
 
@@ -243,7 +262,7 @@ Ter afsluiting demonstreren we de praktische toepassing van Prefect met een proo
 In conclusie is Prefect een krachtig framework voor het beheren en uitvoeren van ML pipelines. Met zijn gebruiksvriendelijke, schaalbare en flexibele karakter is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 \subsection{Apache Airflow}
 
-\textcite{ApacheAirflow2024}, een open-source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
+\textcite{ApacheAirflow2024}, een open source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
 
 De flexibiliteit van Airflow komt voort uit zijn vermogen om pipelines te bouwen met diverse taken, zoals het laden van data, het uitvoeren van ML-modellen, en het opslaan van resultaten. Deze taakdiversiteit maakt het platform veelzijdig en aanpasbaar aan verschillende behoeften. Bovendien kan Airflow eenvoudig worden opgeschaald om pipelines te beheren met een groot aantal taken en datavolumes, waardoor het geschikt is voor grootschalige projecten. De betrouwbaarheid van Airflow is een cruciaal voordeel, aangezien het features biedt voor het omgaan met fouten en het herstarten van mislukte taken, waardoor pipelines robuuster en veerkrachtiger worden. Daarnaast biedt het platform een gebruiksvriendelijke interface voor het definiëren en beheren van pipelines, waardoor de complexiteit wordt verminderd en het gemakkelijker wordt om workflows te beheren.
 
@@ -255,11 +274,11 @@ In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orc
 
 \subsection{Luigi}
 
-\textcite{Luigi2024}, een open-source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe Machine Learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
+\textcite{Luigi2024}, een open source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe Machine Learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
 
 De voordelen van Luigi ten opzichte van andere frameworks voor het uitvoeren van Machine Learning-pipelines zijn duidelijk. Ten eerste is Luigi ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren. Het biedt handige functies die het beheren van pipelines vereenvoudigen. Daarnaast is Luigi schaalbaar en kan het draaien op clusters van machines, waardoor het automatisch taken parallel kan uitvoeren en workflows kan schalen naar grote datasets. Bovendien is het betrouwbaar, met functionaliteit die specifiek is ontworpen om robuust te zijn tegen fouten, waaronder het automatisch opnieuw uitvoeren van taken die mislukken en het herstellen van workflows van fouten.
 
-Luigi is een veelgebruikte keuze voor het uitvoeren van Machine Learning-pipelines in verschillende omgevingen, zoals onderzoek en commerciële implementaties. Het wordt door onderzoekers gebruikt voor het uitvoeren van Machine Learning-experimenten en door bedrijven om pipelines in productie te nemen. Als open-source project heeft Luigi een actieve community van ontwikkelaars die bijdragen aan de verdere ontwikkeling en uitbreiding van de functionaliteit.
+Luigi is een veelgebruikte keuze voor het uitvoeren van Machine Learning-pipelines in verschillende omgevingen, zoals onderzoek en commerciële implementaties. Het wordt door onderzoekers gebruikt voor het uitvoeren van Machine Learning-experimenten en door bedrijven om pipelines in productie te nemen. Als open source project heeft Luigi een actieve community van ontwikkelaars die bijdragen aan de verdere ontwikkeling en uitbreiding van de functionaliteit.
 
 Hoewel Luigi Pipelines vaak wordt ingezet op clusters van machines, is het ook relevant voor het lokaal uitvoeren van ML pipelines. Dit kan voordelig zijn voor ontwikkeling en testen, vooral bij kleine datasets of wanneer gevoelige data betrokken is. Luigi vereenvoudigt het lokale uitvoeren van Machine Learning-pipelines door taken automatisch parallel uit te voeren op de lokale machine en workflows te herstellen van eventuele fouten.
 
@@ -268,7 +287,7 @@ Met een actieve ontwikkelingscommunity kunnen we verwachten dat Luigi Pipelines 
 %%Luigi: https://luigi.readthedocs.io/en/stable/
 %%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
 %%% GITHUB PREFECT EN PREFECT DOCS BRON
-\section{Risico Analyse}
+\section{Requirementsanalyse}
 Om te bepalen welk framework moet worden gebruikt, werd in samenwerking met de co-promotor een risicoanalyse opgesteld. Deze analyse omvat alle criteria die een framework moet hebben om te worden gebruikt in het opleidingsonderdeel ``Machine Learning Operations''.
 De risicoanalyse bestaat uit twee delen: de ``must-haves'' en de ``should-haves''. De "must-haves" zijn criteria waaraan het framework absoluut moet voldoen. De ``should-haves'' omvatten de eigenschappen die wenselijk zijn voor een framework, maar niet essentieel zijn.
 De must haves zijn:
