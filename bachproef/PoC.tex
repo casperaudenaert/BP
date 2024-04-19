@@ -1,22 +1,39 @@
-\chapter{\IfLanguageName{dutch}{PoC}{PoC}}%
+\chapter{\IfLanguageName{dutch}{Proof of Concept}{Proof of Concept}}%
 \label{ch:PoC}
 
-\section{Inleiding}
-Deze documentatie biedt een uitgebreid overzicht van een Proof of Concept (PoC) script dat is ontwikkeld voor het lokaal uitvoeren van een machine learning (ML) pipeline. Het script maakt gebruik van het Prefect-framework voor het orchestreren van de pipeline-taken en MLflow voor het bijhouden van experimenten en logging.
+Dit hoofdstuk biedt een uitgebreid overzicht van een Proof of Concept (PoC) script dat is ontwikkeld voor het lokaal uitvoeren van een Machine Learning pipeline. Het script maakt gebruik van het Prefect-framework voor het orchestreren van de pipelinetaken en MLflow voor het bijhouden van experimenten en logging.
+
+% TODO: verwijs hier naar jouw requirements-analyse waar je bepaalt hebt om Prefect en MLflow te gebruiken
+
 \section{Scenario}
-In het onderdeel ``Machine Learning Operations'' van de opleiding kregen studenten een labo waarin ze een Machine Learning pipline moesten opzetten met behulp van Azure. De student diende een Python-script te openen in een Python-omgeving en dit script vervolgens te verbinden met de endpoint van de Azure-servers.
-Hierdoor kon de Machine Learning pipeline worden uitgevoerd op de Azure-server. Het script betrof een classificatiemodel om appels van sinaasappels te onderscheiden, bestaande uit drie delen: preprocessing, training en evaluatie. De preprocessing-functie downloadde alle bestanden en paste ze aan naar een uniform formaat. Het trainingsgedeelte trainde het model, dat bestond uit verschillende Keras-lagen. Uiteindelijk werd het model geëvalueerd om de prestaties ervan te meten.
-Voor dit Proof of Concept word het zelfde script gebruikt zoals in de labo van ``Machine Learning Operations''
+
+In het opleidingsonderdeel ``Machine Learning Operations'' van de opleiding Toegepaste Informatica kregen studenten een opdracht waarin ze een Machine Learning pipline moesten opzetten met behulp van Azure ML. De studenten dienden een Jupyter notebook te openen die in eerste instantie het model lokaal traint en vervolgens de pipeline opbouwt en doorstuurt naar de Azure. Hierdoor kon de Machine Learning pipeline worden uitgevoerd in de Azure cloud.
+
+Het script bouwt een classificatiemodel om appels van sinaasappels te onderscheiden, bestaande uit drie delen: preprocessing, training en evaluatie. Het preprocessinggedeelte downloadt alle bestanden en herschaalt ze naar een uniforme grootte. Het trainingsgedeelte traint het model, dat bestaat uit verschillende Keras-lagen. Uiteindelijk wordt het model geëvalueerd om de prestaties ervan te meten.
+
+Voor de Proof of Concept van deze bachelorproef wordt hetzelfde script gebruikt zoals in deze opdracht.
 
 \section{Probleemstelling}
-Om gebruik te kunnen maken van de Azure-servers, hebben gebruikers credits nodig. Tijdens het eerder genoemde lab waren er studenten die voor aanvang of tijdens het lab geen credits meer hadden. Dit leidde ertoe dat deze studenten hun resultaten niet konden presenteren of zelfs niet konden beginnen aan het lab.
-Daarom wordt in dit onderzoeksvoorstel gekeken naar het opzetten van een lokale installatie van een Machine Learning pipeline.
-\section{Verwacht resultaat}
-Het verwachtte resultaat is een framework dat een Machine Learning pipline lokaal kan uitvoeren en dat het framework voldoet aan alle criteria van de risicoanalyse.
-\section{Uitvoering}
-De uitvoering van deze Proof of Concept (PoC) zal worden uitgevoerd met behulp van het Prefect-framework samen met MLFlow. Prefect voldoet aan alle criteria van de risicoanalyse en heeft een niet al te steile leercurve, waardoor het een geschikte keuze is voor een labo binnen het opleidingsonderdeel ``Machine Learning Operations''.
 
-Prefect biedt verschillende voordelen ten opzichte van andere frameworks. Ten eerste maakt het eenvoudig plannen van de pipeline mogelijk, zodat deze op een specifiek tijdstip kan worden uitgevoerd. Bovendien is Prefect een Python-bibliotheek, waardoor de enige vereiste kennis Python is, wat mag worden verwacht van de studenten. Daarnaast is het mogelijk om zelf een Prefect-server te starten, waardoor alles lokaal kan worden uitgevoerd, wat overeenkomt met het doel van deze proof of concept.
+% TODO: verwijs hier naar de probleemstelling uit de inleiding. Deze sectie kan je in principe hier ook als basis voor gebruiken!
+
+Om gebruik te kunnen maken van de Azure servers, hebben gebruikers credits nodig. Tijdens de eerder genoemde opdracht waren er studenten die voor aanvang van of tijdens de opdracht geen credits meer hadden. Dit leidde ertoe dat deze studenten hun resultaten niet konden presenteren of zelfs niet konden beginnen aan de opdracht. Daarom wordt in dit onderzoeksvoorstel gekeken naar het opzetten van een lokale installatie van een Machine Learning pipeline.
+
+\section{Verwacht resultaat}
+
+% TODO: Dit lijkt mij niet zo relevant om te vermelden als aparte sectie.
+
+Het verwachtte resultaat is een framework dat een Machine Learning pipline lokaal kan uitvoeren en dat het framework voldoet aan alle criteria van de risicoanalyse.
+
+\section{Uitvoering}
+
+% TODO: ik zou eerst de huidige opstelling van opdracht 3 beschrijven (wat de pipeline doet), evt. met een schematische voorstelling erbij
+% TODO: het lijkt alsof de uitleg van Prefect en flow beter in de stand van zaken kan geplaatst worden. Hier kan je dan verwijzen naar de uitleg in de stand van zaken.
+% TODO: bouw vervolgens de pipeline stap voor stap op: installatie van de nodige packages (misschien via venv?), preprocessing, training, evaluatie... en maak hiervoor aparte secties
+
+De Proof of Concept zal worden uitgevoerd met behulp van het Prefect-framework samen met MLFlow. Prefect voldoet aan alle criteria van de risicoanalyse en heeft een niet al te steile leercurve, waardoor het een geschikte keuze is voor een labo binnen het opleidingsonderdeel ``Machine Learning Operations''.
+
+Prefect biedt verschillende voordelen ten opzichte van andere frameworks. Ten eerste maakt het eenvoudig plannen van de pipeline mogelijk, zodat deze op een specifiek tijdstip kan worden uitgevoerd. Bovendien is Prefect een Python-bibliotheek, waardoor de enige vereiste kennis Python is, wat mag worden verwacht van de studenten. Daarnaast is het mogelijk om zelf een Prefect server te starten, waardoor alles lokaal kan worden uitgevoerd, wat overeenkomt met het doel van deze proof of concept.
 
 MLFlow zal ook worden gebruikt in deze Proof of Concept. Deze bibliotheek zal zorgen voor het bijhouden van metingen tijdens het machine learning proces. Dit omvat onder andere metingen zoals de nauwkeurigheid van het model, het verlies van het model, en het zal ook alle systeemeigenschappen bijhouden.
 
@@ -29,7 +46,7 @@ De @task decorator markeert een functie als een taak, waardoor meerdere taken ku
         print("Hallo")
 \end{minted}
 
-In dit voorbeeld zal de taak ``Hallo'' uitvoeren en de naam van de functie dient ook als de naam van de taak.
+In dit voorbeeld zal de taak ``Hallo'' uitprinten en de naam van de functie dient ook als de naam van de taak.
 
 De @flow decorator combineert alle taken en voert ze vervolgens uit. Een voorbeeld van een flow in Prefect wordt hieronder gegeven:
 \begin{minted}[frame=lines,breaklines, linenos]{python}
