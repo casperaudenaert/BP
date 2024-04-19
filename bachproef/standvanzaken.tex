@@ -306,43 +306,43 @@ De should haves zijn:
 \end{itemize}
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
-% \begin{table}[]
-%     \begin{tabular}{|l|c|c|}
-%         \hline
-%         Criteria & Kedro & Luigi \\
-%         \hline
-%         OS compatibiliteit & Windows, macOS, Linux & Windows, macOS, Linux \\
-%         Reproduceerbaarheid & Ja & Ja \\
-%         Minimumvereisten & Ja & Ja \\
-%         Cloud compatibiliteit & Azure ML, AWS SageMaker & Azure ML, AWS SageMaker \\
-%         Leesbaar formaat & YAML & Python code \\
-%         Lokale uitvoering & Ja & Ja \\
-%         Data verzamelen/verwerken & Ja & Ja \\
-%         Model trainen/evalueren & Ja & Ja \\
-%         Model deployen & Ja & Ja \\
-%         \hline
-% \end{tabular}
-% \end{table}
-
 \begin{table}[]
-    \begin{tabular}{|
-    >{\columncolor[HTML]{FFFFFF}}l |
-    >{\columncolor[HTML]{FFFFFF}}c |
-    >{\columncolor[HTML]{FFFFFF}}c |
-    >{\columncolor[HTML]{FFFFFF}}l |
-    >{\columncolor[HTML]{FFFFFF}}l |
-    >{\columncolor[HTML]{FFFFFF}}l |
-    >{\columncolor[HTML]{FFFFFF}}l |}
-    \hline
-    Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & \begin{tabular}[c]{@{}l@{}}Apache \\ Airflow\end{tabular}         & ZenML                                                             & Kubeflow                                                                                \\ \hline
-    OS compatibiliteit                                                     & \begin{tabular}[c]{@{}c@{}}Windows, \\ macOS, \\ Linux\end{tabular} & \begin{tabular}[c]{@{}c@{}}Windows, \\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular}                       \\ \hline
-    Reproduceerbaarheid                                                    & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    Minimumvereisten                                                       & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    Cloud compatibiliteit                                                  & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    Leesbaar formaat                                                       & YAML                                                                & Python code                                                        & Python code                                                       & \begin{tabular}[c]{@{}l@{}}DAGs \\ (Python code)\end{tabular}     & YAML                                                              & {\color[HTML]{1F1F1F} \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}} \\ \hline
-    Lokale uitvoering                                                      & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    Model deployen                                                         & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
-    \end{tabular}
-    \end{table}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Criteria & Kedro & Luigi \\
+        \hline
+        OS compatibiliteit & Windows, macOS, Linux & Windows, macOS, Linux \\
+        Reproduceerbaarheid & Ja & Ja \\
+        Minimumvereisten & Ja & Ja \\
+        Cloud compatibiliteit & Azure ML, AWS SageMaker & Azure ML, AWS SageMaker \\
+        Leesbaar formaat & YAML & Python code \\
+        Lokale uitvoering & Ja & Ja \\
+        Data verzamelen/verwerken & Ja & Ja \\
+        Model trainen/evalueren & Ja & Ja \\
+        Model deployen & Ja & Ja \\
+        \hline
+\end{tabular}
+\end{table}
+
+% \begin{table}[]
+%     \begin{tabular}{|
+%     >{\columncolor[HTML]{FFFFFF}}l |
+%     >{\columncolor[HTML]{FFFFFF}}c |
+%     >{\columncolor[HTML]{FFFFFF}}c |
+%     >{\columncolor[HTML]{FFFFFF}}l |
+%     >{\columncolor[HTML]{FFFFFF}}l |
+%     >{\columncolor[HTML]{FFFFFF}}l |
+%     >{\columncolor[HTML]{FFFFFF}}l |}
+%     \hline
+%     Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & \begin{tabular}[c]{@{}l@{}}Apache \\ Airflow\end{tabular}         & ZenML                                                             & Kubeflow                                                                                \\ \hline
+%     OS compatibiliteit                                                     & \begin{tabular}[c]{@{}c@{}}Windows, \\ macOS, \\ Linux\end{tabular} & \begin{tabular}[c]{@{}c@{}}Windows, \\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular}                       \\ \hline
+%     Reproduceerbaarheid                                                    & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     Minimumvereisten                                                       & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     Cloud compatibiliteit                                                  & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     Leesbaar formaat                                                       & YAML                                                                & Python code                                                        & Python code                                                       & \begin{tabular}[c]{@{}l@{}}DAGs \\ (Python code)\end{tabular}     & YAML                                                              & {\color[HTML]{1F1F1F} \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}} \\ \hline
+%     Lokale uitvoering                                                      & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     Model deployen                                                         & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                                      \\ \hline
+%     \end{tabular}
+%     \end{table}
