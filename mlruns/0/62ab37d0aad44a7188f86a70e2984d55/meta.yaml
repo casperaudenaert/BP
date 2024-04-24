@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/casper/Desktop/BP-Casper_Audenaert/mlruns/0/62ab37d0aad44a7188f86a70e2984d55/artifacts
+end_time: 1713713869149
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 62ab37d0aad44a7188f86a70e2984d55
+run_name: agreeable-roo-915
+run_uuid: 62ab37d0aad44a7188f86a70e2984d55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713713868664
+status: 4
+tags: []
+user_id: casper
