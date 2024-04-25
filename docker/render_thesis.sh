@@ -4,6 +4,7 @@ set -o errexit
 set -o nounset
 
 readonly source_dir="${1}"
+readonly output_dir="../output"
 
 # Enable debug output for troubleshooting purposes
 set -x
@@ -22,6 +23,7 @@ for latex_file in ${source_files}; do
   latexmk \
     -file-line-error \
     -interaction=nonstopmode \
+    -output-directory="${output_dir}" \
     -shell-escape \
     -synctex=1 \
     -xelatex \
