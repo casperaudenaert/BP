@@ -63,8 +63,8 @@
         },
         {
             "args": [
-                "--input-directory=./output",
-                "--output-directory=./output",
+                "--input-directory=%OUTDIR%",
+                "--output-directory=%OUTDIR%",
                 "%DOCFILE%"
             ],
             "command": "biber",
