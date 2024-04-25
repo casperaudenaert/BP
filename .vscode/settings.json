@@ -1,0 +1,75 @@
+{
+  "latex-workshop.latex.outDir": "output",
+  "latex-workshop.latex.recipes": [
+    {
+        "name": "xelatex× 2",
+        "tools": [
+            "xelatex",
+            "xelatex"
+        ]
+    },
+    {
+        "name": "xelatex ➞ biber ➞ xelatex× 2",
+        "tools": [
+            "xelatex",
+            "biber",
+            "xelatex",
+            "xelatex"
+        ]
+    },
+    {
+        "name": "latexmk 🔃",
+        "tools": [
+            "latexmk"
+        ]
+    }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "args": [
+                "-f",
+                "-xelatex",
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "command": "latexmk",
+            "env": {},
+            "name": "latexmk"
+        },
+        {
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-shell-escape",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "command": "xelatex",
+            "env": {},
+            "name": "xelatex"
+        },
+        {
+            "args": [
+                "%DOCFILE%"
+            ],
+            "command": "bibtex",
+            "env": {},
+            "name": "bibtex"
+        },
+        {
+            "args": [
+                "--input-directory=./output",
+                "--output-directory=./output",
+                "%DOCFILE%"
+            ],
+            "command": "biber",
+            "env": {},
+            "name": "biber"
+        }
+    ]
+}
