@@ -145,40 +145,40 @@ Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee reken
 
 De volgende code is een Machine Learning-pipelines in Kedro: 
 
-% \begin{minted}[frame=lines,breaklines, linenos]{python}
-% from kedro.pipeline import Pipeline, node
-% from kedro.pipeline import node
-% from sklearn.model_selection import train_test_split
-% from sklearn.ensemble import RandomForestClassifier
-% from sklearn.metrics import accuracy_score
-% import pandas as pd
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+from kedro.pipeline import Pipeline, node
+from kedro.pipeline import node
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import pandas as pd
 
-% def load_data():
-%     return pd.read_csv("data.csv")
+def load_data():
+    return pd.read_csv("data.csv")
 
-% def split_data(data):
-%     X = data.drop("target", axis=1)
-%     y = data["target"]
-%     return train_test_split(X, y, test_size=0.2, random_state=42)
+def split_data(data):
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    return train_test_split(X, y, test_size=0.2, random_state=42)
 
-% def train_model(X_train, X_test, y_train, y_test):
-%     model = RandomForestClassifier()
-%     model.fit(X_train, y_train)
-%     return model
+def train_model(X_train, X_test, y_train, y_test):
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    return model
 
-% def evaluate_model(model, X_test, y_test):
-%     preds = model.predict(X_test)
-%     accuracy = accuracy_score(y_test, preds)
-%     print("Accuracy:", accuracy)
+def evaluate_model(model, X_test, y_test):
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
+    print("Accuracy:", accuracy)
 
-% pipeline = Pipeline([
-%     node(load_data, None, "data"),
-%     node(split_data, "data", ["X_train", "X_test", "y_train", "y_test"]),
-%     node(train_model, ["X_train", "X_test", "y_train", "y_test"], "model"),
-%     node(evaluate_model, ["model", "X_test", "y_test"], None),
-% ])
+pipeline = Pipeline([
+    node(load_data, None, "data"),
+    node(split_data, "data", ["X_train", "X_test", "y_train", "y_test"]),
+    node(train_model, ["X_train", "X_test", "y_train", "y_test"], "model"),
+    node(evaluate_model, ["model", "X_test", "y_test"], None),
+])
 
-% \end{minted}
+\end{minted}
 
 Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
 
@@ -218,30 +218,30 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 
 % TODO: bespreek deze code ook!
 
-% \begin{minted}[frame=lines,breaklines, linenos]{python}
-%     import mlflow
-%     import mlflow.sklearn
-%     from sklearn.model_selection import train_test_split
-%     from sklearn.ensemble import RandomForestClassifier
-%     from sklearn.metrics import accuracy_score
-%     import pandas as pd
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    import mlflow
+    import mlflow.sklearn
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
     
-%     def train():
-%         data = pd.read_csv("data.csv")
-%         X = data.drop("target", axis=1)
-%         y = data["target"]
-%         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-%         model = RandomForestClassifier()
-%         model.fit(X_train, y_train)
-%         preds = model.predict(X_test)
-%         accuracy = accuracy_score(y_test, preds)
+    def train():
+        data = pd.read_csv("data.csv")
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
         
-%         mlflow.log_metric("accuracy", accuracy)
-%         mlflow.sklearn.log_model(model, "model")
+        mlflow.log_metric("accuracy", accuracy)
+        mlflow.sklearn.log_model(model, "model")
     
-%     if __name__ == "__main__":
-%         train()
-% \end{minted}
+    if __name__ == "__main__":
+        train()
+\end{minted}
 MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verhogen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
@@ -269,15 +269,28 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
-\textcite{ZenML2024} is een open source framework dat Python-gebaseerde Machine Learning (ML) pipelines definieert en beheert, met als doel een end-to-end oplossing te bieden voor het ontwikkelen, implementeren en beheren van dergelijke pipelines. Het framework biedt een geïntegreerde aanpak voor het opslaan van pipelines in een centrale repository, waardoor hergebruik en delen gemakkelijk worden gemaakt. Deze pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+ZenML is een open-source framework voor het definiëren en beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het biedt een end-to-end oplossing voor het ontwikkelen, implementeren en beheren van dergelijke pipelines, met als doel de complexiteit van het ML-levenscyclus te vereenvoudigen.
 
-Een kenmerk van ZenML is de uitgebreide monitoringfunctionaliteit die wordt geboden, waardoor onderzoekers en ontwikkelaars de voortgang en prestaties van hun pipelines nauwkeurig kunnen volgen. Bovendien maakt ZenML het mogelijk om pipelines efficiënt te herstarten vanaf een mislukte stap, waardoor de foutopsporingsprocedure wordt vereenvoudigd en versneld.
+\subsection{Belangrijke Kenmerken van ZenML:}
+\begin{itemize}
+    \item Geïntegreerde pipeline-opslag: ZenML biedt een centrale repository voor het opslaan van pipelines, waardoor hergebruik en delen eenvoudig worden gemaakt.
+    \item Lokale en op afstand uitvoering: Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+    \item Uitgebreide monitoring: ZenML biedt uitgebreide monitoringfunctionaliteit om de voortgang en prestaties van pipelines nauwkeurig te volgen.
+    \item Efficiënt herstarten: Pipelines kunnen efficiënt worden herstart vanaf een mislukte stap, wat de foutopsporing vereenvoudigt en versnelt.
+    \item MLOps-integratie: ZenML integreert MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
+    \item Gebruiksvriendelijkheid: ZenML heeft een eenvoudige leercurve en is flexibel in configuratie en aanpassing.
+    \item Breed scala aan functionaliteiten: ZenML biedt een breed scala aan functionaliteiten om aan de diverse behoeften van ML-projecten te voldoen.
+\end{itemize}
 
-Een belangrijk aspect van ZenML is de integratie van MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het framework aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
+\subsection{Voordelen van ZenML in Vergelijking met Andere Frameworks:}
+\begin{itemize}
+    \item Eenvoudiger te leren: ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
+    \item Flexibeler: ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
+    \item Breder scala aan functionaliteiten: ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
+\end{itemize}
 
-In vergelijking met andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines, valt ZenML op vanwege zijn eenvoudige leercurve, flexibiliteit in configuratie en aanpassing, en zijn brede scala aan functionaliteiten. Bovendien onderscheidt ZenML zich door zijn expliciete focus op MLOps, waardoor het een waardevolle aanwinst is voor onderzoeksgemeenschappen en industriële toepassingen.
-
-Als een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices, is ZenML een geschikte keuze voor data scientists en Machine Learning engineers die streven naar een effectieve en efficiënte aanpak voor het beheren van ML pipelines.
+\subsection*{Conclusie:}
+ZenML is een robuust framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices. Het is een waardevolle aanwinst voor onderzoeksgemeenschappen en industriële toepassingen, en biedt data scientists en Machine Learning engineers een krachtige tool voor het beheren van ML pipelines.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
