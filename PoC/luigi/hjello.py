@@ -85,7 +85,7 @@ class DownloadImages(luigi.Task):
 
 class preprocess(luigi.Task):
     def output(self):
-        return luigi.LocalTarget("preprocess_done.txt")
+        return luigi.
 
     def run(self):
         train_datagen = ImageDataGenerator(rescale=1.0 / 255.0)
@@ -121,7 +121,7 @@ class preprocess(luigi.Task):
         with self.output().open("w") as f:
             json.dump([train_filenames, validation_filenames, test_filenames], f)
 
-class train(luigi.Task):
+class build_model(luigi.Task):
     def requires(self):
         return preprocess()
 
@@ -137,7 +137,11 @@ class train(luigi.Task):
         model.add(tf.keras.layers.Dense(1))
         model.add(tf.keras.layers.Activation("sigmoid"))
 
-        return model
+        
+class train(luigi.Task):
+    def requires(self):
+        return preprocess()
+
 
     def run(self):
         mlflow.autolog(log_models=False, log_model_signatures=False)
@@ -145,12 +149,9 @@ class train(luigi.Task):
             mlflow.log_param("epochs", EPOCHS)
             mlflow.log_param("batch_size", BATCH_SIZE)
 
-            model = self.build_model()
-            with self.input().open("r") as f:
-                content = f.read()
-                print("Content of the file:", content)
-                # Load the generators from the file
-                train_generator, validation_generator, test_generator = json.loads(content)
+            model = build_model()
+            train_generator = preprocess()[0]
+            validation_generator = preprocess()[1]
 
             model.compile(
                 optimizer="adam",
@@ -158,7 +159,7 @@ class train(luigi.Task):
                 metrics=["accuracy"],
             )
 
-            # mlflow.keras.log_model(model, "model")
+            #mlflow.keras.log_model(model, "model")
 
             history = model.fit(
                 train_generator,

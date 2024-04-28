@@ -1,5 +1,5 @@
 - Task not accepting argument by unknown issue
-    -> Solved by changing the task to subflows
+    -> Solved by changing tasks to subflows
 
 - Setup local MlFlow and Prefect server
     Prefect: prefect server start
