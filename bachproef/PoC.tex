@@ -38,17 +38,20 @@ Dit noemt Experiment Tracking, en stelt ons in staat om experimenten bij te houd
 
 Om van MLflow gebruikt te kunnen maken moeten we het eerst importeren hieronder is een codevoorbeeld hoe dit gebeurd:
 
-Nadata MLflow geimporteerd is moeten we alle variablen veranderen zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.
+Nadata MLflow geimporteerd is moeten we alle variablen veranderen zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.\\
 De varaiablen die we moeten bijhouden zijn als volgt:
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
     import mlflow.keras
 \end{minted}
 
-% \begin{itemize}
-%     \item **Parameter Logging:** Het commando hiervoor is ``mflow().log_param''. Dit houd alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
-% \end{itemize}
-
+\begin{itemize}
+    \item Parameter Logging: Het commando hiervoor is ``mflow().log_param''. Dit houd alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
+\end{itemize}
+\section*{Prefect}
+Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow, hierbij worden alle aanpassingen uitgelegd vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
+\section*{ZenML}
+\section*{Dagster}
 
 
 

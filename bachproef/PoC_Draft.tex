@@ -82,3 +82,11 @@ In dit deel van het PoC gaan we het resultaat van labo 3 nabootsen met Prefect.
 Om hier aan te beginnen moeten we eerst het orginele notebook omzetten naar Prefect taken en flows. Er zal gefocust worden op de 3 taken preprocessing, train en eval.
 
 
+\item **Parameter Logging:** Met behulp van `mlflow.log_param()` kunnen we belangrijke parameters van ons experiment vastleggen, zoals het aantal epochs en de batchgrootte. Deze parameters worden gelogd en gekoppeld aan de huidige run, waardoor we later kunnen analyseren hoe verschillende parameters de prestaties van ons model beïnvloeden.
+
+\item **Metric Logging:** Tijdens het trainen van het model loggen we belangrijke trainingsstatistieken, zoals de nauwkeurigheid en het verlies, met behulp van `mlflow.log_metric()`. Deze statistieken worden vastgelegd voor elke epoch van het trainingsproces en kunnen worden gebruikt om de voortgang en de prestaties van het model in de loop van de tijd te analyseren.
+
+\item **Artifact Logging:** Naast het bijhouden van numerieke gegevens, kunnen we met MLflow ook artefacten vastleggen die voortkomen uit ons experiment, zoals de modelarchitectuur en -gewichten. Met `mlflow.log_artifact()` kunnen we deze artefacten opslaan en associëren met de huidige run, waardoor we een volledig beeld krijgen van het experiment.
+
+\item **Auto Logging:** MLflow biedt de mogelijkheid tot automatisch loggen van bepaalde gebeurtenissen, zoals parameters, metrieken en artefacten. In de gegeven code wordt `mlflow.autolog()` gebruikt om automatisch logs te genereren voor de parameters en metrieken van het model. Dit vereenvoudigt het proces van het bijhouden van experimenten en maakt het gemakkelijk om consistentie te handhaven tussen verschillende runs.
+
