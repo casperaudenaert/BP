@@ -127,10 +127,11 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
-
+*.h5
 # Vim-LaTeX
 *.latexmain
 
 # output directory - see make_thesis.sh
 output/
 out/
+PoC/Dagster/my-dagster-project/dataset/
