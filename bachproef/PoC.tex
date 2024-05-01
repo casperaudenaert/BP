@@ -30,9 +30,9 @@ De basis packages dat gebruikt zullen worden in de Proof of Concepts zijn:
 
 In de bijlage van deze Proof of Concept zal er een bestand zijn genaamd ``requirements\_framework.txt'' waarbij dat ``framework'' de naam is van het framework waarvoor de packages zijn. Dit bestand kan samen met ``pip'' gebruikt worden om alle packages te installeren met het volgende commando:
 
-\begin{minted}[frame=lines,breaklines,linenos]{bash}
-    pip install -r "requirements.txt"
-\end{minted}
+% \begin{minted}[frame=lines,breaklines,linenos]{bash}
+%     pip install -r "requirements.txt"
+% \end{minted}
 
 \subsection{Preprocessing}
 Het Preprocessing gedeelte van de pipeline gaat de data voorbereiden zodat het trainen van het model. Dit omvat het het laden en transformeren van de afbeeldingen, zodat deze afbeeldingen gebruikt kunnen worden als invoer voor het trainen van het model. In dit Proof of Concept wordt er gebruikt gemaakt van Tensorflow's ImageDataGenerator om afbeeldingen in te laden, te normalizeren en te voorzien van labels gebaseerd op de mapstructuur. Na het inladen van de afbeeldingen en deze klaar te maken voor het trainen van het model worden de afbeeldingen gesplits in trainings-, validatie- en testsets. In elke van deze sets worden de juiste labels voorzien. figuur x.x toont aan hoe het er voor deze Proof of Concept eruit zal zien. 
