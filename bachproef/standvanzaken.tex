@@ -284,7 +284,7 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
 
 \subsection{Voordelen van ZenML in Vergelijking met Andere Frameworks:}
 \begin{itemize}
-    \item Eenvoudiger te leren: ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
+    \item Eenvoudiger leercurve: ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
     \item Flexibeler: ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
     \item Breder scala aan functionaliteiten: ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
 \end{itemize}
@@ -295,15 +295,28 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
-\textcite{Prefect2024} is een open source framework dat Python-gebaseerde ML pipelines definieert als gerichte acyclische grafieken (DAG's). Deze aanpak maakt het mogelijk om de stappen in de pipeline expliciet te definiëren en hun onderlinge afhankelijkheden te specificeren. Het framework biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
+\texcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafieken (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
-De voordelen van het gebruik van Prefect voor het lokaal uitvoeren van ML pipelines zijn aanzienlijk. Het framework biedt een intuïtieve interface die het gemakkelijk maakt om pipelines te definiëren en te beheren. Daarnaast is Prefect zeer schaalbaar en kan het pipelines uitvoeren op verschillende platforms, variërend van laptops tot clusters. Bovendien is Prefect flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
+Voordelen van Prefect voor lokaal uitvoeren van ML pipelines:
 
-In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi en Kubeflow Pipelines, onderscheidt Prefect zich door zijn gebruiksvriendelijkheid, flexibiliteit en uitgebreide functieset. Het heeft een eenvoudigere leercurve, is gemakkelijker aan te passen en biedt meer mogelijkheden dan zijn tegenhangers.
+\begin{itemize}
+  \item Intuïtieve interface: Prefect biedt een gebruiksvriendelijke interface die het definiëren en beheren van pipelines vereenvoudigt.
+  \item Schaalbaarheid: Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, van laptops tot clusters.
+  \item Flexibiliteit: Prefect is flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
+  \item Uitgebreide functieset: Prefect biedt een uitgebreide functieset voor het beheren en uitvoeren van pipelines.
+\end{itemize}
 
-Ter afsluiting demonstreren we de praktische toepassing van Prefect met een proof of concept. We definiëren een eenvoudige ML pipeline die een iris-classificatiemodel traint en evalueert, en laten zien hoe deze lokaal kan worden uitgevoerd met Prefect. Deze PoC bevestigt dat Prefect inderdaad een eenvoudige en efficiënte manier biedt om ML pipelines lokaal uit te voeren.
+Vergelijking met andere frameworks:
 
-In conclusie is Prefect een krachtig framework voor het beheren en uitvoeren van ML pipelines. Met zijn gebruiksvriendelijke, schaalbare en flexibele karakter is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
+In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi en Kubeflow Pipelines, onderscheidt Prefect zich door:
+
+\begin{itemize}
+  \item Gebruiksvriendelijkheid: Prefect heeft een eenvoudigere leercurve en een intuïtievere interface.
+  \item Flexibiliteit: Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
+  \item Uitgebreide functieset: Prefect biedt een breder scala aan functies dan sommige concurrenten.
+\end{itemize}
+
+Prefect is een krachtig en gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 \subsection{Apache Airflow}
 
 \textcite{ApacheAirflow2024}, een open source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
@@ -318,15 +331,34 @@ In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orc
 
 \subsection{Luigi}
 
-\textcite{Luigi2024}, een open source Python-bibliotheek, biedt een krachtige oplossing voor het uitvoeren van complexe Machine Learning-pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
+Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te creëren die bestaan uit een groot aantal afzonderlijke stappen.
 
-De voordelen van Luigi ten opzichte van andere frameworks voor het uitvoeren van Machine Learning-pipelines zijn duidelijk. Ten eerste is Luigi ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren. Het biedt handige functies die het beheren van pipelines vereenvoudigen. Daarnaast is Luigi schaalbaar en kan het draaien op clusters van machines, waardoor het automatisch taken parallel kan uitvoeren en workflows kan schalen naar grote datasets. Bovendien is het betrouwbaar, met functionaliteit die specifiek is ontworpen om robuust te zijn tegen fouten, waaronder het automatisch opnieuw uitvoeren van taken die mislukken en het herstellen van workflows van fouten.
+Voordelen van Luigi:
 
-Luigi is een veelgebruikte keuze voor het uitvoeren van Machine Learning-pipelines in verschillende omgevingen, zoals onderzoek en commerciële implementaties. Het wordt door onderzoekers gebruikt voor het uitvoeren van Machine Learning-experimenten en door bedrijven om pipelines in productie te nemen. Als open source project heeft Luigi een actieve community van ontwikkelaars die bijdragen aan de verdere ontwikkeling en uitbreiding van de functionaliteit.
+\begin{itemize}
+  \item Gebruiksgemak: Luigi is ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren.
+  \item Schaalbaarheid: Luigi kan draaien op clusters van machines en taken automatisch parallel uitvoeren, waardoor het workflows kan schalen naar grote datasets.
+  \item Betrouwbaarheid: Luigi heeft functionaliteit om fouten te verwerken, zoals het automatisch opnieuw uitvoeren van mislukte taken en het herstellen van workflows.
+  \item Flexibiliteit: Luigi is geschikt voor zowel grootschalige implementaties als lokale uitvoeringen van ML-pipelines.
+\end{itemize}
 
-Hoewel Luigi Pipelines vaak wordt ingezet op clusters van machines, is het ook relevant voor het lokaal uitvoeren van ML pipelines. Dit kan voordelig zijn voor ontwikkeling en testen, vooral bij kleine datasets of wanneer gevoelige data betrokken is. Luigi vereenvoudigt het lokale uitvoeren van Machine Learning-pipelines door taken automatisch parallel uit te voeren op de lokale machine en workflows te herstellen van eventuele fouten.
+Toepassingen van Luigi:
 
-Met een actieve ontwikkelingscommunity kunnen we verwachten dat Luigi Pipelines in de toekomst nog krachtiger en flexibeler zal worden. Dit maakt het een aantrekkelijke keuze voor zowel grootschalige implementaties als lokale uitvoeringen van Machine Learning-pipelines.
+\begin{itemize}
+  \item Onderzoek: Luigi wordt door onderzoekers gebruikt om ML-experimenten uit te voeren en de reproduceerbaarheid van workflows te waarborgen.
+  \item Commerciële implementaties: Bedrijven gebruiken Luigi om ML-pipelines in productie te nemen en de prestaties van modellen te monitoren.
+  \item Lokale ontwikkeling en testen: Luigi vereenvoudigt het lokale uitvoeren van ML-pipelines, wat handig is voor ontwikkeling en testen met kleine datasets of gevoelige data.
+\end{itemize}
+
+Waarom Luigi niet kiezen voor ML-pipelines:
+\begin{itemize}
+    \item Complexiteit: Hoewel Luigi gebruiksvriendelijker is dan sommige andere frameworks, kan het nog steeds complex zijn om te implementeren en te configureren, vooral voor beginners. Dit kan de leercurve verhogen en de tijd die nodig is om pipelines op te zetten verlengen.
+    \item Beperkte integratie: Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
+    \item Beperkte flexibiliteit: Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
+  \end{itemize}
+
+Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
+
 %%%% Apache Airflow: https://airflow.apache.org/
 %%Luigi: https://luigi.readthedocs.io/en/stable/
 %%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
@@ -360,6 +392,7 @@ Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal
 
 
 \begin{table}[]
+    \rotatebox{90}{
     \begin{tabular}{lllllll}
     Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & \begin{tabular}[c]{@{}l@{}}Apache \\ Airflow\end{tabular}         & ZenML                                                             & Kubeflow                                                          \\
     OS compatibiliteit                                                     & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS, \\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} \\
@@ -372,4 +405,5 @@ Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal
     \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
     Model deployen                                                         & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                               
     \end{tabular}
+    }
 \end{table}

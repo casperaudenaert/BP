@@ -48,6 +48,7 @@ Er word gebruik gemaakt keras sequential model, dit betekend dat alle lagen word
     \item Dense laag
 \end{itemize}
 \subsection{Evaluatie}
+Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. 
 
 \section*{MLflow}
 Elk van deze Proof of Concepts bevat MLflow zoals besproken in heeft dit framework heel wat functionaliteiten, voor deze Proof of Concepts gaan we vooral de parameters van het model, de resultaten van de training en de resultaten van de evaluatie bijhouden.
@@ -66,8 +67,8 @@ De varaiablen die we moeten bijhouden zijn als volgt:
     \item Parameter Logging: Het commando hiervoor is ``mflow().log\_param''. Dit houdts alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
 \end{itemize}
 
+De volgende hoodstukken zal gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria.
 \section*{Prefect}
-
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow, hierbij worden alle aanpassingen uitgelegd vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 
 \section*{ZenML}
