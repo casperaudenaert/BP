@@ -40,12 +40,10 @@ Het Preprocessing gedeelte van de pipeline gaat de data voorbereiden zodat het t
 Het Training gedeelte is gaat weldegelijk een Machine Learning-model trainen. Deze Proof of Concept zal gebruik maken van een Convolutional Neural Network (CNN) met behulp van Keras. Dit model bevat verschillende lagen en parameters.
 Er word gebruik gemaakt keras sequential model, dit betekend dat alle lagen worden achtereenvolgens worden uitgevoerd. De volgorde en de lagen die gebruikt worden voor dit Proof of Concept zijn als volgend:
 \begin{itemize}
-    \item Convolutional laag (Conv2D)
-    \item Activatie laag (Activation)
-    \item Flatten laag
-    \item Dense laag
-    \item Activatie laag (Activation)
-    \item Dense laag
+    \item Convolutionele laag (Conv2D)
+    \item Activatielaag (Activation)
+    \item Flatten-laag
+    \item Dense-laag
 \end{itemize}
 \subsection{Evaluatie}
 Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. 
@@ -65,9 +63,11 @@ De varaiablen die we moeten bijhouden zijn als volgt:
 
 \begin{itemize}
     \item Parameter Logging: Het commando hiervoor is ``mflow().log\_param''. Dit houdts alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
+    \item Metric Logging: Tijdens het trainen van het model zal MLflow belangerijke resulaten bijhouden, zoals de nauwkeurigheid en het verlies van het model. Dit word aan de hand van ``mlflow.log\_metric()'' bijgehouden. Deze metrics worden voor elke epoch van het trainingsproces bijgehouden om het verloop van de training te analyseren.
+    \item 
 \end{itemize}
 
-De volgende hoodstukken zal gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria.
+De volgende hoodstukken zal gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria van het requirementsanalyse.
 \section*{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow, hierbij worden alle aanpassingen uitgelegd vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 
