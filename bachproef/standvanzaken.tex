@@ -262,7 +262,48 @@ Hoewel Kubeflow vele voordelen biedt, zijn er ook enkele potentiële nadelen waa
     \item \textbf{Vereist kennis:} Het effectief gebruik van Kubeflow vereist kennis van zowel Machine Learning als Kubernetes, wat een uitdaging kan zijn voor onderzoekers zonder ervaring in deze gebieden.
     \item \textbf{Beperkte ondersteuning:} De ondersteuning voor lokale uitvoering van Kubeflow is beperkter dan voor cloudomgevingen, wat mogelijk beperkingen kan opleggen aan onderzoekers die afhankelijk zijn van lokale resources.
 \end{itemize}
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    import kfp.v2 as kfp
+    from kfp.v2 import dsl
+    from kfp.v2.dsl import ContainerOp, pipeline
+    import pandas as pd
+    from sklearn.metrics import accuracy_score
+    @dsl.pipeline_op(name="data_preprocessing")
+    def preprocess_data(data_path: str) -> kfp.v2.dsl.OutputArgument[pd.DataFrame]:
 
+        data = pd.read_csv(data_path)
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        return X, y
+
+        @dsl.pipeline_op(name="train_model")
+        def train(X_train: pd.DataFrame, y_train: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[RandomForestClassifier]:
+
+        from sklearn.ensemble import RandomForestClassifier
+
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        return model
+
+    @dsl.pipeline_op(name="evaluate_model")
+    def evaluate(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[float]:
+
+
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
+        return accuracy
+
+    @pipeline(name="train_rf_pipeline")
+    def train_rf_pipeline(data_path: str):
+
+    X_train, y_train = preprocess_data(data_path)
+
+    model = train(X_train, y_train)
+
+    accuracy = evaluate(model, X_train.copy(), y_train.copy())
+
+    kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
+\end{minted}
 Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderzoekers die schaalbare en flexibele ML-pipelines willen opzetten en beheren in lokale omgevingen. De voordelen zoals schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken Kubeflow tot een belangrijk instrument voor onderzoeksinspanningen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,7 +328,8 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
     \item Flexibeler: ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
     \item Breder scala aan functionaliteiten: ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
 \end{itemize}
-
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+\end{minted}
 ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices. Het is een waardevolle aanwinst voor onderzoeksgemeenschappen en industriële toepassingen, en biedt data scientists en Machine Learning engineers een krachtige tool voor het beheren van ML pipelines.
 
 
@@ -312,7 +354,8 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
   \item Flexibiliteit: Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
   \item Uitgebreide functies: Prefect biedt meer functies dan sommige concurrenten.
 \end{itemize}
-
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+\end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 \subsection{Apache Airflow}
 
@@ -325,7 +368,8 @@ Binnen het domein van Machine Learning kunnen Airflow-pipelines worden ingezet v
 Niettemin brengt het gebruik van Airflow voor ML pipelines enkele nadelen met zich mee. Het platform heeft een steile leercurve en kan complex zijn om te configureren en te gebruiken. Daarnaast kan Airflow overhead toevoegen aan pipelines, wat de prestaties kan beïnvloeden. Daarom moet de beslissing om Airflow te gebruiken voor ML pipelines zorgvuldig worden afgewogen, rekening houdend met de specifieke behoeften en vereisten van het project \autocite{Harenslak2021}.
 
 In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orchestreren van workflows, met een bijzondere focus op data pipelines. Zijn flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak maken het een aantrekkelijke keuze voor het lokaal uitvoeren van ML pipelines. Echter, potentiële gebruikers moeten zich bewust zijn van de leercurve en mogelijke overhead die gepaard kunnen gaan met het gebruik ervan, en deze afwegen tegen de voordelen die het biedt voor hun specifieke projectbehoeften.
-
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+\end{minted}
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -353,7 +397,8 @@ Waarom Luigi niet kiezen voor ML-pipelines:
     \item Beperkte integratie: Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
     \item Beperkte flexibiliteit: Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
   \end{itemize}
-
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+\end{minted}
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 
 %%%% Apache Airflow: https://airflow.apache.org/

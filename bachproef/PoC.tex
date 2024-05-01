@@ -4,7 +4,14 @@
 Dit deel van het onderzoek presenteert een proof of concept gericht op welk framework er gebruik zal worden om machine learning pipelines lokaal uit te voeren, dat gebruikt kan worden in de cursus ``Machine Learning Operations''.
 Het doel van deze proof of concept is de efficiëntie en bruikbaarheid van deze frameworks te onderzoeken aan de hand van een lokale opstelling met de gekozen frameworks. Hierbij zal de uitvoering van het framework alsook de resultaten en bevindingen hiervan besproken worden.
 Hierna wordt, er aan de hand van de resulaten een conclusie genomen over het gekozen framework.
-
+\section{Vereisten}
+Vooraleer dat er gestart kan worden met het uitwerken van de volgende Proof of Concepts zijn er bepaalde vereisten nodig.
+De vereisten zijn als volgt:
+\begin{itemize}
+    \item Python moet geinstalleerd zijn.
+    \item De package manager ``pip''
+\end{itemize}
+Deze vereisten zorgen ervoor dat de volgende hoofdstukken zonder problemen werken.
 \section{Ontwikkeling van de Machine Learning pipeline}
 In dit onderdeel wordt de opbouw van de Machine Learning pipeline besproken, dit zal er voor zorgen dat het duidelijk is hoe de pipeline in elkaar zit.
 De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de cursus ``Machine Learning Operations''. Deze pipeline is ontworpen om aan de hand van Image Classification het verschil te kunnen herkennen tussen fotos van ``Appelsienen'' en ``Appels'', zoals besproken in de stand van zaken heeft deze pipeline verschillende onderdelen:
@@ -30,7 +37,7 @@ De basis packages dat gebruikt zullen worden in de Proof of Concepts zijn:
 
 In de bijlage van deze Proof of Concept zal er een bestand zijn genaamd ``requirements\_framework.txt'' worden toegevoegd, waarbij ``framework'' de naam is van het gebruikte framework. Dit bestand kan samen met ``pip'' gebruikt worden om alle packages te installeren met het volgende commando:
 
-\begin{minted}[frame=lines,breaklines,linenos]{text}
+\begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install -r "requirements.txt"
 \end{minted}
 
@@ -54,7 +61,7 @@ Dit noemt Experiment Tracking, en stelt ons in staat om experimenten bij te houd
 
 Om van MLflow gebruikt te kunnen maken moeten we het eerst importeren hieronder is een codevoorbeeld hoe dit gebeurd:
 
-Nadata MLflow geimporteerd is moeten we alle variablen veranderen zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.
+Nadata MLflow geimporteerd is, moeten we alle variablen veranderen zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.
 De varaiablen die we moeten bijhouden zijn als volgt:
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
@@ -67,9 +74,17 @@ De varaiablen die we moeten bijhouden zijn als volgt:
     \item 
 \end{itemize}
 
-De volgende hoodstukken zal gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria van het requirementsanalyse.
+\section*{Virtuele omgeving}
+De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria van het requirementsanalyse.
 \section*{Prefect}
-Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow, hierbij worden alle aanpassingen uitgelegd vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
+Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
+\subsection*{Installatie}
+De installatie van Prefect gebruikt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren.
+\begin{minted}[frame=lines,breaklines,linenos]{bash}
+    pip install -r "requirements.txt"
+\end{minted}
+\subsection*{Lokale Server}
+Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren, dit is aan de hand van een lokale server. 
 
 \section*{ZenML}
 
