@@ -15,20 +15,20 @@ De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de c
     \item Evaluatie
 \end{itemize}
 
-De volgende hoofdstukken gaan dieper in op elk onderdeel van de pipeline en zal de werking ervan uitleggen, zoals het diagram 1.4.2 aantoont word elk onderdeel achter elkaar uitgevoerd.
+De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram 1.4.2.
 \subsection*{Packages}
 Dit deel zal alle gebruikte packages kort uitleggen en hoe dat deze geinstelleerd kunnen worden. De packages zijn grotendeels het zelfde voor elke Proof of Concept maar kunnen extra pakcages hebben in verband met het gekozen framework.
 
 De basis packages dat gebruikt zullen worden in de Proof of Concepts zijn:
 \begin{itemize}
-    \item Tensorflow: Zal gebruikt worden om het model te trainen en deze te evalueren, dit werkt samen met Keras.
-    \item os: Zal de mappen aanmaken voor de verschillende sets die gebruikt zullen worden om het model te trainen en te evalueren.
-    \item Requests: Maakt HTTP-verzoeken naar de bronnen van de afbeeldingen om ze te downloaden.
-    \item Keras: Maakt het model doormiddel van verschillende lagen.
-    \item MLFlow: Zal alle resultaten bijhouden van het model en van het trainingsprocess.
+    \item Tensorflow: Voor het trainen en evalueren van het model, Tensorflow werkt samen met Keras hiervoor.
+    \item os: Voor het maken van mappen voor de verschillende datasets die worden gebruikt tijdens de training en de evaluatie van het model.
+    \item Requests: Voor het maken van HTTP-verzoeken naar de links van de afbeeldingen om deze dan te kunnen downloaden.
+    \item Keras: Voor het maken van het model doormiddel van verschillende lagen.
+    \item MLFlow: Voor het bijhouden van alle resultaten van het model, trainingsprocess en de evaluatie.
 \end{itemize}
 
-In de bijlage van deze Proof of Concept zal er een bestand zijn genaamd ``requirements\_framework.txt'' waarbij dat ``framework'' de naam is van het framework waarvoor de packages zijn. Dit bestand kan samen met ``pip'' gebruikt worden om alle packages te installeren met het volgende commando:
+In de bijlage van deze Proof of Concept zal er een bestand zijn genaamd ``requirements\_framework.txt'' worden toegevoegd, waarbij ``framework'' de naam is van het gebruikte framework. Dit bestand kan samen met ``pip'' gebruikt worden om alle packages te installeren met het volgende commando:
 
 % \begin{minted}[frame=lines,breaklines,linenos]{bash}
 %     pip install -r "requirements.txt"
