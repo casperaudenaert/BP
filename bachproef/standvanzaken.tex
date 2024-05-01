@@ -123,20 +123,19 @@ Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zij
 Kedro biedt verschillende pluspunten waaronder:
 
 \begin{itemize}
-    \item \textbf{Flexibiliteit en modulariteit:} Kedro maakt het mogelijk om ML-pipelines op een flexibele manier samen te stellen. Onderzoekers kunnen eenvoudig componenten toevoegen, verwijderen of aanpassen, waardoor ze zich kunnen aanpassen aan de veranderende behoeften van hun onderzoek.
-    \item \textbf{Versiebeheer en reproduceerbaarheid:} Kedro integreert versiebeheer in ML-pipelines, waardoor experimenten reproduceerbaar worden en resultaten gevalideerd kunnen worden. Dit is cruciaal voor het bevorderen van transparantie en betrouwbaarheid in onderzoek.
+    \item \textbf{Flexibiliteit:} Kedro maakt het mogelijk om ML-pipelines op een flexibele manier samen te stellen. Onderzoekers kunnen eenvoudig componenten toevoegen, verwijderen of aanpassen, waardoor ze zich kunnen aanpassen aan de veranderende behoeften van hun onderzoek.
+    \item \textbf{Versiebeheer:} Kedro integreert versiebeheer in ML-pipelines, waardoor experimenten reproduceerbaar worden en resultaten gevalideerd kunnen worden. Dit is cruciaal voor het bevorderen van transparantie en betrouwbaarheid in onderzoek.
     \item \textbf{Gegevenscatalogus:} Kedro biedt een geïntegreerde gegevenscatalogus waarmee onderzoekers datasets eenvoudig kunnen beheren, documenteren en traceren binnen de ML-pipeline. Dit vereenvoudigt het gegevensbeheer en bevordert de samenwerking tussen teamleden.
     \item \textbf{Lokale uitvoering:} Kedro ondersteunt lokale uitvoering van ML-pipelines, waardoor onderzoekers offline experimenten kunnen uitvoeren en ontwikkelen. Dit is met name gunstig voor onderzoek met gevoelige data of in situaties waar cloudresources niet beschikbaar zijn.
-    \item \textbf{Integratie met populaire ML-frameworks:} Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn. Hierdoor kunnen onderzoekers hun favoriete tools blijven gebruiken binnen de Kedro pipeline.
-    \item \textbf{Virtual environments:} Kedro ondersteunt het gebruik van virtual environments, waardoor onderzoekers afhankelijkheden kunnen isoleren en een gecontroleerde ontwikkelingsomgeving kunnen behouden.
-    \item \textbf{Automatische documentatie:} Kedro kan automatisch gedetailleerde documentatie genereren voor ML-pipelines, inclusief informatie over datasets, parameters en dependencies.
-    \item \textbf{Visualisatie:} Kedro biedt tools voor het visualiseren van ML-pipelines, waardoor onderzoekers een beter begrip krijgen van de gegevensstroom en de interacties tussen verschillende componenten.
+    \item \textbf{Integratie met ML-frameworks:} Kedro integreert naadloos met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn. Hierdoor kunnen onderzoekers hun favoriete tools blijven gebruiken binnen de Kedro pipeline.
+    \item \textbf{Automatische documentatie:} Kedro kan automatisch gedetailleerde documentatie genereren voor ML-pipelines, inclusief informatie over datasets, parameters en dependencies aan de hand van de geschreven code.
+    \item \textbf{Visualisatie:} Kedro biedt de mogelijkheid voor het visualiseren van ML-pipelines, waardoor er een beter begrip gekregen kan worden van de gegevensstroom en de interacties tussen verschillende componenten.
 \end{itemize}
 
 Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee rekening moet gehouden worden:
 
 \begin{itemize}
-    \item \textbf{Leercurve:} Kedro heeft een zekere leercurve, hoewel de integratie met populaire ML-frameworks de overstap vereenvoudigt.
+    \item \textbf{Leercurve:} Kedro heeft een hoge leercurve, hoewel de integratie met populaire ML-frameworks dit vereenvoudigt.
     \item \textbf{Opslagruimte:} Lokale uitvoering van ML-pipelines kan, afhankelijk van de datasetgrootte, veel opslagruimte vereisen.
 \end{itemize}
 
@@ -295,28 +294,26 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
-\texcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafieken (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
+\textcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafieken (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
 Voordelen van Prefect voor lokaal uitvoeren van ML pipelines:
 
 \begin{itemize}
-  \item Intuïtieve interface: Prefect biedt een gebruiksvriendelijke interface die het definiëren en beheren van pipelines vereenvoudigt.
-  \item Schaalbaarheid: Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, van laptops tot clusters.
+  \item interface: Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
+  \item Schaalbaarheid: Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, dit kan lokaal maar ook in de cloud zoals, AWS of Azure.
   \item Flexibiliteit: Prefect is flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
-  \item Uitgebreide functieset: Prefect biedt een uitgebreide functieset voor het beheren en uitvoeren van pipelines.
+  \item Uitgebreide functies: Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines.
 \end{itemize}
 
-Vergelijking met andere frameworks:
-
-In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi en Kubeflow Pipelines, onderscheidt Prefect zich door:
+In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi, Kubeflow Pipelines enzovoort, onderscheidt Prefect zich door:
 
 \begin{itemize}
-  \item Gebruiksvriendelijkheid: Prefect heeft een eenvoudigere leercurve en een intuïtievere interface.
+  \item Gebruiksvriendelijkheid: Prefect heeft een eenvoudigere leercurve en een duidelijke interface.
   \item Flexibiliteit: Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
-  \item Uitgebreide functieset: Prefect biedt een breder scala aan functies dan sommige concurrenten.
+  \item Uitgebreide functies: Prefect biedt meer functies dan sommige concurrenten.
 \end{itemize}
 
-Prefect is een krachtig en gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
+Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 \subsection{Apache Airflow}
 
 \textcite{ApacheAirflow2024}, een open source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
