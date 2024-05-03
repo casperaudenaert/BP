@@ -80,7 +80,9 @@ De varaiablen die we moeten bijhouden zijn als volgt:
 \end{itemize}
 
 \section{Virtuele omgeving}
-De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria van het requirementsanalyse.
+De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze voldoen ook aan alle nodige criteria van het requirementsanalyse.
+
+Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libaries.
 \section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 \subsection{Installatie}
@@ -94,7 +96,7 @@ Deze server kan opgestart worden met het commando:
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     prefect server start
 \end{minted}
-Na het uitvoeren van het start commando zou het resulaat van \ref{Prefect_server} te zien moeten zijn.
+Na het uitvoeren van het start commando zou het resulaat van \ref{fig:Prefect_server} te zien moeten zijn.
 \begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
     \caption{Prefect Dashboard}
@@ -107,13 +109,13 @@ Zoals figuut 2 aantoont word dit aan de hand van een commando ingesteld, het maa
 \end{minted}
 Nu dat de server is opgestart en verbonden in met de lokale omgeving, kan via de link die eerder werd ingesteld het Prefect dashboard bezocht worden.
 \subsection{Dashboard}
-Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref{Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
+Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Prefect Dashboard}
     \label{fig:Prefect_Dashboard}
 \end{figure}
-De functies die gezien kunnen worden op \ref{Prefect_Dashboard} zijn:
+De functies die gezien kunnen worden op \ref{fig:Prefect_Dashboard} zijn:
 \begin{itemize}
     \item Dashboard: Geeft een overzicht van alle flow runs, hier kan gekeken worden waneer een flow succesvol of onsuccesvol uitgevoerd werd.
     \item Flow Runs: Geeft een tijdlijn weer met alle flow die uitgevoerd zijn over een bepaalde tijd.
