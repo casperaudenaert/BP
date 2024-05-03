@@ -60,7 +60,7 @@ Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. 
     \item Accuracy van het model en de evaluatie
 \end{itemize}
 
-\section*{MLflow}
+\section{MLflow}
 Elk van deze Proof of Concepts bevat MLflow zoals besproken in heeft dit framework heel wat functionaliteiten, voor deze Proof of Concepts gaan we vooral de parameters van het model, de resultaten van de training en de resultaten van de evaluatie bijhouden.
 Dit noemt Experiment Tracking, en stelt ons in staat om experimenten bij te houden.
 
@@ -79,23 +79,23 @@ De varaiablen die we moeten bijhouden zijn als volgt:
     \item 
 \end{itemize}
 
-\section*{Virtuele omgeving}
+\section{Virtuele omgeving}
 De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze frameworks voldoen ook aan alle nodige criteria van het requirementsanalyse.
-\section*{Prefect}
+\section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
-\subsection*{Installatie}
+\subsection{Installatie}
 De installatie van Prefect gebruikt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren.
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install -r "requirements.txt"
 \end{minted}
-\subsection*{Lokale Server}
+\subsection{Lokale Server}
 Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren, dit is aan de hand van een lokale server. 
 Deze server kan opgestart worden met het commando: 
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     prefect server start
 \end{minted}
-Na het uitvoeren van het start commando zou het resulaat van \ref*{Prefect_server} te zien moeten zijn.
-\begin{figure}[h]
+Na het uitvoeren van het start commando zou het resulaat van \ref{Prefect_server} te zien moeten zijn.
+\begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
     \caption{Prefect Dashboard}
     \label{fig:Prefect_server}
@@ -106,14 +106,14 @@ Zoals figuut 2 aantoont word dit aan de hand van een commando ingesteld, het maa
     prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
 \end{minted}
 Nu dat de server is opgestart en verbonden in met de lokale omgeving, kan via de link die eerder werd ingesteld het Prefect dashboard bezocht worden.
-\subsection*{Dashboard}
-Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref*{Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
+\subsection{Dashboard}
+Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref{Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Prefect Dashboard}
     \label{fig:Prefect_Dashboard}
 \end{figure}
-De functies die gezien kunnen worden op figuur 3 zijn:
+De functies die gezien kunnen worden op \ref{Prefect_Dashboard} zijn:
 \begin{itemize}
     \item Dashboard: Geeft een overzicht van alle flow runs, hier kan gekeken worden waneer een flow succesvol of onsuccesvol uitgevoerd werd.
     \item Flow Runs: Geeft een tijdlijn weer met alle flow die uitgevoerd zijn over een bepaalde tijd.
@@ -122,9 +122,9 @@ De functies die gezien kunnen worden op figuur 3 zijn:
     \item Work Pools: Hier kan verbinding gemaakt worden met een externe infrastructuur zoals: Azure, AWS, Docker, echter
     \item Blocks: Hier word alle gevoelige informatie bijgehouden, zoals wachtwoorden en API keys.
 \end{itemize}
-\section*{ZenML}
+\section{ZenML}
 
-\section*{Dagster}
+\section{Dagster}
 
 
 
