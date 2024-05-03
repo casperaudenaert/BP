@@ -53,7 +53,12 @@ Er word gebruik gemaakt keras sequential model, dit betekend dat alle lagen word
     \item Dense-laag
 \end{itemize}
 \subsection{Evaluatie}
-Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. 
+Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. Alle resulataten hiervan zullen bijgehouden worden met MLFlow. De resultaten bevatten:
+\begin{itemize}
+    \item Parameters van het model
+    \item systeemeigenschappen en performance
+    \item Accuracy van het model en de evaluatie
+\end{itemize}
 
 \section*{MLflow}
 Elk van deze Proof of Concepts bevat MLflow zoals besproken in heeft dit framework heel wat functionaliteiten, voor deze Proof of Concepts gaan we vooral de parameters van het model, de resultaten van de training en de resultaten van de evaluatie bijhouden.
@@ -85,7 +90,38 @@ De installatie van Prefect gebruikt met de package manager ``pip''. Via de termi
 \end{minted}
 \subsection*{Lokale Server}
 Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren, dit is aan de hand van een lokale server. 
-
+Deze server kan opgestart worden met het commando: 
+\begin{minted}[frame=lines,breaklines,linenos]{bash}
+    prefect server start
+\end{minted}
+Na het uitvoeren van het start commando zou het resulaat van \ref*{Prefect_server} te zien moeten zijn.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
+    \caption{Prefect Dashboard}
+    \label{fig:Prefect_server}
+\end{figure}
+Nu dat de server is opgestart moet de code nog communiceren met de Prefect web interface. 
+Zoals figuut 2 aantoont word dit aan de hand van een commando ingesteld, het maak gebruikt van een lokale API:
+\begin{minted}[frame=lines,breaklines,linenos]{bash}
+    prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
+\end{minted}
+Nu dat de server is opgestart en verbonden in met de lokale omgeving, kan via de link die eerder werd ingesteld het Prefect dashboard bezocht worden.
+\subsection*{Dashboard}
+Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref*{Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
+    \caption{Prefect Dashboard}
+    \label{fig:Prefect_Dashboard}
+\end{figure}
+De functies die gezien kunnen worden op figuur 3 zijn:
+\begin{itemize}
+    \item Dashboard: Geeft een overzicht van alle flow runs, hier kan gekeken worden waneer een flow succesvol of onsuccesvol uitgevoerd werd.
+    \item Flow Runs: Geeft een tijdlijn weer met alle flow die uitgevoerd zijn over een bepaalde tijd.
+    \item Flows: Toont elke flow aan die in de code geschreven word. Hierbij kan ook in de flow gekeken worden om te zien welke taken het bevat.
+    \item Deployments: Toont alle deployments weer, deze zijn flows die rechtstreeks met het dashboard kunnen worden uitgevoerd.
+    \item Work Pools: Hier kan verbinding gemaakt worden met een externe infrastructuur zoals: Azure, AWS, Docker, echter
+    \item Blocks: Hier word alle gevoelige informatie bijgehouden, zoals wachtwoorden en API keys.
+\end{itemize}
 \section*{ZenML}
 
 \section*{Dagster}

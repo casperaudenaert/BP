@@ -357,19 +357,9 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
-\subsection{Apache Airflow}
+\subsection{Dagster}
 
-\textcite{ApacheAirflow2024}, een open source platform ontworpen voor het orchestreren van workflows, richt zich voornamelijk op data pipelines en geniet een brede populariteit. Vooral binnen het domein van Machine Learning (ML) worden zijn voordelen duidelijk erkend. Deze omvatten flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak.
 
-De flexibiliteit van Airflow komt voort uit zijn vermogen om pipelines te bouwen met diverse taken, zoals het laden van data, het uitvoeren van ML-modellen, en het opslaan van resultaten. Deze taakdiversiteit maakt het platform veelzijdig en aanpasbaar aan verschillende behoeften. Bovendien kan Airflow eenvoudig worden opgeschaald om pipelines te beheren met een groot aantal taken en datavolumes, waardoor het geschikt is voor grootschalige projecten. De betrouwbaarheid van Airflow is een cruciaal voordeel, aangezien het features biedt voor het omgaan met fouten en het herstarten van mislukte taken, waardoor pipelines robuuster en veerkrachtiger worden. Daarnaast biedt het platform een gebruiksvriendelijke interface voor het definiëren en beheren van pipelines, waardoor de complexiteit wordt verminderd en het gemakkelijker wordt om workflows te beheren.
-
-Binnen het domein van Machine Learning kunnen Airflow-pipelines worden ingezet voor een reeks taken, waaronder data laden, data pre-processing, model training, model evaluatie, model deployment en model monitoring. Door gebruik te maken van Airflow voor ML pipelines, kunnen organisaties profiteren van verbeterde efficiëntie, verhoogde betrouwbaarheid, verbeterde schaalbaarheid en verbeterde reproduceerbaarheid. Het automatiseren van pipeline-uitvoering bespaart tijd en vermindert handmatige inspanningen, terwijl de betrouwbaarheid wordt verhoogd door de ingebouwde foutafhandelingsmechanismen van Airflow. Bovendien kan Airflow moeiteloos worden geschaald om te voldoen aan de eisen van groeiende datasets en complexere taken, terwijl het delen en coderen van pipelines de reproduceerbaarheid verbetert.
-
-Niettemin brengt het gebruik van Airflow voor ML pipelines enkele nadelen met zich mee. Het platform heeft een steile leercurve en kan complex zijn om te configureren en te gebruiken. Daarnaast kan Airflow overhead toevoegen aan pipelines, wat de prestaties kan beïnvloeden. Daarom moet de beslissing om Airflow te gebruiken voor ML pipelines zorgvuldig worden afgewogen, rekening houdend met de specifieke behoeften en vereisten van het project \autocite{Harenslak2021}.
-
-In conclusie, Apache Airflow vertegenwoordigt een krachtig platform voor het orchestreren van workflows, met een bijzondere focus op data pipelines. Zijn flexibiliteit, schaalbaarheid, betrouwbaarheid en gebruiksgemak maken het een aantrekkelijke keuze voor het lokaal uitvoeren van ML pipelines. Echter, potentiële gebruikers moeten zich bewust zijn van de leercurve en mogelijke overhead die gepaard kunnen gaan met het gebruik ervan, en deze afwegen tegen de voordelen die het biedt voor hun specifieke projectbehoeften.
-\begin{minted}[frame=lines,breaklines, linenos]{python}
-\end{minted}
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -381,14 +371,6 @@ Voordelen van Luigi:
   \item Schaalbaarheid: Luigi kan draaien op clusters van machines en taken automatisch parallel uitvoeren, waardoor het workflows kan schalen naar grote datasets.
   \item Betrouwbaarheid: Luigi heeft functionaliteit om fouten te verwerken, zoals het automatisch opnieuw uitvoeren van mislukte taken en het herstellen van workflows.
   \item Flexibiliteit: Luigi is geschikt voor zowel grootschalige implementaties als lokale uitvoeringen van ML-pipelines.
-\end{itemize}
-
-Toepassingen van Luigi:
-
-\begin{itemize}
-  \item Onderzoek: Luigi wordt door onderzoekers gebruikt om ML-experimenten uit te voeren en de reproduceerbaarheid van workflows te waarborgen.
-  \item Commerciële implementaties: Bedrijven gebruiken Luigi om ML-pipelines in productie te nemen en de prestaties van modellen te monitoren.
-  \item Lokale ontwikkeling en testen: Luigi vereenvoudigt het lokale uitvoeren van ML-pipelines, wat handig is voor ontwikkeling en testen met kleine datasets of gevoelige data.
 \end{itemize}
 
 Waarom Luigi niet kiezen voor ML-pipelines:
