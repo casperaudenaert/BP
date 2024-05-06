@@ -1,0 +1,1 @@
+import{j as e}from"./@tanstack-D1KSn3AD.js";import{C as t}from"./CodeSnippet-BRHUya0e.js";function o(s){return e.jsxs("div",{className:"space-y-1",children:[e.jsx("p",{className:"text-text-sm text-theme-text-secondary",children:s.description}),e.jsx(t,{codeClasses:"whitespace-pre-wrap",wrap:!0,code:s.command})]})}export{o as g};

@@ -55,7 +55,7 @@ Er word gebruik gemaakt keras sequential model, dit betekend dat alle lagen word
     \item Convolutionele laag (Conv2D)
     \item Activatielaag (Activation)
     \item Flatten-laag
-    \item Dense-laag
+    \item Dense-laag: 
 \end{itemize}
 \subsection{Evaluatie}
 Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. Alle resulataten hiervan zullen bijgehouden worden met MLFlow. De resultaten bevatten:
@@ -91,7 +91,7 @@ De varaiablen die we moeten bijhouden zijn als volgt:
 
 De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze voldoen ook aan alle nodige criteria van het requirementsanalyse.
 
-Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libaries.
+Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van libaries.
 \section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 \subsection{Installatie}
@@ -109,7 +109,7 @@ Deze server kan opgestart worden met het commando:
 % TODO: het resulaat van Figuur~\ref{fig:Prefect_server}
 % je moet er dus zelf nog Figuur bij schrijven!
 
-Na het uitvoeren van het start commando zou het resulaat van \ref{fig:Prefect_server} te zien moeten zijn.
+Na het uitvoeren van het start commando zou het resulaat van figuur \ref{fig:Prefect_server} te zien moeten zijn.
 \begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
     \caption{Prefect Dashboard}
@@ -122,7 +122,7 @@ Zoals figuut 2 aantoont word dit aan de hand van een commando ingesteld, het maa
 \end{minted}
 Nu dat de server is opgestart en verbonden in met de lokale omgeving, kan via de link die eerder werd ingesteld het Prefect dashboard bezocht worden.
 \subsection{Dashboard}
-Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
+Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. Figuur \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Prefect Dashboard}
