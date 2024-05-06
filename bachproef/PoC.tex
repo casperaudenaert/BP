@@ -5,6 +5,9 @@ Dit deel van het onderzoek presenteert een proof of concept gericht op welk fram
 Het doel van deze proof of concept is de efficiëntie en bruikbaarheid van deze frameworks te onderzoeken aan de hand van een lokale opstelling met de gekozen frameworks. Hierbij zal de uitvoering van het framework alsook de resultaten en bevindingen hiervan besproken worden.
 Hierna wordt, er aan de hand van de resulaten een conclusie genomen over het gekozen framework.
 \section{Vereisten}
+
+% TODO: beschrijf ook de specs van jouw pc, de software-versie, eventuele configuratie en installatie-stappen (of verwijs naar documentatie).
+
 Vooraleer dat er gestart kan worden met het uitwerken van de volgende Proof of Concepts zijn er bepaalde vereisten nodig.
 De vereisten zijn als volgt:
 \begin{itemize}
@@ -13,6 +16,8 @@ De vereisten zijn als volgt:
 \end{itemize}
 Deze vereisten zorgen ervoor dat de volgende hoofdstukken zonder problemen werken.
 \section{Ontwikkeling van de Machine Learning pipeline}
+% TODO: ik lees vaan "in dit onderdeel", "in dit deel", dat leest moeizaam
+
 In dit onderdeel wordt de opbouw van de Machine Learning pipeline besproken, dit zal er voor zorgen dat het duidelijk is hoe de pipeline in elkaar zit.
 De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de cursus ``Machine Learning Operations''. Deze pipeline is ontworpen om aan de hand van Image Classification het verschil te kunnen herkennen tussen fotos van ``Appelsienen'' en ``Appels'', zoals besproken in de stand van zaken heeft deze pipeline verschillende onderdelen:
 
@@ -80,6 +85,10 @@ De varaiablen die we moeten bijhouden zijn als volgt:
 \end{itemize}
 
 \section{Virtuele omgeving}
+
+% TODO: Waarom geen virtuele omgeving voor elke tool apart of voor alle tools samen?
+% TODO: verplaats het opzetten van de testomgeving naar vooraan dit hoofdstuk, tenzij specifieke vereisten nodig zijn voor de verschillende tools
+
 De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze voldoen ook aan alle nodige criteria van het requirementsanalyse.
 
 Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libaries.
@@ -96,6 +105,10 @@ Deze server kan opgestart worden met het commando:
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     prefect server start
 \end{minted}
+
+% TODO: het resulaat van Figuur~\ref{fig:Prefect_server}
+% je moet er dus zelf nog Figuur bij schrijven!
+
 Na het uitvoeren van het start commando zou het resulaat van \ref{fig:Prefect_server} te zien moeten zijn.
 \begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
