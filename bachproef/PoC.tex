@@ -28,7 +28,7 @@ De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de c
 \end{itemize}
 
 De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram 1.4.2.
-\subsection*{Packages}
+\subsection{Packages}
 Dit deel zal alle gebruikte packages kort uitleggen en hoe dat deze geinstelleerd kunnen worden. De packages zijn grotendeels het zelfde voor elke Proof of Concept maar kunnen extra pakcages hebben in verband met het gekozen framework.
 
 De basis packages dat gebruikt zullen worden in de Proof of Concepts zijn:
@@ -45,6 +45,14 @@ In de bijlage van deze Proof of Concept zal er een bestand zijn genaamd ``requir
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install -r "requirements.txt"
 \end{minted}
+\section{Virtuele omgeving}
+
+% TODO: Waarom geen virtuele omgeving voor elke tool apart of voor alle tools samen?
+% TODO: verplaats het opzetten van de testomgeving naar vooraan dit hoofdstuk, tenzij specifieke vereisten nodig zijn voor de verschillende tools
+
+De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze voldoen ook aan alle nodige criteria van het requirementsanalyse.
+
+Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libaries.
 
 \subsection{Preprocessing}
 Het Preprocessing gedeelte van de pipeline gaat de data voorbereiden zodat het trainen van het model. Dit omvat het het laden en transformeren van de afbeeldingen, zodat deze afbeeldingen gebruikt kunnen worden als invoer voor het trainen van het model. In dit Proof of Concept wordt er gebruikt gemaakt van Tensorflow's ImageDataGenerator om afbeeldingen in te laden, te normalizeren en te voorzien van labels gebaseerd op de mapstructuur. Na het inladen van de afbeeldingen en deze klaar te maken voor het trainen van het model worden de afbeeldingen gesplits in trainings-, validatie- en testsets. In elke van deze sets worden de juiste labels voorzien. figuur x.x toont aan hoe het er voor deze Proof of Concept eruit zal zien. 
@@ -84,14 +92,6 @@ De varaiablen die we moeten bijhouden zijn als volgt:
     \item 
 \end{itemize}
 
-\section{Virtuele omgeving}
-
-% TODO: Waarom geen virtuele omgeving voor elke tool apart of voor alle tools samen?
-% TODO: verplaats het opzetten van de testomgeving naar vooraan dit hoofdstuk, tenzij specifieke vereisten nodig zijn voor de verschillende tools
-
-De volgende hoodstukken zullen gebruik maken van verschillende frameworks, deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en deze voldoen ook aan alle nodige criteria van het requirementsanalyse.
-
-Voor elke framework dat gebruikt zal worden word er een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libaries.
 \section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 \subsection{Installatie}
@@ -109,7 +109,7 @@ Deze server kan opgestart worden met het commando:
 % TODO: het resulaat van Figuur~\ref{fig:Prefect_server}
 % je moet er dus zelf nog Figuur bij schrijven!
 
-Na het uitvoeren van het start commando zou het resulaat van \ref{fig:Prefect_server} te zien moeten zijn.
+Na het uitvoeren van het start commando zou het resulaat van figuur \ref{fig:Prefect_server} te zien moeten zijn.
 \begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
     \caption{Prefect Dashboard}
@@ -122,13 +122,13 @@ Zoals figuut 2 aantoont word dit aan de hand van een commando ingesteld, het maa
 \end{minted}
 Nu dat de server is opgestart en verbonden in met de lokale omgeving, kan via de link die eerder werd ingesteld het Prefect dashboard bezocht worden.
 \subsection{Dashboard}
-Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
+Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worden. Figuur \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Prefect Dashboard}
     \label{fig:Prefect_Dashboard}
 \end{figure}
-De functies die gezien kunnen worden op \ref{fig:Prefect_Dashboard} zijn:
+De functies die gezien kunnen worden op figuur\ref{fig:Prefect_Dashboard} zijn:
 \begin{itemize}
     \item Dashboard: Geeft een overzicht van alle flow runs, hier kan gekeken worden waneer een flow succesvol of onsuccesvol uitgevoerd werd.
     \item Flow Runs: Geeft een tijdlijn weer met alle flow die uitgevoerd zijn over een bepaalde tijd.
@@ -136,7 +136,16 @@ De functies die gezien kunnen worden op \ref{fig:Prefect_Dashboard} zijn:
     \item Deployments: Toont alle deployments weer, deze zijn flows die rechtstreeks met het dashboard kunnen worden uitgevoerd.
     \item Work Pools: Hier kan verbinding gemaakt worden met een externe infrastructuur zoals: Azure, AWS, Docker, echter
     \item Blocks: Hier word alle gevoelige informatie bijgehouden, zoals wachtwoorden en API keys.
+    \item Work Pools: Hier kan er verbinding gemaakt worden met een cloud omgeving om de pipeline daar te laten uitvoeren.
 \end{itemize}
+Dit Proof of Concept zal gebruik maken van de ``Flow runs'' en ``Flows'' paginas op het dashboard.
+
+\section{Uitvoering}
+Prefect werkt met decorators, dit zorgt ervoor dat bestaande Python-functies makkelijk kunnen worden omgezet naar het Prefect framework. De twee decorators ``@task'' en ``@flow'' werd  eerder in de stand van zaken uitgelegd.
+\subsection{Preprocessing}
+\subsection{Training}
+\subsection{Evaluatie}
+\section{Problemen}
 \section{ZenML}
 
 \section{Dagster}
