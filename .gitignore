@@ -135,3 +135,4 @@ sympy-plots-for-*.tex/
 output/
 out/
 PoC/Dagster/my-dagster-project/dataset/
+__pycache__/
