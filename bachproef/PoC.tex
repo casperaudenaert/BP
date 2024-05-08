@@ -11,10 +11,12 @@ Hierna wordt, er aan de hand van de resulaten een conclusie genomen over het gek
 Vooraleer dat er gestart kan worden met het uitwerken van de volgende Proof of Concepts zijn er bepaalde vereisten nodig.
 De vereisten zijn als volgt:
 \begin{itemize}
-    \item Python moet geinstalleerd zijn.
+    \item Python moet geinstalleerd zijn, Python kan worden geinstalleerd via de documentatie.
     \item De package manager ``pip''
 \end{itemize}
 Deze vereisten zorgen ervoor dat de volgende hoofdstukken zonder problemen werken.
+Als hardwarevereisten is het voldoende voor de minimum vereisten van de opleiding Toegepaste Informatica, als computer.
+De Proof of Concept zal ook geen configuratiebestanden veranderen voor de lokale opstelling alles word met de standaard instellingen uitgevoerd.
 \section{Ontwikkeling van de Machine Learning pipeline}
 % TODO: ik lees vaan "in dit onderdeel", "in dit deel", dat leest moeizaam
 
@@ -22,9 +24,9 @@ In dit onderdeel wordt de opbouw van de Machine Learning pipeline besproken, dit
 De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de cursus ``Machine Learning Operations''. Deze pipeline is ontworpen om aan de hand van Image Classification het verschil te kunnen herkennen tussen fotos van ``Appelsienen'' en ``Appels'', zoals besproken in de stand van zaken heeft deze pipeline verschillende onderdelen:
 
 \begin{itemize}
-    \item Preprocessing
-    \item Training
-    \item Evaluatie
+    \item Preprocessing: Voor het downloaden en verwerken van de afbeeldingen.
+    \item Training: Voor het trainen van het model.
+    \item Evaluatie: Voor het evalueren van het moel.
 \end{itemize}
 
 De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram 1.4.2.
@@ -95,10 +97,16 @@ De varaiablen die we moeten bijhouden zijn als volgt:
 \section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 \subsection{Installatie}
-De installatie van Prefect gebruikt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren.
+De installatie van Prefect gebruikt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren voor deze Proof of Concept.
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install -r "requirements.txt"
 \end{minted}
+
+Om enkel Prefect te installeren kan dit met het voglende ``pip'' commando:
+\begin{minted}[frame=lines,breaklines,linenos]{bash}
+    pip install prefect
+\end{minted}
+
 \subsection{Lokale Server}
 Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren, dit is aan de hand van een lokale server. 
 Deze server kan opgestart worden met het commando: 
@@ -128,7 +136,7 @@ Het dashboard van Prefect is een omgeving waar alle pipeline flows beheerd worde
     \caption{Prefect Dashboard}
     \label{fig:Prefect_Dashboard}
 \end{figure}
-De functies die gezien kunnen worden op figuur\ref{fig:Prefect_Dashboard} zijn:
+De functies die gezien kunnen worden op figuur \ref{fig:Prefect_Dashboard} zijn:
 \begin{itemize}
     \item Dashboard: Geeft een overzicht van alle flow runs, hier kan gekeken worden waneer een flow succesvol of onsuccesvol uitgevoerd werd.
     \item Flow Runs: Geeft een tijdlijn weer met alle flow die uitgevoerd zijn over een bepaalde tijd.
@@ -139,16 +147,105 @@ De functies die gezien kunnen worden op figuur\ref{fig:Prefect_Dashboard} zijn:
     \item Work Pools: Hier kan er verbinding gemaakt worden met een cloud omgeving om de pipeline daar te laten uitvoeren.
 \end{itemize}
 Dit Proof of Concept zal gebruik maken van de ``Flow runs'' en ``Flows'' paginas op het dashboard.
+\subsection{Uitvoering}
+Prefect werkt met decorators, dit zorgt ervoor dat bestaande Python-functies makkelijk kunnen worden omgezet naar het Prefect framework. De twee decorators ``@task'' en ``@flow'' werd  eerder in de stand van zaken werd uitgelegd.
+Deze maken het mogelijk om bestaande python functies om te zetten naar het Prefect framework.
+\subsection{Preprocessing}
+Orgineel was preprocessing het downloaden en het verwerken van de afbeeldingen maar voor het uitvoeren in Prefect is dit nog eens onderverdeeld geweest in twee aparte delen.
+Het downloaden en het verwerken gebeurd dus apart. Als bijlage kan de Prefect code te zien zijn.
+\subsection{Training}
 
-\section{Uitvoering}
-Prefect werkt met decorators, dit zorgt ervoor dat bestaande Python-functies makkelijk kunnen worden omgezet naar het Prefect framework. De twee decorators ``@task'' en ``@flow'' werd  eerder in de stand van zaken uitgelegd.
+\subsection{Evaluatie}
+
+\subsection{Pipeline}
+De pipeline in Prefect is een flow waarin alle tasks en flows achter elkaar worden uitgevoerd. De flow of pipeline ziet er als volgt uit:
+\begin{minted}[frame=lines,breaklines,linenos]{python}
+@flow(task_runner=SequentialTaskRunner(), log_prints=True)
+def main():
+    tracking_uri = "http://127.0.0.1:8080"
+    model_name = "PoC"
+    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_experiment(model_name)
+    download()
+    preprocess()
+    model = train()
+    eval(model)
+\end{minted}
+
+Deze code stelt eerst de juiste tracking adress in voor MLFlow en het model naam.
+Hierna worden alle functies achter elkaar uitgevoerd en kunnen deze dan ook in de dashboard gezien worden zoals in figuur xxx.
+
+In dit geval heeft de ``@flow'' nog extra parameters, deze betekend het volgend:
+
+\begin{itemize}
+    \item task_runner: Geeft aan hoe dat de taken en flows moeten uitgevoerd worden, in dit geval is dat een ``SequentialTaskRunner'' wat betekend dat alle tasks en flows achter elkaar worden uitgevoerd.
+    \item log_prints: Geeft alle print commando\'s weer dat in de Python code werd gebruikt, in dit geval is dat ``True'' dat maakt het gemakkelijk tijden het ontwikkelen van de pipeline.
+\end{itemize}
+
+Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van Prefect. Figuur 
+\subsection{Problemen}
+Prefect had het moeilijk met het doorgeven van parameters naar de volgende ``Task''. Waardoor de flow niet meer kon werken, om dit op te lossen is er gebruik gemaakt van een subflow.
+Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen wel goed de parameters en kunnen alles goed uitvoeren.
+\subsection{Cloud}
+Prefect heeft een concept dat noemt ``Work Pools'' figuur \ref{fig:Prefect_Work_Pools} toont hoe dat deze pagina in Prefect eruit ziet:
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools.PNG}
+    \caption{Prefect Work Pool Pagina}
+    \label{fig:Prefect_Work_Pools}
+\end{figure}
+Op deze pagina kan er een ``Work Pools'' worden toegevoeg deze zorgen voor een connectie met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd.
+Het aanmaken van een verbinding kan via de knop ``Add Work Pool'' van figuur \ref{fig:Prefect_Work_Pools}.
+Na het klikken van deze knop kan je kiezen met welke cloud omgeving dat er verbinding met gemaakt moet worden zoals te zien op figuur \ref{fig:Prefect_Work_Pools_Create}.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create.PNG}
+    \caption{Prefect Work Pool Cloud provider}
+    \label{fig:Prefect_Work_Pools_Create}
+\end{figure}
+Figuur \ref{fig:Prefect_Work_Pools_Create} toont de verschillende cloud omgevingen waarmee dat Prefect kan werken. Deze zijn:
+\begin{itemize}
+    \item AWS Elastic Container Service
+    \item Azure Container Instances
+    \item Docker
+    \item Google Cloud Run
+    \item Google Cloud Run v2
+    \item Google Vertex AI
+    \item Kubernetes
+    \item Prefect Agent 
+    \item Process
+\end{itemize}
+Voor dit voorbeeld gaan we Process selecteren omdat er momenteel geen toegang is tot een cloud omgeving.
+De volgende stap is het invullen van details, Deze details zijn de naam en de beschrijving van de ``Work Pool'' en eventuele Concurrency. Alleen de naam is verplicht om in te vullen zoals te zien in figuur \ref{fig:Prefect_Work_Pools_Create_Details}.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Details.PNG}
+    \caption{Prefect Work Pool Creation Details}
+    \label{fig:Prefect_Work_Pools_Create_Details}
+\end{figure}
+Ten slotte op de laatste pagina worden extra parameters ingesteld in verband met de cloud provider, dit is te zien op figuur \ref{fig:Prefect_Work_Pools_Create_parameters}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Parameters.PNG}
+    \caption{Prefect Work Pool Creation Details}
+    \label{fig:Prefect_Work_Pools_Create_parameters}
+\end{figure}
+\section{ZenML}
+\subsection{Installatie}
+\subsection{Dashboard}
+\subsection{Uitvoering}
 \subsection{Preprocessing}
 \subsection{Training}
 \subsection{Evaluatie}
-\section{Problemen}
-\section{ZenML}
+\subsection{Pipeline}
+\subsection{Problemen}
+\subsection{Cloud}
 
 \section{Dagster}
-
+\subsection{Installatie}
+\subsection{Dashboard}
+\subsection{Uitvoering}
+\subsection{Preprocessing}
+\subsection{Training}
+\subsection{Evaluatie}
+\subsection{Pipeline}
+\subsection{Problemen}
+\subsection{Cloud}
 
 
