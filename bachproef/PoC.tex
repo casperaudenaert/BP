@@ -157,75 +157,75 @@ Het downloaden en het verwerken gebeurd dus apart. Als bijlage kan de Prefect co
 
 \subsection{Evaluatie}
 
-% \subsection{Pipeline}
-% De pipeline in Prefect is een flow waarin alle tasks en flows achter elkaar worden uitgevoerd. De flow of pipeline ziet er als volgt uit:
-% \begin{minted}[frame=lines,breaklines,linenos]{python}
-% @flow(task_runner=SequentialTaskRunner(), log_prints=True)
-% def main():
-%     tracking_uri = "http://127.0.0.1:8080"
-%     model_name = "PoC"
-%     mlflow.set_tracking_uri(tracking_uri)
-%     mlflow.set_experiment(model_name)
-%     download()
-%     preprocess()
-%     model = train()
-%     eval(model)
-% \end{minted}
+\subsection{Pipeline}
+De pipeline in Prefect is een flow waarin alle tasks en flows achter elkaar worden uitgevoerd. De flow of pipeline ziet er als volgt uit:
+\begin{minted}[frame=lines,breaklines,linenos]{python}
+@flow(task_runner=SequentialTaskRunner(), log_prints=True)
+def main():
+    tracking_uri = "http://127.0.0.1:8080"
+    model_name = "PoC"
+    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_experiment(model_name)
+    download()
+    preprocess()
+    model = train()
+    eval(model)
+\end{minted}
 
-% Deze code stelt eerst de juiste tracking adress in voor MLFlow en het model naam.
-% Hierna worden alle functies achter elkaar uitgevoerd en kunnen deze dan ook in de dashboard gezien worden zoals in figuur xxx.
+Deze code stelt eerst de juiste tracking adress in voor MLFlow en het model naam.
+Hierna worden alle functies achter elkaar uitgevoerd en kunnen deze dan ook in de dashboard gezien worden zoals in figuur xxx.
 
-% In dit geval heeft de ``@flow'' nog extra parameters, deze betekenen:
+In dit geval heeft de ``@flow'' nog extra parameters, deze betekenen:
 
 % \begin{itemize}
 %     \item task_runner: Geeft aan hoe dat de taken en flows moeten uitgevoerd worden, in dit geval is dat een ``SequentialTaskRunner'' wat betekend dat alle tasks en flows achter elkaar worden uitgevoerd.
 %     \item log_prints: Geeft alle prints weer dat in de Python code werd gebruikt, in dit geval is dat ``True'' dat maakt het gemakkelijk tijden het ontwikkelen van de pipeline.
 % \end{itemize}
 
-% Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van Prefect. Figuur 
-% \subsection{Problemen}
-% Prefect had het moeilijk met het doorgeven van parameters naar de volgende ``Task''. Waardoor de flow niet meer kon werken, om dit op te lossen is er gebruik gemaakt van een subflow.
-% Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen wel goed de parameters en kunnen alles goed uitvoeren.
-% \subsection{Cloud}
-% Prefect heeft een concept dat noemt ``Work Pools'' figuur \ref{fig:Prefect_Work_Pools} toont hoe dat deze pagina in Prefect eruit ziet:
-% \begin{figure}[h]
-%     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools.PNG}
-%     \caption{Prefect Work Pool Pagina}
-%     \label{fig:Prefect_Work_Pools}
-% \end{figure}
-% Op deze pagina kan er een ``Work Pools'' worden toegevoeg deze zorgen voor een connectie met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd.
-% Het aanmaken van een verbinding kan via de knop ``Add Work Pool'' van figuur \ref{fig:Prefect_Work_Pools}.
-% Na het klikken van deze knop kan je kiezen met welke cloud omgeving dat er verbinding met gemaakt moet worden zoals te zien op figuur \ref{fig:Prefect_Work_Pools_Create}.
-% \begin{figure}[h]
-%     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create.PNG}
-%     \caption{Prefect Work Pool Cloud provider}
-%     \label{fig:Prefect_Work_Pools_Create}
-% \end{figure}
-% Figuur \ref{fig:Prefect_Work_Pools_Create} toont de verschillende cloud omgevingen waarmee dat Prefect kan werken. Deze zijn:
-% \begin{itemize}
-%     \item AWS Elastic Container Service
-%     \item Azure Container Instances
-%     \item Docker
-%     \item Google Cloud Run
-%     \item Google Cloud Run v2
-%     \item Google Vertex AI
-%     \item Kubernetes
-%     \item Prefect Agent 
-%     \item Process
-% \end{itemize}
-% Voor dit voorbeeld gaan we Process selecteren omdat er momenteel geen toegang is tot een cloud omgeving.
-% De volgende stap is het invullen van details, Deze details zijn de naam en de beschrijving van de ``Work Pool'' en eventuele Concurrency. Alleen de naam is verplicht om in te vullen zoals te zien in figuur \ref{fig:Prefect_Work_Pools_Create_Details}.
-% \begin{figure}[h]
-%     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Details.PNG}
-%     \caption{Prefect Work Pool Creation Details}
-%     \label{fig:Prefect_Work_Pools_Create_Details}
-% \end{figure}
-% Ten slotte op de laatste pagina worden extra parameters ingesteld in verband met de cloud provider, dit is te zien op figuur \ref{fig:Prefect_Work_Pools_Create_parameters}
-% \begin{figure}[h]
-%     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Parameters.PNG}
-%     \caption{Prefect Work Pool Creation Details}
-%     \label{fig:Prefect_Work_Pools_Create_parameters}
-% \end{figure}
+Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van Prefect. Figuur 
+\subsection{Problemen}
+Prefect had het moeilijk met het doorgeven van parameters naar de volgende ``Task''. Waardoor de flow niet meer kon werken, om dit op te lossen is er gebruik gemaakt van een subflow.
+Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen wel goed de parameters en kunnen alles goed uitvoeren.
+\subsection{Cloud}
+Prefect heeft een concept dat noemt ``Work Pools'' figuur \ref{fig:Prefect_Work_Pools} toont hoe dat deze pagina in Prefect eruit ziet:
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools.PNG}
+    \caption{Prefect Work Pool Pagina}
+    \label{fig:Prefect_Work_Pools}
+\end{figure}
+Op deze pagina kan er een ``Work Pools'' worden toegevoeg deze zorgen voor een connectie met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd.
+Het aanmaken van een verbinding kan via de knop ``Add Work Pool'' van figuur \ref{fig:Prefect_Work_Pools}.
+Na het klikken van deze knop kan je kiezen met welke cloud omgeving dat er verbinding met gemaakt moet worden zoals te zien op figuur \ref{fig:Prefect_Work_Pools_Create}.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create.PNG}
+    \caption{Prefect Work Pool Cloud provider}
+    \label{fig:Prefect_Work_Pools_Create}
+\end{figure}
+Figuur \ref{fig:Prefect_Work_Pools_Create} toont de verschillende cloud omgevingen waarmee dat Prefect kan werken. Deze zijn:
+\begin{itemize}
+    \item AWS Elastic Container Service
+    \item Azure Container Instances
+    \item Docker
+    \item Google Cloud Run
+    \item Google Cloud Run v2
+    \item Google Vertex AI
+    \item Kubernetes
+    \item Prefect Agent 
+    \item Process
+\end{itemize}
+Voor dit voorbeeld gaan we Process selecteren omdat er momenteel geen toegang is tot een cloud omgeving.
+De volgende stap is het invullen van details, Deze details zijn de naam en de beschrijving van de ``Work Pool'' en eventuele Concurrency. Alleen de naam is verplicht om in te vullen zoals te zien in figuur \ref{fig:Prefect_Work_Pools_Create_Details}.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Details.PNG}
+    \caption{Prefect Work Pool Creation Details}
+    \label{fig:Prefect_Work_Pools_Create_Details}
+\end{figure}
+Ten slotte op de laatste pagina worden extra parameters ingesteld in verband met de cloud provider, dit is te zien op figuur \ref{fig:Prefect_Work_Pools_Create_parameters}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Parameters.PNG}
+    \caption{Prefect Work Pool Creation Details}
+    \label{fig:Prefect_Work_Pools_Create_parameters}
+\end{figure}
 \section{ZenML}
 \subsection{Installatie}
 \subsection{Dashboard}
