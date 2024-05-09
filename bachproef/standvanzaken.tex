@@ -142,6 +142,7 @@ Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee reken
 
 % TODO: bedoel je de cloud met dat laatste puntje hier?
 % TODO: kan het eenvoudig vertaald worden naar bv. k8s?
+Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
 
 De volgende code is een Machine Learning-pipelines in Kedro: 
 
@@ -179,9 +180,6 @@ pipeline = Pipeline([
 ])
 
 \end{minted}
-
-Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MLflow}
 
@@ -213,6 +211,7 @@ Er zijn enkele mogelijke nadelen verbonden aan het gebruik van MLflow voor het l
     \item \textbf{Beperkte integratie:} De integratie van MLflow met lokale tools en infrastructuur kan beperkt zijn.
     \item \textbf{Opslagruimte:} Het lokaal opslaan van alle experimentgegevens en artefacten kan veel opslagruimte vereisen.
 \end{itemize}
+MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verhogen.
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 
@@ -242,7 +241,8 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
     if __name__ == "__main__":
         train()
 \end{minted}
-MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verhogen.
+Deze code is een normale code voor het maken van een Machine Learning pipeline, echter zijn er enkele verschillen aangezien dat MLflow gebruikt word.
+In de code kan ``log_metrics'' en ``log_model'' te zien zijn, deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
 \autocite{Kubeflow2021} is een open source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
@@ -263,6 +263,10 @@ Hoewel Kubeflow vele voordelen biedt, zijn er ook enkele potentiële nadelen waa
     \item \textbf{Vereist kennis:} Het effectief gebruik van Kubeflow vereist kennis van zowel Machine Learning als Kubernetes, wat een uitdaging kan zijn voor onderzoekers zonder ervaring in deze gebieden.
     \item \textbf{Beperkte ondersteuning:} De ondersteuning voor lokale uitvoering van Kubeflow is beperkter dan voor cloudomgevingen, wat mogelijk beperkingen kan opleggen aan onderzoekers die afhankelijk zijn van lokale resources.
 \end{itemize}
+Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderzoekers die schaalbare en flexibele ML-pipelines willen opzetten en beheren in lokale omgevingen. De voordelen zoals schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken Kubeflow tot een belangrijk instrument voor onderzoeksinspanningen.
+
+De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
+
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import kfp.v2 as kfp
     from kfp.v2 import dsl
@@ -305,14 +309,13 @@ Hoewel Kubeflow vele voordelen biedt, zijn er ook enkele potentiële nadelen waa
 
     kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderzoekers die schaalbare en flexibele ML-pipelines willen opzetten en beheren in lokale omgevingen. De voordelen zoals schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken Kubeflow tot een belangrijk instrument voor onderzoeksinspanningen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
 \textcite{ZenML2024} is een open-source framework voor het definiëren en beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het biedt een end-to-end oplossing voor het ontwikkelen, implementeren en beheren van dergelijke pipelines, met als doel de complexiteit van het ML-levenscyclus te vereenvoudigen.
 
-\subsection{Belangrijke Kenmerken van ZenML:}
+Belangrijke Kenmerken van ZenML:
 \begin{itemize}
     \item Geïntegreerde pipeline-opslag: ZenML biedt een centrale repository voor het opslaan van pipelines, waardoor hergebruik en delen eenvoudig worden gemaakt.
     \item Lokale en op afstand uitvoering: Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
@@ -323,22 +326,55 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
     \item Breed scala aan functionaliteiten: ZenML biedt een breed scala aan functionaliteiten om aan de diverse behoeften van ML-projecten te voldoen.
 \end{itemize}
 
-\subsection{Voordelen van ZenML in Vergelijking met Andere Frameworks:}
+Voordelen van ZenML in Vergelijking met Andere Frameworks:
 \begin{itemize}
     \item Eenvoudiger leercurve: ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
     \item Flexibeler: ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
     \item Breder scala aan functionaliteiten: ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
 \end{itemize}
-\begin{minted}[frame=lines,breaklines, linenos]{python}
-\end{minted}
 ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices. Het is een waardevolle aanwinst voor onderzoeksgemeenschappen en industriële toepassingen, en biedt data scientists en Machine Learning engineers een krachtige tool voor het beheren van ML pipelines.
 
+De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
+
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
+    @step
+    def read_data():
+        data = pd.read_csv("data.csv")
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    @step    
+    def train():
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
+    
+    @pipeline
+    def main():
+        train(read_data())
+
+    if __name__ == "__main__":
+        run = main()
+\end{minted}
+In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
+\begin{itemize}
+    \item @step: Deze decorator word voor elke functie geplaats die moet worden uitgevoerd worden als een taak, een taak is een onderdeel van een pipeline.
+    \item @pipeline: Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerde opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw word uitgevoerd als er geen verandering is.
+\end{itemize}
+
+Deze code heeft dus 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst word de read_data() uitgevoerd die dan zijn resultaten naar de functie train stuur om het model te trainen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
 \textcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafieken (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
-Voordelen van Prefect voor lokaal uitvoeren van ML pipelines:
+Voordelen van Prefect voor het lokaal uitvoeren van ML pipelines:
 
 \begin{itemize}
   \item interface: Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
@@ -358,8 +394,22 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 \end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 \subsection{Dagster}
-Dagster is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
+\textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
+Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines:
+\begin{itemize}
+    \item Modulair: Dagster heeft een modulaire architectuur dat het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
+    \item Efficiëntie: Dagster legt de focus op efficiëntie, waardoor dat alle onderliggend technologieën de pipeline niet zou vertragen.
+    \item MLOps: Dagster integreert MLOps-best practices, onderandere versie-, experimentenbeheer en artifacts managment voor het beheren van pipelines. Dit maakt het makkelijker 
+    \item Schaalbaarheid: Dagster kan worden gebruikt om pipelines uit te voeren op een lokale machine, op clusters of in de cloud.
+  \end{itemize}
+Ondanks alle voordelen bied Dagster ook enkele nadelen:
+\begin{itemize}
+    \item Nieuw: Dagster is relatief nieuw en heeft nog geen uitgebreide documentatie, community en integraties met andere frameworks.
+    \item Leercurve: Dagster is modulair dit kan het moeilijker maken om te begrijpen en te implementeren, zeker voor mensen die dit soort syntax niet gewoon zijn. Door de leercurve kan het ontwikkelen van pipelines langer duren.
+    \item Klein eocsysteem: Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
+  \end{itemize}
+  Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 
 \subsection{Luigi}
 
@@ -379,10 +429,10 @@ Waarom Luigi niet kiezen voor ML-pipelines:
     \item Beperkte integratie: Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
     \item Beperkte flexibiliteit: Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
   \end{itemize}
+
+Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
-Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
-
 %%%% Apache Airflow: https://airflow.apache.org/
 %%Luigi: https://luigi.readthedocs.io/en/stable/
 %%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
@@ -413,22 +463,6 @@ De should haves zijn:
 \end{itemize}
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
-
-
-% \begin{table}[]
-%     \begin{tabular}{lllllll}
-%     Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & \begin{tabular}[c]{@{}l@{}}Apache \\ Airflow\end{tabular}         & ZenML                                                             & Kubeflow                                                          \\
-%     OS compatibiliteit                                                     & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS, \\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} \\
-%     Reproduceerbaarheid                                                    & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     Minimumvereisten                                                       & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     Cloud compatibiliteit                                                  & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     Leesbaar formaat                                                       & YAML                                                                & Python code                                                        & Python code                                                       & \begin{tabular}[c]{@{}l@{}}DAGs \\ (Python code)\end{tabular}     & YAML                                                              & \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}  \\
-%     Lokale uitvoering                                                      & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\
-%     Model deployen                                                         & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                               
-%     \end{tabular}
-% \end{table}
 
 \begin{landscape}
     \begin{table}[]

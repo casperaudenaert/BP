@@ -20,7 +20,7 @@ De Proof of Concept zal ook geen configuratiebestanden veranderen voor de lokale
 \section{Ontwikkeling van de Machine Learning pipeline}
 % TODO: ik lees vaan "in dit onderdeel", "in dit deel", dat leest moeizaam
 
-In dit onderdeel wordt de opbouw van de Machine Learning pipeline besproken, dit zal er voor zorgen dat het duidelijk is hoe de pipeline in elkaar zit.
+De opbouw van de Machine Learning pipeline besproken, dit zal er voor zorgen dat het duidelijk is hoe de pipeline in elkaar zit.
 De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de cursus ``Machine Learning Operations''. Deze pipeline is ontworpen om aan de hand van Image Classification het verschil te kunnen herkennen tussen fotos van ``Appelsienen'' en ``Appels'', zoals besproken in de stand van zaken heeft deze pipeline verschillende onderdelen:
 
 \begin{itemize}
@@ -29,7 +29,12 @@ De Machine Learning pipeline dat gebruikt gaat worden is die van Labo 3 van de c
     \item Evaluatie: Voor het evalueren van het moel.
 \end{itemize}
 
-De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram 1.4.2.
+De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram \ref{fig:Model_Flow}.
+\begin{figure}[]
+    \includegraphics[width=\linewidth]{graphics/Model_Diagram.PNG}
+    \caption{Model Flow}
+    \label{fig:Model_Flow}
+\end{figure}
 \subsection{Packages}
 Dit deel zal alle gebruikte packages kort uitleggen en hoe dat deze geinstelleerd kunnen worden. De packages zijn grotendeels het zelfde voor elke Proof of Concept maar kunnen extra pakcages hebben in verband met het gekozen framework.
 
@@ -78,26 +83,45 @@ Het evaluatie gedeelte zal het model evalueren dat we hiervoor hebben getraint. 
 \section{MLflow}
 Elk van deze Proof of Concepts bevat MLflow zoals besproken in heeft dit framework heel wat functionaliteiten, voor deze Proof of Concepts gaan we vooral de parameters van het model, de resultaten van de training en de resultaten van de evaluatie bijhouden.
 Dit noemt Experiment Tracking, en stelt ons in staat om experimenten bij te houden.
-
-Om van MLflow gebruikt te kunnen maken moeten we het eerst importeren hieronder is een codevoorbeeld hoe dit gebeurd:
-
-Nadata MLflow geimporteerd is, moeten we alle variablen veranderen zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.
-De varaiablen die we moeten bijhouden zijn als volgt:
+\subsection{Installatie}
+Om van MLflow gebruikt te kunnen maken moet het eerst geinstalleerd en geimporteren worden, hieronder is een codevoorbeeld hoe dit gebeurd:
+Installeren aan de hand van ``pip'':
+\begin{minted}[frame=lines,breaklines, linenos]{bash}
+    pip install MLFlow
+\end{minted}
+Het importeren in een python script of notebook:
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
     import mlflow.keras
 \end{minted}
 
+Nadata MLflow geimporteerd is, moeten we alle parameters veranderen in de code zodat deze de resulaten naar de juiste server worden gestuurd en de juiste resulaten worden bijgehouden.
+De parameters die we moeten veranderen zijn als volgt:
 \begin{itemize}
-    \item Parameter Logging: Het commando hiervoor is ``mflow().log\_param''. Dit houdts alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
+    \item Parameter Logging: Het commando hiervoor is ``mflow().log\_param''. Dit houdt alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
     \item Metric Logging: Tijdens het trainen van het model zal MLflow belangerijke resulaten bijhouden, zoals de nauwkeurigheid en het verlies van het model. Dit word aan de hand van ``mlflow.log\_metric()'' bijgehouden. Deze metrics worden voor elke epoch van het trainingsproces bijgehouden om het verloop van de training te analyseren.
     \item 
 \end{itemize}
-
+Nadat MLflow is geinstalleerd en alle parameters goed ingesteld zijn kan de lokale server worden opgestard, dit kan met het volgende commando:
+\begin{minted}[frame=lines,breaklines, linenos]{bash}
+    mlflow server --host 127.0.0.1 --port 8080
+\end{minted}
+Dit commando heeft de parameters:
+\begin{itemize}
+    \item --host: voor het instellen van het ip addres voor de lokale server.
+    \item --port: voor het instellen van de poort van de lokale server.
+\end{itemize}
+\subsection{Dashboard}
+Het dashboard van MLflow toont de resulaten van alle pipelines weer, figuur \ref{fig:mlflow_dashboard} toont het dashboard weer.
+\begin{figure}[]
+    \includegraphics[width=\linewidth]{graphics/mlflow_dashboard.PNG}
+    \caption{MLflow Dashboard}
+    \label{fig:mlflow_dashboard}
+\end{figure}
 \section{Prefect}
 Dit deel zal het Proof of Concept uitleggen waarbij Prefect word gebruikt samen met MLFlow voor het lokaal uitvoeren van Machine Learning pipelines, hierbij worden alle aanpassingen uitgelegd in de code van het framework vergeleken met de orignele code van Labo 3 van de cursus ``Machine Learning Operations''
 \subsection{Installatie}
-De installatie van Prefect gebruikt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren voor deze Proof of Concept.
+De installatie van Prefect gebeurt met de package manager ``pip''. Via de terminal kan je met het volgende commando Prefect installeren, dit zal alle nodige libraries installeren voor deze Proof of Concept.
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install -r "requirements.txt"
 \end{minted}
@@ -120,7 +144,7 @@ Deze server kan opgestart worden met het commando:
 Na het uitvoeren van het start commando zou het resulaat van figuur \ref{fig:Prefect_server} te zien moeten zijn.
 \begin{figure}[]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
-    \caption{Prefect Dashboard}
+    \caption{Prefect Server Command}
     \label{fig:Prefect_server}
 \end{figure}
 Nu dat de server is opgestart moet de code nog communiceren met de Prefect web interface. 
