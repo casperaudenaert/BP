@@ -316,20 +316,20 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
 
 Belangrijke Kenmerken van ZenML:
 \begin{itemize}
-    \item Geïntegreerde pipeline-opslag: ZenML biedt een centrale repository voor het opslaan van pipelines, waardoor hergebruik en delen eenvoudig worden gemaakt.
-    \item Lokale en op afstand uitvoering: Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
-    \item Uitgebreide monitoring: ZenML biedt uitgebreide monitoringfunctionaliteit om de voortgang en prestaties van pipelines nauwkeurig te volgen.
-    \item Efficiënt herstarten: Pipelines kunnen efficiënt worden herstart vanaf een mislukte stap, wat de foutopsporing vereenvoudigt en versnelt.
-    \item MLOps-integratie: ZenML integreert MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
-    \item Gebruiksvriendelijkheid: ZenML heeft een eenvoudige leercurve en is flexibel in configuratie en aanpassing.
-    \item Breed scala aan functionaliteiten: ZenML biedt een breed scala aan functionaliteiten om aan de diverse behoeften van ML-projecten te voldoen.
+    \item \textbf{Geïntegreerde pipeline-opslag:} ZenML biedt een centrale repository voor het opslaan van pipelines, waardoor hergebruik en delen eenvoudig worden gemaakt.
+    \item \textbf{Lokale en op afstand uitvoering:} Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+    \item \textbf{Uitgebreide monitoring:} ZenML biedt uitgebreide monitoringfunctionaliteit om de voortgang en prestaties van pipelines nauwkeurig te volgen.
+    \item \textbf{Efficiënt herstarten:} Pipelines kunnen efficiënt worden herstart vanaf een mislukte stap, wat de foutopsporing vereenvoudigt en versnelt.
+    \item \textbf{MLOps-integratie:} ZenML integreert MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
+    \item \textbf{Gebruiksvriendelijkheid:} ZenML heeft een eenvoudige leercurve en is flexibel in configuratie en aanpassing.
+    \item \textbf{Breed scala aan functionaliteiten:} ZenML biedt een breed scala aan functionaliteiten om aan de diverse behoeften van ML-projecten te voldoen.
 \end{itemize}
 
 Voordelen van ZenML in vergelijking met andere frameworks:
 \begin{itemize}
-    \item Eenvoudiger leercurve: ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
-    \item Flexibeler: ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
-    \item Breder scala aan functionaliteiten: ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
+    \item \textbf{Eenvoudiger leercurve:} ZenML heeft een eenvoudiger leercurve dan andere frameworks zoals Apache Airflow, Luigi en Kubeflow Pipelines.
+    \item \textbf{Flexibeler:} ZenML biedt meer flexibiliteit in configuratie en aanpassing dan andere frameworks.
+    \item \textbf{Breder scala aan functionaliteiten:} ZenML biedt een breder scala aan functionaliteiten dan andere frameworks, inclusief expliciete focus op MLOps.
 \end{itemize}
 ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices. Het is een waardevolle aanwinst voor onderzoeksgemeenschappen en industriële toepassingen, en biedt data scientists en Machine Learning engineers een krachtige tool voor het beheren van ML pipelines.
 
@@ -363,11 +363,11 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 \end{minted}
 In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \begin{itemize}
-    \item @step: Deze decorator word voor elke functie geplaats die moet worden uitgevoerd worden als een taak, een taak is een onderdeel van een pipeline.
-    \item @pipeline: Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerde opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw word uitgevoerd als er geen verandering is.
+    \item \textbf{@step:} Deze decorator word voor elke functie geplaats die moet worden uitgevoerd worden als een taak, een taak is een onderdeel van een pipeline.
+    \item \textbf{@pipeline:} Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerde opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw word uitgevoerd als er geen verandering is.
 \end{itemize}
 
-Deze code heeft dus 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst word de read_data() uitgevoerd die dan zijn resultaten naar de functie train stuur om het model te trainen.
+Deze code heeft dus 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst word de read\_data() uitgevoerd die dan zijn resultaten naar de functie train stuur om het model te trainen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
@@ -376,18 +376,18 @@ Deze code heeft dus 2 steps die dan samen in de pipeline worden uitgevoerd. Eers
 Voordelen van Prefect voor het lokaal uitvoeren van ML pipelines:
 
 \begin{itemize}
-  \item interface: Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
-  \item Schaalbaarheid: Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, dit kan lokaal maar ook in de cloud zoals, AWS of Azure.
-  \item Flexibiliteit: Prefect is flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
-  \item Uitgebreide functies: Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines.
+  \item \textbf{interface:} Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
+  \item \textbf{Schaalbaarheid:} Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, dit kan lokaal maar ook in de cloud zoals, AWS of Azure.
+  \item \textbf{Flexibiliteit:} Prefect is flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
+  \item \textbf{Uitgebreide functies:} Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines.
 \end{itemize}
 
 In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals Apache Airflow, Luigi, Kubeflow Pipelines enzovoort, onderscheidt Prefect zich door:
 
 \begin{itemize}
-  \item Gebruiksvriendelijkheid: Prefect heeft een eenvoudigere leercurve en een duidelijke interface.
-  \item Flexibiliteit: Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
-  \item Uitgebreide functies: Prefect biedt meer functies dan sommige concurrenten.
+  \item \textbf{Gebruiksvriendelijkheid:} Prefect heeft een eenvoudigere leercurve en een duidelijke interface.
+  \item \textbf{Flexibiliteit:} Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
+  \item \textbf{Uitgebreide functies:} Prefect biedt meer functies dan sommige concurrenten.
 \end{itemize}
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
