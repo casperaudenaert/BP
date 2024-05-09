@@ -332,11 +332,11 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
-\begin{minted}[frame=lines,breaklines, linenos]{python}
+\begin{minted}[frame=lines,breaklines, linenos, highlightlines={5}]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
-    |\colorbox{orange}{from zenml import pipeline, step}|
+    from zenml import pipeline, step
     import pandas as pd
     @step
     def read_data():
