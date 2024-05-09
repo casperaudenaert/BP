@@ -336,6 +336,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
+    |\colorbox{orange}{from zenml import pipeline, step}|
     import pandas as pd
     @step
     def read_data():
@@ -389,7 +390,34 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
+De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
+    @step
+    def read_data():
+        data = pd.read_csv("data.csv")
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    @step    
+    def train():
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
+    
+    @pipeline
+    def main():
+        train(read_data())
+
+    if __name__ == "__main__":
+        run = main()
+\end{minted}
 \subsection{Dagster}
 \textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
@@ -407,7 +435,34 @@ Ondanks alle voordelen bied Dagster ook enkele nadelen:
     \item \textbf{Klein eocsysteem:} Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
 \end{itemize}
 Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
+De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
+    @step
+    def read_data():
+        data = pd.read_csv("data.csv")
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    @step    
+    def train():
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
+    
+    @pipeline
+    def main():
+        train(read_data())
+
+    if __name__ == "__main__":
+        run = main()
+\end{minted}
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -430,7 +485,34 @@ Waarom Luigi niet kiezen voor ML-pipelines:
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
+De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
+\begin{minted}[frame=lines,breaklines, linenos]{python}
+    from sklearn.model_selection import train_test_split
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
+    @step
+    def read_data():
+        data = pd.read_csv("data.csv")
+        X = data.drop("target", axis=1)
+        y = data["target"]
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    @step    
+    def train():
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        preds = model.predict(X_test)
+        accuracy = accuracy_score(y_test, preds)
+    
+    @pipeline
+    def main():
+        train(read_data())
+
+    if __name__ == "__main__":
+        run = main()
+\end{minted}
 \section{Requirementsanalyse}
 
 Om te bepalen welk framework gebruikt zal worden, werd in samenwerking met de copromotor een lijst van requirements opgesteld. Deze lijst omvat alle criteria die een framework moet hebben om te worden gebruikt in het opleidingsonderdeel ``Machine Learning Operations''.
