@@ -112,8 +112,8 @@ Machine Learning pipelines zijn een cruciaal onderdeel van het Machine Learning 
 Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatforms of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van Machine Learning pipelines biedt een aantal voordelen:
 
 \begin{itemize}
-  \item Lagere kosten: Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
-  \item Flexibiliteit: Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
+  \item \textbf{Lagere kosten:} Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
+  \item \textbf{Flexibiliteit:} Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
 \end{itemize}
 
 Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voor- en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze onderzoeksvraag.
@@ -191,9 +191,7 @@ De volgende code is een Machine Learning-pipelines in Kedro:
     \item \textbf{Registry:} MLflow Registry fungeert als een centrale hub voor het beheren van modelversies. Het stelt onderzoekers in staat om een gecentraliseerd repository in te stellen voor geregistreerde modellen, waardoor ze verschillende versies van modellen kunnen organiseren, volgen en openen.
 \end{itemize}
 
-% TODO: "bezig houden" klinkt negatief, zoek een beter verwoording :) je gebruikt dit nog hieronder!
-
-MLflow biedt verschillende voordelen voor onderzoekers die zich bezighouden met ML-projecten:
+MLflow biedt verschillende voordelen voor onderzoekers die zich bezig zijn met ML-projecten:
 
 \begin{itemize}
     \item \textbf{Verbeterde reproduceerbaarheid:} De zorgvuldige logging- en trackingmogelijkheden van MLflow garanderen dat experimenten gemakkelijk reproduceerbaar zijn, wat de geloofwaardigheid en betrouwbaarheid van onderzoek versterkt.
@@ -214,7 +212,6 @@ MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-pro
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 
-% TODO: bespreek deze code ook!
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
@@ -393,23 +390,23 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 \end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 
-% \subsection{Dagster}
-% \textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
+\subsection{Dagster}
+\textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
-% Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines:
-% \begin{itemize}
-%     \item Modulair: Dagster heeft een modulaire architectuur dat het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
-%     \item Efficiëntie: Dagster legt de focus op efficiëntie, waardoor dat alle onderliggend technologieën de pipeline niet zou vertragen.
-%     \item MLOps: Dagster integreert MLOps-best practices, onderandere versie-, experimentenbeheer en artifacts managment voor het beheren van pipelines. Dit maakt het makkelijker 
-%     \item Schaalbaarheid: Dagster kan worden gebruikt om pipelines uit te voeren op een lokale machine, op clusters of in de cloud.
-% \end{itemize}
-% Ondanks alle voordelen bied Dagster ook enkele nadelen:
-% \begin{itemize}
-%     \item Nieuw: Dagster is relatief nieuw en heeft nog geen uitgebreide documentatie, community en integraties met andere frameworks.
-%     \item Leercurve: Dagster is modulair dit kan het moeilijker maken om te begrijpen en te implementeren, zeker voor mensen die dit soort syntax niet gewoon zijn. Door de leercurve kan het ontwikkelen van pipelines langer duren.
-%     \item Klein eocsysteem: Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
-% \end{itemize}
-% Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
+Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines:
+\begin{itemize}
+    \item Modulair: Dagster heeft een modulaire architectuur dat het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
+    \item Efficiëntie: Dagster legt de focus op efficiëntie, waardoor dat alle onderliggend technologieën de pipeline niet zou vertragen.
+    \item MLOps: Dagster integreert MLOps-best practices, onderandere versie-, experimentenbeheer en artifacts managment voor het beheren van pipelines. Dit maakt het makkelijker 
+    \item Schaalbaarheid: Dagster kan worden gebruikt om pipelines uit te voeren op een lokale machine, op clusters of in de cloud.
+\end{itemize}
+Ondanks alle voordelen bied Dagster ook enkele nadelen:
+\begin{itemize}
+    \item Nieuw: Dagster is relatief nieuw en heeft nog geen uitgebreide documentatie, community en integraties met andere frameworks.
+    \item Leercurve: Dagster is modulair dit kan het moeilijker maken om te begrijpen en te implementeren, zeker voor mensen die dit soort syntax niet gewoon zijn. Door de leercurve kan het ontwikkelen van pipelines langer duren.
+    \item Klein eocsysteem: Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
+\end{itemize}
+Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 
 \subsection{Luigi}
 
@@ -417,27 +414,22 @@ Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriende
 
 Voordelen van Luigi:
 \begin{itemize}
-  \item Gebruiksgemak: Luigi is ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren.
-  \item Schaalbaarheid: Luigi kan draaien op clusters van machines en taken automatisch parallel uitvoeren, waardoor het workflows kan schalen naar grote datasets.
-  \item Betrouwbaarheid: Luigi heeft functionaliteit om fouten te verwerken, zoals het automatisch opnieuw uitvoeren van mislukte taken en het herstellen van workflows.
-  \item Flexibiliteit: Luigi is geschikt voor zowel grootschalige implementaties als lokale uitvoeringen van ML-pipelines.
+  \item \textbf{Gebruiksgemak:} Luigi is ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren.
+  \item \textbf{Schaalbaarheid:} Luigi kan draaien op clusters van machines en taken automatisch parallel uitvoeren, waardoor het workflows kan schalen naar grote datasets.
+  \item \textbf{Betrouwbaarheid:} Luigi heeft functionaliteit om fouten te verwerken, zoals het automatisch opnieuw uitvoeren van mislukte taken en het herstellen van workflows.
+  \item \textbf{Flexibiliteit:} Luigi is geschikt voor zowel grootschalige implementaties als lokale uitvoeringen van ML-pipelines.
 \end{itemize}
 
 Waarom Luigi niet kiezen voor ML-pipelines:
 \begin{itemize}
-    \item Complexiteit: Hoewel Luigi gebruiksvriendelijker is dan sommige andere frameworks, kan het nog steeds complex zijn om te implementeren en te configureren, vooral voor beginners. Dit kan de leercurve verhogen en de tijd die nodig is om pipelines op te zetten verlengen.
-    \item Beperkte integratie: Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
-    \item Beperkte flexibiliteit: Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
+    \item \textbf{Complexiteit:} Hoewel Luigi gebruiksvriendelijker is dan sommige andere frameworks, kan het nog steeds complex zijn om te implementeren en te configureren, vooral voor beginners. Dit kan de leercurve verhogen en de tijd die nodig is om pipelines op te zetten verlengen.
+    \item \textbf{Beperkte integratie:} Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
+    \item \textbf{Beperkte flexibiliteit:} Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
   \end{itemize}
 
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
-%%%% Apache Airflow: https://airflow.apache.org/
-%%Luigi: https://luigi.readthedocs.io/en/stable/
-%%%Kubeflow Pipelines: https://www.kubeflow.org/docs/pipelines/
-%%% GITHUB PREFECT EN PREFECT DOCS BRON
-
 
 \section{Requirementsanalyse}
 
