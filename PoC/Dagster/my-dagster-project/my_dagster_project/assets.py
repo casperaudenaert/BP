@@ -8,7 +8,7 @@ from keras.layers import Activation, Flatten, Dense
 import mlflow
 import mlflow.keras
 import requests
-from dagster import asset # import the `dagster` library
+from dagster import asset
 from tensorflow import keras
 
 DATASET = "dataset"

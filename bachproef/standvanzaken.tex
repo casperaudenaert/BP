@@ -332,7 +332,7 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
-\begin{minted}[frame=lines,breaklines, linenos, highlightlines={5}]{python}
+\begin{minted}[frame=lines,breaklines, linenos, highlightlines={4}]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
@@ -366,6 +366,7 @@ In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \end{itemize}
 
 Deze code heeft dus 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst word de read\_data() uitgevoerd die dan zijn resultaten naar de functie train stuur om het model te trainen.
+De lijn die is aangeduid toont aan hoe dat ZenML moet geïmporteerd worden in een python script of notebook.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
 
@@ -392,28 +393,31 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
-\begin{minted}[frame=lines,breaklines, linenos]{python}
+\begin{minted}[frame=lines,breaklines, linenos, highlightlines={4,5}]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
+    from prefect import task, flow
+    from prefect.task_runners import SequentialTaskRunner
     import pandas as pd
-    @step
+    @task
     def read_data():
         data = pd.read_csv("data.csv")
         X = data.drop("target", axis=1)
         y = data["target"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    @step    
+    @task    
     def train():
         model = RandomForestClassifier()
         model.fit(X_train, y_train)
         preds = model.predict(X_test)
         accuracy = accuracy_score(y_test, preds)
     
-    @pipeline
+    @flow(task_runner=SequentialTaskRunner())
     def main():
-        train(read_data())
+        read_data()
+        train()
 
     if __name__ == "__main__":
         run = main()
@@ -437,32 +441,27 @@ Ondanks alle voordelen bied Dagster ook enkele nadelen:
 Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
-\begin{minted}[frame=lines,breaklines, linenos]{python}
+\begin{minted}[frame=lines,breaklines, linenos,highlightlines={5}]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
     import pandas as pd
-    @step
+    from dagster import asset
+    @asset()
     def read_data():
         data = pd.read_csv("data.csv")
         X = data.drop("target", axis=1)
         y = data["target"]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    @step    
+    @asset(deps=[read_data])  
     def train():
         model = RandomForestClassifier()
         model.fit(X_train, y_train)
         preds = model.predict(X_test)
         accuracy = accuracy_score(y_test, preds)
-    
-    @pipeline
-    def main():
-        train(read_data())
-
-    if __name__ == "__main__":
-        run = main()
 \end{minted}
+
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -514,13 +513,16 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
         run = main()
 \end{minted}
 \section{Requirementsanalyse}
-
-Om te bepalen welk framework gebruikt zal worden, werd in samenwerking met de copromotor een lijst van requirements opgesteld. Deze lijst omvat alle criteria die een framework moet hebben om te worden gebruikt in het opleidingsonderdeel ``Machine Learning Operations''.
-
 % TODO: kijk eens naar sectie 2.12 en verder van https://thesis.hogent.be/2022-2023/1330_202075027_PBA-TIN_scriptie.pdf om te zien hoe je deze sectie het best aanpakt
+Om te bepalen welk framework gebruikt zal worden voor het lokaal uitvoeren van Machine Learning pipelines, zullen de frameworks vegeleken worden aan de hand van criteria die zijn opgesteld via de MoSCoW-methode. Deze methode wordt veel gebruikt binnen Agile Software Development om prioriteiten te stellen aan vereisten.
 
-De risicoanalyse bestaat uit twee delen: de ``must-haves'' en de ``should-haves''. De "must-haves" zijn criteria waaraan het framework absoluut moet voldoen. De ``should-haves'' omvatten de eigenschappen die wenselijk zijn voor een framework, maar niet essentieel zijn.
-
+De MoSCoW-methode worden onderverdeeld in vier categorieën:
+\begin{itemize}
+    \item \textbf{Must have:} onderdelen die essentieel zijn en de de hoogste prioriteit hebben.
+    \item \textbf{Should have:} onderdelen die belangerijk zijn, maar niet noodzakelijk essentieel
+    \item \textbf{Could have:} onderdelen die de gebruikerservaring kunnen verbeteren, maar geen functionaliteiten toevoegd.
+    \item \textbf{ Won\'t have:} onderdelen die geen toegevoegde waarde bieden en dus niet worden geimplementeerd.
+\end{itemize}
 De must haves zijn:
 \begin{itemize}
     \item De pipeline moet op eender welk besturingssysteem uitvoerbaar zijn (Windows, macOS en Linux)
