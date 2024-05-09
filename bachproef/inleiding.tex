@@ -5,14 +5,35 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-Dit onderzoek richt zich op het verkennen van de mogelijkheden voor het lokaal uitvoeren van machine learning pipelines, aan de hand van verschillende frameworks.
-Binnen het keuzepakket ``AI \& Data Engineering'' en het bijbehorende opleidingsonderdeel ``Machine Learning Operations'' wordt er momenteel gebruik gemaakt van Azure ML pipelines voor het uitvoeren van machine learning pipelines in de Azure Cloud.
-Het gebruik van Azure ML pipelines is echter niet gratis voor studenten die niet voldoende krediet hebben op het platform. Hierdoor richt dit onderzoek zich op het lokaal uitvoeren van machine learning pipelines.
-De basis van Azure ML pipelines is Kubeflow. Voor het lokaal draaien van Kubeflow zijn er echter aanzienlijke uitdagingen, waardoor het noodzakelijk is om een aangepaste Proof of Concept (PoC) op te stellen.
-Het lokaal uitvoeren van machine learning pipelines kan ook problemen met zich meebrengen, zoals de noodzaak van aanzienlijke rekenkracht die mogelijk niet beschikbaar is op computers van studenten. Als gevolg daarvan hebben bepaalde frameworks een beperktere versie die niet zo krachtig is als hun cloud-varianten, maar toch lokaal machine learning pipelines kan uitvoeren.
-De eerste fase van deze bachelorproef omvat een uitgebreide literatuurstudie waarin onderzocht wordt welke frameworks bestaan voor het lokaal draaien van machine learning pipelines, hoe deze frameworks functioneren, en ook de compatibiliteit en de diverse functies ervan.
-Het tweede deel van dit onderzoek richt zich op het opzetten van een Proof of Concept voor de geselecteerde tool(s), mogelijks vertrekkende van publiek beschikbare manifest bestanden. Hierbij wordt specifiek aandacht besteed aan het gemak van onderhoud voor de betrokken lectoren.
-Het verwachte resultaat van dit onderzoek is een diepgaand inzicht in de geschiktheid van verschillende frameworks voor het lokaal uitvoeren van machine learning pipelines, met praktische toepasbaarheid in het onderwijs en het bedrijfsleven.
+% Dit onderzoek richt zich op het verkennen van de mogelijkheden voor het lokaal uitvoeren van machine learning pipelines, aan de hand van verschillende frameworks.
+% Binnen het keuzepakket ``AI \& Data Engineering'' en het bijbehorende opleidingsonderdeel ``Machine Learning Operations'' wordt er momenteel gebruik gemaakt van Azure ML pipelines voor het uitvoeren van machine learning pipelines in de Azure Cloud.
+% Het gebruik van Azure ML pipelines is echter niet gratis voor studenten die niet voldoende krediet hebben op het platform. Hierdoor richt dit onderzoek zich op het lokaal uitvoeren van machine learning pipelines.
+% De basis van Azure ML pipelines is Kubeflow. Voor het lokaal draaien van Kubeflow zijn er echter aanzienlijke uitdagingen, waardoor het noodzakelijk is om een aangepaste Proof of Concept (PoC) op te stellen.
+% Het lokaal uitvoeren van machine learning pipelines kan ook problemen met zich meebrengen, zoals de noodzaak van aanzienlijke rekenkracht die mogelijk niet beschikbaar is op computers van studenten. Als gevolg daarvan hebben bepaalde frameworks een beperktere versie die niet zo krachtig is als hun cloud-varianten, maar toch lokaal machine learning pipelines kan uitvoeren.
+% De eerste fase van deze bachelorproef omvat een uitgebreide literatuurstudie waarin onderzocht wordt welke frameworks bestaan voor het lokaal draaien van machine learning pipelines, hoe deze frameworks functioneren, en ook de compatibiliteit en de diverse functies ervan.
+% Het tweede deel van dit onderzoek richt zich op het opzetten van een Proof of Concept voor de geselecteerde tool(s), mogelijks vertrekkende van publiek beschikbare manifest bestanden. Hierbij wordt specifiek aandacht besteed aan het gemak van onderhoud voor de betrokken lectoren.
+% Het verwachte resultaat van dit onderzoek is een diepgaand inzicht in de geschiktheid van verschillende frameworks voor het lokaal uitvoeren van machine learning pipelines, met praktische toepasbaarheid in het onderwijs en het bedrijfsleven.
+
+De toename van Artificiële Intelligentie (AI), Machine Learning (ML) en Deep Learning heeft geleid tot een groeiende vraag naar manieren om Machine Learning modellen op een schaalbare en efficiënte manier te implementeren en te beheren \autocite{Aggarwal2022}.
+Binnen het keuzepakket ``AI \& Data Engineering'' right het opleidingsonderdeel ``Machine Learning Operations'' zich op het opzetten van Machine Learning werkruimtes en het monitoren van Machine Learning operaties. In dit vak leert de student complexe IT-oplossingen efficiënt en zelfstandig te installeren, configureren, beveiligen, onderhouden en aanpassen, zodat ze blijven voldoen aan de veranderende behoeften. De student leert ook de CI/CD-principes toe te passen binnen de context van Machine Learning, zoals het beschrijven van deze principes, het in productie brengen en monitoren van een Machine Learning model met behulp van CI/CD-principes. Verder kan de student de uitdagingen en mogelijke oplossingen beschrijven voor het draaien van een Machine Learning model op apparaten met beperkte rekenkracht, en het model laten werken op zo'n apparaat, bijvoorbeeld door gebruik te maken van TensorFlow Lite.
+Dit onderzoek richt zich op een specifieke uitdaging binnen Machine Learning Operations: het lokaal uitvoeren van Machine Learning pipelines.
+
+In het kader van dit opleidingsonderdeel wordt er gebruik gemaakt van Azure ML pipelines, waarvan het onderliggende framework Kubeflow is. Kubeflow is een open-source Machine Learning toolkit op Kubernetes \autocite{Kubeflow2021}.
+Het gebruik van Azure ML pipelines is namelijk niet gratis voor studenten die niet genoeg krediet hebben op het platform. Dit leidt ertoe dat dit onderzoek zich richt op het lokaal uitvoeren van Machine Learning pipelines.
+Het lokaal uitvoeren van Machine Learning pipelines kan ook problemen met zich meebrengen, zoals de noodzaak van veel rekenkracht die mogelijk niet beschikbaar is op computers van studenten. Als gevolg daarvan hebben bepaalde frameworks een beperkte versie die niet zo krachtig is als de cloud-variant, maar toch lokaal Machine Learning pipelines kan uitvoeren.
+Er zal onderzoek gedaan worden naar alternatieve frameworks om Machine Learning pipelines lokaal uit te voeren. Deze zullen met elkaar worden vergeleken om vervolgens een Proof of Concept (PoC) op te stellen. Hierbij zal gekeken worden naar hoe de verschillende frameworks en bibliotheken werken, welke programmeertaal ze gebruiken en welke functies ze aanbieden. Daarnaast worden de frameworks getest op de compatibiliteit met verschillende besturingssystemen. Deze test omvat gedetailleerde installaties van alle frameworks, waarvan de resultaten worden vastgelegd in een rapport.
+
+Dit onderzoek richt zich op IT-professionals die betrokken zijn bij Machine Learning Operations, specifiek voor de diegenen die ML-pipelines lokaal willen uitvoeren.
+Het lokaal uitvoeren van Machine Learning pipelines blijkt een uitdaging te zijn, vooral met betrekking tot de huidige migratieproblemen en gebrekkige documentatie.
+De centrale onderzoeksvraag is daarom: ``Hoe kan een ML-pipeline lokaal worden uitgevoerd met behulp van een Machine Learning framework?''
+Hierbij worden de volgende deelvragen behandeld:
+\begin{itemize}
+  \item Wat zijn de belangrijkste uitdagingen bij het lokaliseren van Machine Learning pipelines?
+  \item Welke specifieke problemen kunnen optreden bij het lokaal uitvoeren van Machine\\ Learning pipelines?
+  \item Hoe vertaalt de lokale uitvoering van een ML pipeline zich naar de cloud?
+  \item Wat zijn de hardware- en softwarevereisten voor het lokaal uitvoeren van een ML-pipeline?
+  \item Welke frameworks en tools kunnen worden gebruikt om Machine Learning pipelines lokaal uit te voeren, en wat zijn hun respectieve kenmerken en voordelen?
+\end{itemize}
 
 % De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
 
