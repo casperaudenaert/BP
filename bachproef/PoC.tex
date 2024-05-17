@@ -88,7 +88,7 @@ Importeren in een python-script of notebook:
 
 Nadat MLflow is geïmporteerd, moeten we alle parameters in de code aanpassen, zodat deze de resultaten naar de juiste server stuurt en de juiste resultaten bijhoudt. De parameters die we moeten aanpassen zijn als volgt:
 \begin{itemize}
-    \item Parameter Logging: Het commando hiervoor is ``mflow().log\_param''. Dit houdt alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
+    \item Parameter Logging: Het commando hiervoor is \verb+mflow().log\_param+. Dit houdt alle parameters bij van het model, zoals het aantal epochs of de batchgrootte.
     \item Metric Logging: Tijdens het trainen van het model zal MLflow belangerijke resulaten bijhouden, zoals de nauwkeurigheid en het verlies van het model. Dit word aan de hand van ``mlflow.log\_metric()'' bijgehouden. Deze metrics worden voor elke epoch van het trainingsproces bijgehouden om het verloop van de training te analyseren.
 \end{itemize}
 Als MLflow geinstalleerd is en alle parameters correct zijn ingesteld, kan de lokale server worden opgestart met het volgende commando:

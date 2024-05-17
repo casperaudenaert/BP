@@ -385,8 +385,6 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
   \item \textbf{Flexibiliteit:} Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
   \item \textbf{Uitgebreide functies:} Prefect biedt meer functies dan sommige concurrenten.
 \end{itemize}
-\begin{minted}[frame=lines,breaklines, linenos]{python}
-\end{minted}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Prefect:
 
@@ -459,7 +457,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
         preds = model.predict(X_test)
         accuracy = accuracy_score(y_test, preds)
 \end{minted}
-
+In Dagster worden gegevens en taken gemodelleerd als ``assets'', die worden aangegeven met de @asset decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan van de webinterface elke asset uitgevoerd worden.
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -480,8 +478,6 @@ Waarom Luigi niet kiezen voor ML-pipelines:
   \end{itemize}
 
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
-\begin{minted}[frame=lines,breaklines, linenos]{python}
-\end{minted}
 De volgende code is een voorbeeld van een Machine Learning pipeline in Luigi:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
