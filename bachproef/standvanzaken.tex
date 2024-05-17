@@ -300,7 +300,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
 
         kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-In Kubeflow Pipelines is elke stap vertegenwoordigd door een pipeline_op object in de pipeline. De invoer- en uitvoerparameters van elke pipeline_op worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
+In Kubeflow Pipelines is elke stap vertegenwoordigd door een pipeline\_op object in de pipeline. De invoer- en uitvoerparameters van elke pipeline_op worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
