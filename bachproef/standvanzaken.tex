@@ -237,7 +237,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
         train()
 \end{minted}
 Deze code is een normale code voor het maken van een Machine Learning pipeline, echter zijn er enkele verschillen aangezien dat MLflow gebruikt word.
-In de code kan ``log\_metrics'' en ``log\_model'' te zien zijn, deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
+In de code kan \verb+log\_metrics+ en \verb+log\_model+ te zien zijn, deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
 \autocite{Kubeflow2021} is een open source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
@@ -300,7 +300,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
 
         kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-In Kubeflow Pipelines is elke stap vertegenwoordigd door een pipeline\_op object in de pipeline. De invoer- en uitvoerparameters van elke pipeline\_op worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
+In Kubeflow Pipelines is elke stap vertegenwoordigd door een \verb+pipeline\_op+ object in de pipeline. De invoer- en uitvoerparameters van elke \verb+pipeline\_op+ worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
@@ -327,7 +327,7 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
-\begin{minted}[frame=lines,breaklines, linenos, highlightlines={4}]{python}
+\begin{minted}[frame=lines,breaklines, linenos]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
@@ -359,10 +359,10 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \begin{itemize}
     \item \textbf{@step:} Deze decorator word voor elke functie geplaats die moet worden uitgevoerd worden als een taak, een taak is een onderdeel van een pipeline.
-    \item \textbf{@pipeline:} Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerde opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw word uitgevoerd als er geen verandering is.
+    \item \textbf{@pipeline:} Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerdere opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw wordt uitgevoerd als er geen verandering is.
 \end{itemize}
 
-Deze code heeft 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst word de read\_data() uitgevoerd die dan zijn resultaten naar de functie train stuur om het model te trainen.
+Deze code heeft 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst wordt de \verb+read\_data()+ uitgevoerd die dan zijn resultaten naar de functie train stuurt om het model te trainen.
 De lijn die is aangeduid toont aan hoe dat ZenML moet geïmporteerd worden in een python script of notebook.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
@@ -372,7 +372,7 @@ De lijn die is aangeduid toont aan hoe dat ZenML moet geïmporteerd worden in ee
 Voordelen van Prefect voor het lokaal uitvoeren van ML pipelines:
 
 \begin{itemize}
-  \item \textbf{interface:} Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
+  \item \textbf{Interface:} Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
   \item \textbf{Schaalbaarheid:} Prefect is schaalbaar en kan pipelines uitvoeren op verschillende platforms, dit kan lokaal maar ook in de cloud zoals, AWS of Azure.
   \item \textbf{Flexibiliteit:} Prefect is flexibel configureerbaar om aan de specifieke behoeften van elk project te voldoen.
   \item \textbf{Uitgebreide functies:} Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines.
@@ -423,21 +423,21 @@ In Prefect worden taken gedefinieerd met @task decorators die de bouwstenen vorm
 
 Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines:
 \begin{itemize}
-    \item \textbf{Modulair:} Dagster heeft een modulaire architectuur dat het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
-    \item \textbf{Efficiëntie:} Dagster legt de focus op efficiëntie, waardoor dat alle onderliggend technologieën de pipeline niet zou vertragen.
-    \item \textbf{MLOps:} Dagster integreert MLOps-best practices, onderandere versie-, experimentenbeheer en artifacts managment voor het beheren van pipelines. Dit maakt het makkelijker 
+    \item \textbf{Modulair:} Dagster heeft een modulaire architectuur die het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
+    \item \textbf{Efficiëntie:} Dagster legt de nadruk op efficiëntie, zodat alle onderliggende technologieën de pipeline niet vertragen
+    \item \textbf{MLOps:} Dagster integreert MLOps-best practices, waaronder versiebeheer, experimentenbeheer en artefactenbeheer, voor het beheren van pipelines.
     \item \textbf{Schaalbaarheid:} Dagster kan worden gebruikt om pipelines uit te voeren op een lokale machine, op clusters of in de cloud.
 \end{itemize}
-Ondanks alle voordelen bied Dagster ook enkele nadelen:
+Ondanks alle voordelen biedt Dagster ook enkele nadelen:
 \begin{itemize}
     \item \textbf{Nieuw:} Dagster is relatief nieuw en heeft nog geen uitgebreide documentatie, community en integraties met andere frameworks.
     \item \textbf{Leercurve:} Dagster is modulair dit kan het moeilijker maken om te begrijpen en te implementeren, zeker voor mensen die dit soort syntax niet gewoon zijn. Door de leercurve kan het ontwikkelen van pipelines langer duren.
-    \item \textbf{Klein eocsysteem:} Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
+    \item \textbf{Klein eocsysteem:} Het ecosysteem van Dagster bevindt zich nog steeds in ontwikkeling, wat betekent dat het nog niet alle integraties en componenten biedt die andere frameworks wel hebben.
 \end{itemize}
 Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
 
-\begin{minted}[frame=lines,breaklines, linenos,highlightlines={5}]{python}
+\begin{minted}[frame=lines,breaklines, linenos]{python}
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import accuracy_score
@@ -457,7 +457,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
         preds = model.predict(X_test)
         accuracy = accuracy_score(y_test, preds)
 \end{minted}
-In Dagster worden gegevens en taken gemodelleerd als ``assets'', die worden aangegeven met de @asset decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan van de webinterface elke asset uitgevoerd worden.
+In Dagster worden gegevens en taken gemodelleerd als \verb+assets+, die worden aangegeven met de @asset decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan van de webinterface elke asset uitgevoerd worden.
 \subsection{Luigi}
 
 Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
@@ -507,6 +507,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Luigi:
         run = main()
 \end{minted}
 \section{Requirementsanalyse}
+\label{s:Requirementsanalyse}
 % TODO: kijk eens naar sectie 2.12 en verder van https://thesis.hogent.be/2022-2023/1330_202075027_PBA-TIN_scriptie.pdf om te zien hoe je deze sectie het best aanpakt
 Om te bepalen welk framework gebruikt zal worden voor het lokaal uitvoeren van Machine Learning pipelines, zullen de frameworks vegeleken worden aan de hand van criteria die zijn opgesteld via de MoSCoW-methode. Deze methode wordt veel gebruikt binnen Agile Software Development om prioriteiten te stellen aan vereisten.
 
@@ -539,12 +540,12 @@ Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal
     \begin{table}[]
     \begin{tabular}{|l|l|l|l|l|l|l|}
     \hline
-    Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & \begin{tabular}[c]{@{}l@{}}Apache \\ Airflow\end{tabular}         & ZenML                                                             & Kubeflow                                                          \\ \hline
+    Criteria                                                               & Kedro                                                               & Luigi                                                              & Prefect                                                           & Dagster                                                           & ZenML                                                             & Kubeflow                                                          \\ \hline
     OS compatibiliteit                                                     & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS, \\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows, \\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} & \begin{tabular}[c]{@{}l@{}}Windows,\\ macOS,\\ Linux\end{tabular} \\ \hline
     Reproduceerbaarheid                                                    & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     Minimumvereisten                                                       & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     \begin{tabular}[c]{@{}l@{}}Cloud\\ compatibiliteit\end{tabular}        & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Leesbaar\\ formaat\end{tabular}             & YAML                                                                & Python code                                                        & Python code                                                       & \begin{tabular}[c]{@{}l@{}}DAGs \\ (Python code)\end{tabular}     & YAML                                                              & \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}  \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Leesbaar\\ formaat\end{tabular}             & YAML                                                                & Python code                                                        & Python code                                                       & Python code                                                       & YAML                                                              & \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}  \\ \hline
     Lokale uitvoering                                                      & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
