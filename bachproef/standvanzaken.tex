@@ -212,7 +212,6 @@ MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-pro
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 
-
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     import mlflow
     import mlflow.sklearn
@@ -293,15 +292,15 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
     @pipeline(name="train_rf_pipeline")
     def train_rf_pipeline(data_path: str):
 
-    X_train, y_train = preprocess_data(data_path)
+        X_train, y_train = preprocess_data(data_path)
 
-    model = train(X_train, y_train)
+        model = train(X_train, y_train)
 
-    accuracy = evaluate(model, X_train.copy(), y_train.copy())
+        accuracy = evaluate(model, X_train.copy(), y_train.copy())
 
-    kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
+        kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-
+In Kubeflow Pipelines is elke stap vertegenwoordigd door een pipeline_op object in de pipeline. De invoer- en uitvoerparameters van elke pipeline_op worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
@@ -420,6 +419,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Prefect:
     if __name__ == "__main__":
         run = main()
 \end{minted}
+In Prefect worden taken gedefinieerd met @task decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een @flow-geannoteerde functie, die de algehele workflow definieert. De task_runner parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd; in dit geval is dat SequentialTaskRunner, wat betekent dat de taken achter elkaar moeten worden uitgevoerd.
 \subsection{Dagster}
 \textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
@@ -437,7 +437,7 @@ Ondanks alle voordelen bied Dagster ook enkele nadelen:
     \item \textbf{Klein eocsysteem:} Dagster zijn ecosteem is nog steeds in ontwikkeling, hierdoor heeft dagster niet alle integraties en componenten dat andere frameworks bieden.
 \end{itemize}
 Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
-De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
+De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
 
 \begin{minted}[frame=lines,breaklines, linenos,highlightlines={5}]{python}
     from sklearn.model_selection import train_test_split
@@ -482,7 +482,7 @@ Waarom Luigi niet kiezen voor ML-pipelines:
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 \end{minted}
-De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
+De volgende code is een voorbeeld van een Machine Learning pipeline in Luigi:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
     from sklearn.model_selection import train_test_split

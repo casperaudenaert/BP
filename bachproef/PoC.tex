@@ -27,8 +27,9 @@ Deze pipeline is ontworpen om aan de hand van Image Classification het verschil 
 \end{itemize}
 
 De volgende hoofdstukken zullen elk van deze onderdelen toelichten en de werking ervan uitleggen, zoals weergegeven in diagram \ref{fig:Model_Flow}.
-\begin{figure}[b]
-    \includegraphics[width=\linewidth]{graphics/Model_Diagram.PNG}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9]{graphics/Model_Diagram.PNG}
     \caption{Model Flow}
     \label{fig:Model_Flow}
 \end{figure}
@@ -102,7 +103,7 @@ Dit commando heeft de volgende parameters:
 Nadat de server is opgestart kan naar het ingestelde adres worden genavigeerd om het dashboard te zien.
 \subsection{Dashboard}
 Het dashboard van MLflow toont de resulaten van alle pipelines weer, figuur \ref{fig:mlflow_dashboard} toont het dashboard weer.
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/mlflow_dashboard.PNG}
     \caption{MLflow Dashboard}
     \label{fig:mlflow_dashboard}
@@ -128,7 +129,7 @@ Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren
 \end{minted}
 
 Na het uitvoeren van het startcommando zou het resultaat van figuur \ref{fig:Prefect_server} te zien moeten zijn.
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_server.PNG}
     \caption{Prefect Server Command}
     \label{fig:Prefect_server}
@@ -141,7 +142,7 @@ Zoals figuur \ref{fig:Prefect_server} aantoont, wordt dit gedaan aan de hand van
 Nu de server is opgestart en verbonden is met de lokale omgeving, kan via de ingestelde link het Prefect dashboard worden bezocht.
 \subsection{Dashboard}
 Het dashboard van Prefect is een omgeving waar alle pipeline flows worden beheerd. Figuur \ref{fig:Prefect_Dashboard} toont aan hoe dat het Prefect dashboard eruit ziet.
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Prefect Dashboard}
     \label{fig:Prefect_Dashboard}
@@ -191,14 +192,14 @@ Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface v
 Prefect had moeite met het doorgeven van parameters naar de volgende ``Task'', waardoor de flow niet meer kon werken. Om dit op te lossen is er gebruik gemaakt van een subflow. Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen wel goed de parameters en kunnen alles goed uitvoeren.
 \subsection{Cloud}
 Prefect heeft een concept dat noemt ``Work Pools''. Figuur \ref{fig:Prefect_Work_Pools} toont hoe dat deze pagina in Prefect eruitziet:
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools.PNG}
     \caption{Prefect Work Pool Pagina}
     \label{fig:Prefect_Work_Pools}
 \end{figure}
 Op deze pagina kan er een ``Work Pool'' worden toegevoegd. Dit zorgt voor een verbinding met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd. Het aanmaken van een verbinding kan via de knop ``Add Work Pool'' zoals te zien in figuur \ref{fig:Prefect_Work_Pools}.
 Na het klikken van deze knop kan je kiezen met welke cloud omgeving dat er verbinding met gemaakt moet worden zoals te zien op figuur \ref{fig:Prefect_Work_Pools_Create}.
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create.PNG}
     \caption{Prefect Work Pool Cloud provider}
     \label{fig:Prefect_Work_Pools_Create}
@@ -216,13 +217,13 @@ Figuur \ref{fig:Prefect_Work_Pools_Create} toont de verschillende cloud omgeving
     \item Process
 \end{itemize}
 Voor dit voorbeeld selecteren we ``Process'' omdat er momenteel geen toegang is tot een cloudomgeving. De volgende stap is het invullen van details. Deze details zijn de naam en de beschrijving van de "Work Pool" en eventuele Concurrency. Alleen de naam is verplicht om in te vullen zoals te zien is in figuur \ref{fig:Prefect_Work_Pools_Create_Details}.
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Details.PNG}
     \caption{Prefect Work Pool Creation Details}
     \label{fig:Prefect_Work_Pools_Create_Details}
 \end{figure}
 Ten slotte, op de laatste pagina worden extra parameters ingesteld met betrekking tot de cloudprovider, zoals te zien is in figuur \ref{fig:Prefect_Work_Pools_Create_parameters}
-\begin{figure}[h]
+\begin{figure}[htbp]
     \includegraphics[width=\linewidth]{graphics/Prefect_Work_Pools_Create_Parameters.PNG}
     \caption{Prefect Work Pool Creation Details}
     \label{fig:Prefect_Work_Pools_Create_parameters}
@@ -233,7 +234,7 @@ De installatie van ZenML is via de package manager ``pip'' en kan met het volgen
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install zenml
 \end{minted}
-Er moet wel rekening gehouden worden dat ZenML alleen werk met de Python versies 3.8,3.9,3.10 en 3.11.
+Er moet wel rekening gehouden worden dat ZenML alleen werk met de Python versies 3.8, 3.9, 3.10 en 3.11.
 Voor het lokaal uitvoeren van het ZenML dashboard moet er ook nog een extra package geinstalleerd worden:
 \begin{minted}[frame=lines,breaklines,linenos]{bash}
     pip install "zenml[server]"
@@ -243,7 +244,6 @@ Voor het lokaal uitvoeren van het ZenML dashboard moet er ook nog een extra pack
 \subsection{Pipeline}
 \subsection{Problemen}
 \subsection{Cloud}
-
 \section{Dagster}
 \subsection{Installatie}
 \subsection{Dashboard}
