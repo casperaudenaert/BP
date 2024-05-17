@@ -163,7 +163,7 @@ Dit Proof of Concept zal gebruik maken van de \verb+Flow runs+ en \verb+Flows+ p
 \subsection{Uitvoering}
 Prefect werkt met decorators, dit zorgt ervoor dat bestaande Python-functies makkelijk kunnen worden omgezet naar het Prefect framework. De twee decorators \verb+@task+ en \verb+@flow+ werden eerder in de stand van zaken uitgelegd. Deze maken het mogelijk om bestaande Python functies om te zetten naar het Prefect framework.
 
-Origineel was preprocessing het downloaden en het verwerken van de afbeeldingen, maar voor het uitvoeren in Prefect is dit nog eens onderverdeeld geweest in twee aparte delen. Het downloaden en het verwerken gebeuren dus apart. Als bijlage kan de Prefect code te zien zijn.
+Origineel was preprocessing het downloaden en het verwerken van de afbeeldingen, maar voor het uitvoeren in Prefect is dit nog eens onderverdeeld geweest in twee aparte delen. Het downloaden en het verwerken gebeuren dus apart. In de github kan de Prefect code te zien zijn.
 
 De download functie werd een \verb+Task+ de andere functies werden een \verb+Flow+
 Dit werd gedaan via de decorators voor de functie te plaatsen uiteindelijk worden dan alle \verb+Tasks+ en \verb+Flows+ samengevoegd in 1 pipeline.
