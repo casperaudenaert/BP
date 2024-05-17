@@ -419,7 +419,7 @@ De volgende code is een voorbeeld van een Machine Learning pipeline in Prefect:
     if __name__ == "__main__":
         run = main()
 \end{minted}
-In Prefect worden taken gedefinieerd met @task decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een @flow-geannoteerde functie, die de algehele workflow definieert. De task_runner parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd; in dit geval is dat SequentialTaskRunner, wat betekent dat de taken achter elkaar moeten worden uitgevoerd.
+In Prefect worden taken gedefinieerd met @task decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een @flow-geannoteerde functie, die de algehele workflow definieert. De task\_runner parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd; in dit geval is dat SequentialTaskRunner, wat betekent dat de taken achter elkaar moeten worden uitgevoerd.
 \subsection{Dagster}
 \textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
