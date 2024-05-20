@@ -1,0 +1,48 @@
+
+\section{MLflow}
+
+Elk van de Proof of Concepts bevat MLflow. Zoals besproken in Sectie~\ref{subsec:mlflow} heeft dit framework veel functionaliteiten. Voor deze Proof of Concepts worden vooral de parameters van het model, de resultaten van de training en de resultaten van de evaluatie bijgehouden. Dit wordt \textit{Experiment Tracking} genoemd en maakt het mogelijk om experimenten bij te houden.
+
+\subsection{Installatie}
+
+Alvorens MLFlow gebruikt kan worden, moet het geïnstalleerd worden. Dit kan met behulp van \texttt{pip}:
+
+\begin{minted}{bash}
+    pip install MLFlow
+\end{minted}
+
+Vervolgens kan MLFlow geïmporteerd worden in de Python-code:
+
+\begin{minted}{python}
+    import mlflow
+    import mlflow.keras
+\end{minted}
+
+Nadat MLflow geïmporteerd is, moeten alle parameters in de code aangepast worden. Zo stuurt het de resultaten naar de juiste server en worden de juiste resultaten bijgehouden. De parameters die aangepast moeten worden zijn als volgt:
+
+\begin{itemize}
+    \item \textbf{Parameter Logging}: Het commando hiervoor is \texttt{mflow().log\_param}. Dit houdt alle parameters van het model bij, zoals het aantal epochs of de batchgrootte.
+    \item \textbf{Metric Logging}: Tijdens het trainen van het model zal MLflow belangerijke resulaten bijhouden, zoals de nauwkeurigheid en het verlies van het model. Dit word aan de hand van \texttt{mlflow.log\_metric()} bijgehouden. Deze metrics worden voor elke epoch van het trainingsproces bijgehouden om het verloop van de training te analyseren.
+\end{itemize}
+
+Als MLflow geinstalleerd is en alle parameters correct zijn ingesteld, kan de lokale server worden opgestart met het volgende commando:
+
+\begin{minted}{bash}
+    mlflow server --host 127.0.0.1 --port 8080
+\end{minted}
+
+Dit commando heeft de volgende parameters:
+
+\begin{itemize}
+    \item \texttt{--host}: voor het instellen van het ip addres voor de lokale server.
+    \item \texttt{--port}: voor het instellen van de poort van de lokale server.
+\end{itemize}
+
+Nadat de server opgestart is, kan naar het ingestelde adres worden genavigeerd in een webbrowser om het dashboard te zien. Het dashboard van MLflow toont de resulaten van alle pipelines weer, zie het voorbeeld in Figuur~\ref{fig:mlflow_dashboard}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/mlflow_dashboard.PNG}
+    \caption{Voorbeeld van het MLflow dashboard}
+    \label{fig:mlflow_dashboard}
+\end{figure}
