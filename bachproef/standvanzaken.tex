@@ -14,20 +14,23 @@
 %\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
 
 %Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+
+% TODO: geen sectie zonder inleiding ervoor
+
 \section{Machine Learning}
 
 Machine Learning (ML) is een onderdeel van Artificial Intelligence (AI), een snel groeiend vakgebied in verband met data en statistiek dat feitgebaseerde beslissingen in verschillende sectoren aanstuurt \autocite{Jordan2015}. Door wiskundige berekeningen kan Machine Learning patronen herkennen in gegevens en op basis daarvan voorspellingen doen. Dit wordt mogelijk gemaakt door het gebruik van Machine Learning algoritmen, waarmee computers kunnen leren van data. Met verschillende testen en validaties kunnen ze hun prestaties in de loop van de tijd verbeteren, waardoor ze nieuwe taken kunnen uitvoeren met nieuwe ongeziene data \autocite{Shaveta2023}.\newline
 
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=\linewidth]{graphics/mlcycle.png}
-    \caption{Machine Learning cycle}
+    \caption{Machine Learning lifecycle}
     \label{fig:ML_cycle}
 \end{figure}
 
-Volgens \textcite{Schlegel2022} omvat de levenscyclus van een typisch Machine Learning-project verschillende fasen zoals in getoont figuur \ref{fig:ML_cycle}:
+Volgens \textcite{Schlegel2022} omvat de levenscyclus van een typisch Machine Learning-project verschillende fasen zoals weergegeven op Figuur~\ref{fig:ML_cycle}:
 
 \begin{itemize}
-    \item \textbf{Data Verzameling en Preprocessing:} gegevens worden verzameld en voorbereid voor het trainen van een model. Dit omvat het opschonen van de gegevens, het verwerken van ontbrekende waarden, en het transformeren van de gegevens naar een geschikt formaat voor Machine Learning-modellen.
+    \item \textbf{Data verzameling en Preprocessing:} gegevens worden verzameld en voorbereid voor het trainen van een model. Dit omvat het opschonen van de gegevens, het verwerken van ontbrekende waarden, en het transformeren van de gegevens naar een geschikt formaat voor Machine Learning-modellen.
 
     \item \textbf{Model Selectie en Training:} er wordt een geschikt Machine Learning-model geselecteerd op basis van de gegevens en het gekozen doel. Het model wordt getraind met behulp van verzamelde data, waarbij parameters worden veranderd om een zo optimaal mogelijk resultaat te bereiken.
     
@@ -40,37 +43,36 @@ Volgens \textcite{Schlegel2022} omvat de levenscyclus van een typisch Machine Le
 
 \subsection{Machine Learning Methoden}
 
-Deze secite richt zich op de verschillende onderdelen binnen het domein van Machine Learning (ML) die worden gebruikt om modellen te trainen en voorspellingen te genereren op basis van data. Aan de hand van onderzoeksvragen worden de belangrijkste methoden binnen ML uitgelegd, waarbij de nadruk ligt op het begrijpen van hun toepassingen en werking.
+Deze sectie richt zich op de verschillende onderdelen binnen het domein van Machine Learning (ML) die worden gebruikt om modellen te trainen en voorspellingen te genereren op basis van data. Aan de hand van onderzoeksvragen worden de belangrijkste methoden binnen ML uitgelegd, waarbij de nadruk ligt op het begrijpen van hun toepassingen en werking.
 
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{graphics/mm.png}
-    \caption{Machine Learning en de subsets ervan}
-    \label{fig:ML_subsets}
-\end{figure}
+% TODO: ik heb de figuur verwijderd, die had geen meerwaarde.
 
 Volgens \textcite{Mahesh2019} zijn er verschillende soorten Machine Learning-methoden, waaronder:
 
 \begin{itemize}
-    \item Supervised Learning, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een model te ontwikkelen voor nieuwe, niet eerder geziene data.
+    \item \textbf{Supervised Learning}, waarbij het model wordt getraind op een dataset met gelabelde voorbeelden om een model te ontwikkelen voor nieuwe, niet eerder geziene data.
 
-    \item Unsupervised Learning, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de data te ontdekken zonder voorafgaande kennis van de uitvoer.
+    \item \textbf{Unsupervised Learning}, waarbij het model wordt getraind op een dataset zonder gelabelde voorbeelden, om patronen en structuren in de data te ontdekken zonder voorafgaande kennis van de uitvoer.
 
-    \item Semi-supervised Learning, die een combinatie van gelabelde en ongelabelde gegevens gebruikt voor training, om nauwkeuriger voorspellingen te maken.
+    \item \textbf{Semi-supervised Learning}, die een combinatie van gelabelde en ongelabelde gegevens gebruikt voor training, om nauwkeuriger voorspellingen te maken.
 
-    \item Reinforcement Learning, waarbij het model leert door interactie met een dynamische omgeving, om een optimale strategie te ontwikkelen om beloningen te maximaliseren.
+    \item \textbf{Reinforcement Learning}, waarbij het model leert door interactie met een dynamische omgeving, om een optimale strategie te ontwikkelen om beloningen te maximaliseren.
 
-    \item Deep Learning, een subset van Machine Learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
+    \item \textbf{Deep Learning}, een subset van Machine Learning die gebruikmaakt van kunstmatige neurale netwerken met meerdere lagen van verwerkingseenheden om complexe patronen in grote datasets te leren en te begrijpen.
 \end{itemize}
 
-Figuur \ref*{fig:ML_subsets} visualiseert deze soorten machine learning methoden.
-
 Machine Learning speelt een cruciale rol in het genereren van inzichten uit gegevens en het maken van voorspellingen op basis van complexe patronen \autocite{Jordan2015}. Door de levenscyclus van Machine Learning te begrijpen en verschillende soorten Machine Learning-methoden te onderzoeken, kunnen onderzoekers en ontwikkelaars effectievere en nauwkeurigere modellen ontwikkelen om een breed scala aan problemen op te lossen in bepaalde sectoren.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CI/CD pipelines}
 %hier
 Een Continuous Integration/Continuous Deployment (CI/CD) pipeline is een belangrijk onderdeel van softwareontwikkeling. Het versnelt en verbetert de levering van webapplicaties. Een CI/CD pipeline bestaat uit een opeenvolging van een reeks stappen die codewijzigingen automatisch integreren, testen en implementeren. Deze stappen omvatten Continuous Integration, Continuous Testing, Continuous Delivery en Continuous Deployment.
 
+% TODO: dit is vreemd verwoord. Gebruik de autocite gewoon in de tekst zonder de onderstaande zin.
+
 Dit is CI/CD pipelines uitgelegd zoals beschreven in \textcite{NaveenVemuri2024}:
+
+Figuur~\ref{fig:CICD_flow} toont de flow van een CI/CD pipeline. % TODO: zet dan hierachter wat je hieronder hebt zodat het er beter uitziet in de pdf
 
 Continuous Integration omvat het samenvoegen en testen van wijzigingen van diverse ontwikkelaars om ervoor te zorgen dat de verschillende delen van de code goed samenwerken en conflicten worden vermeden.
 
@@ -80,13 +82,11 @@ Vervolgens komt Continuous Delivery, waar de code die eerder werd getest wordt v
 
 Tenslotte is er Continuous Deployment, waar de voorbereide code automatisch wordt uitgevoerd in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
 
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=\linewidth]{graphics/cdci.png}
-    \caption{CI/CD Flow van \autocite{RedHat2023}}
+    \caption{Typische flow van een CI/CD pipeline \autocite{RedHat2023}}
     \label{fig:CICD_flow}
 \end{figure}
-  
-Figuur \ref{fig:CICD_flow} toont de flow van een CI/CD pipeline.
 
 Binnen het domein van datamanagement benadrukken \textcite{Samad2018} en \textcite{Vadavalasa2020} de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een belangrijke rol speelt bij het ontwikkelen van ML-modellen en het behouden van een veilige datastroom.
 
@@ -98,22 +98,22 @@ Het proces van het ontwikkelen van ML-modellen omvat een complexe reeks stappen,
 
 Machine Learning pipelines zijn geautomatiseerde workflows die zijn ontworpen om deze stappen in de levenscyclus van een ML-project te stroomlijnen en te automatiseren. Ze bestaan uit een reeks geordende taken, zoals data-ingestion, data-preprocessing, feature engineering, modeltraining, modelbeoordeling en modelimplementatie. Deze pipelines zorgen voor consistente en gestructureerde uitvoering van deze taken, waardoor de ontwikkeling en implementatie van ML-modellen efficiënter worden.
 
-De voordelen van Machine Learning pipelines zijn talrijk. Ten eerste verhogen ze de efficiëntie door repetitieve taken te automatiseren, waardoor de doorlooptijd van ML-projecten wordt verkort \textcite{Vadavalasa2020}. Bovendien zorgen pipelines voor verbeterde reproduceerbaarheid, doordat ze garanderen dat experimenten op een consistente manier worden uitgevoerd, wat essentieel is voor wetenschappelijke validatie en het delen van resultaten. Verder bieden pipelines een betere schaalbaarheid door de implementatie van ML-modellen op grotere datasets en in productieomgevingen te vergemakkelijken. Ten slotte vergroten ze de transparantie van het ML-proces door de stappen in de workflow te documenteren en te volgen.
+De voordelen van Machine Learning pipelines zijn talrijk. Ten eerste verhogen ze de efficiëntie door repetitieve taken te automatiseren, waardoor de doorlooptijd van ML-projecten wordt verkort \autocite{Vadavalasa2020}. Bovendien zorgen pipelines voor verbeterde reproduceerbaarheid, doordat ze garanderen dat experimenten op een consistente manier worden uitgevoerd, wat essentieel is voor wetenschappelijke validatie en het delen van resultaten. Verder bieden pipelines een betere schaalbaarheid door de implementatie van ML-modellen op grotere datasets en in productieomgevingen te vereenvoudigen. Ten slotte vergroten ze de transparantie van het ML-proces door de stappen in de workflow te documenteren en te volgen.
 
 Pipelines kunnen worden geïmplementeerd met behulp van verschillende tools en frameworks, zoals Apache Airflow, Kubeflow, Kedro, MLflow, luigi en prefect. Deze technologieën bieden een gevarieerd scala aan mogelijkheden om de ontwikkeling en implementatie van pipelines te faciliteren en te optimaliseren, afhankelijk van de specifieke behoeften en vereisten van een project.
 
-Al met al bieden Machine Learning pipelines een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren, waardoor de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten worden bevorderd.
+Machine Learning pipelines bieden een efficiënte en schaalbare manier om ML-modellen te ontwikkelen en te implementeren, waardoor de reproduceerbaarheid, transparantie en efficiëntie van ML-projecten worden bevorderd.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Frameworks}
 
 Machine Learning pipelines zijn een cruciaal onderdeel van het Machine Learning proces \autocite{Jordan2015}. Ze automatiseren de stappen van dataverzameling en -voorbereiding tot modeltraining en -evaluatie, waardoor het efficiënter en reproduceerbaarder wordt.
 
-Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatforms of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van Machine Learning pipelines biedt een aantal voordelen:
+Traditioneel worden Machine Learning pipelines uitgevoerd op cloudplatformen of op krachtige servers. Dit kan echter kostbaar zijn en vereist gespecialiseerde kennis. Lokale uitvoering van Machine Learning pipelines biedt een aantal voordelen:
 
 \begin{itemize}
-  \item \textbf{Lagere kosten:} Lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
-  \item \textbf{Flexibiliteit:} Gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
+  \item \textbf{Lagere kosten:} lokale uitvoering maakt gebruik van de eigen hardware van de gebruiker, wat de kosten van cloudresources kan besparen.
+  \item \textbf{Flexibiliteit:} gebruikers hebben meer flexibiliteit om te experimenteren met verschillende frameworks en configuraties.
 \end{itemize}
 
 Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zijn voor het lokaal uitvoeren van Machine Learning pipelines. We bespreken de voor- en nadelen van elk framework en geven richtlijnen voor het kiezen van het juiste framework voor deze bachelorproef.
@@ -121,7 +121,7 @@ Deze literatuurstudie onderzoekt de verschillende frameworks die beschikbaar zij
 
 \textcite{Kedro2024} is een open source Python-bibliotheek die de ontwikkeling van betrouwbare, reproduceerbare en onderhoudbare Machine Learning-pipelines vereenvoudigt. Dit framework biedt een krachtige oplossing voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren.
 
-Kedro biedt verschillende pluspunten waaronder:
+Kedro biedt verschillende pluspunten waaronder \autocite{Kedro2024}:
 
 \begin{itemize}
     \item \textbf{Flexibiliteit:} Kedro maakt het mogelijk om ML-pipelines op een flexibele manier samen te stellen. Onderzoekers kunnen eenvoudig componenten toevoegen, verwijderen of aanpassen, waardoor ze zich kunnen aanpassen aan de veranderende behoeften van hun onderzoek.
@@ -137,64 +137,68 @@ Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee reken
 
 \begin{itemize}
     \item \textbf{Leercurve:} Kedro heeft een hoge leercurve, hoewel de integratie met populaire ML-frameworks dit vereenvoudigt.
-    \item \textbf{Opslagruimte:} Lokale uitvoering van ML-pipelines kan, afhankelijk van de datasetgrootte, veel opslagruimte vereisen.
+    \item \textbf{Opslagruimte:} lokale uitvoering van ML-pipelines kan, afhankelijk van de datasetgrootte, veel opslagruimte vereisen.
 \end{itemize}
 
 % TODO: bedoel je de cloud met dat laatste puntje hier?
 % TODO: kan het eenvoudig vertaald worden naar bv. k8s?
 Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
 
-De volgende code is een Machine Learning-pipeline in Kedro: 
+Onderstaande code is een voorbeeld van een Machine Learning-pipeline in Kedro: 
+
+% TODO: eigenlijk moet je codefragmenten ook voorzien van een caption en vooraan een "Lijst van Codefragmenten" toevoegen.
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    from kedro.pipeline import Pipeline, node
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    import pandas as pd
+from kedro.pipeline import Pipeline, node
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import pandas as pd
 
-    def load_data():
-        return pd.read_csv("data.csv")
+def load_data():
+    return pd.read_csv("data.csv")
 
-    def split_data(data):
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        return train_test_split(X, y, test_size=0.2, random_state=42)
+def split_data(data):
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    return train_test_split(X, y, test_size=0.2, random_state=42)
 
-    def train_model(X_train, X_test, y_train, y_test):
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        return model
+def train_model(X_train, X_test, y_train, y_test):
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    return model
 
-    def evaluate_model(model, X_test, y_test):
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-        print("Accuracy:", accuracy)
+def evaluate_model(model, X_test, y_test):
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
+    print("Accuracy:", accuracy)
 
-    pipeline = Pipeline([
-        node(load_data, None, "data"),
-        node(split_data, "data", ["X_train", "X_test", "y_train", "y_test"]),
-        node(train_model, ["X_train", "X_test", "y_train", "y_test"], "model"),
-        node(evaluate_model, ["model", "X_test", "y_test"], None),
-    ])
+pipeline = Pipeline([
+    node(load_data, None, "data"),
+    node(split_data, "data", ["X_train", "X_test", "y_train", "y_test"]),
+    node(train_model, ["X_train", "X_test", "y_train", "y_test"], "model"),
+    node(evaluate_model, ["model", "X_test", "y_test"], None),
+])
 \end{minted}
+
 In Kedro is elke stap vertegenwoordigd door een node object in de pipeline. De invoer- en uitvoerparameters van elke node worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MLflow}
+\label{subsec:mlflow}
 
-\textcite{MLflow2023} is een open source Python bibliotheek ontwikkeld door Databricks die een uitgebreide set functionaliteiten biedt voor het beheren van Machine Learning (ML) projecten. De vier pijlers van MLflow zijn Tracking, Projects, Models en Registry:
+\textcite{MLflow2023} is een open source Python bibliotheek ontwikkeld door Databricks die een uitgebreide set aan functionaliteiten biedt voor het beheren van Machine Learning (ML) projecten. De vier pijlers van MLflow zijn Tracking, Projects, Models en Registry:
 
 \begin{itemize}
-    \item \textbf{Tracking:} MLflow Tracking biedt een eenvoudige manier om experimenten te volgen en resultaten te vergelijken. Het registreert nauwkeurig relevante details gedurende de ML-levenscyclus, zoals code, parameters, metrieken en artefacten (modellen, datasets). Dit maakt het voor onderzoekers naadloos mogelijk om eerdere experimenten te reproduceren en verschillende configuraties te vergelijken.
-    \item \textbf{Projects:} MLflow Projects zorgt voor een uniforme structuur voor ML-projecten en bevordert herbruikbaarheid. Onderzoekers kunnen gestandaardiseerde projectstructuren definiëren met MLflow Projects, waardoor consistente en reproduceerbare onderzoeksomgevingen worden gecreëerd.
-    \item \textbf{Models:} MLflow Models biedt tools om modellen te verpakken en te implementeren in verschillende omgevingen. Het stroomlijnt de implementatie van ML-modellen in productieomgevingen door ze te verpakken in een gestandaardiseerd formaat, inclusief de modelcode, afhankelijkheden en configuratiedetails.
-    \item \textbf{Registry:} MLflow Registry fungeert als een centrale hub voor het beheren van modelversies. Het stelt onderzoekers in staat om een gecentraliseerd repository in te stellen voor geregistreerde modellen, waardoor ze verschillende versies van modellen kunnen organiseren, volgen en openen.
+    \item \textbf{MLFlow Tracking} biedt een eenvoudige manier om experimenten te volgen en resultaten te vergelijken. Het registreert nauwkeurig relevante details gedurende de ML-levenscyclus, zoals code, parameters, metrieken en artefacten (modellen, datasets). Dit maakt het voor onderzoekers naadloos mogelijk om eerdere experimenten te reproduceren en verschillende configuraties te vergelijken.
+    \item \textbf{MLFlow Projects} zorgt voor een uniforme structuur voor ML-projecten en bevordert herbruikbaarheid. Onderzoekers kunnen gestandaardiseerde projectstructuren definiëren met MLflow Projects, waardoor consistente en reproduceerbare onderzoeksomgevingen worden gecreëerd.
+    \item \textbf{MLFlow Models} biedt tools om modellen te verpakken en te implementeren in verschillende omgevingen. Het stroomlijnt de implementatie van ML-modellen in productieomgevingen door ze te verpakken in een gestandaardiseerd formaat, inclusief de modelcode, afhankelijkheden en configuratiedetails.
+    \item \textbf{MLFlow Registry} fungeert als een centrale hub voor het beheren van modelversies. Het stelt onderzoekers in staat om een gecentraliseerd repository in te stellen voor geregistreerde modellen, waardoor ze verschillende versies van modellen kunnen organiseren, volgen en openen.
 \end{itemize}
 
 MLflow biedt verschillende voordelen voor onderzoekers die zich bezig zijn met ML-projecten:
 
 \begin{itemize}
-    \item \textbf{Verbeterde reproduceerbaarheid:} De zorgvuldige logging- en trackingmogelijkheden van MLflow garanderen dat experimenten gemakkelijk reproduceerbaar zijn, wat de geloofwaardigheid en betrouwbaarheid van onderzoek versterkt.
+    \item \textbf{Verbeterde reproduceerbaarheid:} De zorgvuldige logging- en trackingmogelijkheden van MLflow garanderen dat experimenten eenvoudig reproduceerbaar zijn, wat de geloofwaardigheid en betrouwbaarheid van onderzoek versterkt.
     \item \textbf{Gestroomlijnde samenwerking:} Gecentraliseerd model- en experimentbeheer bevordert naadloze samenwerking tussen onderzoekers, doordat ze elkaars werk eenvoudig kunnen delen en volgen.
     \item \textbf{Verbeterde efficiëntie:} MLflow automatiseert tijdrovende taken zoals experimenttracking en modelbeheer, waardoor onderzoekers waardevolle tijd kunnen vrijmaken voor kernonderzoeksactiviteiten.
     \item \textbf{Vereenvoudigde implementatie:} MLflow stroomlijnt het implementatieproces, waardoor onderzoekers hun modellen snel en efficiënt kunnen overbrengen van onderzoek naar productieomgevingen.
@@ -213,44 +217,47 @@ MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-pro
 De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    import mlflow
-    import mlflow.sklearn
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    import pandas as pd
+import mlflow
+import mlflow.sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import pandas as pd
+
+def train():
+    data = pd.read_csv("data.csv")
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
     
-    def train():
-        data = pd.read_csv("data.csv")
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-        
-        mlflow.log_metric("accuracy", accuracy)
-        mlflow.sklearn.log_model(model, "model")
-    
-    if __name__ == "__main__":
-        train()
+    mlflow.log_metric("accuracy", accuracy)
+    mlflow.sklearn.log_model(model, "model")
+
+if __name__ == "__main__":
+    train()
 \end{minted}
-Deze code is een normale code voor het maken van een Machine Learning pipeline, echter zijn er enkele verschillen aangezien dat MLflow gebruikt word.
-In de code kan \verb+log\_metrics+ en \verb+log\_model+ te zien zijn, deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
+Deze code is een normale code voor het maken van een Machine Learning pipeline, echter zijn er enkele verschillen aangezien dat MLflow gebruikt wordt.
+In de code zijn de functies \texttt{log\_metrics} en \texttt{log\_model} te zien. Deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
+
+% TODO: wordt MLFlow niet eerder gebruikt als onderdeel van een pipeline i.p.v. om een pipeline mee te maken?
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
-\autocite{Kubeflow2021} is een open source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
+\textcite{Kubeflow2021} is een open source Machine Learning-toolkit die is ontworpen voor Kubernetes. Het biedt een krachtige infrastructuur voor onderzoekers om Machine Learning-pipelines op te zetten en te beheren in zowel lokale als cloudomgevingen.
 Kubeflow biedt verschillende voordelen voor onderzoekers die zich bezighouden met het opzetten en beheren van Machine Learning-pipelines:
 \begin{itemize}
     \item \textbf{Schaalbaarheid:} Door gebruik te maken van Kubernetes kan Kubeflow ML-workloads eenvoudig schalen, wat onderzoekers in staat stelt om snel te reageren op veranderende behoeften in hun onderzoek.
     \item \textbf{Geautomatiseerd beheer:} Kubeflow automatiseert de implementatie en het beheer van ML-pipelines, waardoor onderzoekers minder tijd hoeven te besteden aan handmatige configuratie en monitoring van infrastructuur, en zich meer kunnen richten op hun onderzoek.
     \item \textbf{Reproduceerbaarheid:} Met Kubeflow kunnen onderzoekers de omgeving vastleggen en de code versiebeheren, waardoor ze experimenten kunnen reproduceren en resultaten kunnen valideren, wat essentieel is voor de wetenschappelijke integriteit.
     \item \textbf{Flexibiliteit:} Kubeflow ondersteunt een breed scala aan ML-workloads, waardoor onderzoekers flexibel kunnen experimenteren met verschillende modellen en technieken binnen dezelfde infrastructuur, wat de innovatie stimuleert.
-    \item \textbf{Integratie met Kubernetes:} Kubeflow is ontworpen om naadloos te integreren met Kubernetes, waardoor onderzoekers het gemakkelijk kunnen implementeren en beheren op lokale Kubernetes-clusters, wat de operationele efficiëntie verbetert.
+    \item \textbf{Integratie met Kubernetes:} Kubeflow is ontworpen om naadloos te integreren met Kubernetes, waardoor onderzoekers het eenvoudig kunnen implementeren en beheren op lokale Kubernetes-clusters, wat de operationele efficiëntie verbetert.
     \item \textbf{Integratie met ML-frameworks:} Kubeflow biedt integratie met populaire ML-frameworks zoals TensorFlow, PyTorch en scikit-learn, waardoor onderzoekers hun favoriete tools kunnen blijven gebruiken binnen de Kubeflow-pipeline.
     \item \textbf{Monitoring:} Kubeflow biedt functionaliteiten voor het bijhouden en monitoren van ML-experimenten, waardoor onderzoekers inzicht krijgen in de prestaties van hun modellen en het gedrag van hun systemen kunnen volgen.
-    \item \textbf{Model deployment:} Kubeflow ondersteunt model deployment en serving, waardoor onderzoekers hun modellen gemakkelijk kunnen delen en gebruiken in productieomgevingen.
+    \item \textbf{Model deployment:} Kubeflow ondersteunt model deployment en serving, waardoor onderzoekers hun modellen eenvoudig kunnen delen en gebruiken in productieomgevingen.
 \end{itemize}
 Hoewel Kubeflow vele voordelen biedt, zijn er ook enkele potentiële nadelen waar onderzoekers rekening mee moeten houden:
 \begin{itemize}
@@ -263,53 +270,53 @@ Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderz
 De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    import kfp.v2 as kfp
-    from kfp.v2 import dsl
-    from kfp.v2.dsl import ContainerOp, pipeline
-    import pandas as pd
-    from sklearn.metrics import accuracy_score
-    from sklearn.ensemble import RandomForestClassifier
-    @dsl.pipeline_op(name="data_preprocessing")
-    def preprocess_data(data_path: str) -> kfp.v2.dsl.OutputArgument[pd.DataFrame]:
+import kfp.v2 as kfp
+from kfp.v2 import dsl
+from kfp.v2.dsl import ContainerOp, pipeline
+import pandas as pd
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+@dsl.pipeline_op(name="data_preprocessing")
+def preprocess_data(data_path: str) -> kfp.v2.dsl.OutputArgument[pd.DataFrame]:
 
-        data = pd.read_csv(data_path)
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        return X, y
+    data = pd.read_csv(data_path)
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    return X, y
 
-        @dsl.pipeline_op(name="train_model")
-        def train(X_train: pd.DataFrame, y_train: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[RandomForestClassifier]:
-            model = RandomForestClassifier()
-            model.fit(X_train, y_train)
-            return model
+    @dsl.pipeline_op(name="train_model")
+    def train(X_train: pd.DataFrame, y_train: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[RandomForestClassifier]:
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+        return model
 
-    @dsl.pipeline_op(name="evaluate_model")
-    def evaluate(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[float]:
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-        return accuracy
+@dsl.pipeline_op(name="evaluate_model")
+def evaluate(model: RandomForestClassifier, X_test: pd.DataFrame, y_test: pd.DataFrame) -> kfp.v2.dsl.OutputArgument[float]:
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
+    return accuracy
 
-    @pipeline(name="train_rf_pipeline")
-    def train_rf_pipeline(data_path: str):
+@pipeline(name="train_rf_pipeline")
+def train_rf_pipeline(data_path: str):
 
-        X_train, y_train = preprocess_data(data_path)
+    X_train, y_train = preprocess_data(data_path)
 
-        model = train(X_train, y_train)
+    model = train(X_train, y_train)
 
-        accuracy = evaluate(model, X_train.copy(), y_train.copy())
+    accuracy = evaluate(model, X_train.copy(), y_train.copy())
 
-        kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
+    kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-In Kubeflow Pipelines is elke stap vertegenwoordigd door een \verb+pipeline\_op+ object in de pipeline. De invoer- en uitvoerparameters van elke \verb+pipeline\_op+ worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
+In Kubeflow Pipelines is elke stap vertegenwoordigd door een \texttt{pipeline\_op} object in de pipeline. De invoer- en uitvoerparameters van elke \texttt{pipeline\_op} worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
 
 \textcite{ZenML2024} is een open-source framework voor het definiëren en beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het biedt een end-to-end oplossing voor het ontwikkelen, implementeren en beheren van dergelijke pipelines, met als doel de complexiteit van het ML-levenscyclus te vereenvoudigen.
 
-Belangrijke Kenmerken van ZenML:
+Belangrijke kenmerken van ZenML:
 \begin{itemize}
     \item \textbf{Geïntegreerde pipeline-opslag:} ZenML biedt een centrale repository voor het opslaan van pipelines, waardoor hergebruik en delen eenvoudig worden gemaakt.
-    \item \textbf{Lokale en op afstand uitvoering:} Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platforms zoals Kubernetes en Docker.
+    \item \textbf{Lokale en op afstand uitvoering:} Pipelines kunnen zowel lokaal als op afstand worden uitgevoerd, met ondersteuning voor verschillende platformen zoals Kubernetes en Docker.
     \item \textbf{Uitgebreide monitoring:} ZenML biedt uitgebreide monitoringfunctionaliteit om de voortgang en prestaties van pipelines nauwkeurig te volgen.
     \item \textbf{Efficiënt herstarten:} Pipelines kunnen efficiënt worden herstart vanaf een mislukte stap, wat de foutopsporing vereenvoudigt en versnelt.
     \item \textbf{MLOps-integratie:} ZenML integreert MLOps-functionaliteit, inclusief artefactbeheer, versiebeheer en experimentenbeheer, waardoor het aantrekkelijk is voor teams die streven naar best practices op het gebied van Machine Learning operations.
@@ -328,48 +335,52 @@ ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    from zenml import pipeline, step
-    import pandas as pd
-    @step
-    def read_data():
-        data = pd.read_csv("data.csv")
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        return X_train, X_test, y_train, y_test
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from zenml import pipeline, step
+import pandas as pd
+@step
+def read_data():
+    data = pd.read_csv("data.csv")
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    return X_train, X_test, y_train, y_test
 
-    @step    
-    def train():
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-        return model
-    
-    @pipeline
-    def main():
-        train(read_data())
+@step    
+def train():
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
+    return model
 
-    if __name__ == "__main__":
-        run = main()
+@pipeline
+def main():
+    train(read_data())
+
+if __name__ == "__main__":
+    run = main()
 \end{minted}
 In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \begin{itemize}
-    \item \textbf{@step:} Deze decorator word voor elke functie geplaats die moet worden uitgevoerd worden als een taak, een taak is een onderdeel van een pipeline.
-    \item \textbf{@pipeline:} Deze decorator gaat alle functies met de step decorator uitvoeren, deze decorator kan ook meerdere opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een al uitgevoerde step niet opnieuw wordt uitgevoerd als er geen verandering is.
+    \item \textbf{@step:} Deze decorator wordt voor elke functie, die moet worden uitgevoerd worden als een taak, geplaatst. Een taak is een onderdeel van een pipeline.
+    \item \textbf{@pipeline:} Deze decorator zal alle functies met de \texttt{step} decorator uitvoeren. Deze decorator kan ook meerdere opties bevatten zoals het gebruiken van cache. Deze cache zorgt ervoor dat een reeds uitgevoerde stap niet opnieuw wordt uitgevoerd indien er geen verandering is.
 \end{itemize}
 
-Deze code heeft 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst wordt de \verb+read\_data()+ uitgevoerd die dan zijn resultaten naar de functie train stuurt om het model te trainen.
+Deze code heeft 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst wordt de \texttt{read\_data} uitgevoerd die vervolgens zijn resultaten naar de functie \texttt{train} stuurt om het model te trainen.
 De lijn die is aangeduid toont aan hoe dat ZenML moet geïmporteerd worden in een python script of notebook.
+
+% TODO: ik zie geen aangeduide lijn
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
+\label{subsec:prefect}
 
-\textcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafieken (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
+\textcite{Prefect2024} is een open-source framework voor het beheren van Python-gebaseerde Machine Learning (ML) pipelines. Het maakt gebruik van gerichte acyclische grafen (DAG's) om de stappen in de pipeline en hun onderlinge afhankelijkheden expliciet te definiëren. Prefect biedt een breed scala aan functies voor het beheren en uitvoeren van pipelines, waaronder opslag, uitvoering, monitoring en het herstarten van pipelines vanaf een mislukte stap.
 
-Voordelen van Prefect voor het lokaal uitvoeren van ML pipelines:
+Voordelen van Prefect voor het lokaal uitvoeren van ML pipelines zijn:
 
 \begin{itemize}
   \item \textbf{Interface:} Prefect biedt een gebruiksvriendelijke interface voor het volgen van de pipeline uitvoeringen en de resultaten hiervan.
@@ -382,87 +393,88 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 
 \begin{itemize}
   \item \textbf{Gebruiksvriendelijkheid:} Prefect heeft een eenvoudigere leercurve en een duidelijke interface.
-  \item \textbf{Flexibiliteit:} Prefect is gemakkelijker aan te passen aan de specifieke behoeften van een project.
+  \item \textbf{Flexibiliteit:} Prefect is eenvoudiger aan te passen aan de specifieke behoeften van een project.
   \item \textbf{Uitgebreide functies:} Prefect biedt meer functies dan sommige concurrenten.
 \end{itemize}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Prefect:
 
 \begin{minted}[frame=lines,breaklines, linenos, highlightlines={4,5}]{python}
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    from prefect import task, flow
-    from prefect.task_runners import SequentialTaskRunner
-    import pandas as pd
-    @task
-    def read_data():
-        data = pd.read_csv("data.csv")
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from prefect import task, flow
+from prefect.task_runners import SequentialTaskRunner
+import pandas as pd
+@task
+def read_data():
+    data = pd.read_csv("data.csv")
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    @task    
-    def train():
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-    
-    @flow(task_runner=SequentialTaskRunner())
-    def main():
-        read_data()
-        train()
+@task    
+def train():
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
 
-    if __name__ == "__main__":
-        run = main()
+@flow(task_runner=SequentialTaskRunner())
+def main():
+    read_data()
+    train()
+
+if __name__ == "__main__":
+    run = main()
 \end{minted}
-In Prefect worden taken gedefinieerd met @task decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een @flow-geannoteerde functie, die de algehele workflow definieert. De task\_runner parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd; in dit geval is dat SequentialTaskRunner, wat betekent dat de taken achter elkaar moeten worden uitgevoerd.
+In Prefect worden taken gedefinieerd met \texttt{@task} decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een \texttt{@flow} geannoteerde functie, die de algehele workflow definieert. De \texttt{task\_runner} parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd. In dit geval is dit een \texttt{SequentialTaskRunner}, wat betekent dat de taken achter elkaar uitgevoerd moeten worden.
+
 \subsection{Dagster}
 \textcite{Dagster2024} is een open-source framework voor het beheren en uitvoeren van Machine Learning (ML) pipelines. Het maakt gebruik van een modulaire structuur en heeft een focus op operationele efficiëntie. Dagster is snel aan het groeien door de flexibiliteit en schaalbaarheid.
 
-Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines:
+Voordelen van Dagster voor het lokaal uitvoeren van ML pipelines zijn:
 \begin{itemize}
     \item \textbf{Modulair:} Dagster heeft een modulaire architectuur die het maken, onderhouden en hergebruiken van pipelines vereenvoudigt. Elke onderdeel kan worden gecombineerd om een workflow te maken.
     \item \textbf{Efficiëntie:} Dagster legt de nadruk op efficiëntie, zodat alle onderliggende technologieën de pipeline niet vertragen
     \item \textbf{MLOps:} Dagster integreert MLOps-best practices, waaronder versiebeheer, experimentenbeheer en artefactenbeheer, voor het beheren van pipelines.
     \item \textbf{Schaalbaarheid:} Dagster kan worden gebruikt om pipelines uit te voeren op een lokale machine, op clusters of in de cloud.
 \end{itemize}
-Ondanks alle voordelen biedt Dagster ook enkele nadelen:
+Ondanks alle voordelen heeft Dagster ook enkele nadelen:
 \begin{itemize}
     \item \textbf{Nieuw:} Dagster is relatief nieuw en heeft nog geen uitgebreide documentatie, community en integraties met andere frameworks.
     \item \textbf{Leercurve:} Dagster is modulair dit kan het moeilijker maken om te begrijpen en te implementeren, zeker voor mensen die dit soort syntax niet gewoon zijn. Door de leercurve kan het ontwikkelen van pipelines langer duren.
     \item \textbf{Klein eocsysteem:} Het ecosysteem van Dagster bevindt zich nog steeds in ontwikkeling, wat betekent dat het nog niet alle integraties en componenten biedt die andere frameworks wel hebben.
 \end{itemize}
-Dagster is een goede keus voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
+Dagster is een goede keuze voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    import pandas as pd
-    from dagster import asset
-    @asset()
-    def read_data():
-        data = pd.read_csv("data.csv")
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import pandas as pd
+from dagster import asset
+@asset()
+def read_data():
+    data = pd.read_csv("data.csv")
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    @asset(deps=[read_data])  
-    def train():
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
+@asset(deps=[read_data])  
+def train():
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
 \end{minted}
-In Dagster worden gegevens en taken gemodelleerd als \verb+assets+, die worden aangegeven met de @asset decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan van de webinterface elke asset uitgevoerd worden.
+In Dagster worden gegevens en taken gemodelleerd als \texttt{assets}, die worden aangegeven met de \texttt{@asset} decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan via de webinterface elke asset uitgevoerd worden.
 \subsection{Luigi}
 
-Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafieken (DAG's), waarbij elke taak in de grafiek afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
+Luigi is een open-source Python-bibliotheek die een krachtige en gebruiksvriendelijke oplossing biedt voor het uitvoeren van complexe Machine Learning (ML) pipelines op een schaalbare manier. Het kernconcept van Luigi draait om het definiëren van workflows als gerichte acyclische grafen (DAG's), waarbij elke taak in de graaf afhankelijk kan zijn van andere taken. Deze aanpak maakt het eenvoudig om pipelines te maken die bestaan uit een groot aantal afzonderlijke stappen.
 
-Voordelen van Luigi:
+De voordelen van Luigi zijn:
 \begin{itemize}
   \item \textbf{Gebruiksgemak:} Luigi is ontworpen met gebruiksgemak in gedachten, waardoor het eenvoudig is om pipelines te definiëren en te configureren.
   \item \textbf{Schaalbaarheid:} Luigi kan draaien op clusters van machines en taken automatisch parallel uitvoeren, waardoor het workflows kan schalen naar grote datasets.
@@ -470,10 +482,10 @@ Voordelen van Luigi:
   \item \textbf{Flexibiliteit:} Luigi is geschikt voor zowel grootschalige implementaties als lokale uitvoeringen van ML-pipelines.
 \end{itemize}
 
-Waarom Luigi niet kiezen voor ML-pipelines:
+Ook zijn er een aantal mogelijke nadelen verbonden aan Luigi:
 \begin{itemize}
     \item \textbf{Complexiteit:} Hoewel Luigi gebruiksvriendelijker is dan sommige andere frameworks, kan het nog steeds complex zijn om te implementeren en te configureren, vooral voor beginners. Dit kan de leercurve verhogen en de tijd die nodig is om pipelines op te zetten verlengen.
-    \item \textbf{Beperkte integratie:} Luigi heeft mogelijk niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
+    \item \textbf{Beperkte integratie:} Luigi heeft mogelijks niet dezelfde mate van integratie met andere ML-tools en -bibliotheken als andere frameworks, wat kan leiden tot extra handmatig werk en complexiteit.
     \item \textbf{Beperkte flexibiliteit:} Luigi's DAG-gebaseerde structuur kan beperkend zijn voor complexe pipelines met onregelmatige of dynamische workflows. In dergelijke scenario's kunnen andere frameworks meer flexibiliteit en aanpassingsmogelijkheden bieden.
   \end{itemize}
 
@@ -481,30 +493,30 @@ Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van 
 De volgende code is een voorbeeld van een Machine Learning pipeline in Luigi:
 
 \begin{minted}[frame=lines,breaklines, linenos]{python}
-    from sklearn.model_selection import train_test_split
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.metrics import accuracy_score
-    import pandas as pd
-    @step
-    def read_data():
-        data = pd.read_csv("data.csv")
-        X = data.drop("target", axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+import pandas as pd
+@step
+def read_data():
+    data = pd.read_csv("data.csv")
+    X = data.drop("target", axis=1)
+    y = data["target"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    @step    
-    def train():
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-        preds = model.predict(X_test)
-        accuracy = accuracy_score(y_test, preds)
-    
-    @pipeline
-    def main():
-        train(read_data())
+@step    
+def train():
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
 
-    if __name__ == "__main__":
-        run = main()
+@pipeline
+def main():
+    train(read_data())
+
+if __name__ == "__main__":
+    run = main()
 \end{minted}
 \section{Requirementsanalyse}
 \label{s:Requirementsanalyse}
@@ -516,9 +528,13 @@ De MoSCoW-methode worden onderverdeeld in vier categorieën:
     \item \textbf{Must have:} onderdelen die essentieel zijn en de de hoogste prioriteit hebben.
     \item \textbf{Should have:} onderdelen die belangrijk zijn, maar niet noodzakelijk essentieel
     \item \textbf{Could have:} onderdelen die de gebruikerservaring kunnen verbeteren, maar geen functionaliteiten toevoegd.
-    \item \textbf{ Won\'t have:} onderdelen die geen toegevoegde waarde bieden en dus niet worden geimplementeerd.
+    \item \textbf{ Won't have:} onderdelen die geen toegevoegde waarde bieden en dus niet worden geimplementeerd.
 \end{itemize}
-De must haves zijn:
+
+De criteria die zullen worden gebruikt om de frameworks te vergelijken zijn:
+
+\subsection*{Must have}
+
 \begin{itemize}
     \item De pipeline moet op eender welk besturingssysteem uitvoerbaar zijn (Windows, macOS en Linux)
     \item De omgeving waarin de pipeline uitgevoerd wordt is reproduceerbaar
@@ -527,14 +543,29 @@ De must haves zijn:
     \item De pipeline wordt beschreven in een leesbaar formaat (bv. YAML)
     \item De pipeline is in staat om lokaal uitgevoerd te worden, al dan niet met een minimalistisch model
 \end{itemize}
-De should haves zijn:
+
+
+\subsection*{Should have}
+
 \begin{itemize}
     \item De pipeline kan in een container uitgevoerd worden
     \item De pipeline kan een rollback uitvoeren wanneer het model niet voldoet aan vooropgestelde criteria
 \end{itemize}
-Er zijn geen could haves en won\'t haves.
+
+\subsection*{Could have}
+
+Er zijn geen could haves.
+
+\subsection*{Won't have}
+
+Er zijn geen won\'t haves.
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
+
+% TODO: caption bij de tabel
+% TODO: niet zomaar de tabel geven. Je moet die ook bespreken. Je kan bv. zeggen "Na analyses van alle voorgaande secties en de requirementsanalyse, toont Tabel ... een overzicht van de frameworks en hun mogelijkheden."
+% TODO: je moet hier dan ook de short list bepalen en uitleggen waarom je die frameworks hebt gekozen
+
 
 \begin{landscape}
     \begin{table}[]
