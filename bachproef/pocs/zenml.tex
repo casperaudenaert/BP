@@ -14,8 +14,17 @@ Nu dat de server geïnstalleerd is kan deze worden opgestart met het volgende co
 \begin{minted}{bash}
     zenml up --blocking
 \end{minted}
+Er wordt een extra parameter \texttt{blocking} toegevoegd omdat Windows ZenML niet als achtergrondproces kan uitvoeren. Het is ook mogelijk om ZenML in een Docker-container uit te voeren met de parameter \texttt{docker}.
 
+Na het opstarten van de server kan in de console het serveradres gevonden worden, zoals te zien is in de figuur~\ref{ZenMLServer}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/ZenML_Server.PNG}
+    \caption{ZenML server uitvoer na het opstarten}
+    \label{fig:ZenMLServer}
+\end{figure}
 \subsection{Dashboard}
+
 \subsection{Uitvoering}
 \subsection{Pipeline}
 \subsection{Problemen}

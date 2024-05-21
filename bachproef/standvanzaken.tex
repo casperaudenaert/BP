@@ -308,7 +308,7 @@ def train_rf_pipeline(data_path: str):
 
     kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
-\caption[voorbeeld van een Machine Learning pipeline met Kubeflow.]{\label{code:example-Kubeflow}Een voorbeeld van een Machine Learning pipeline met Kubeflow.}
+\caption[Voorbeeld van een Machine Learning pipeline met Kubeflow.]{\label{code:example-Kubeflow}Een voorbeeld van een Machine Learning pipeline met Kubeflow.}
 \end{listing}
 In Kubeflow Pipelines is elke stap vertegenwoordigd door een \texttt{pipeline\_op} object in de pipeline. De invoer- en uitvoerparameters van elke \texttt{pipeline\_op} worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,7 +452,7 @@ Ondanks alle voordelen heeft Dagster ook enkele nadelen:
 \end{itemize}
 Dagster is een goede keuze voor het beheren van ML-pipelines. De modulaire architectuur en de vele functies voor het maken van pipelines maken het een goede keuze voor onderzoekers, data scientists en ontwikkelaars die Machine Learning pipelines willen ontwikkelen. Dagster is wel relatief nieuw waardoor het niet alle functionaliteiten heeft die andere frameworks wel hebben.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Dagster:
-
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
