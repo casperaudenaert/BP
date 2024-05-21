@@ -1,15 +1,13 @@
 \chapter{\IfLanguageName{dutch}{Proof of Concept}{Proof of Concept}}%
 \label{ch:PoC}
 
-Dit deel van het onderzoek presenteert een Proof of Concept gericht op welk framework er gebruikt zal worden om machine learning pipelines lokaal uit te voeren, en dat gebruikt kan worden in het opleidingsonderdeel Machine Learning Operations.
+Dit deel van het onderzoek presenteert een Proof of Concept gericht op welk framework er gebruikt zal worden om Machine Learning pipelines lokaal uit te voeren, en dat gebruikt kan worden in het opleidingsonderdeel Machine Learning Operations.
 Het doel van deze Proof of Concept is om de efficiëntie en bruikbaarheid van deze frameworks te onderzoeken aan de hand van een lokale opstelling met de gekozen frameworks. Hierbij zullen de uitvoeringen van het framework, alsook de resultaten en bevindingen besproken worden.
 Hierna wordt aan de hand van de resultaten een conclusie getrokken over het gekozen framework.
 
 % TODO: misschien ook vermelden voor welke frameworks je een PoC hebt uitgewerkt?
 
 \section{Vereisten}
-
-% TODO: beschrijf ook de specs van jouw pc, de software-versie, eventuele configuratie en installatie-stappen (of verwijs naar documentatie).
 
 Voordat we kunnen beginnen met het uitwerken van de volgende Proof of Concepts is bepaalde software nodig nodig op het systeem. De vereiste software omvat:
 
@@ -21,9 +19,6 @@ Voordat we kunnen beginnen met het uitwerken van de volgende Proof of Concepts i
 Deze vereisten zorgen ervoor dat de code uit de volgende secties zonder problemen werkt. Als hardwarevereisten is het voldoende om te voldoen aan de minimale vereisten van de opleiding Toegepaste Informatica\footnote{\url{https://www.hogent.be/opleidingen/bachelors/toegepaste-informatica/computervereisten/}}. De Proof of Concept zal ook geen configuratiebestanden wijzigen voor de lokale opstelling. Elk framework wordt met de standaardinstellingen uitgevoerd.
 
 \section{Ontwikkeling van de Machine Learning pipeline}
-% TODO: ik lees vaan "in dit onderdeel", "in dit deel", dat leest moeizaam
-
-% TODO: ik zie "Machine Learning pipeline" en "machine learning pipeline", doe eens Ctrl+F en vervang alle "Machine Learning pipeline" "machine learning pipeline"
 
 Deze sectie bespreekt de opbouw van de Machine Learning pipeline wordt besproken zodat duidelijk is hoe de pipeline uit de proof of concepts functioneert. De Machine Learning pipeline die gebruikt zal worden, is identiek aan de pipeline uit opdracht 3 van het opleidingsonderdeel Machine Learning Operations.
 
@@ -82,6 +77,7 @@ De basispackages die gebruikt zullen worden in alle Proof of Concepts zijn:
     \item \textbf{Tensorflow:} Voor het trainen en evalueren van het model, Tensorflow werkt hiervoor samen met Keras.
     \item \textbf{Keras:} Voor het maken van het model bestaande uit verschillende lagen.
     \item \textbf{MLFlow:} Voor het bijhouden van alle resultaten van het model, het trainingsproces en de evaluatie.
+    \item \textbf{venv:} Voor het opzetten van virtuele Python omgevingen.
 \end{itemize}
 
 % TODO: plaats een link in een voetnoot naar de GitHub-repository van deze PoC: \footnote{\url{...}} + is het niet simpelweg de repo van de BP?
@@ -96,10 +92,15 @@ pip install -r "requirements_framework.txt"
 
 De volgende secties zullen gebruikmaken van verschillende frameworks. Deze frameworks hebben allemaal de mogelijkheid om lokaal een Machine Learning pipeline uit te voeren en voldoen ook aan alle must haves uit de requirementsanalyse (zie Sectie~\ref{s:Requirementsanalyse}).
 
-% TODO: moet venv dan niet bij de basispackages staan?
-% TODO: leg ook uit hoe je venv gebruikt
-
 Voor elk gebruikt framework wordt een virtuele omgeving opgesteld. Dit zorgt ervoor dat er geen conflicten zijn tussen de verschillende versies van de libraries.
+
+Om gebruik te maken van de virtuele omgeving van de Proof of Concept moet het volgene commando uitgevoerd worden:
+
+\begin{minted}[breaklines]{bash}
+    .\dagster\Scripts\activate
+\end{minted}
+
+Dit zal de virtuele omgeving opstarten in de console waar het commando is uitgevoerd. Elk commando dat nu in deze terminal wordt uitgevoerd, gebeurt binnen de virtuele omgeving.
 
 \input{pocs/mlflow.tex}
 \input{pocs/prefect.tex}

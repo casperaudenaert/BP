@@ -240,10 +240,8 @@ def train():
 if __name__ == "__main__":
     train()
 \end{minted}
-Deze code is een normale code voor het maken van een Machine Learning pipeline, echter zijn er enkele verschillen aangezien dat MLflow gebruikt wordt.
-In de code zijn de functies \texttt{log\_metrics} en \texttt{log\_model} te zien. Deze zorgen ervoor dat bepaalde metrics te zien zijn bij de resultaten alsook dat het model word bijgehouden.
-
-% TODO: wordt MLFlow niet eerder gebruikt als onderdeel van een pipeline i.p.v. om een pipeline mee te maken?
+Hoewel MLflow vaak wordt geassocieerd met het monitoren van Machine Learning-modellen, wordt het hier gebruikt in de context van het vastleggen van experimenten en het beheren van metadata. Deze code is een standaardimplementatie van een Machine Learning-pipeline, maar met enkele aanpassingen vanwege het gebruik van MLflow voor experimentele tracking.
+Binnen de code worden de functies \texttt{log\_metrics} en \texttt{log\_model} gebruikt. Deze functies zijn niet alleen verantwoordelijk voor het vastleggen van specifieke metingen, maar ook voor het bijhouden van het model in de resultaten, waardoor een vollediger beeld ontstaat van de experimentele resultaten en de prestaties van het model over tijd.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Kubeflow}
