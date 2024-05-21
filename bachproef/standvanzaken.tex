@@ -147,7 +147,7 @@ Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipe
 Onderstaande code is een voorbeeld van een Machine Learning-pipeline in Kedro: 
 
 % TODO: eigenlijk moet je codefragmenten ook voorzien van een caption en vooraan een "Lijst van Codefragmenten" toevoegen.
-
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 from kedro.pipeline import Pipeline, node
 from sklearn.model_selection import train_test_split
@@ -180,7 +180,8 @@ pipeline = Pipeline([
     node(evaluate_model, ["model", "X_test", "y_test"], None),
 ])
 \end{minted}
-
+\caption[Voorbeeld van een Machine Learning pipeline met Kedro.]{\label{code:example-Kedro}Een voorbeeld van een Machine Learning pipeline met Kedro.}
+\end{listing}
 In Kedro is elke stap vertegenwoordigd door een node object in de pipeline. De invoer- en uitvoerparameters van elke node worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{MLflow}
@@ -214,8 +215,8 @@ Er zijn enkele mogelijke nadelen verbonden aan het gebruik van MLflow voor het l
 \end{itemize}
 MLflow is een waardevolle tool voor onderzoekers die zich bezighouden met ML-projecten. Door reproduceerbaarheid te bevorderen, samenwerking te verbeteren en experimentatie, implementatie en beheer te stroomlijnen, stelt MLflow onderzoekers in staat om de kwaliteit en efficiëntie van hun onderzoeksinspanningen te verhogen.
 
-De volgende code is een voorbeeld van een Machine Learning pipeline in MLFlow:
-
+De volgende code is een voorbeeld voor het monitoren van een Machine Learning pipeline met MLFlow:
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 import mlflow
 import mlflow.sklearn
@@ -240,6 +241,8 @@ def train():
 if __name__ == "__main__":
     train()
 \end{minted}
+\caption[Voorbeeld van MLflow voor het monitoren van een Machine Learning pipeline.]{\label{code:example-MLflow}Een voorbeeld van MLflow voor het monitoren van een Machine Learning pipeline.}
+\end{listing}
 Hoewel MLflow vaak wordt geassocieerd met het monitoren van Machine Learning-modellen, wordt het hier gebruikt in de context van het vastleggen van experimenten en het beheren van metadata. Deze code is een standaardimplementatie van een Machine Learning-pipeline, maar met enkele aanpassingen vanwege het gebruik van MLflow voor experimentele tracking.
 Binnen de code worden de functies \texttt{log\_metrics} en \texttt{log\_model} gebruikt. Deze functies zijn niet alleen verantwoordelijk voor het vastleggen van specifieke metingen, maar ook voor het bijhouden van het model in de resultaten, waardoor een vollediger beeld ontstaat van de experimentele resultaten en de prestaties van het model over tijd.
 
@@ -266,7 +269,7 @@ Hoewel Kubeflow vele voordelen biedt, zijn er ook enkele potentiële nadelen waa
 Ondanks de mogelijke nadelen blijft Kubeflow een waardevol framework voor onderzoekers die schaalbare en flexibele ML-pipelines willen opzetten en beheren in lokale omgevingen. De voordelen zoals schaalbaarheid, geautomatiseerd beheer, ondersteuning voor reproduceerbare experimenten en integratie met populaire ML-frameworks maken Kubeflow tot een belangrijk instrument voor onderzoeksinspanningen.
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in Kubeflow:
-
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 import kfp.v2 as kfp
 from kfp.v2 import dsl
@@ -305,6 +308,8 @@ def train_rf_pipeline(data_path: str):
 
     kfp.compiler.Compiler().compile(train_rf_pipeline, package_path="pipeline.yaml")
 \end{minted}
+\caption[voorbeeld van een Machine Learning pipeline met Kubeflow.]{\label{code:example-Kubeflow}Een voorbeeld van een Machine Learning pipeline met Kubeflow.}
+\end{listing}
 In Kubeflow Pipelines is elke stap vertegenwoordigd door een \texttt{pipeline\_op} object in de pipeline. De invoer- en uitvoerparameters van elke \texttt{pipeline\_op} worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{ZenML}
@@ -331,7 +336,7 @@ Voordelen van ZenML in vergelijking met andere frameworks:
 ZenML is een framework dat zich richt op gebruiksvriendelijkheid, schaalbaarheid en het implementeren van MLOps-best practices. Het is een waardevolle aanwinst voor onderzoeksgemeenschappen en industriële toepassingen, en biedt data scientists en Machine Learning engineers een krachtige tool voor het beheren van ML pipelines.
 
 De volgende code is een voorbeeld van een Machine Learning pipeline in ZenML:
-
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -361,6 +366,8 @@ def main():
 if __name__ == "__main__":
     run = main()
 \end{minted}
+\caption[Voorbeeld van een Machine Learning pipeline met ZenML.]{\label{code:example-ZenML}Een voorbeeld van een Machine Learning pipeline met ZenML.}
+\end{listing}
 In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \begin{itemize}
     \item \textbf{@step:} Deze decorator wordt voor elke functie, die moet worden uitgevoerd worden als een taak, geplaatst. Een taak is een onderdeel van een pipeline.
@@ -368,9 +375,6 @@ In deze code maakt ZenML gebruik van decorators, deze decorators zijn:
 \end{itemize}
 
 Deze code heeft 2 steps die dan samen in de pipeline worden uitgevoerd. Eerst wordt de \texttt{read\_data} uitgevoerd die vervolgens zijn resultaten naar de functie \texttt{train} stuurt om het model te trainen.
-De lijn die is aangeduid toont aan hoe dat ZenML moet geïmporteerd worden in een python script of notebook.
-
-% TODO: ik zie geen aangeduide lijn
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prefect}
@@ -396,8 +400,8 @@ In vergelijking met andere frameworks voor het beheren van ML pipelines, zoals A
 \end{itemize}
 Prefect is een gebruiksvriendelijk framework voor het beheren en uitvoeren van ML pipelines. Met zijn schaalbaarheid, flexibiliteit en uitgebreide functieset is Prefect een uitstekende keuze voor data scientists en Machine Learning engineers die op zoek zijn naar een betrouwbare oplossing voor het beheren van hun ML workflows.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Prefect:
-
-\begin{minted}[frame=lines,breaklines, linenos, highlightlines={4,5}]{python}
+\begin{listing}[h]
+\begin{minted}[frame=lines,breaklines, linenos]{python}
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -426,6 +430,8 @@ def main():
 if __name__ == "__main__":
     run = main()
 \end{minted}
+\caption[Voorbeeld van een Machine Learning pipeline met Prefect.]{\label{code:example-Prefect}Een voorbeeld van een Machine Learning pipeline met Prefect.}
+\end{listing}
 In Prefect worden taken gedefinieerd met \texttt{@task} decorators die de bouwstenen vormen van de workflow. Deze taken worden uitgevoerd binnen een \texttt{@flow} geannoteerde functie, die de algehele workflow definieert. De \texttt{task\_runner} parameter in de flow functie toont aan hoe de taken moeten worden uitgevoerd. In dit geval is dit een \texttt{SequentialTaskRunner}, wat betekent dat de taken achter elkaar uitgevoerd moeten worden.
 
 \subsection{Dagster}
@@ -467,6 +473,8 @@ def train():
     preds = model.predict(X_test)
     accuracy = accuracy_score(y_test, preds)
 \end{minted}
+\caption[Voorbeeld van een Machine Learning pipeline met Dagster.]{\label{code:example-Dagster}Een voorbeeld van een Machine Learning pipeline met Dagster.}
+\end{listing}
 In Dagster worden gegevens en taken gemodelleerd als \texttt{assets}, die worden aangegeven met de \texttt{@asset} decorator. Deze decorator wordt gebruikt om aan te geven dat een functie een gegevensbron of een taak is binnen de data pipeline. Hierna kan via de webinterface elke asset uitgevoerd worden.
 \subsection{Luigi}
 
@@ -489,7 +497,7 @@ Ook zijn er een aantal mogelijke nadelen verbonden aan Luigi:
 
 Luigi is een krachtige en gebruiksvriendelijke oplossing voor het uitvoeren van ML-pipelines. De voordelen van Luigi, zoals gebruiksgemak, schaalbaarheid, betrouwbaarheid en flexibiliteit, maken het een aantrekkelijke keuze voor onderzoekers, data scientists en ontwikkelaars die ML-workflows willen beheren en implementeren.
 De volgende code is een voorbeeld van een Machine Learning pipeline in Luigi:
-
+\begin{listing}[h]
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -516,6 +524,8 @@ def main():
 if __name__ == "__main__":
     run = main()
 \end{minted}
+\caption[Voorbeeld van een Machine Learning pipeline met Luigi.]{\label{code:example-Luigi}Een voorbeeld van een Machine Learning pipeline met Luigi.}
+\end{listing}
 \section{Requirementsanalyse}
 \label{s:Requirementsanalyse}
 % TODO: kijk eens naar sectie 2.12 en verder van https://thesis.hogent.be/2022-2023/1330_202075027_PBA-TIN_scriptie.pdf om te zien hoe je deze sectie het best aanpakt
