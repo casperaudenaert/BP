@@ -52,13 +52,46 @@ De functies die kunnen worden gezien op Figuur~\ref{fig:ZenML_Overview} zijn:
 Deze Proof of Concept zal gebruik maken van de \textit{Pipelines} pagina op het dashboard.
 
 \subsection{Uitvoering}
-ZenML werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het Prefect framework. De twee decorators \texttt{@step} en \texttt{@pipeline} werden eerder in de Sectie~\ref{subsec:ZenML} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het ZenML framework.
+ZenML werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het ZenML framework. De twee decorators \texttt{@step} en \texttt{@pipeline} werden eerder in de Sectie~\ref{subsec:ZenML} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het ZenML framework.
 
 Origineel bevatte het preprocessingsgedeelte zowel het downloaden als het verwerken van de afbeeldingen. Voor gebruik in ZenML is dit echter opgesplitst in twee aparte stappen: het downloaden en het verwerken van de afbeeldingen gebeurt nu afzonderlijk. Ook bij het maken van het model wordt het model eerst gebouwd en pas daarna getraind. In de originele code gebeurde dit in één functie.
 De volledige code van de pipeline is te vinden in de GitHub-repository{\url{https://github.com/casperaudenaert/BP}} van deze Proof of Concept. % TODO: refereer naar dezelfde voetnoot hier
 
 Alle functies werden een \texttt{step}. Dit werd gedaan door de decorators voor de functie te plaatsen. Uiteindelijk worden dan alle \texttt{steps} samengevoegd in één pipeline dit word aan de hand van de \texttt{pipeline} decorator gedefinieerd.
 \subsection{Pipeline}
+De pipeline in ZenML is een functie waarin alle taken en steps achter elkaar worden uitgevoerd. De pipeline ziet er als volgt uit:
+\begin{minted}[frame=lines,breaklines,linenos]{python}
+@pipeline(enable_cache=False)
+def main():
+    tracking_uri = "http://127.0.0.1:8080"
+    model_name = "PoC"
+    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_experiment(model_name)
+    download(id="download")
+    build_model(id="build",after="download")
+    train(id="train",after="build")
+    eval(id="eval",after="train")
+\end{minted}
+Deze code stelt eerst het juiste tracking adres in voor MLflow, alsook de modelnaam. Hierna worden alle functies achter elkaar uitgevoerd en kunnen deze dan ook in de dashboard gezien worden.
 
+In dit geval heeft de \texttt{@pipeline} nog een extra parameter, deze betekend:
+
+\begin{itemize}
+    \item \texttt{enable\_cache}: ZenML heeft de mogelijkheid om reeds uitgevoerde functies in de cache op te slaan, waardoor de volgende uitvoering sneller kan plaatsvinden.
+\end{itemize}
+
+Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van ZenML. Figuur~\ref{fig:ZenML_Pipeline_Flow} toont hoe deze pagina in ZenML eruit ziet.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/ZenML_Pipeline_Flow.PNG}
+    \caption{ZenML pipeline flow}
+    \label{fig:ZenML_Pipeline_Flow}
+\end{figure}
 \subsection{Problemen}
+
 \subsection{Cloud}
+Prefect heeft een concept genaamd \textit{Stacks}. ZenML is net geupgrade naar versie 0.57.0 waardoor heel het dashboard veranderd is en nog in ontwikkeling is.
+Deze pagina is dus nog niet beschikbaar maar de functionaliteit kan al via de command-line-interface (CLI) gebruikt worden.
+
+Als deze pagina beschikbaar
+
