@@ -45,8 +45,6 @@ Volgens \textcite{Schlegel2022} omvat de levenscyclus van een typisch Machine Le
 
 Deze sectie richt zich op de verschillende onderdelen binnen het domein van Machine Learning (ML) die worden gebruikt om modellen te trainen en voorspellingen te genereren op basis van data. Aan de hand van onderzoeksvragen worden de belangrijkste methoden binnen ML uitgelegd, waarbij de nadruk ligt op het begrijpen van hun toepassingen en werking.
 
-% TODO: ik heb de figuur verwijderd, die had geen meerwaarde.
-
 Volgens \textcite{Mahesh2019} zijn er verschillende soorten Machine Learning-methoden, waaronder:
 
 \begin{itemize}
@@ -65,14 +63,19 @@ Machine Learning speelt een cruciale rol in het genereren van inzichten uit gege
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CI/CD pipelines}
-%hier
 Een Continuous Integration/Continuous Deployment (CI/CD) pipeline is een belangrijk onderdeel van softwareontwikkeling. Het versnelt en verbetert de levering van webapplicaties. Een CI/CD pipeline bestaat uit een opeenvolging van een reeks stappen die codewijzigingen automatisch integreren, testen en implementeren. Deze stappen omvatten Continuous Integration, Continuous Testing, Continuous Delivery en Continuous Deployment.
 
 % TODO: dit is vreemd verwoord. Gebruik de autocite gewoon in de tekst zonder de onderstaande zin.
 
 Dit is CI/CD pipelines uitgelegd zoals beschreven in \textcite{NaveenVemuri2024}:
 
-Figuur~\ref{fig:CICD_flow} toont de flow van een CI/CD pipeline. % TODO: zet dan hierachter wat je hieronder hebt zodat het er beter uitziet in de pdf
+Figuur~\ref{fig:CICD_flow} toont de flow van een CI/CD pipeline. 
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{graphics/cdci.png}
+    \caption{Typische flow van een CI/CD pipeline \autocite{RedHat2023}}
+    \label{fig:CICD_flow}
+\end{figure}
 
 Continuous Integration omvat het samenvoegen en testen van wijzigingen van diverse ontwikkelaars om ervoor te zorgen dat de verschillende delen van de code goed samenwerken en conflicten worden vermeden.
 
@@ -82,11 +85,6 @@ Vervolgens komt Continuous Delivery, waar de code die eerder werd getest wordt v
 
 Tenslotte is er Continuous Deployment, waar de voorbereide code automatisch wordt uitgevoerd in de productieomgeving. Dit minimaliseert handmatige tussenkomst en verzekert een snelle en consistente implementatie van nieuwe code.\newline
 
-\begin{figure}
-    \includegraphics[width=\linewidth]{graphics/cdci.png}
-    \caption{Typische flow van een CI/CD pipeline \autocite{RedHat2023}}
-    \label{fig:CICD_flow}
-\end{figure}
 
 Binnen het domein van datamanagement benadrukken \textcite{Samad2018} en \textcite{Vadavalasa2020} de cruciale aspecten van het optimaliseren van beperkte datasets en de implementatie van Continuous Integration in de datapipeline. Ze tonen aan dat CI/CD pipelines een belangrijke rol speelt bij het ontwikkelen van ML-modellen en het behouden van een veilige datastroom.
 
@@ -140,13 +138,10 @@ Kedro heeft vele functionaliteiten maar er zijn enkele opmerkingen waarmee reken
     \item \textbf{Opslagruimte:} lokale uitvoering van ML-pipelines kan, afhankelijk van de datasetgrootte, veel opslagruimte vereisen.
 \end{itemize}
 
-% TODO: bedoel je de cloud met dat laatste puntje hier?
-% TODO: kan het eenvoudig vertaald worden naar bv. k8s?
 Kedro is een krachtig framework voor onderzoekers die lokaal uitgevoerde ML-pipelines willen opzetten en beheren. De flexibiliteit, ondersteuning voor versiebeheer, geïntegreerde gegevenscatalogus en compatibiliteit met populaire ML-frameworks maken Kedro tot een waardevolle tool voor het lokaal uitvoeren van Machine Learning pipelines.
 
 Codevoorbeeld~\ref{code:example-kedro} is een voorbeeld van een Machine Learning-pipeline in Kedro. In Kedro is elke stap vertegenwoordigd door een node object in de pipeline. De invoer- en uitvoerparameters van elke node worden gespecificeerd om de gegevensstroom tussen de stappen te regelen. Bij het uitvoeren van de pipeline worden de functies in de opgegeven volgorde uitgevoerd, waarbij de uitvoer van de ene stap de invoer vormt voor de volgende stap. Dit zorgt voor een gestroomlijnde en reproduceerbare data pipeline voor het trainen en evalueren van machine learning modellen.
 
-% TODO: eigenlijk moet je codefragmenten ook voorzien van een caption en vooraan een "Lijst van Codefragmenten" toevoegen.
 \begin{listing}
 \begin{minted}[frame=lines,breaklines, linenos]{python}
 from kedro.pipeline import Pipeline, node

@@ -5,7 +5,12 @@ Dit deel van het onderzoek presenteert een Proof of Concept gericht op welk fram
 Het doel van deze Proof of Concept is om de efficiëntie en bruikbaarheid van deze frameworks te onderzoeken aan de hand van een lokale opstelling met de gekozen frameworks. Hierbij zullen de uitvoeringen van het framework, alsook de resultaten en bevindingen besproken worden.
 Hierna wordt aan de hand van de resultaten een conclusie getrokken over het gekozen framework.
 
-% TODO: misschien ook vermelden voor welke frameworks je een PoC hebt uitgewerkt?
+De frameworks waarvoor een Proof of Concept opgesteld zal worden zijn:
+\begin{itemize}
+    \item Prefect
+    \item ZenML
+    \item Dagster
+\end{itemize}
 
 \section{Vereisten}
 
@@ -80,9 +85,7 @@ De basispackages die gebruikt zullen worden in alle Proof of Concepts zijn:
     \item \textbf{venv:} Voor het opzetten van virtuele Python omgevingen.
 \end{itemize}
 
-% TODO: plaats een link in een voetnoot naar de GitHub-repository van deze PoC: \footnote{\url{...}} + is het niet simpelweg de repo van de BP?
-
-In de GitHub-repository van deze Proof of Concept zal voor elk framework een bestand genaamd \texttt{requirements\_framework.txt} te vinden zijn, waarbij `framework' de naam is van het gebruikte framework. Dit bestand kan samen met \texttt{pip} gebruikt worden om alle packages te installeren:
+In de GitHub-repository{\footnote\url{https://github.com/casperaudenaert/BP/tree/main/PoC}} van deze Proof of Concept zal voor elk framework een bestand genaamd \texttt{requirements\_framework.txt} te vinden zijn, waarbij `framework' de naam is van het gebruikte framework. Dit bestand kan samen met \texttt{pip} gebruikt worden om alle packages te installeren:
 
 \begin{minted}[breaklines]{bash}
 pip install -r "requirements_framework.txt"
