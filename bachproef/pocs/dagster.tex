@@ -20,7 +20,19 @@ Na het aanmaken van het project kan de webserver worden opgestart. Dit kan met h
     dagster dev
 \end{minted}
 \subsection{Dashboard}
+Na het opstarten van de webserver kun je via het webadres in de terminal naar het Dagster-dashboard gaan. Het Dagster-dashboard is een omgeving waarin alle pipelines worden beheerd.
+Het dashboard ziet eruit zoals in figuur~\ref{fig:Dagser_assets}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/Dagster_Assets.PNG}
+    \caption{Dagster assets overview}
+    \label{fig:Dagser_assets}
+\end{figure}
+Standaard word je naar de asset pagina van Dagster verwijst als je op de link de terminal klikt zoals in figuur~\ref{fig:Dagser_assets}
 \subsection{Uitvoering}
+
 \subsection{Pipeline}
 \subsection{Problemen}
+Tijdens het uitvoeren van de Proof of Concept zijn er enkele problemen opgedoken.
+Het eerste probleem was dat Dagster verschillende data types niet ondersteund als parameters voor \textit{assets} waardoor het model niet meegegeven kon worden naar de opeenvolgende functie. Om dit op te lossen is het model lokaal opgeslagen om in de opeenvogende functie deze terug in te lezen en dit voor elke opeenvolgende functie.
 \subsection{Cloud}

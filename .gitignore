@@ -136,3 +136,8 @@ output/
 out/
 PoC/Dagster/my-dagster-project/dataset/
 __pycache__/
+
+*.db
+*.err
+*.complete
+PoC/Dagster/my-dagster-project/tmp_q_pa2fl/storage/

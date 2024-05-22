@@ -90,7 +90,10 @@ Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface v
     \label{fig:ZenML_Pipeline_Flow}
 \end{figure}
 \subsection{Problemen}
-
+Tijdens het uitvoeren van de Proof of Concept zijn er enkele problemen opgedoken.
+Het eerste probleem was dat ZenML verschillende data types niet ondersteund als parameters voor \textit{steps} waardoor het model niet meegegeven kon worden naar de opeenvolgende functie. Om dit op te lossen is het model lokaal opgeslagen om in de opeenvogende functie deze terug in te lezen en dit voor elke opeenvolgende functie.
+Het volgende probleem was dat ZenML tijdens het opbouw van deze Proof of Concept heel het dashboard had geupdate, hierdoor is alles veranderd en zijn bepaalde functionaliteiten niet meer up to date met de documentatie van ZenML.
+Het laatste probleem was dat ZenML oudere versies van libraries gebruiktte waardoor er conflicten waren, hierdoor is er voor alle Proof of Concepts een virtuele omgeving opgesteld.
 \subsection{Cloud}
 ZenML heeft een concept genaamd \textit{Stacks}. Recentelijk is ZenML geüpgraded naar versie 0.57.0, waardoor het hele dashboard is vernieuwd en nog in ontwikkeling is. Deze pagina is dus nog niet beschikbaar, maar de functionaliteit kan al worden gebruikt via de command-line-interface (CLI).
 Met Stacks is het mogelijk om verbinding te maken met verschillende integraties zoals AWS en Azure. Het unieke aspect van Stacks is dat verschillende onderdelen van de pipeline op verschillende platformen kunnen worden uitgevoerd. Bijvoorbeeld, het preprocessing kan plaatsvinden op Kubeflow, het trainen van het model op AWS, en het deployen van het model op Azure. Dit wordt mogelijk gemaakt door ZenML en vereenvoudigt het verbinden van verschillende integraties met elkaar.
