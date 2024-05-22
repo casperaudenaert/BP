@@ -23,6 +23,10 @@
 %% If you compile with the make_thesis.{bat,sh} script, use the following
 %% import instead:
 \usepackage[section,outputdir=../output]{minted}
+% Rename Listing to Codefragment
+\renewcommand{\listingscaption}{Codefragment}
+\renewcommand{\listoflistingscaption}{Lijst van codefragmenten}
+
 \usemintedstyle{solarized-light}
 \definecolor{bg}{RGB}{253,246,227} %% Set the background color of the codeframe
 
@@ -117,8 +121,8 @@
 
 % If you included tables and/or source code listings, uncomment the appropriate
 % lines.
-%\listoftables
-%\listoflistings
+% \listoftables
+\listoflistings
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
