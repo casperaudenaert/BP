@@ -55,7 +55,7 @@ Deze Proof of Concept zal gebruik maken van de \textit{Pipelines} pagina op het 
 ZenML werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het ZenML framework. De twee decorators \texttt{@step} en \texttt{@pipeline} werden eerder in de Sectie~\ref{subsec:ZenML} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het ZenML framework.
 
 Origineel bevatte het preprocessingsgedeelte zowel het downloaden als het verwerken van de afbeeldingen. Voor gebruik in ZenML is dit echter opgesplitst in twee aparte stappen: het downloaden en het verwerken van de afbeeldingen gebeurt nu afzonderlijk. Ook bij het maken van het model wordt het model eerst gebouwd en pas daarna getraind. In de originele code gebeurde dit in één functie.
-De volledige code van de pipeline is te vinden in de GitHub-repository{\url{https://github.com/casperaudenaert/BP}} van deze Proof of Concept. % TODO: refereer naar dezelfde voetnoot hier
+De volledige code van de pipeline is te vinden in de GitHub-repository{\footnote\url{https://github.com/casperaudenaert/BP}} van deze Proof of Concept. % TODO: refereer naar dezelfde voetnoot hier
 
 Alle functies werden een \texttt{step}. Dit werd gedaan door de decorators voor de functie te plaatsen. Uiteindelijk worden dan alle \texttt{steps} samengevoegd in één pipeline dit word aan de hand van de \texttt{pipeline} decorator gedefinieerd.
 \subsection{Pipeline}
@@ -77,7 +77,7 @@ Deze code stelt eerst het juiste tracking adres in voor MLflow, alsook de modeln
 In dit geval heeft de \texttt{@pipeline} nog een extra parameter, deze betekend:
 
 \begin{itemize}
-    \item \texttt{enable\_cache}: ZenML heeft de mogelijkheid om reeds uitgevoerde functies in de cache op te slaan, waardoor de volgende uitvoering sneller kan plaatsvinden.
+    \item \texttt{enable\_cache:} ZenML heeft de mogelijkheid om reeds uitgevoerde functies in de cache op te slaan, waardoor de volgende uitvoering sneller kan plaatsvinden.
 \end{itemize}
 
 Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van ZenML. Figuur~\ref{fig:ZenML_Pipeline_Flow} toont hoe deze pagina in ZenML eruit ziet.
@@ -90,8 +90,16 @@ Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface v
 \subsection{Problemen}
 
 \subsection{Cloud}
-Prefect heeft een concept genaamd \textit{Stacks}. ZenML is net geupgrade naar versie 0.57.0 waardoor heel het dashboard veranderd is en nog in ontwikkeling is.
-Deze pagina is dus nog niet beschikbaar maar de functionaliteit kan al via de command-line-interface (CLI) gebruikt worden.
+ZenML heeft een concept genaamd \textit{Stacks}. Recentelijk is ZenML geüpgraded naar versie 0.57.0, waardoor het hele dashboard is vernieuwd en nog in ontwikkeling is. Deze pagina is dus nog niet beschikbaar, maar de functionaliteit kan al worden gebruikt via de command-line-interface (CLI).
+Met Stacks is het mogelijk om verbinding te maken met verschillende integraties zoals AWS en Azure. Het unieke aspect van Stacks is dat verschillende onderdelen van de pipeline op verschillende platformen kunnen worden uitgevoerd. Bijvoorbeeld, het preprocessing kan plaatsvinden op Kubeflow, het trainen van het model op AWS, en het deployen van het model op Azure. Dit wordt mogelijk gemaakt door ZenML en vereenvoudigt het verbinden van verschillende integraties met elkaar.
 
-Als deze pagina beschikbaar
+Om een ZenML pipeline uit te voeren op kubeflow kan het volgende commando gebruikt worden:
+\begin{minted}{bash}
+    zenml orchestrator register ORCHESTRATOR_NAME --flavor=ORCHESTRATOR_FLAVOR
+\end{minted}
+Waarbij de volgende twee parameters moeten aangepast worden:
+\begin{itemize}
+    \item \texttt{ORCHESTRATOR\_NAME:} De naam dat je wilt toekennen aan deze \textit{orchestrator}.
+    \item \texttt{ORCHESTRATOR\_FLAVOR{\footnote\url{https://docs.zenml.io/stacks-and-components/component-guide/orchestrators}}:} De integratie die wordt gebruikt voor het uitvoeren van de pipeline, zoals Azure of AWS.
+\end{itemize}
 
