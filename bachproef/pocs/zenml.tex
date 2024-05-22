@@ -31,7 +31,34 @@ Wanneer er genavigeerd wordt naar het serveradres, zal er gevraagd worden om in 
     \caption{ZenML authenticatie pagina}
     \label{fig:ZenML_Login}
 \end{figure}
+Na het inloggen wordt gevraagd om enkele basisgegevens, zoals je naam, e-mailadres, het gebruiksdoel van ZenML en hoe je ZenML hebt ontdekt. Het invullen van de naam en het e-mailadres is optioneel, maar de overige velden zijn verplicht.
+Nu dat alles is ingevuld kan het dashboard gezien worden. Dit dashboard ziet er uit zoals op figuur~\ref{fig:ZenML_Overview}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/ZenML_Overview.PNG}
+    \caption{ZenML startpagina}
+    \label{fig:ZenML_Overview}
+\end{figure}
+De functies die kunnen worden gezien op Figuur~\ref{fig:ZenML_Overview} zijn:
+
+\begin{itemize}
+    \item \textbf{Overview:} Geeft weer hoe je verbinding kunt maken met de ZenML-server, zodat je meerdere computers aan één server kunt koppelen.
+    \item \textbf{Pipelines:} Geeft alle pipelines weer die werden of worden uitgevoerd.
+    \item \textbf{Models:} Maakt het mogelijk voor het beheren van getrainde Machine Learning modellen. (Dit is een ZenML Cloud optie en is betalend)
+    \item \textbf{Artifacts:} De output van het training process word hier bijgehouden. (Dit is een ZenML Cloud optie en is betalend)
+    \item \textbf{Stacks:} Hier kan verbinding gemaakt worden met verschillede integraties zoals: Discord, Azure, Docker, Kubernetes, etc.
+    \item \textbf{Settings:} Hier wordt alle gevoelige informatie bijgehouden, zoals wachtwoorden en API keys. Alsook GitHub-repositories.
+\end{itemize}
+Deze Proof of Concept zal gebruik maken van de \textit{Pipelines} pagina op het dashboard.
+
 \subsection{Uitvoering}
+ZenML werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het Prefect framework. De twee decorators \texttt{@step} en \texttt{@pipeline} werden eerder in de Sectie~\ref{subsec:ZenML} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het ZenML framework.
+
+Origineel bevatte het preprocessingsgedeelte zowel het downloaden als het verwerken van de afbeeldingen. Voor gebruik in ZenML is dit echter opgesplitst in twee aparte stappen: het downloaden en het verwerken van de afbeeldingen gebeurt nu afzonderlijk. Ook bij het maken van het model wordt het model eerst gebouwd en pas daarna getraind. In de originele code gebeurde dit in één functie.
+De volledige code van de pipeline is te vinden in de GitHub-repository{\url{https://github.com/casperaudenaert/BP}} van deze Proof of Concept. % TODO: refereer naar dezelfde voetnoot hier
+
+Alle functies werden een \texttt{step}. Dit werd gedaan door de decorators voor de functie te plaatsen. Uiteindelijk worden dan alle \texttt{steps} samengevoegd in één pipeline dit word aan de hand van de \texttt{pipeline} decorator gedefinieerd.
 \subsection{Pipeline}
+
 \subsection{Problemen}
 \subsection{Cloud}
