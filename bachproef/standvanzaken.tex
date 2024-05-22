@@ -537,7 +537,6 @@ if __name__ == "__main__":
 
 \section{Requirementsanalyse}
 \label{s:Requirementsanalyse}
-% TODO: kijk eens naar sectie 2.12 en verder van https://thesis.hogent.be/2022-2023/1330_202075027_PBA-TIN_scriptie.pdf om te zien hoe je deze sectie het best aanpakt
 Om te bepalen welk framework gebruikt zal worden voor het lokaal uitvoeren van Machine Learning pipelines, zullen de frameworks vegeleken worden aan de hand van criteria die zijn opgesteld via de MoSCoW-methode. Deze methode wordt veel gebruikt binnen Agile Software Development om prioriteiten te stellen aan vereisten.
 
 De MoSCoW-methode worden onderverdeeld in vier categorieën:
@@ -579,11 +578,7 @@ Er zijn geen won\'t haves.
 
 Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal worden om de Proof-of-Concept uit te werken.
 
-% TODO: caption bij de tabel
-% TODO: niet zomaar de tabel geven. Je moet die ook bespreken. Je kan bv. zeggen "Na analyses van alle voorgaande secties en de requirementsanalyse, toont Tabel ... een overzicht van de frameworks en hun mogelijkheden."
-% TODO: je moet hier dan ook de short list bepalen en uitleggen waarom je die frameworks hebt gekozen
-
-
+Na analyse van alle voorgaande secties en de requirementsanalyse, toont \ref{tab:table-vergelijking} een overzicht van de frameworks en hun mogelijkheden. Deze tabel biedt een gedetailleerd vergelijk tussen de verschillende machine learning frameworks op basis van een reeks criteria die essentieel zijn voor het opzetten en uitvoeren van pipelines.
 \begin{landscape}
     \begin{table}[]
     \begin{tabular}{|l|l|l|l|l|l|l|}
@@ -593,11 +588,25 @@ Aan de hand van deze criteria zal besloten worden welke framework(s) gekozen zal
     Reproduceerbaarheid                                                    & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     Minimumvereisten                                                       & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     \begin{tabular}[c]{@{}l@{}}Cloud\\ compatibiliteit\end{tabular}        & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Leesbaar\\ formaat\end{tabular}             & YAML                                                                & Python code                                                        & Python code                                                       & Python code                                                       & YAML                                                              & \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}  \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Leesbaar\\ formaat\end{tabular}             & \begin{tabular}[c]{@{}l@{}}YAML en \\ Python code\end{tabular}      & Python code                                                        & Python code                                                       & Python code                                                       & Python code                                                       & \begin{tabular}[c]{@{}l@{}}YAML\\ en Python \\ code\end{tabular}  \\ \hline
     Lokale uitvoering                                                      & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Data verzamelen\\ en verwerken\end{tabular} &                                                                     & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     \begin{tabular}[c]{@{}l@{}}Model trainen\\ en evalueren\end{tabular}   & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
     Model deployen                                                         & Ja                                                                  & Ja                                                                 & Ja                                                                & Ja                                                                & Ja                                                                & Ja                                                                \\ \hline
+    Relatieve Leercurve                                                    & Gemiddeld                                                           & Laag                                                               & Gemiddeld                                                         & Hoog                                                              & Gemiddeld                                                         & Zeer hoog                                                         \\ \hline
+    Documentatie                                                           & Goed                                                                & Minimaal                                                           & Uitgebreid                                                        & Uitgebreid                                                        & Ontwikkelend                                                      & Goed                                                              \\ \hline
     \end{tabular}
+    \caption{\label{tab:table-vergelijking}Vergelijking van Machine Learing frameworks voor het uitvoeren van pipelines.}
     \end{table}
-    \end{landscape}
+\end{landscape}
+
+Op basis van tabel \ref{tab:table-vergelijking} en de specifieke vereisten van de requirementsanalyse, is er een shortlist gemaakt van de meest geschikte frameworks: Dagster, Prefect en ZenML. Deze keuze is gebaseerd op de volgende overwegingen:
+
+\textbf{Prefect}: Prefect is een machine learning framework dat uitgebreide mogelijkheden biedt voor het opzetten, uitvoeren en beheren van data pipelines. Het biedt een solide basis voor reproducibility, uitstekende documentatie en goede ondersteuning voor zowel lokale als cloudgebaseerde uitvoering.
+
+\textbf{ZenML}: ZenML is een opkomend framework dat zich richt op het stroomlijnen van het machine learning proces, van gegevensbeheer tot modelversiebeheer en experiment tracking. Het biedt een intuïtieve interface en integraties met populaire machine learning libraries.
+
+\textbf{Dagster}: Dagster is een krachtig framework dat zich richt op het bouwen van data applicaties met een sterke nadruk op het garanderen van data integriteit en betrouwbaarheid. Het biedt geavanceerde functionaliteiten zoals type checking, unit testing en dependency management.
+
+Voor elk van deze drie frameworks zullen later Proof of Concepts worden ontwikkeld om de lokale uitvoering van Machine Learning pipelines te demonstreren.
+

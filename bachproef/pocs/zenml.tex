@@ -76,7 +76,9 @@ def main():
 \end{minted}
 Deze code stelt eerst het juiste tracking adres in voor MLflow, alsook de modelnaam. Hierna worden alle functies achter elkaar uitgevoerd en kunnen deze dan ook in de dashboard gezien worden.
 
-In dit geval heeft de \texttt{@pipeline} nog een extra parameter, deze betekend:
+Elke \textit{step} heeft in dit geval een \textit{id}, wat ervoor zorgt dat de functies gemakkelijk in ZenML kunnen worden gebruikt. Dit is bijvoorbeeld handig voor de parameter \textit{after}, die ervoor zorgt dat een functie pas wordt uitgevoerd nadat de vorige functie is voltooid.
+
+Alle \textit{steps} worden uitgevoerd in een \texttt{@pipeline} die nog een extra parameter heeft, deze betekend:
 
 \begin{itemize}
     \item \texttt{enable\_cache:} ZenML heeft de mogelijkheid om reeds uitgevoerde functies in de cache op te slaan, waardoor de volgende uitvoering sneller kan plaatsvinden.
@@ -91,9 +93,14 @@ Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface v
 \end{figure}
 \subsection{Problemen}
 Tijdens het uitvoeren van de Proof of Concept zijn er enkele problemen opgedoken.
-Het eerste probleem was dat ZenML verschillende data types niet ondersteund als parameters voor \textit{steps} waardoor het model niet meegegeven kon worden naar de opeenvolgende functie. Om dit op te lossen is het model lokaal opgeslagen om in de opeenvogende functie deze terug in te lezen en dit voor elke opeenvolgende functie.
-Het volgende probleem was dat ZenML tijdens het opbouw van deze Proof of Concept heel het dashboard had geupdate, hierdoor is alles veranderd en zijn bepaalde functionaliteiten niet meer up to date met de documentatie van ZenML.
-Het laatste probleem was dat ZenML oudere versies van libraries gebruiktte waardoor er conflicten waren, hierdoor is er voor alle Proof of Concepts een virtuele omgeving opgesteld.
+
+Het eerste probleem was dat ZenML verschillende datatypes niet ondersteunt als parameters voor \textit{steps}, waardoor het model niet kon worden doorgegeven aan de volgende functie. Om dit op te lossen, werd het model lokaal opgeslagen en vervolgens in elke opeenvolgende functie opnieuw ingelezen.
+
+Het tweede probleem was dat ZenML tijdens het opbouwen van deze Proof of Concept het hele dashboard had geüpdatet. Hierdoor is alles veranderd en zijn bepaalde functionaliteiten niet meer up-to-date met de documentatie van ZenML.
+
+Het derde probleem was dat ZenML oudere versies van libraries gebruikte, wat tot conflicten leidde. Daarom is er voor alle Proof of Concepts een virtuele omgeving opgezet.
+
+Het laatste probleem is dat ZenML de \textit{steps} niet in de volgorde uitvoert zoals ze in de \textit{pipeline} staan. Daarom moeten de \textit{steps} een \textit{id} krijgen, en de \textit{steps} die pas na een bepaalde \textit{step} kunnen worden uitgevoerd, moeten de parameter \textit{after} krijgen.
 \subsection{Cloud}
 ZenML heeft een concept genaamd \textit{Stacks}. Recentelijk is ZenML geüpgraded naar versie 0.57.0, waardoor het hele dashboard is vernieuwd en nog in ontwikkeling is. Deze pagina is dus nog niet beschikbaar, maar de functionaliteit kan al worden gebruikt via de command-line-interface (CLI).
 Met Stacks is het mogelijk om verbinding te maken met verschillende integraties zoals AWS en Azure. Het unieke aspect van Stacks is dat verschillende onderdelen van de pipeline op verschillende platformen kunnen worden uitgevoerd. Bijvoorbeeld, het preprocessing kan plaatsvinden op Kubeflow, het trainen van het model op AWS, en het deployen van het model op Azure. Dit wordt mogelijk gemaakt door ZenML en vereenvoudigt het verbinden van verschillende integraties met elkaar.
