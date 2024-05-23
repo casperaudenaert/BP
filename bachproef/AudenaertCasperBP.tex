@@ -53,6 +53,12 @@
     texcl=false,
 }
 
+%% Ensure the list of listings is in the table of contents
+\renewcommand*\listoflistings{%
+    \addcontentsline{toc}{chapter}{\listoflistingscaption}%
+    \listof{listing}{\listoflistingscaption}%
+}
+
 % Other packages not already included can be imported here
 
 %%---------- Document metadata -------------------------------------------------
