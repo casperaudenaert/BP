@@ -221,6 +221,7 @@
 \usetikzlibrary{positioning}
 \RequirePackage{standalone}
 \RequirePackage{wrapfig}
+\graphicspath{{../graphics/}}
 
 % Page layout & document structure
 \RequirePackage{appendix}
@@ -243,8 +244,6 @@
 \RequirePackage{titletoc}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{url}
-
-\captionsetup[figure]{labelformat=parens, labelsep=newline}
 
 % Typography & Symbols
 \RequirePackage{eurosym}
@@ -363,7 +362,7 @@
         \setsansfont{Montserrat}
     }{%
         \newfontfamily\titlefont{Montserrat}[
-            Path = fonts/Montserrat/,
+            Path = ../fonts/Montserrat/,
             Extension = .otf,
             UprightFont = *-Black, %% Force black
             BoldFont=*-Black,
@@ -371,7 +370,7 @@
             BoldItalicFont= *-BlackItalic]
 
         \newfontfamily\subtitlefont{Montserrat}[
-            Path = fonts/Montserrat/,
+            Path = ../fonts/Montserrat/,
             Extension = .otf,
             UprightFont = *-ExtraBold, %% Force extra bold
             BoldFont=*-ExtraBold,
@@ -379,7 +378,7 @@
             BoldItalicFont= *-ExtraBoldItalic]
 
         \newfontfamily\tocfont{Montserrat}[
-            Path = fonts/Montserrat/,
+            Path = ../fonts/Montserrat/,
             Extension = .otf,
             UprightFont = *-Regular,
             BoldFont=*-Bold,
@@ -387,7 +386,7 @@
             BoldItalicFont= *-BoldItalic]
 
         \setmainfont{Montserrat}[
-            Path = fonts/Montserrat/,
+            Path = ../fonts/Montserrat/,
             Extension = .otf,
             UprightFont = *-Regular,
             BoldFont=*-Bold,
