@@ -1,4 +1,3 @@
-
 \section{Prefect}
 
 Een eerste tool waarvan een Proof of Concept gemaakt wordt is Prefect. Dit zal, in combinatie met MLFlow, gebruikt worden voor het lokaal uitvoeren van Machine Learning pipelines. Hierbij worden alle aanpassingen in de code van het framework vergeleken met de originele code van opdracht 3 van opleidingsonderdeel Machine Learning Operations.
@@ -12,7 +11,7 @@ De installatie van Prefect gebeurt met de package manager \texttt{pip}. Via de t
     pip install -r "requirements_Prefect.txt"
 \end{minted}
 
-Om alleen Prefect te installeren kan dit met het volgende \texttt{pip} commando:
+Alleen Prefect te installeren kan met het volgende \texttt{pip} commando:
 
 \begin{minted}{bash}
     pip install prefect
@@ -20,7 +19,7 @@ Om alleen Prefect te installeren kan dit met het volgende \texttt{pip} commando:
 
 \subsection{Lokale Server}
 
-Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren, dit gebeurt met behulp van een lokale server. Deze server kan worden opgestart met het commando:
+Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren. Dit gebeurt met behulp van een lokale server. Deze server kan worden opgestart met het commando:
 
 \begin{minted}{bash}
     prefect server start
@@ -70,7 +69,7 @@ Deze Proof of Concept zal gebruik maken van de \textit{Flow runs} en \textit{Flo
 
 Prefect werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het Prefect framework. De twee decorators \texttt{@task} en \texttt{@flow} werden eerder in de Sectie~\ref{subsec:prefect} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het Prefect framework.
 
-Origineel bevatte het preprocessinggedeelte het downloaden en het verwerken van de afbeeldingen. Echter, voor het uitvoeren in Prefect werd dit nog eens onderverdeeld in twee aparte delen. Het downloaden en het verwerken van de afbeeldingen gebeurt dus apart. De volledige code van de pipeline is te vinden in de GitHub-repository van deze Proof of Concept. % TODO: refereer naar dezelfde voetnoot hier
+Origineel bevatte het preprocessinggedeelte het downloaden en het verwerken van de afbeeldingen. Echter, voor het uitvoeren in Prefect werd dit nog eens onderverdeeld in twee aparte delen. Het downloaden en het verwerken van de afbeeldingen gebeurt bijgevolg apart. De volledige code van de pipeline is te vinden in de GitHub-repository\footnote{\url{https://github.com/casperaudenaert/BP/tree/main/PoC/ZenML}} van deze Proof of Concept.
 
 De download functie werd een \texttt{Task} de andere functies werden een \texttt{Flow}. Dit werd gedaan door de decorators voor de functie te plaatsen. Uiteindelijk worden dan alle \texttt{Tasks} en \texttt{Flows} samengevoegd in één pipeline.
 
@@ -100,7 +99,7 @@ In dit geval heeft de \texttt{@flow} nog extra parameters, deze betekenen:
     \item \texttt{log\_prints}: Geeft alle prints weer die in de Python code werden gebruikt. In dit geval is de waarde \texttt{True}. Dit maakt het debuggen eenvoudig tijden het ontwikkelen van de pipeline.
 \end{itemize}
 
-Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van Prefect. Figuur~\ref{fig:Prefect_Flow} toont hoe deze pagina in Prefect eruit ziet.
+Na het uitvoeren van de flow wordt deze flow gevisualiseerd in de webinterface van Prefect. Figuur~\ref{fig:Prefect_Flow} toont hoe deze pagina in Prefect eruit ziet.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Flow.PNG}
@@ -110,11 +109,11 @@ Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface v
 
 \subsection{Problemen}
 
-Prefect had moeite met het doorgeven van parameters naar de volgende task, waardoor de flow niet meer kon werken. Om dit op te lossen werd er gebruik gemaakt van een subflow. Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen wel goed de parameters en kunnen alles goed uitvoeren.
+Prefect had moeite met het doorgeven van parameters naar de volgende task, waardoor de flow niet meer kon werken. Om dit op te lossen werd er gebruik gemaakt van een subflow. Subflows zijn flows die worden uitgevoerd in een bestaande flow. Deze ontvangen de parameters wel goed en kunnen alles goed uitvoeren.
 
 \subsection{Cloud}
 
-Prefect heeft een concept genaamd \textit{Work Pools}. Figuur~\ref{fig:Prefect_Work_Pools} toont hoe deze pagina in Prefect eruit ziet.
+Prefect heeft een concept genaamd \textit{Work Pools}. Figuur~\ref{fig:Prefect_Work_Pools} toont hoe deze pagina in Prefect eruit ziet. Op deze pagina kan een work pool worden toegevoegd. Dit zorgt voor een verbinding met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd. Het aanmaken van een verbinding kan via de knop \texttt{Add Work Pool}, zoals te zien is op Figuur~\ref{fig:Prefect_Work_Pools}. Na het klikken op deze knop kan de gewenste cloudomgeving gekozen worden (zie Figuur~\ref{fig:Prefect_Work_Pools_Create}).
 
 \begin{figure}[h]
     \centering
@@ -122,10 +121,6 @@ Prefect heeft een concept genaamd \textit{Work Pools}. Figuur~\ref{fig:Prefect_W
     \caption{Voorbeeld van de Prefect Work Pool pagina}
     \label{fig:Prefect_Work_Pools}
 \end{figure}
-
-Op deze pagina kan er een work pool worden toegevoegd. Dit zorgt voor een verbinding met een cloud omgeving, zodat de Prefect flow in de cloud kan worden uitgevoerd. Het aanmaken van een verbinding kan via de knop \texttt{Add Work Pool}, zoals te zien is op Figuur~\ref{fig:Prefect_Work_Pools}.
-
-Na het klikken op deze knop kan de gewenste cloudomgeving gekozen worden (zie Figuur~\ref{fig:Prefect_Work_Pools_Create}).
 
 \begin{figure}[h]
     \centering

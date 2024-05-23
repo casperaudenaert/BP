@@ -3,18 +3,11 @@
 
 Dit deel van het onderzoek presenteert een Proof of Concept gericht op welk framework er gebruikt zal worden om Machine Learning pipelines lokaal uit te voeren, en dat gebruikt kan worden in het opleidingsonderdeel Machine Learning Operations.
 Het doel van deze Proof of Concept is om de efficiëntie en bruikbaarheid van deze frameworks te onderzoeken aan de hand van een lokale opstelling met de gekozen frameworks. Hierbij zullen de uitvoeringen van het framework, alsook de resultaten en bevindingen besproken worden.
-Hierna wordt aan de hand van de resultaten een conclusie getrokken over het gekozen framework.
-
-De frameworks waarvoor een Proof of Concept opgesteld zal worden zijn:
-\begin{itemize}
-    \item Prefect
-    \item ZenML
-    \item Dagster
-\end{itemize}
+Hierna wordt aan de hand van de resultaten een conclusie getrokken over het gekozen framework. De frameworks waarvoor een Proof of Concept opgesteld zal worden zijn Prefect, ZenML en Dagster.
 
 \section{Vereisten}
 
-Voordat we kunnen beginnen met het uitwerken van de volgende Proof of Concepts is bepaalde software nodig nodig op het systeem. De vereiste software omvat:
+Voordat de Proof of Concepts uitgewerkt kunnen worden, is bepaalde software nodig nodig op het systeem. De vereiste software omvat:
 
 \begin{itemize}
     \item Python\footnote{\url{https://www.python.org/downloads/}}
@@ -25,7 +18,7 @@ Deze vereisten zorgen ervoor dat de code uit de volgende secties zonder probleme
 
 \section{Ontwikkeling van de Machine Learning pipeline}
 
-Deze sectie bespreekt de opbouw van de Machine Learning pipeline wordt besproken zodat duidelijk is hoe de pipeline uit de proof of concepts functioneert. De Machine Learning pipeline die gebruikt zal worden, is identiek aan de pipeline uit opdracht 3 van het opleidingsonderdeel Machine Learning Operations.
+Deze sectie bespreekt de opbouw van de Machine Learning pipeline zodat duidelijk is hoe de pipeline uit de Proof of Concepts functioneert. De Machine Learning pipeline die gebruikt zal worden, is identiek aan de pipeline uit opdracht 3 van het opleidingsonderdeel Machine Learning Operations.
 
 Deze pipeline is ontworpen om aan de hand van \textit{Image Classification} het verschil te kunnen herkennen tussen foto's van sinaasappels en appels. Deze pipeline heeft verschillende onderdelen:
 
@@ -47,11 +40,11 @@ De volgende secties zullen elk van deze onderdelen toelichten en de werking erva
 
 \subsection{Preprocessing}
 
-Het preprocessinggedeelte van de pipeline bereidt de afbeeldingen  zodat deze afbeeldingen gebruikt kunnen worden als invoer voor het trainen van het model. Dit omvat het downloaden en transformeren van de afbeeldingen. In deze Proof of Concept wordt gebruik gemaakt van de Tensorflow \texttt{ImageDataGenerator} om afbeeldingen in te laden, te normaliseren en te voorzien van labels gebaseerd op de mappenstructuur. Na het inladen en het klaarmaken van de afbeeldingen worden de afbeeldingen gesplitst in trainings-, validatie- en testsets. In elke van deze sets worden de juiste labels voorzien.
+Het preprocessinggedeelte van de pipeline bereidt de afbeeldingen voor zodat deze afbeeldingen gebruikt kunnen worden als invoer voor het trainen van het model. Dit omvat het downloaden en transformeren van de afbeeldingen. In deze Proof of Concept wordt gebruik gemaakt van de Tensorflow \texttt{ImageDataGenerator} om afbeeldingen in te laden, te normaliseren en te voorzien van labels gebaseerd op de mappenstructuur. Na het inladen en het klaarmaken van de afbeeldingen worden de afbeeldingen gesplitst in trainings-, validatie- en testsets. In elke van deze sets worden de juiste labels voorzien.
 
 \subsection{Training}
 
-Het trainingsgedeelte gaat daadwerkelijk een Machine Learning-model trainen. Deze Proof of Concept zal gebruikmaken van een Convolutional Neural Network (CNN) met behulp van Keras. Dit model bevat verschillende lagen en parameters. Er wordt gebruikgemaakt van een sequentieel model van Keras, wat betekent dat alle lagen achtereenvolgens worden uitgevoerd. De volgorde en de lagen die gebruikt worden voor dit Proof of Concept zijn als volgt:
+Het trainingsgedeelte gaat daadwerkelijk een Machine Learning model trainen. Deze Proof of Concept zal gebruikmaken van een Convolutional Neural Network (CNN) met behulp van Keras. Dit model bevat verschillende lagen en parameters. Er wordt gebruikgemaakt van een sequentieel model van Keras, wat betekent dat alle lagen achtereenvolgens worden uitgevoerd. De volgorde en de lagen die gebruikt worden voor deze Proof of Concept zijn als volgt:
 
 \begin{itemize}
     \item Convolutionele laag (\texttt{Conv2D})
@@ -113,10 +106,10 @@ Dit zal de virtuele omgeving opstarten in de console waar het commando is uitgev
 \section{Conclusie}
 Deze conclusie vat de bevindingen van alle Proof of Concepts samen, waarbij verschillende frameworks zijn onderzocht voor het uitvoeren van Machine Learning pipelines. De focus lag op het verkennen van de efficiëntie en bruikbaarheid van deze frameworks in een lokale opstelling.
 
-Het onderzoek begon met het presenteren van de vereisten en de ontwikkeling van de Machine Learning pipeline, die gericht was op het herkennen van verschillen tussen foto's van sinaasappels en appels. Elke Proof of Concept volgde dezelfde opbouw, waarbij preprocessing, training en evaluatie werden uitgevoerd. De basispackages en MLflow werden gebruikt voor het bijhouden van resultaten en experiment tracking.\\
+Het onderzoek begon met het presenteren van de vereisten en de ontwikkeling van de Machine Learning pipeline, die gericht was op het herkennen van verschillen tussen foto's van sinaasappels en appels. Elke Proof of Concept volgde dezelfde opbouw, waarbij preprocessing, training en evaluatie werden uitgevoerd. De basispackages en MLflow werden gebruikt voor het bijhouden van resultaten en experiment tracking.
 
 Vervolgens werden drie frameworks onderzocht: Prefect, ZenML en Dagster. Prefect bood een gebruiksvriendelijke interface met een overzichtelijk dashboard voor het beheren van pipelines, terwijl ZenML een geavanceerde functionaliteit bood voor het uitvoeren en beheren van Machine Learning pipelines, hoewel het enkele technische uitdagingen met zich meebracht. Dagster, aan de andere kant, bood robuuste mogelijkheden voor het ontwikkelen en uitvoeren van pipelines, maar vereiste meer handmatige configuratie.
 
-Elk framework had zijn eigen installatie- en uitvoeringsprocessen, evenals specifieke kenmerken en uitdagingen. Prefect integreerde goed met MLflow en bood een gebruiksvriendelijke dashboardinterface voor het beheren van pipelines. ZenML stelde krachtige functionaliteiten ter beschikking, zoals cloudintegratie en modelbeheer, maar had enkele beperkingen met betrekking tot datatypen en versieconflicten. Dagster bood een solide basis voor het ontwikkelen en uitvoeren van pipelines, maar vereiste meer handmatige configuratie.\\
+Elk framework had zijn eigen installatie- en uitvoeringsprocessen, evenals specifieke kenmerken en uitdagingen. Prefect integreerde goed met MLflow en bood een gebruiksvriendelijke dashboardinterface voor het beheren van pipelines. ZenML stelde krachtige functionaliteiten ter beschikking, zoals cloudintegratie en modelbeheer, maar had enkele beperkingen met betrekking tot datatypen en versieconflicten. Dagster bood een solide basis voor het ontwikkelen en uitvoeren van pipelines, maar vereiste meer handmatige configuratie.
 
 In het algemeen bieden deze frameworks verschillende opties voor het uitvoeren van Machine Learning pipelines, elk met zijn eigen sterke punten en uitdagingen. De keuze voor een specifiek framework hangt af van de specifieke vereisten en voorkeuren van het project en het team.
