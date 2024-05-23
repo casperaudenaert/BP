@@ -27,7 +27,7 @@ Prefect heeft de mogelijkheid om Machine Learning pipelines lokaal uit te voeren
 \end{minted}
 
 Na het uitvoeren van het startcommando zou het resultaat van Figuur~\ref{fig:Prefect_server} te zien moeten zijn.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_server.PNG}
     \caption{Uitvoer van de Prefect Server}
@@ -46,7 +46,7 @@ Nu de server opgestart en verbonden is met de lokale omgeving, kan via de ingest
 
 Het dashboard van Prefect is een omgeving waarin alle pipeline flows worden beheerd. Figuur~\ref{fig:Prefect_Dashboard} geeft een voorbeeld van het Prefect dashboard.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_dashboard.PNG}
     \caption{Voorbeeld van het Prefect Dashboard}
@@ -101,7 +101,7 @@ In dit geval heeft de \texttt{@flow} nog extra parameters, deze betekenen:
 \end{itemize}
 
 Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van Prefect. Figuur~\ref{fig:Prefect_Flow} toont hoe deze pagina in Prefect eruit ziet.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Flow.PNG}
     \caption{Flow gevisualiseerd in Prefect}
@@ -116,7 +116,7 @@ Prefect had moeite met het doorgeven van parameters naar de volgende task, waard
 
 Prefect heeft een concept genaamd \textit{Work Pools}. Figuur~\ref{fig:Prefect_Work_Pools} toont hoe deze pagina in Prefect eruit ziet.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Work_Pools.PNG}
     \caption{Voorbeeld van de Prefect Work Pool pagina}
@@ -127,7 +127,7 @@ Op deze pagina kan er een work pool worden toegevoegd. Dit zorgt voor een verbin
 
 Na het klikken op deze knop kan de gewenste cloudomgeving gekozen worden (zie Figuur~\ref{fig:Prefect_Work_Pools_Create}).
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Work_Pools_Create.PNG}
     \caption{Mogelijke cloud omgevingen voor Prefect Work Pools}
@@ -138,7 +138,7 @@ Figuur~\ref{fig:Prefect_Work_Pools_Create} toont de verschillende cloud omgeving
 
 In dit voorbeeld wordt \texttt{Process} geselecteerd omdat er momenteel geen toegang is tot een cloudomgeving. De volgende stap is het invullen van details. Deze details zijn de naam en de beschrijving van de work pool en eventuele concurrency. Alleen de naam is verplicht in te vullen, zoals te zien is op Figuur~\ref{fig:Prefect_Work_Pools_Create_Details}.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Work_Pools_Create_Details.PNG}
     \caption{Details van de create van een Prefect Work Pool}
@@ -147,7 +147,7 @@ In dit voorbeeld wordt \texttt{Process} geselecteerd omdat er momenteel geen toe
 
 Op de laatste pagina worden ten slotte extra parameters ingesteld met betrekking tot de cloudprovider, zoals te zien is op Figuur~\ref{fig:Prefect_Work_Pools_Create_parameters}
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/Prefect_Work_Pools_Create_Parameters.PNG}
     \caption{Prefect Work Pool Creation Details}

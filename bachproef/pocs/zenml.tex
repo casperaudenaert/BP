@@ -18,8 +18,8 @@ Nu dat de server geïnstalleerd is kan deze worden opgestart met het volgende co
 \end{minted}
 Er wordt een extra parameter \texttt{blocking} toegevoegd omdat Windows ZenML niet als achtergrondproces kan uitvoeren. Het is ook mogelijk om ZenML in een Docker-container uit te voeren met de parameter \texttt{docker}.
 
-Na het opstarten van de server kan in de console het serveradres gevonden worden, zoals te zien is in de figuur~\ref{ZenMLServer}
-\begin{figure}
+Na het opstarten van de server kan in de console het serveradres gevonden worden, zoals te zien is in de figuur~\ref{fig:ZenMLServer}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/ZenML_Server.PNG}
     \caption{ZenML server uitvoer na het opstarten}
@@ -27,7 +27,7 @@ Na het opstarten van de server kan in de console het serveradres gevonden worden
 \end{figure}
 \subsection{Dashboard}
 Wanneer er genavigeerd wordt naar het serveradres, zal er gevraagd worden om in te loggen. De inloggegevens zijn te zien bij het opstarten van de server in de console. Figuur~\ref{fig:ZenMLServer} toont dit ook aan. Hier kan gezien worden dat de gebruikersnaam \texttt{default} is en dat het wachtwoord leeg gelaten mag worden. Het inlogscherm ziet eruit zoals weergegeven in figuur~\ref{fig:ZenML_Login}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/ZenML_Login.PNG}
     \caption{ZenML authenticatie pagina}
@@ -35,7 +35,7 @@ Wanneer er genavigeerd wordt naar het serveradres, zal er gevraagd worden om in 
 \end{figure}
 Na het inloggen wordt gevraagd om enkele basisgegevens, zoals je naam, e-mailadres, het gebruiksdoel van ZenML en hoe je ZenML hebt ontdekt. Het invullen van de naam en het e-mailadres is optioneel, maar de overige velden zijn verplicht.
 Nu dat alles is ingevuld kan het dashboard gezien worden. Dit dashboard ziet er uit zoals op figuur~\ref{fig:ZenML_Overview}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/ZenML_Overview.PNG}
     \caption{ZenML startpagina}
@@ -85,7 +85,7 @@ Alle \textit{steps} worden uitgevoerd in een \texttt{@pipeline} die nog een extr
 \end{itemize}
 
 Na het uitvoeren van de flow word deze flow gevisualiseerd in de web interface van ZenML. Figuur~\ref{fig:ZenML_Pipeline_Flow} toont hoe deze pagina in ZenML eruit ziet.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{graphics/ZenML_Pipeline_Flow.PNG}
     \caption{ZenML pipeline flow}
