@@ -37,9 +37,24 @@ De functies die kunnen worden gezien op Figuur~\ref{fig:Dagser_assets} zijn:
     \item \textbf{Deployments:} Geeft alle deployments weer. Dit zijn alle projecten in de huidige map.
 \end{itemize}
 
+De \textit{runs} pagina ziet er uit zoals in figuur~\ref{fig:Dagser_runs}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/Dagster_Runs.PNG}
+    \caption{Dagster runs overview}
+    \label{fig:Dagser_runs}
+\end{figure}
+
+Bij het overzicht van de uitvoeringen van de pipelines kan een pipeline geselecteerd worden om meer details te zien. Figuur~\ref{fig:Dagser_details} toont hoe deze pagina eruit ziet.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\linewidth]{graphics/Dagster_Flow.PNG}
+    \caption{Dagster pipeline detauks}
+    \label{fig:Dagser_details}
+\end{figure}
 \subsection{Uitvoering}
 Origineel bevatte het preprocessingsgedeelte zowel het downloaden als het verwerken van de afbeeldingen. Voor gebruik in Dagster is dit echter opgesplitst in twee aparte stappen: het downloaden en het verwerken van de afbeeldingen gebeurt nu afzonderlijk. Ook bij het maken van het model wordt het model eerst gebouwd en pas daarna getraind. In de originele code gebeurde dit in één functie.
-De volledige code van de pipeline is te vinden in de GitHub-repository{\footnote\url{https://github.com/casperaudenaert/BP/tree/main/PoC/Dagster}} van deze Proof of Concept.
+De volledige code van de pipeline is te vinden in de GitHub-repository\footnote{\url{https://github.com/casperaudenaert/BP/tree/main/PoC/Dagster}}van deze Proof of Concept.
 Alle functies worden \textit{assets} in Dagster. Hierdoor kan de webserver deze herkennen en weergeven op het dashboard. Er is geen speciale functie of decorator nodig om een pipeline in de code te maken.
 \subsection{Pipeline}
 In vergelijking met andere frameworks heeft Dagster geen speciale functie of decorator voor het maken van een pipeline. De volgorde wordt bepaald door de parameter \textit{deps} mee te geven aan de \textit{asset}.
@@ -70,8 +85,8 @@ Het probleem bij Dagster was dat verschillende datatypes niet ondersteund werden
 \subsection{Cloud}
 Voor het verbinden met de cloud zijn er twee opties:
 \begin{itemize}
-    \item \textbf{Codevoorbeeld{\footnote\url{https://dagster.io/templates}}:} Dagster biedt voorbeeldprojecten met verschillende integraties. Dit zijn GitHub-repositories die gedownload kunnen worden om zelf gebruik te maken van de integraties.
-    \item \textbf{Documentatie{\footnote\url{https://docs.dagster.io/integrations}}:} Dagster heeft een pagina waarop alle integraties worden gelijst en hoe deze gebruikt moeten worden. Dit gebeurt meestal aan de hand van een \textit{pip}-pakket, waarbij ook een voorbeeld staat van hoe je het pakket moet gebruiken.
+    \item \textbf{Codevoorbeeld\footnote{\url{https://dagster.io/templates}}:} Dagster biedt voorbeeldprojecten met verschillende integraties. Dit zijn GitHub-repositories die gedownload kunnen worden om zelf gebruik te maken van de integraties.
+    \item \textbf{Documentatie\footnote{\url{https://docs.dagster.io/integrations}}:} Dagster heeft een pagina waarop alle integraties worden gelijst en hoe deze gebruikt moeten worden. Dit gebeurt meestal aan de hand van een \textit{pip}-pakket, waarbij ook een voorbeeld staat van hoe je het pakket moet gebruiken.
 \end{itemize}
 
 Voor het overzetten van lokaal naar de cloud is het dus een keuze tussen zelf integreren met de documentatie of beginnen met een startvoorbeeld dat Dagster aanbiedt op hun GitHub-repository.

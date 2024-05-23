@@ -85,7 +85,7 @@ De basispackages die gebruikt zullen worden in alle Proof of Concepts zijn:
     \item \textbf{venv:} Voor het opzetten van virtuele Python omgevingen.
 \end{itemize}
 
-In de GitHub-repository{\footnote\url{https://github.com/casperaudenaert/BP/tree/main/PoC}} van deze Proof of Concept zal voor elk framework een bestand genaamd \texttt{requirements\_framework.txt} te vinden zijn, waarbij `framework' de naam is van het gebruikte framework. Dit bestand kan samen met \texttt{pip} gebruikt worden om alle packages te installeren:
+In de GitHub-repository\footnote{\url{https://github.com/casperaudenaert/BP/tree/main/PoC}} van deze Proof of Concept zal voor elk framework een bestand genaamd \texttt{requirements\_framework.txt} te vinden zijn, waarbij `framework' de naam is van het gebruikte framework. Dit bestand kan samen met \texttt{pip} gebruikt worden om alle packages te installeren:
 
 \begin{minted}[breaklines]{bash}
 pip install -r "requirements_framework.txt"
@@ -109,3 +109,14 @@ Dit zal de virtuele omgeving opstarten in de console waar het commando is uitgev
 \input{pocs/prefect.tex}
 \input{pocs/zenml.tex}
 \input{pocs/dagster.tex}
+
+\section{Conclusie}
+Deze conclusie vat de bevindingen van alle Proof of Concepts samen, waarbij verschillende frameworks zijn onderzocht voor het uitvoeren van Machine Learning pipelines. De focus lag op het verkennen van de efficiëntie en bruikbaarheid van deze frameworks in een lokale opstelling.
+
+Het onderzoek begon met het presenteren van de vereisten en de ontwikkeling van de Machine Learning pipeline, die gericht was op het herkennen van verschillen tussen foto's van sinaasappels en appels. Elke Proof of Concept volgde dezelfde opbouw, waarbij preprocessing, training en evaluatie werden uitgevoerd. De basispackages en MLflow werden gebruikt voor het bijhouden van resultaten en experiment tracking.\\
+
+Vervolgens werden drie frameworks onderzocht: Prefect, ZenML en Dagster. Prefect bood een gebruiksvriendelijke interface met een overzichtelijk dashboard voor het beheren van pipelines, terwijl ZenML een geavanceerde functionaliteit bood voor het uitvoeren en beheren van Machine Learning pipelines, hoewel het enkele technische uitdagingen met zich meebracht. Dagster, aan de andere kant, bood robuuste mogelijkheden voor het ontwikkelen en uitvoeren van pipelines, maar vereiste meer handmatige configuratie.
+
+Elk framework had zijn eigen installatie- en uitvoeringsprocessen, evenals specifieke kenmerken en uitdagingen. Prefect integreerde goed met MLflow en bood een gebruiksvriendelijke dashboardinterface voor het beheren van pipelines. ZenML stelde krachtige functionaliteiten ter beschikking, zoals cloudintegratie en modelbeheer, maar had enkele beperkingen met betrekking tot datatypen en versieconflicten. Dagster bood een solide basis voor het ontwikkelen en uitvoeren van pipelines, maar vereiste meer handmatige configuratie.\\
+
+In het algemeen bieden deze frameworks verschillende opties voor het uitvoeren van Machine Learning pipelines, elk met zijn eigen sterke punten en uitdagingen. De keuze voor een specifiek framework hangt af van de specifieke vereisten en voorkeuren van het project en het team.

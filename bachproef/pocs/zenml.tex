@@ -57,7 +57,7 @@ Deze Proof of Concept zal gebruik maken van de \textit{Pipelines} pagina op het 
 ZenML werkt met decorators. Dit zorgt ervoor dat bestaande Python-functies eenvoudig kunnen worden omgezet naar het ZenML framework. De twee decorators \texttt{@step} en \texttt{@pipeline} werden eerder in de Sectie~\ref{subsec:ZenML} besproken. Deze maken het mogelijk om bestaande Python functies om te zetten naar het ZenML framework.
 
 Origineel bevatte het preprocessingsgedeelte zowel het downloaden als het verwerken van de afbeeldingen. Voor gebruik in ZenML is dit echter opgesplitst in twee aparte stappen: het downloaden en het verwerken van de afbeeldingen gebeurt nu afzonderlijk. Ook bij het maken van het model wordt het model eerst gebouwd en pas daarna getraind. In de originele code gebeurde dit in één functie.
-De volledige code van de pipeline is te vinden in de GitHub-repository{\footnote\url{https://github.com/casperaudenaert/BP/tree/main/PoC/ZenML}} van deze Proof of Concept.
+De volledige code van de pipeline is te vinden in de GitHub-repository\footnote{\url{https://github.com/casperaudenaert/BP/tree/main/PoC/ZenML}} van deze Proof of Concept.
 
 Alle functies werden een \texttt{step}. Dit werd gedaan door de decorators voor de functie te plaatsen. Uiteindelijk worden dan alle \texttt{steps} samengevoegd in één pipeline dit word aan de hand van de \texttt{pipeline} decorator gedefinieerd.
 \subsection{Pipeline}
@@ -112,6 +112,6 @@ Om een ZenML pipeline uit te voeren op kubeflow kan het volgende commando gebrui
 Waarbij de volgende twee parameters moeten aangepast worden:
 \begin{itemize}
     \item \texttt{ORCHESTRATOR\_NAME:} De naam dat je wilt toekennen aan deze \textit{orchestrator}.
-    \item \texttt{ORCHESTRATOR\_FLAVOR{\footnote\url{https://docs.zenml.io/stacks-and-components/component-guide/orchestrators}}:} De integratie die wordt gebruikt voor het uitvoeren van de pipeline, zoals Azure of AWS.
+    \item \texttt{ORCHESTRATOR\_FLAVOR\footnote{\url{https://docs.zenml.io/stacks-and-components/component-guide/orchestrators}}:} De integratie die wordt gebruikt voor het uitvoeren van de pipeline, zoals Azure of AWS.
 \end{itemize}
 
