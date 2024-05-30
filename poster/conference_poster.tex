@@ -9,21 +9,21 @@
 % Info over de opleiding
 \course{Bachelorproef}
 \studyprogramme{toegepaste informatica}
-\academicyear{2022-2023}
+\academicyear{2023-2024}
 \institution{Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent}
 
 % Info over de bachelorproef
-\title{Titel van uw bachelorproef}
-\subtitle{Ondertitel (eventueel)}
-\author{Voornaam Naam}
-\email{voornaam.familienaam@student.hogent.be}
-\supervisor{Voornaam Naam}
-\cosupervisor{Voornaam Naam (Bedrijf)}
+\title{Lokaal uitvoeren van Machine Learning pipelines: een vergelijkende studie en Proof of Concept.}
+%\subtitle{Ondertitel (eventueel)}
+\author{Casper Audenaert}
+\email{casper.audenaert@student.hogent.be}
+\supervisor{Dhr. S. Lievens}
+\cosupervisor{Dhr. T. Aelbrecht (HOGENT)}
 
 % Indien ingevuld, wordt deze informatie toegevoegd aan het einde van de
 % abstract. Zet in commentaar als je dit niet wilt.
-\specialisation{Systeem- en Netwerkbeheer}
-\keywords{Lambda-calculus, Scheme}
+\specialisation{AI \& Data Engineering}
+\keywords{cloud, CI/CD pipelines, machine learning operations, Kubeflow}
 \projectrepo{https://github.com/user/repo}
 
 \begin{document}
@@ -31,9 +31,14 @@
 \maketitle
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+  Dit onderzoek richt zich op het verkennen van de mogelijkheden voor het lokaal uitvoeren van machine learning pipelines, aan de hand van verschillende frameworks.
+  Binnen het keuzepakket ``AI \& Data Engineering'' en het bijbehorende opleidingsonderdeel ``Machine Learning Operations'' wordt er momenteel gebruik gemaakt van Azure ML pipelines voor het uitvoeren van machine learning pipelines in de Azure Cloud.
+  Het gebruik van Azure ML pipelines is echter niet gratis voor studenten die niet voldoende krediet hebben op het platform. Hierdoor richt dit onderzoek zich op het lokaal uitvoeren van machine learning pipelines.\\\\
+  De basis van Azure ML pipelines is Kubeflow. Voor het lokaal draaien van Kubeflow zijn er echter aanzienlijke uitdagingen, waardoor het noodzakelijk is om een aangepaste Proof of Concept (PoC) op te stellen.
+  Het lokaal uitvoeren van machine learning pipelines kan ook problemen met zich meebrengen, zoals de noodzaak van aanzienlijke rekenkracht die mogelijks niet beschikbaar is op computers van studenten. Als gevolg daarvan hebben bepaalde frameworks een beperktere versie die niet zo krachtig is als hun cloud-varianten, maar toch lokaal machine learning pipelines kan uitvoeren.\\\\
+  De eerste fase van deze bachelorproef omvat een uitgebreide literatuurstudie waarin onderzocht wordt welke frameworks bestaan voor het lokaal draaien van machine learning pipelines, hoe deze frameworks functioneren, en ook de compatibiliteit en de diverse functies ervan.
+  Het tweede deel van dit onderzoek richt zich op het opzetten van een Proof of Concept voor de geselecteerde tool(s), mogelijks vertrekkende van publiek beschikbare manifest bestanden. Hierbij wordt specifiek aandacht besteed aan het gemak van onderhoud voor de betrokken lectoren.
+  Het onderzoek leidde tot een aanbeveling voor Prefect, met een grondig begrip van de geschiktheid van diverse frameworks voor het lokaal uitvoeren van machine learning pipelines. Deze aanbeveling biedt praktische toepasbaarheid voor zowel onderwijs als bedrijfsleven.
 \end{abstract}
 
 \begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
