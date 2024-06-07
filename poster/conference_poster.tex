@@ -45,33 +45,37 @@
 
 \section{Introductie}
 
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say `Ni' again to you, if you do not appease us.
+Om gebruik te kunnen maken van de Azure-servers hebben gebruikers credits nodig. Tijdens de eerder genoemde opdracht waren er studenten die voor aanvang of tijdens de opdracht geen credits meer hadden. Dit leidde ertoe dat deze studenten hun resultaten niet konden presenteren of zelfs niet konden beginnen aan de opdracht. Daarom wordt in dit onderzoeksvoorstel gekeken naar het opzetten van een lokale installatie van een machine learning-pipeline.
+De gekozen frameworks van de shortlist zullen worden gebruikt om verschillende proof of concepts op te stellen. Hierna wordt er gekeken naar hoe elk framework werkt en of het echt wel voldoet aan de vooraf besproken requirements.
 
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
 
-You can't expect to wield supreme power just `cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+\section{Proof of Concepts}
+De short list bevatte 3 verschillende frameworks genaamd:
+\begin{itemize}
+  \item Prefect
+  \item ZenML
+  \item Dagster
+\end{itemize}
 
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+Prefect werd gekozen omdat dit framework de meeste functies had en de laagste leercurve van alle frameworks. Vervolgens werd ZenML gekozen omdat dit het nieuwste framework op de longlist was. Hoewel het nog in ontwikkeling is, is het zeer veelbelovend. Ten slotte werd er voor Dagster gekozen omdat dit framework al het langst bestaat en de documentatie goed is uitgewerkt.
 
-\section{Experimenten}
+Elke Proof of Concept legt uit hoe dat de installatie te werk gaat van de frameworks en hoe dat de pipeline gemaakt kan worden uitgevoerd met dit framework.
 
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
+\section{Bijhouden van variablen}
 
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
+Voor het bijhouden van verschillende variabelen wordt MLflow gebruikt. Dit komt voor in elke proof of concept en wordt extern verbonden met elkaar. Dit zorgt ervoor dat de volledige installatie lokaal blijft, zowel het framework als MLflow.
 
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-\section{Sectie met figuur}
-
-De {\LaTeX} figure-omgeving bepaalt zelf waar een afbeelding komt en dat is meestal niet op de plek in de tekst waar de figure-omgeving gedefinieerd wordt. Als je wilt forceren dat afbeeldingen toch in de flow van de tekst blijven, dan kan je dat zoals hieronder:
+De variabelen die MLflow bijhoudt voor dit onderzoek zijn als volgt:
+\begin{itemize}
+  \item Eigenschappen van het model
+  \item De prestaties van het trainen en evalueren van het model
+  \item Systeemeigenschappen tijdens het uitvoeren van een pipeline
+\end{itemize}
 
 \begin{center}
   \captionsetup{type=figure}
-  \includegraphics[width=1.0\linewidth]{grail}
+  \includegraphics[width=1.0\linewidth]{mlflow_Graph.PNG}
   \captionof{figure}{He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say `Ni' again to you, if you do not appease us}
 \end{center}
 
