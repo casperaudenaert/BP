@@ -75,16 +75,25 @@ De variabelen die MLflow bijhoudt voor dit onderzoek zijn als volgt:
 
 \begin{center}
   \captionsetup{type=figure}
-  \includegraphics[width=1.0\linewidth]{grail}
-  \captionof{figure}{He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say `Ni' again to you, if you do not appease us}
+  \includegraphics[width=1.0\linewidth]{graphics/mlflow_Graph.PNG}
+  \captionof{figure}{Grafieken die de prestatie van de pipeline aantonen}
+  \label{fig:mlflow_grafiek}
 \end{center}
 
-Let er wel op dat dit tot problemen met bladschikking kan leiden.
-
+Figuur \ref{mlflow_grafiek} toont de verschillende waarden die kunnen worden vastgesteld in MLflow. Op de afbeelding zijn de accuracy, loss, en validatie-accuracy van het model te zien, evenals de accuracy van enkele epochs tijdens het trainen van het model.
 \section{Conclusies}
 
-Don't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+De Proof of Concepts hebben inzicht geboden in de efficiëntie en bruikbaarheid van de drie onderzochte frameworks - Prefect, ZenML en Dagster - voor het lokaal uitvoeren van machine learning pipelines. Deze analyse biedt een basis voor aanbevelingen over welk framework het meest geschikt is voor gebruik in het opleidingsonderdeel Machine Learning Operations.\\
 
+Prefect is een krachtig framework dat gebruikmaakt van een intuïtieve gebruikersinterface en een uitgebreide set functies biedt voor het beheren en uitvoeren van workflows. Het biedt een eenvoudige installatie en configuratie, waardoor gebruikers snel aan de slag kunnen. Prefect integreert naadloos met MLFlow voor experiment tracking, waardoor het gemakkelijk is om de resultaten van machine learning modellen te volgen en te beheren.\\
+
+ZenML biedt een gestructureerde aanpak voor het ontwikkelen en uitvoeren van machine learning pipelines. Het framework maakt gebruik van decorators om Py\-thon-functies om te zetten naar ZenML-stappen, waardoor het ontwikkelingsproces vereenvoudigd wordt. Hoewel ZenML een gebruiksvriendelijke interface biedt, zijn er enkele uitdagingen geïdentificeerd, zoals beperkte ondersteuning voor bepaalde datatypes en enkele compatibiliteitsproblemen met oudere library-versies.\\
+
+Dagster richt zich op de \textit{data orchestration} en biedt een krachtig platform voor het bouwen en uitvoeren van data pipelines. Het maakt gebruik van een concept genaamd \textit{assets} om taken te definiëren en te orchestreren. Hoewel Dagster een robuust framework is, vereist het een iets complexere configuratie in vergelijking met de andere twee frameworks.\\
+
+Gezien de vergelijking van de frameworks en de resultaten van de Proof of Concepts, wordt Prefect aanbevolen voor gebruik in het opleidingsonderdeel Machine Learning Operations. Prefect combineert een gebruiksvriendelijke interface met krachtige functies voor workflowbeheer en integratie met MLFlow voor experiment tracking. Het biedt een ideale balans tussen eenvoud, efficiëntie en functionaliteit, waardoor het geschikt is voor zowel educatieve als professionele toepassingen.
+
+Met Prefect kunnen studenten effectief machine learning pipelines ontwikkelen en beheren, terwijl ze tegelijkertijd vertrouwd raken met industriestandaard tools en workflows. Dit stelt hen in staat om hun vaardigheden op het gebied van machine learning operations verder te ontwikkelen en voor te bereiden op toekomstige uitdagingen in het werkveld.
 \section{Toekomstig onderzoek}
 
 I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
